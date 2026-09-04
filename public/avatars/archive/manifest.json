@@ -1,0 +1,714 @@
+{
+  "items": [
+    {
+      "id": "11-s3-v1-villain",
+      "avatarId": 11,
+      "pack": "ultra",
+      "stage": 3,
+      "version": "v1",
+      "note": "villain (retired)",
+      "src": "/avatars/archive/ultra/11-s3-v1-villain.jpg",
+      "label": "Quillburst \u00b7 old legend (retired)"
+    },
+    {
+      "id": "21-s3-v1-studio",
+      "avatarId": 21,
+      "pack": "ultra",
+      "stage": 3,
+      "version": "v1",
+      "note": "studio (retired)",
+      "src": "/avatars/archive/ultra/21-s3-v1-plainbg.jpg",
+      "label": "Quietpaw \u00b7 old legend (studio)"
+    },
+    {
+      "id": "22-s3-v1-studio",
+      "avatarId": 22,
+      "pack": "ultra",
+      "stage": 3,
+      "version": "v1",
+      "note": "studio (retired)",
+      "src": "/avatars/archive/ultra/22-s3-v1-plainbg.jpg",
+      "label": "Hearthound \u00b7 old legend (studio)"
+    },
+    {
+      "id": "23-s3-v1-studio",
+      "avatarId": 23,
+      "pack": "ultra",
+      "stage": 3,
+      "version": "v1",
+      "note": "studio (retired)",
+      "src": "/avatars/archive/ultra/23-s3-v1-studio.jpg",
+      "label": "Mistfawn \u00b7 old legend (studio)"
+    },
+    {
+      "id": "24-s3-v1-studio",
+      "avatarId": 24,
+      "pack": "ultra",
+      "stage": 3,
+      "version": "v1",
+      "note": "studio (retired)",
+      "src": "/avatars/archive/ultra/24-s3-v1-plainbg.jpg",
+      "label": "Mossback \u00b7 old legend (studio)"
+    },
+    {
+      "id": "25-s3-v1-studio",
+      "avatarId": 25,
+      "pack": "ultra",
+      "stage": 3,
+      "version": "v1",
+      "note": "studio (retired)",
+      "src": "/avatars/archive/ultra/25-s3-v1-plainbg.jpg",
+      "label": "Softwing \u00b7 old legend (studio)"
+    },
+    {
+      "id": "14-s2-v1-studio",
+      "avatarId": 14,
+      "pack": "ultra",
+      "stage": 2,
+      "version": "v1",
+      "note": "studio (retired)",
+      "src": "/avatars/archive/ultra/14-s2-v1-studio.jpg",
+      "label": "Bonehollow \u00b7 old adolescent (studio)"
+    },
+    {
+      "id": "16-s3-v1-studio",
+      "avatarId": 16,
+      "pack": "ultra",
+      "stage": 3,
+      "version": "v1",
+      "note": "studio (retired)",
+      "src": "/avatars/archive/ultra/16-s3-v1-studio.jpg",
+      "label": "Prismite \u00b7 old legend (studio)"
+    },
+    {
+      "id": "18-s2-v1-studio",
+      "avatarId": 18,
+      "pack": "ultra",
+      "stage": 2,
+      "version": "v1",
+      "note": "studio (retired)",
+      "src": "/avatars/archive/ultra/18-s2-v1-studio.jpg",
+      "label": "Mirthling \u00b7 old adolescent (studio)"
+    },
+    {
+      "id": "kids-01-v1-css",
+      "avatarId": 1,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/01-v1-css.jpg",
+      "label": "Teal Dragon \u00b7 old kids art"
+    },
+    {
+      "id": "kids-02-v1-css",
+      "avatarId": 2,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/02-v1-css.jpg",
+      "label": "Purple Yeti \u00b7 old kids art"
+    },
+    {
+      "id": "kids-03-v1-css",
+      "avatarId": 3,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/03-v1-css.jpg",
+      "label": "Coral Octopus \u00b7 old kids art"
+    },
+    {
+      "id": "kids-04-v1-css",
+      "avatarId": 4,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/04-v1-css.jpg",
+      "label": "Sunny Fox \u00b7 old kids art"
+    },
+    {
+      "id": "kids-05-v1-css",
+      "avatarId": 5,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/05-v1-css.jpg",
+      "label": "Mint Robot \u00b7 old kids art"
+    },
+    {
+      "id": "kids-06-v1-css",
+      "avatarId": 6,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/06-v1-css.jpg",
+      "label": "Scholar Owl \u00b7 old kids art"
+    },
+    {
+      "id": "kids-07-v1-css",
+      "avatarId": 7,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/07-v1-css.jpg",
+      "label": "Lime Slime \u00b7 old kids art"
+    },
+    {
+      "id": "kids-08-v1-css",
+      "avatarId": 8,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/08-v1-css.jpg",
+      "label": "Golden Cat \u00b7 old kids art"
+    },
+    {
+      "id": "kids-09-v1-css",
+      "avatarId": 9,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/09-v1-css.jpg",
+      "label": "Dino Buddy \u00b7 old kids art"
+    },
+    {
+      "id": "kids-10-v1-css",
+      "avatarId": 10,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/10-v1-css.jpg",
+      "label": "Star Unicorn \u00b7 old kids art"
+    },
+    {
+      "id": "kids-11-v1-css",
+      "avatarId": 11,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/11-v1-css.jpg",
+      "label": "Boot Frog \u00b7 old kids art"
+    },
+    {
+      "id": "kids-12-v1-css",
+      "avatarId": 12,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/12-v1-css.jpg",
+      "label": "Honey Bee \u00b7 old kids art"
+    },
+    {
+      "id": "kids-13-v1-css",
+      "avatarId": 13,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/13-v1-css.jpg",
+      "label": "Blue Penguin \u00b7 old kids art"
+    },
+    {
+      "id": "kids-14-v1-css",
+      "avatarId": 14,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/14-v1-css.jpg",
+      "label": "Heart Bear \u00b7 old kids art"
+    },
+    {
+      "id": "kids-15-v1-css",
+      "avatarId": 15,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/15-v1-css.jpg",
+      "label": "Phoenix Chick \u00b7 old kids art"
+    },
+    {
+      "id": "kids-16-v1-css",
+      "avatarId": 16,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/16-v1-css.jpg",
+      "label": "Flower Cactus \u00b7 old kids art"
+    },
+    {
+      "id": "kids-17-v1-css",
+      "avatarId": 17,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/17-v1-css.jpg",
+      "label": "Cloud Spirit \u00b7 old kids art"
+    },
+    {
+      "id": "kids-18-v1-css",
+      "avatarId": 18,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/18-v1-css.jpg",
+      "label": "Bubble Fish \u00b7 old kids art"
+    },
+    {
+      "id": "kids-19-v1-css",
+      "avatarId": 19,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/19-v1-css.jpg",
+      "label": "Bandit Raccoon \u00b7 old kids art"
+    },
+    {
+      "id": "kids-20-v1-css",
+      "avatarId": 20,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/20-v1-css.jpg",
+      "label": "Mushroom Pal \u00b7 old kids art"
+    },
+    {
+      "id": "kids-22-v1-css",
+      "avatarId": 22,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/22-v1-css.jpg",
+      "label": "Pixel Panda \u00b7 old kids art"
+    },
+    {
+      "id": "kids-35-v1-css",
+      "avatarId": 35,
+      "pack": "kids",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/kids/35-v1-css.jpg",
+      "label": "Happy Pup \u00b7 old kids art"
+    },
+    {
+      "id": "teens-01-v1-css",
+      "avatarId": 1,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/01-v1-css.jpg",
+      "label": "Neon Blade \u00b7 old teens art"
+    },
+    {
+      "id": "teens-02-v1-css",
+      "avatarId": 2,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/02-v1-css.jpg",
+      "label": "Shadow Monk \u00b7 old teens art"
+    },
+    {
+      "id": "teens-03-v1-css",
+      "avatarId": 3,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/03-v1-css.jpg",
+      "label": "Cyber Samurai \u00b7 old teens art"
+    },
+    {
+      "id": "teens-04-v1-css",
+      "avatarId": 4,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/04-v1-css.jpg",
+      "label": "Arcane Mage \u00b7 old teens art"
+    },
+    {
+      "id": "teens-05-v1-css",
+      "avatarId": 5,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/05-v1-css.jpg",
+      "label": "Plasma Gunner \u00b7 old teens art"
+    },
+    {
+      "id": "teens-06-v1-css",
+      "avatarId": 6,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/06-v1-css.jpg",
+      "label": "Gravity Brawler \u00b7 old teens art"
+    },
+    {
+      "id": "teens-07-v1-css",
+      "avatarId": 7,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/07-v1-css.jpg",
+      "label": "Blade Dancer \u00b7 old teens art"
+    },
+    {
+      "id": "teens-08-v1-css",
+      "avatarId": 8,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/08-v1-css.jpg",
+      "label": "Titan Striker \u00b7 old teens art"
+    },
+    {
+      "id": "teens-09-v1-css",
+      "avatarId": 9,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/09-v1-css.jpg",
+      "label": "Apex Wolf \u00b7 old teens art"
+    },
+    {
+      "id": "teens-10-v1-css",
+      "avatarId": 10,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/10-v1-css.jpg",
+      "label": "Thunder Eagle \u00b7 old teens art"
+    },
+    {
+      "id": "teens-11-v1-css",
+      "avatarId": 11,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/11-v1-css.jpg",
+      "label": "Shadow Panther \u00b7 old teens art"
+    },
+    {
+      "id": "teens-12-v1-css",
+      "avatarId": 12,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/12-v1-css.jpg",
+      "label": "Frost Fox \u00b7 old teens art"
+    },
+    {
+      "id": "teens-13-v1-css",
+      "avatarId": 13,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/13-v1-css.jpg",
+      "label": "Ember Phoenix \u00b7 old teens art"
+    },
+    {
+      "id": "teens-14-v1-css",
+      "avatarId": 14,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/14-v1-css.jpg",
+      "label": "Abyss Kraken \u00b7 old teens art"
+    },
+    {
+      "id": "teens-15-v1-css",
+      "avatarId": 15,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/15-v1-css.jpg",
+      "label": "Stalker Lynx \u00b7 old teens art"
+    },
+    {
+      "id": "teens-16-v1-css",
+      "avatarId": 16,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/16-v1-css.jpg",
+      "label": "Spirit Bear \u00b7 old teens art"
+    },
+    {
+      "id": "teens-17-v1-css",
+      "avatarId": 17,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/17-v1-css.jpg",
+      "label": "Void Walker \u00b7 old teens art"
+    },
+    {
+      "id": "teens-18-v1-css",
+      "avatarId": 18,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/18-v1-css.jpg",
+      "label": "Mech Pilot \u00b7 old teens art"
+    },
+    {
+      "id": "teens-19-v1-css",
+      "avatarId": 19,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/19-v1-css.jpg",
+      "label": "Quantum Hacker \u00b7 old teens art"
+    },
+    {
+      "id": "teens-20-v1-css",
+      "avatarId": 20,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/20-v1-css.jpg",
+      "label": "Star Captain \u00b7 old teens art"
+    },
+    {
+      "id": "teens-21-v1-css",
+      "avatarId": 21,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/21-v1-css.jpg",
+      "label": "Android Rebel \u00b7 old teens art"
+    },
+    {
+      "id": "teens-22-v1-css",
+      "avatarId": 22,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/22-v1-css.jpg",
+      "label": "Nebula Scout \u00b7 old teens art"
+    },
+    {
+      "id": "teens-23-v1-css",
+      "avatarId": 23,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/23-v1-css.jpg",
+      "label": "Plasma Tech \u00b7 old teens art"
+    },
+    {
+      "id": "teens-24-v1-css",
+      "avatarId": 24,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/24-v1-css.jpg",
+      "label": "Drone Ace \u00b7 old teens art"
+    },
+    {
+      "id": "teens-25-v1-css",
+      "avatarId": 25,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/25-v1-css.jpg",
+      "label": "Street Racer \u00b7 old teens art"
+    },
+    {
+      "id": "teens-26-v1-css",
+      "avatarId": 26,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/26-v1-css.jpg",
+      "label": "Parkour Runner \u00b7 old teens art"
+    },
+    {
+      "id": "teens-27-v1-css",
+      "avatarId": 27,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/27-v1-css.jpg",
+      "label": "Nightwave DJ \u00b7 old teens art"
+    },
+    {
+      "id": "teens-28-v1-css",
+      "avatarId": 28,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/28-v1-css.jpg",
+      "label": "Urban Skater \u00b7 old teens art"
+    },
+    {
+      "id": "teens-29-v1-css",
+      "avatarId": 29,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/29-v1-css.jpg",
+      "label": "Future Fashion \u00b7 old teens art"
+    },
+    {
+      "id": "teens-30-v1-css",
+      "avatarId": 30,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/30-v1-css.jpg",
+      "label": "Rebel Poet \u00b7 old teens art"
+    },
+    {
+      "id": "teens-31-v1-css",
+      "avatarId": 31,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/31-v1-css.jpg",
+      "label": "Ghost Agent \u00b7 old teens art"
+    },
+    {
+      "id": "teens-32-v1-css",
+      "avatarId": 32,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/32-v1-css.jpg",
+      "label": "Stage Idol \u00b7 old teens art"
+    },
+    {
+      "id": "teens-33-v1-css",
+      "avatarId": 33,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/33-v1-css.jpg",
+      "label": "Crystal Titan \u00b7 old teens art"
+    },
+    {
+      "id": "teens-34-v1-css",
+      "avatarId": 34,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/34-v1-css.jpg",
+      "label": "Oni Mask \u00b7 old teens art"
+    },
+    {
+      "id": "teens-35-v1-css",
+      "avatarId": 35,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/35-v1-css.jpg",
+      "label": "Desert Nomad \u00b7 old teens art"
+    },
+    {
+      "id": "teens-36-v1-css",
+      "avatarId": 36,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/36-v1-css.jpg",
+      "label": "Bio Hybrid \u00b7 old teens art"
+    },
+    {
+      "id": "teens-37-v1-css",
+      "avatarId": 37,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/37-v1-css.jpg",
+      "label": "Time Runner \u00b7 old teens art"
+    },
+    {
+      "id": "teens-38-v1-css",
+      "avatarId": 38,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/38-v1-css.jpg",
+      "label": "Glitch Phantom \u00b7 old teens art"
+    },
+    {
+      "id": "teens-39-v1-css",
+      "avatarId": 39,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/39-v1-css.jpg",
+      "label": "Dragon Rider \u00b7 old teens art"
+    },
+    {
+      "id": "teens-40-v1-css",
+      "avatarId": 40,
+      "pack": "teens",
+      "stage": 1,
+      "version": "v1",
+      "note": "css drawing (retired)",
+      "src": "/avatars/archive/teens/40-v1-css.jpg",
+      "label": "Cosmic Guard \u00b7 old teens art"
+    }
+  ]
+}

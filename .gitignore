@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.node_modules.lock
+
+# Build / framework
+dist/
+dist-portable/
+.output/
+.vercel/
+.tanstack/
+.nitro/
+*.tsbuildinfo
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Agent / local scratch
+artifacts/
+tmp_images/
+screenshots/
+*.log
+/tmp/
+.cache/
+.project_id
+.grok/
+public/offline-app/__pycache__/
+public/offline-app/avatars/
+
+# Teacher classroom data (must survive updates; never commit)
+/data/
+scripts/__pycache__/
+scripts/android/*.keystore
+
+# GitHub 100 MB file cap — zip packs stay on the live server
+public/downloads/*.zip
+public/downloads/*.apk.idsig

@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "name": "dragon",
+    "file": "/avatars/kids/01.jpg"
+  },
+  {
+    "id": 2,
+    "name": "yeti",
+    "file": "/avatars/kids/02.jpg"
+  },
+  {
+    "id": 3,
+    "name": "octopus",
+    "file": "/avatars/kids/03.jpg"
+  },
+  {
+    "id": 4,
+    "name": "fox",
+    "file": "/avatars/kids/04.jpg"
+  },
+  {
+    "id": 5,
+    "name": "robot",
+    "file": "/avatars/kids/05.jpg"
+  },
+  {
+    "id": 6,
+    "name": "owl",
+    "file": "/avatars/kids/06.jpg"
+  },
+  {
+    "id": 7,
+    "name": "slime",
+    "file": "/avatars/kids/07.jpg"
+  },
+  {
+    "id": 8,
+    "name": "cat",
+    "file": "/avatars/kids/08.jpg"
+  },
+  {
+    "id": 9,
+    "name": "dino",
+    "file": "/avatars/kids/09.jpg"
+  },
+  {
+    "id": 10,
+    "name": "unicorn",
+    "file": "/avatars/kids/10.jpg"
+  },
+  {
+    "id": 11,
+    "name": "frog",
+    "file": "/avatars/kids/11.jpg"
+  },
+  {
+    "id": 12,
+    "name": "bee",
+    "file": "/avatars/kids/12.jpg"
+  },
+  {
+    "id": 13,
+    "name": "penguin",
+    "file": "/avatars/kids/13.jpg"
+  },
+  {
+    "id": 14,
+    "name": "bear",
+    "file": "/avatars/kids/14.jpg"
+  },
+  {
+    "id": 15,
+    "name": "phoenix",
+    "file": "/avatars/kids/15.jpg"
+  },
+  {
+    "id": 16,
+    "name": "cactus",
+    "file": "/avatars/kids/16.jpg"
+  },
+  {
+    "id": 17,
+    "name": "cloud",
+    "file": "/avatars/kids/17.jpg"
+  },
+  {
+    "id": 18,
+    "name": "fish",
+    "file": "/avatars/kids/18.jpg"
+  },
+  {
+    "id": 19,
+    "name": "raccoon",
+    "file": "/avatars/kids/19.jpg"
+  },
+  {
+    "id": 20,
+    "name": "mushroom",
+    "file": "/avatars/kids/20.jpg"
+  },
+  {
+    "id": 21,
+    "name": "space-puppy",
+    "file": "/avatars/kids/21.jpg"
+  },
+  {
+    "id": 22,
+    "name": "pixel-panda",
+    "file": "/avatars/kids/22.jpg"
+  },
+  {
+    "id": 23,
+    "name": "rainbow-llama",
+    "file": "/avatars/kids/23.jpg"
+  },
+  {
+    "id": 24,
+    "name": "shell-ninja",
+    "file": "/avatars/kids/24.jpg"
+  },
+  {
+    "id": 25,
+    "name": "magic-kitten",
+    "file": "/avatars/kids/25.jpg"
+  },
+  {
+    "id": 26,
+    "name": "pirate-parrot",
+    "file": "/avatars/kids/26.jpg"
+  },
+  {
+    "id": 27,
+    "name": "crystal-buddy",
+    "file": "/avatars/kids/27.jpg"
+  },
+  {
+    "id": 28,
+    "name": "mini-hero",
+    "file": "/avatars/kids/28.jpg"
+  },
+  {
+    "id": 29,
+    "name": "bubble-narwhal",
+    "file": "/avatars/kids/29.jpg"
+  },
+  {
+    "id": 30,
+    "name": "fairy-flutter",
+    "file": "/avatars/kids/30.jpg"
+  },
+  {
+    "id": 31,
+    "name": "cookie-goblin",
+    "file": "/avatars/kids/31.jpg"
+  },
+  {
+    "id": 32,
+    "name": "skate-hedgehog",
+    "file": "/avatars/kids/32.jpg"
+  },
+  {
+    "id": 33,
+    "name": "tree-friend",
+    "file": "/avatars/kids/33.jpg"
+  },
+  {
+    "id": 34,
+    "name": "star-axolotl",
+    "file": "/avatars/kids/34.jpg"
+  },
+  {
+    "id": 35,
+    "name": "happy-pup",
+    "file": "/avatars/kids/35.jpg"
+  },
+  {
+    "id": 36,
+    "name": "wizard-toad",
+    "file": "/avatars/kids/36.jpg"
+  },
+  {
+    "id": 37,
+    "name": "neon-jelly",
+    "file": "/avatars/kids/37.jpg"
+  },
+  {
+    "id": 38,
+    "name": "cowboy-dino",
+    "file": "/avatars/kids/38.jpg"
+  },
+  {
+    "id": 39,
+    "name": "chef-panda",
+    "file": "/avatars/kids/39.jpg"
+  },
+  {
+    "id": 40,
+    "name": "icecream-dragon",
+    "file": "/avatars/kids/40.jpg"
+  }
+]

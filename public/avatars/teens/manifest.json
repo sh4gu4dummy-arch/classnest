@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "name": "neon-blade",
+    "file": "/avatars/teens/01.jpg"
+  },
+  {
+    "id": 2,
+    "name": "shadow-monk",
+    "file": "/avatars/teens/02.jpg"
+  },
+  {
+    "id": 3,
+    "name": "cyber-samurai",
+    "file": "/avatars/teens/03.jpg"
+  },
+  {
+    "id": 4,
+    "name": "arcane-mage",
+    "file": "/avatars/teens/04.jpg"
+  },
+  {
+    "id": 5,
+    "name": "rail-lynx",
+    "file": "/avatars/teens/05.jpg"
+  },
+  {
+    "id": 6,
+    "name": "gravity-brawler",
+    "file": "/avatars/teens/06.jpg"
+  },
+  {
+    "id": 7,
+    "name": "ink-dancer",
+    "file": "/avatars/teens/07.jpg"
+  },
+  {
+    "id": 8,
+    "name": "storm-rhino",
+    "file": "/avatars/teens/08.jpg"
+  },
+  {
+    "id": 9,
+    "name": "apex-wolf",
+    "file": "/avatars/teens/09.jpg"
+  },
+  {
+    "id": 10,
+    "name": "thunder-eagle",
+    "file": "/avatars/teens/10.jpg"
+  },
+  {
+    "id": 11,
+    "name": "shadow-panther",
+    "file": "/avatars/teens/11.jpg"
+  },
+  {
+    "id": 12,
+    "name": "frost-fox",
+    "file": "/avatars/teens/12.jpg"
+  },
+  {
+    "id": 13,
+    "name": "ember-phoenix",
+    "file": "/avatars/teens/13.jpg"
+  },
+  {
+    "id": 14,
+    "name": "abyss-kraken",
+    "file": "/avatars/teens/14.jpg"
+  },
+  {
+    "id": 15,
+    "name": "moss-elk",
+    "file": "/avatars/teens/15.jpg"
+  },
+  {
+    "id": 16,
+    "name": "spirit-bear",
+    "file": "/avatars/teens/16.jpg"
+  },
+  {
+    "id": 17,
+    "name": "void-walker",
+    "file": "/avatars/teens/17.jpg"
+  },
+  {
+    "id": 18,
+    "name": "mech-pilot",
+    "file": "/avatars/teens/18.jpg"
+  },
+  {
+    "id": 19,
+    "name": "quantum-hacker",
+    "file": "/avatars/teens/19.jpg"
+  },
+  {
+    "id": 20,
+    "name": "star-captain",
+    "file": "/avatars/teens/20.jpg"
+  },
+  {
+    "id": 21,
+    "name": "android-rebel",
+    "file": "/avatars/teens/21.jpg"
+  },
+  {
+    "id": 22,
+    "name": "radio-owl",
+    "file": "/avatars/teens/22.jpg"
+  },
+  {
+    "id": 23,
+    "name": "lab-gecko",
+    "file": "/avatars/teens/23.jpg"
+  },
+  {
+    "id": 24,
+    "name": "drone-ace",
+    "file": "/avatars/teens/24.jpg"
+  },
+  {
+    "id": 25,
+    "name": "street-racer",
+    "file": "/avatars/teens/25.jpg"
+  },
+  {
+    "id": 26,
+    "name": "graffiti-moth",
+    "file": "/avatars/teens/26.jpg"
+  },
+  {
+    "id": 27,
+    "name": "nightwave-dj",
+    "file": "/avatars/teens/27.jpg"
+  },
+  {
+    "id": 28,
+    "name": "urban-skater",
+    "file": "/avatars/teens/28.jpg"
+  },
+  {
+    "id": 29,
+    "name": "chrome-swan",
+    "file": "/avatars/teens/29.jpg"
+  },
+  {
+    "id": 30,
+    "name": "rebel-poet",
+    "file": "/avatars/teens/30.jpg"
+  },
+  {
+    "id": 31,
+    "name": "mirror-fox",
+    "file": "/avatars/teens/31.jpg"
+  },
+  {
+    "id": 32,
+    "name": "stage-idol",
+    "file": "/avatars/teens/32.jpg"
+  },
+  {
+    "id": 33,
+    "name": "crystal-titan",
+    "file": "/avatars/teens/33.jpg"
+  },
+  {
+    "id": 34,
+    "name": "oni-mask",
+    "file": "/avatars/teens/34.jpg"
+  },
+  {
+    "id": 35,
+    "name": "desert-nomad",
+    "file": "/avatars/teens/35.jpg"
+  },
+  {
+    "id": 36,
+    "name": "bio-hybrid",
+    "file": "/avatars/teens/36.jpg"
+  },
+  {
+    "id": 37,
+    "name": "chrono-hare",
+    "file": "/avatars/teens/37.jpg"
+  },
+  {
+    "id": 38,
+    "name": "vhs-raven",
+    "file": "/avatars/teens/38.jpg"
+  },
+  {
+    "id": 39,
+    "name": "dragon-rider",
+    "file": "/avatars/teens/39.jpg"
+  },
+  {
+    "id": 40,
+    "name": "cosmic-guard",
+    "file": "/avatars/teens/40.jpg"
+  }
+]
