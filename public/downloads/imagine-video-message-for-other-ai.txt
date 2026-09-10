@@ -1,0 +1,82 @@
+Imagine videos do write into the project. ClassNest just put 70+ native .mp4s in the app this way.
+
+Do not remount /workspace/artifacts as a normal folder.
+That path is a FUSE locker (grok-files). Chat can play the clip even when the locker save fails. If you umount / rm -rf / mkdir it, Imagine still tries to save to the locker, the tool returns no file path, and your empty folder stays empty. That’s the bug you’re seeing.
+
+Working recipe
+
+1. Leave /workspace/artifacts as the FUSE mount.
+
+2. Probe it (don’t replace it):
+
+   mkdir -p /workspace/artifacts/imagine_videos
+   echo ok > /workspace/artifacts/imagine_videos/_write_test.txt
+   cat /workspace/artifacts/imagine_videos/_write_test.txt
+
+   If that fails, remount the same FUSE locker. Do not create a fake disk folder.
+
+3. Generate with imagine_image_to_video / imagine_text_to_video (480p is reliable).
+
+4. Read the tool result. You need this line:
+   Video saved to: /workspace/artifacts/imagine_videos/<uuid>.mp4
+
+5. Immediately copy that exact path into the app:
+
+   cp /workspace/artifacts/imagine_videos/<uuid>.mp4 /workspace/public/your-folder/name.mp4
+
+6. Ignore stat / du on artifacts — the directory size is always 0. Use ls or test -r on the uuid path.
+
+If the tool says “generated” but no path, the locker is broken or was replaced. Fix the mount. There is no second download API and no video.url in this sandbox.
+
+When a clip lands, copy it out of artifacts right away. Don’t wait; don’t depend on the locker surviving a restart.
+
+---
+
+What actually works
+
+Imagine does write an .mp4. It always lands at:
+
+  /workspace/artifacts/imagine_videos/<uuid>.mp4
+
+That folder is a live FUSE mount (grok-files), not a normal disk folder. After each generate, the tool result says:
+
+  Video saved to: /workspace/artifacts/imagine_videos/….mp4
+
+Copy that exact path into the app (public/…) immediately. That’s how ClassNest got 35 intros + 35 adventures.
+
+The trap
+
+They remounted / replaced artifacts with a normal mkdir folder because FUSE looked “dead” (permission denied, dir size 0).
+
+Do not do that.
+
+- Chat still plays the clip (CDN / thread).
+- Imagine still tries to save into the FUSE locker.
+- If you ripped the locker out, save returns “generated, no file path.”
+- Your new empty folder stays empty. That’s expected.
+
+FUSE dirs always report size 0 even when 140 videos are sitting there. stat lying ≠ empty.
+
+Don’t remount/replace the artifacts FUSE mount if Imagine is supposed to write there.
+
+The file path comes from the tool result, not from searching. If the tool returns no path, you can’t find it.
+
+Copy immediately using that exact path, because FUSE listings can be flaky (Size: 0 on directories even when files exist).
+
+If you replace FUSE with a regular dir, Imagine’s save step may still try to write to the FUSE backend that is now gone, hence “generated, no file path.”
+
+Write test before generating:
+  echo test > /workspace/artifacts/imagine_videos/ok.txt
+If this works AND it’s still FUSE, Imagine should work.
+
+If FUSE is dead (permission denied): remount FUSE, don’t replace with a regular mkdir.
+
+Tool names: imagine_image_to_video / imagine_text_to_video / imagine_reference_to_video — these return file_path in the tool result. Chat-only Imagine might not.
+
+480p / 10s keeps files smaller and more reliable.
+
+After the path is returned: copy immediately to public/ or the project folder. Don’t rely on artifacts persisting across hibernate.
+
+ffmpeg after copy — artifacts files can be large raw.
+
+They don’t need an API key. They need to stop deleting the folder Imagine actually writes to.

@@ -1,0 +1,721 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Class-based dark mode (html.dark) instead of system-only */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", sans-serif;
+  --font-display: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", sans-serif;
+
+  /* Playful classroom palette — warm paper + vivid teal / violet */
+  --color-bg: #fff0d6;
+  --color-surface: #ffffff;
+  --color-surface-2: #ffe2c4;
+  --color-surface-3: #ffd0a3;
+  --color-fg: #1a1430;
+  --color-muted-fg: #5c5478;
+  --color-border: color-mix(in oklab, #7c3aed 22%, transparent);
+  --color-border-strong: color-mix(in oklab, #0d9488 42%, transparent);
+  --color-ink: #1a1430;
+
+  --color-accent: #0d9f8f;
+  --color-accent-fg: #ecfdf8;
+  --color-ring: #f97316;
+
+  --color-positive: #16a34a;
+  --color-positive-fg: #f0fdf4;
+  --color-danger: #e11d48;
+  --color-danger-fg: #fff1f2;
+
+  --shadow-sm: 0 2px 8px color-mix(in oklab, #1e1b2e 8%, transparent);
+  --shadow-md: 0 10px 28px color-mix(in oklab, #1e1b2e 12%, transparent);
+  --shadow-lg: 0 18px 44px color-mix(in oklab, #1e1b2e 16%, transparent);
+}
+
+/* Dark mode token overrides */
+html.dark {
+  --color-bg: #0c0818;
+  --color-surface: #1a1340;
+  --color-surface-2: #2a1d58;
+  --color-surface-3: #3d2a78;
+  --color-fg: #f6f0ff;
+  --color-muted-fg: #c4b5fd;
+  --color-border: color-mix(in oklab, #a78bfa 38%, transparent);
+  --color-border-strong: color-mix(in oklab, #2dd4bf 55%, transparent);
+  --color-ink: #f6f0ff;
+
+  --color-accent: #2ee9c8;
+  --color-accent-fg: #042f2e;
+  --color-ring: #fb923c;
+
+  --color-positive: #4ade80;
+  --color-positive-fg: #052e16;
+  --color-danger: #fb7185;
+  --color-danger-fg: #4c0519;
+
+  --shadow-sm: 0 2px 10px color-mix(in oklab, #7c3aed 28%, transparent);
+  --shadow-md: 0 10px 32px color-mix(in oklab, #7c3aed 32%, transparent);
+  --shadow-lg: 0 18px 48px color-mix(in oklab, #2dd4bf 22%, transparent);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-bg text-fg antialiased;
+    font-family: var(--font-sans);
+    min-height: 100dvh;
+    background-image:
+      radial-gradient(
+        ellipse 90% 55% at 0% -10%,
+        color-mix(in oklab, var(--color-accent) 20%, transparent),
+        transparent 58%
+      ),
+      radial-gradient(
+        ellipse 70% 45% at 100% 0%,
+        color-mix(in oklab, #a78bfa 24%, transparent),
+        transparent 52%
+      );
+  }
+  html.dark body {
+    background-image:
+      radial-gradient(
+        ellipse 90% 55% at 8% -12%,
+        color-mix(in oklab, #2dd4bf 26%, transparent),
+        transparent 58%
+      ),
+      radial-gradient(
+        ellipse 75% 50% at 100% -8%,
+        color-mix(in oklab, #a78bfa 30%, transparent),
+        transparent 52%
+      ),
+      radial-gradient(
+        ellipse 55% 40% at 80% 110%,
+        color-mix(in oklab, #fb923c 14%, transparent),
+        transparent 55%
+      );
+  }
+}
+
+/* ─── Evolution / power FX ───────────────────────────────────────────
+   Prefer transform + opacity (compositor-friendly). Avoid filter:
+   brightness/saturate on 24 board cards — those thrash classroom GPUs. */
+
+@keyframes evolve-pop {
+  0% {
+    opacity: 0.85;
+    transform: scale(0.88);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes evolve-flash {
+  0%,
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.06);
+  }
+  55% {
+    transform: scale(1.02);
+  }
+}
+
+/* White sheen overlay during evolve (replaces filter:brightness) */
+@keyframes evolve-sheen {
+  0% {
+    opacity: 0.55;
+  }
+  40% {
+    opacity: 0.15;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes evolve-ring {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  40% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.85;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes evolve-panel {
+  0% {
+    opacity: 0;
+    transform: scale(0.72) translateY(20px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.03) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes power-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes energy-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes ray-burst {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40%) scaleY(0.3);
+  }
+  40% {
+    opacity: 0.85;
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -120%) scaleY(1.4);
+  }
+}
+
+.animate-evolve-pop {
+  animation: evolve-pop 0.55s cubic-bezier(0.34, 1.4, 0.64, 1) both;
+}
+.animate-evolve-flash {
+  animation: evolve-flash 0.9s ease-in-out both;
+}
+.animate-evolve-sheen {
+  animation: evolve-sheen 0.9s ease-out both;
+}
+.animate-evolve-ring {
+  animation: evolve-ring 1s ease-out both;
+}
+.animate-evolve-panel {
+  animation: evolve-panel 0.5s cubic-bezier(0.34, 1.45, 0.64, 1) both;
+}
+.animate-power-spin {
+  animation: power-spin 6s linear infinite;
+  will-change: transform;
+}
+.animate-energy-shimmer {
+  animation: energy-shimmer 2.4s linear infinite;
+  background-size: 200% 100%;
+}
+.animate-ray-burst {
+  animation: ray-burst 1.1s ease-out both;
+}
+.animate-in {
+  animation: fadeIn 0.2s ease-out both;
+}
+
+/* Sharp avatar thumbs — avoid muddy scaling on smartboards */
+.avatar-art {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-user-drag: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation-name: fadeIn;
+}
+
+/* ─── Spar fight FX ────────────────────────────────────────────────── */
+
+@keyframes spar-lunge-right {
+  0% {
+    transform: translate(0) scale(1);
+  }
+  40% {
+    transform: translate(18px) scale(1.08) rotate(4deg);
+  }
+  70% {
+    transform: translate(-6px) scale(1.02);
+  }
+  to {
+    transform: translate(0) scale(1);
+  }
+}
+
+@keyframes spar-lunge-left {
+  0% {
+    transform: translate(0) scale(1);
+  }
+  40% {
+    transform: translate(-18px) scale(1.08) rotate(-4deg);
+  }
+  70% {
+    transform: translate(6px) scale(1.02);
+  }
+  to {
+    transform: translate(0) scale(1);
+  }
+}
+
+@keyframes spar-impact {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+  to {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+}
+
+.animate-spar-lunge-right {
+  animation: spar-lunge-right 0.7s cubic-bezier(0.34, 1.4, 0.64, 1) both;
+}
+.animate-spar-lunge-left {
+  animation: spar-lunge-left 0.7s cubic-bezier(0.34, 1.4, 0.64, 1) both;
+}
+.animate-spar-impact {
+  animation: spar-impact 0.55s cubic-bezier(0.34, 1.45, 0.64, 1) both;
+}
+
+/* Spar result ticker: hold current → pop delta → settle total */
+@keyframes spar-pts-hold {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes spar-pts-delta {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.7);
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(0) scale(1.15);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes spar-pts-total {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-spar-pts-hold {
+  animation: spar-pts-hold 0.55s ease-out both;
+}
+.animate-spar-pts-delta {
+  animation: spar-pts-delta 0.45s cubic-bezier(0.34, 1.45, 0.64, 1) both;
+}
+.animate-spar-pts-total {
+  animation: spar-pts-total 0.35s ease-out both;
+}
+
+/* ─── Confetti ─────────────────────────────────────────────────────── */
+
+@keyframes confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, -8%, 0) rotate(0deg);
+  }
+  80% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(var(--confetti-x, 12px), 110%, 0) rotate(540deg);
+  }
+}
+.animate-confetti-fall {
+  animation-name: confetti-fall;
+  animation-timing-function: cubic-bezier(0.25, 0.7, 0.4, 1);
+  animation-fill-mode: both;
+}
+
+/* ─── Today points RGB trail ─────────────────────────────────────────
+   Static arc while filling (0–20). Orbit class applied only when full.
+   See student-avatar.tsx + today-ring.ts.
+*/
+
+@keyframes rgb-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-rgb-orbit {
+  /* Slightly slower spin so the “unlock” moment feels earned */
+  animation: rgb-orbit 12s linear infinite;
+}
+
+/* Max-evolution idle pulse — soft zoom in/out inside the avatar frame */
+@keyframes legend-breathe {
+  0%,
+  100% {
+    transform: scale(1.06);
+  }
+  50% {
+    transform: scale(1.14);
+  }
+}
+.animate-legend-breathe {
+  animation: legend-breathe 2.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Freeze board FX while painting a selection — keeps hit targets still */
+.cn-selecting .animate-rgb-orbit,
+.cn-selecting .animate-legend-breathe,
+.cn-selecting .animate-power-spin {
+  animation-play-state: paused;
+}
+.cn-selecting [data-student-id] {
+  transform: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rgb-orbit,
+  .animate-power-spin,
+  .animate-confetti-fall,
+  .animate-ray-burst,
+  .animate-evolve-ring,
+  .animate-spar-lunge-right,
+  .animate-spar-lunge-left,
+  .animate-legend-breathe {
+    animation: none !important;
+  }
+}
+
+/* Presentation: hide non-essential chrome */
+html.presentation-mode header [data-chrome="teacher"],
+html.presentation-mode [data-hide-presentation] {
+  display: none !important;
+}
+
+@media print {
+  header,
+  [data-no-print],
+  .no-print {
+    display: none !important;
+  }
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .print-report {
+    break-inside: avoid;
+  }
+}
+
+/* ─── Board density (compact / normal / showcase) ─────────────────── */
+.board-grid[data-density="compact"] .relative.shrink-0.size-32 {
+  width: 4.5rem !important;
+  height: 4.5rem !important;
+}
+@media (min-width: 640px) {
+  .board-grid[data-density="compact"] .relative.shrink-0.sm\:size-36 {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+}
+.board-grid[data-density="compact"] .board-name {
+  font-size: 0.75rem;
+}
+.board-grid[data-density="showcase"] .relative.shrink-0.size-32 {
+  width: 7.5rem !important;
+  height: 7.5rem !important;
+}
+@media (min-width: 640px) {
+  .board-grid[data-density="showcase"] .relative.shrink-0.sm\:size-36 {
+    width: 9rem !important;
+    height: 9rem !important;
+  }
+}
+.board-grid[data-density="showcase"] .board-name {
+  font-size: 1rem;
+}
+
+/* ─── Projector mode — high contrast, bigger type ───────────────── */
+html.projector {
+  --color-bg: #0a0a12;
+  --color-surface: #14141f;
+  --color-surface-2: #1c1c2a;
+  --color-surface-3: #28283a;
+  --color-fg: #ffffff;
+  --color-muted-fg: #c8c8d8;
+  --color-border: color-mix(in oklab, #ffffff 22%, transparent);
+  --color-border-strong: color-mix(in oklab, #2dd4bf 50%, transparent);
+  --color-accent: #2dd4bf;
+  --color-accent-fg: #042f2e;
+  font-size: 112%;
+}
+html.projector body {
+  letter-spacing: 0.01em;
+}
+html.projector .board-name {
+  font-size: 1.05em;
+  font-weight: 700;
+}
+
+/* ─── Smartboard (Seewo / interactive whiteboard) — DEFAULT ON ─────
+   Finger + infrared touch, large panels, teacher at arm’s length.
+   Min ~48–56px hit targets, no hover reliance, prevent pinch-zoom
+   on controls, higher contrast type. */
+html.smartboard {
+  /* ~18–20% larger base type for board-distance reading */
+  font-size: 118%;
+  /* Slightly stronger contrast on light theme */
+  --color-muted-fg: color-mix(in oklab, var(--color-fg) 62%, transparent);
+  --color-border: color-mix(in oklab, #7c3aed 18%, transparent);
+  --color-border-strong: color-mix(in oklab, #0d9488 38%, transparent);
+  --shadow-md: 0 12px 32px color-mix(in oklab, #1e1b2e 16%, transparent);
+  --sb-tap: 3rem;
+  --sb-tap-lg: 3.5rem;
+  -webkit-tap-highlight-color: color-mix(in oklab, var(--color-accent) 22%, transparent);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html.smartboard.dark {
+  --color-muted-fg: #d8ccff;
+  --color-border: color-mix(in oklab, #c4b5fd 42%, transparent);
+}
+
+html.smartboard,
+html.smartboard body {
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+html.smartboard input,
+html.smartboard textarea,
+html.smartboard [contenteditable="true"] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+/* Bigger default controls */
+html.smartboard button,
+html.smartboard [role="button"],
+html.smartboard a.inline-flex {
+  min-height: var(--sb-tap);
+  min-width: var(--sb-tap);
+  touch-action: manipulation;
+}
+
+html.smartboard button.h-9,
+html.smartboard button.h-10 {
+  min-height: var(--sb-tap);
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+}
+
+html.smartboard button.h-9.w-9,
+html.smartboard button.h-10.w-10 {
+  min-width: var(--sb-tap);
+  min-height: var(--sb-tap);
+  width: var(--sb-tap);
+  height: var(--sb-tap);
+}
+
+html.smartboard header > div {
+  min-height: 3.75rem;
+  gap: 0.35rem;
+}
+
+html.smartboard main {
+  padding-top: 0.85rem;
+  padding-bottom: 1.25rem;
+  max-width: 92rem !important;
+}
+
+html.smartboard .board-grid {
+  gap: 0.85rem !important;
+  contain: layout style;
+}
+
+html.smartboard .board-grid .board-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 0.1rem 0.15rem;
+}
+
+html.smartboard .board-grid .relative.shrink-0.size-32 {
+  width: 7rem !important;
+  height: 7rem !important;
+}
+@media (min-width: 640px) {
+  html.smartboard .board-grid .relative.shrink-0.sm\:size-36 {
+    width: 8rem !important;
+    height: 8rem !important;
+  }
+}
+html.smartboard .board-grid[data-density="showcase"] .relative.shrink-0.size-32 {
+  width: 8.5rem !important;
+  height: 8.5rem !important;
+}
+@media (min-width: 640px) {
+  html.smartboard .board-grid[data-density="showcase"] .relative.shrink-0.sm\:size-36 {
+    width: 10rem !important;
+    height: 10rem !important;
+  }
+}
+html.smartboard .board-grid[data-density="compact"] .relative.shrink-0.size-32 {
+  width: 5.5rem !important;
+  height: 5.5rem !important;
+}
+
+html.smartboard .board-grid > div {
+  padding: 0.65rem 0.4rem !important;
+  border-width: 3px;
+  /* Isolate paint when one card flashes */
+  contain: layout paint;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 200px;
+}
+html.smartboard .board-grid > div:hover {
+  transform: none;
+}
+html.smartboard .board-grid > div:active {
+  transform: scale(0.98);
+  border-color: color-mix(in oklab, var(--color-accent) 55%, transparent);
+}
+
+html.smartboard .board-grid .rounded-full.px-2\.5 {
+  font-size: 1rem;
+  padding: 0.2rem 0.75rem;
+  min-width: 2.75rem;
+}
+
+html.smartboard [data-chrome="teacher"] button.min-h-9,
+html.smartboard [data-chrome="teacher"] button.min-h-11 {
+  min-height: var(--sb-tap-lg) !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1rem;
+}
+
+html.smartboard [role="menu"] button,
+html.smartboard [role="menuitem"] {
+  min-height: var(--sb-tap-lg);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+html.smartboard [role="dialog"] {
+  max-width: min(36rem, 94vw) !important;
+}
+
+html.smartboard input,
+html.smartboard select,
+html.smartboard textarea {
+  min-height: var(--sb-tap);
+  font-size: 1.05rem !important;
+}
+
+html.smartboard [data-sonner-toaster] [data-sonner-toast] {
+  font-size: 1.05rem !important;
+  padding: 0.9rem 1rem !important;
+  min-height: 3.25rem;
+  gap: 0.75rem;
+}
+html.smartboard [data-sonner-toaster] [data-close-button] {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+}
+
+html.smartboard [data-favorite-skill] {
+  min-height: var(--sb-tap-lg) !important;
+  font-size: 1rem;
+}
+
+html.smartboard .h-1\.5 {
+  height: 0.55rem;
+}
+
+/* Lighter continuous FX on big boards (less GPU thrash) */
+html.smartboard .animate-legend-breathe {
+  animation-duration: 4s;
+}
+html.smartboard .animate-power-spin {
+  animation-duration: 8s;
+  opacity: 0.55;
+}
+html.smartboard .animate-rgb-orbit {
+  animation-duration: 14s;
+}
+
+html.smartboard .overflow-y-auto,
+html.smartboard .overflow-auto,
+html.smartboard [data-scroll] {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+}
+
+/* Desktop override: slightly calmer when user turns smartboard off */
+html:not(.smartboard) {
+  /* keep base theme */
+}
+
+/* Pause continuous FX when tab hidden — saves GPU on shared classroom PCs */
+html.cn-paused .animate-rgb-orbit,
+html.cn-paused .animate-power-spin,
+html.cn-paused .animate-legend-breathe,
+html.cn-paused .animate-confetti-fall,
+html.cn-paused .animate-energy-shimmer {
+  animation-play-state: paused !important;
+}

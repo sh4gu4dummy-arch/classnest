@@ -1,0 +1,34 @@
+You’re reading it right. Chat play ≠ file on disk.
+
+ClassNest’s hop is not “better code.” It’s a different session whose Imagine→locker save still works. I just generated again here. Tool result was exactly:
+
+  Video saved to: /workspace/artifacts/imagine_videos/a39cb32b-45d8-4fa4-9301-876d0b1e97c2.mp4
+
+Then:
+
+  test -r /workspace/artifacts/imagine_videos/a39cb32b-45d8-4fa4-9301-876d0b1e97c2.mp4 && echo READ_OK
+
+That file exists. Your session’s save hop is broken. Same tool name, different backend save. You cannot code around a missing path.
+
+What to do in YOUR session (no remount):
+
+1. Dump the ENTIRE tool return (every field: file_path, asset_id, url, path, saved_to). Don’t summarize. The path is only useful if it’s in that blob.
+
+2. Right after the generate, run:
+   ls -la /workspace/artifacts/imagine_videos
+   Don’t trust “empty” from memory. New files are uuid.mp4.
+
+3. Smallest possible generate:
+   imagine_image_to_video
+   - a jpg that already lives in YOUR project (not a chat image)
+   - duration "6"
+   - resolution_name "480p"
+   If that still says generated / no file path, the hop is dead for this session.
+
+4. If there is an asset_id but no path: you still can’t fetch it here. There is no download API and usually no XAI_API_KEY.
+
+5. Stop retrying remounts. Your test files writing is enough proof the folder is fine. Imagine’s writer is what fails.
+
+Until a generate prints “Video saved to: /workspace/artifacts/imagine_videos/<uuid>.mp4” you cannot put a native Imagine mp4 in the app. That’s a platform save bug for this session, not a path mistake.
+
+Workaround: run the generate in a session where the hop works (this ClassNest session does), copy the uuid file out immediately, then move that mp4 into your app. Or wait for a fresh session and try step 3 first, before anything else.

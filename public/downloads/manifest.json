@@ -1,0 +1,51 @@
+{
+  "name": "classnest",
+  "version": "0.045",
+  "label": "v0.045",
+  "packVersion": "0.045",
+  "builtAt": "2026-09-08T06:03:09.795Z",
+  "builtLabel": "Sep 8, 2026, 12:03 AM MDT",
+  "stamp": "20260908-0003",
+  "files": {
+    "portable": {
+      "file": "classnest-v0.045-20260908-0002-portable.zip",
+      "href": "/downloads/classnest-v0.045-20260908-0002-portable.zip",
+      "bytes": 13482766,
+      "description": "Offline APP — unzip, then add Avatar media into avatars/",
+      "builtAt": "2026-09-08T06:02:24.135Z",
+      "builtLabel": "Sep 8, 2026, 12:02 AM MDT",
+      "stamp": "20260908-0002",
+      "downloadAs": "classnest-v0.045-20260908-0002-portable.zip"
+    },
+    "code": {
+      "file": "classnest-v0.045-20260908-0003-code.zip",
+      "href": "/downloads/classnest-v0.045-20260908-0003-code.zip",
+      "bytes": 372503,
+      "description": "Source only — no heavy assets",
+      "builtAt": "2026-09-08T06:03:09.795Z",
+      "builtLabel": "Sep 8, 2026, 12:03 AM MDT",
+      "stamp": "20260908-0003",
+      "downloadAs": "classnest-v0.045-20260908-0003-code.zip"
+    },
+    "apk": {
+      "file": "classnest-v0.025-20260819-2117.apk",
+      "href": "/downloads/classnest-v0.025-20260819-2117.apk",
+      "bytes": 5001522,
+      "description": "Android app — install on a tablet (sideload)",
+      "builtAt": "2026-08-20T03:17:10.661Z",
+      "builtLabel": "Aug 19, 2026, 9:17 PM MDT",
+      "stamp": "20260819-2117",
+      "downloadAs": "classnest-v0.025-20260819-2117.apk"
+    },
+    "avatars": {
+      "file": "classnest-v0.035-20260830-0614-avatars.zip",
+      "href": "/downloads/classnest-v0.035-20260830-0614-avatars.zip",
+      "bytes": 416084461,
+      "description": "Avatar media — unzip next to index.html into avatars/",
+      "builtAt": "2026-08-30T12:14:34.288Z",
+      "builtLabel": "Aug 30, 2026, 6:14 AM MDT",
+      "stamp": "20260830-0614",
+      "downloadAs": "classnest-v0.035-20260830-0614-avatars.zip"
+    }
+  }
+}
