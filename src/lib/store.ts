@@ -1479,6 +1479,7 @@ export const useClassStore = create<ClassStore>()(
     }),
     {
       name: "classnest-v2",
+      skipHydration: true,
       storage: createJSONStorage(() => createDebouncedStorage(550)),
       partialize: (s) => ({
         classes: s.classes,
@@ -1490,3 +1491,7 @@ export const useClassStore = create<ClassStore>()(
     },
   ),
 );
+
+if (typeof window !== "undefined") {
+  void useClassStore.persist.rehydrate();
+}

@@ -146,6 +146,12 @@ function ClassBoardPage() {
   );
   const { locked, setLocked } = useBoardLockState();
 
+  useEffect(() => {
+    if (ready && !classroom) {
+      void navigate({ to: "/" });
+    }
+  }, [ready, classroom, navigate]);
+
 
   const pack: AvatarPack = resolvePack(classroom?.avatarPack);
   const arenaSrc = resolveBoardBackdropSrc(classroom?.boardBackdrop, pack);

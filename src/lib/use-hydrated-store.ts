@@ -6,6 +6,7 @@ import { useClassStore } from "@/lib/store";
  *  was merging deleted students back from the last save. */
 let sessionReady = false;
 let booting = false;
+let kicked = false;
 let stopSync: (() => void) | undefined;
 const waiters = new Set<(v: boolean) => void>();
 
@@ -39,11 +40,32 @@ async function boot(seedIfEmpty: () => void) {
     }
   } finally {
     booting = false;
+    markSessionReady();
+  }
+}
+
+function kickoff(seedIfEmpty: () => void) {
+  if (kicked) return;
+  kicked = true;
+  // Do not clear this on unmount — Strict Mode + tab-hide was wiping it,
+  // which left the home screen stuck on “Loading…”.
+  window.setTimeout(markSessionReady, 400);
+  try {
+    void useClassStore.persist.rehydrate();
+  } catch {
+    /* ignore */
+  }
+  const start = () => void boot(seedIfEmpty);
+  if (useClassStore.persist.hasHydrated()) {
+    start();
+  } else {
+    useClassStore.persist.onFinishHydration(start);
   }
 }
 
 export function useHydratedStore() {
   const seedIfEmpty = useClassStore((s) => s.seedIfEmpty);
+  const hasClasses = useClassStore((s) => s.classes.length > 0);
   const [ready, setReady] = useState(sessionReady);
 
   useEffect(() => {
@@ -52,28 +74,29 @@ export function useHydratedStore() {
       return;
     }
     waiters.add(setReady);
-    const bail = window.setTimeout(markSessionReady, 1200);
-    try {
-      void useClassStore.persist.rehydrate();
-    } catch {
-      /* ignore */
-    }
-    const start = () => void boot(seedIfEmpty);
-    if (useClassStore.persist.hasHydrated()) {
-      start();
-    } else {
-      const unsub = useClassStore.persist.onFinishHydration(start);
-      return () => {
-        waiters.delete(setReady);
-        unsub();
-        window.clearTimeout(bail);
-      };
-    }
+    kickoff(seedIfEmpty);
     return () => {
       waiters.delete(setReady);
-      window.clearTimeout(bail);
     };
   }, [seedIfEmpty]);
 
-  return ready;
+  useEffect(() => {
+    const onShow = () => {
+      if (sessionReady || useClassStore.persist.hasHydrated()) {
+        markSessionReady();
+        setReady(true);
+      }
+    };
+    const onVis = () => {
+      if (document.visibilityState === "visible") onShow();
+    };
+    document.addEventListener("visibilitychange", onVis);
+    window.addEventListener("pageshow", onShow);
+    return () => {
+      document.removeEventListener("visibilitychange", onVis);
+      window.removeEventListener("pageshow", onShow);
+    };
+  }, []);
+
+  return ready || hasClasses;
 }
