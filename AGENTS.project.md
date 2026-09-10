@@ -30,3 +30,7 @@ Read this before changing ClassNest. Direct chat instructions still win.
   commit each change.
 - Sounds on by default; no first-run sound pop-up.
 - Smartboard mode is the default.
+- **“lmk” (let me know) = talk only.** If the teacher says `lmk`, answer in
+  chat with info / options / sizes. Do **not** edit files, rebuild packs,
+  delete anything, or push. A later “do it” / “go ahead” is required.
+
