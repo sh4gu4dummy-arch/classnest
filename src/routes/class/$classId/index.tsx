@@ -11,6 +11,7 @@ import {
 import { Link, createFileRoute, useNavigate } from "@tanstack/react-router";
 import {
   ArrowUpDown,
+  Dices,
   Maximize2,
   Minimize2,
   Monitor,
@@ -18,6 +19,7 @@ import {
   Plus,
   Search,
   Settings2,
+  Shuffle,
   Swords,
   Undo2,
   UserPlus,
@@ -35,7 +37,7 @@ import { ClassTimer } from "@/components/class-timer";
 import { EvolutionBurst, type EvolutionBurstData } from "@/components/evolution-burst";
 import { EvolutionCatalog } from "@/components/evolution-catalog";
 import { FavoriteSkillsBar } from "@/components/favorite-skills-bar";
-import { RandomPicker } from "@/components/random-picker";
+import { CycleStrip, pickRandomStudent } from "@/components/random-picker";
 import { StudentCard } from "@/components/student-card";
 import { Button } from "@/components/ui/button";
 import {
@@ -232,6 +234,9 @@ function ClassBoardPage() {
   const [focusId, setFocusId] = useState<string | null>(null);
   const [attendanceOpen, setAttendanceOpen] = useState(false);
   const [catalogOpen, setCatalogOpen] = useState(false);
+  const [cycleActive, setCycleActive] = useState(false);
+  const [cycleCurrentId, setCycleCurrentId] = useState<string | null>(null);
+  const [cyclePickedIds, setCyclePickedIds] = useState<Set<string>>(() => new Set());
 
   useEffect(() => {
     document.documentElement.classList.toggle("presentation-mode", presentation);
@@ -309,6 +314,10 @@ function ClassBoardPage() {
 
   const boardStudents = rearrangeMode && orderDraft ? orderDraft : sortedStudents;
   const activeRoster = useMemo(() => presentStudents(students), [students]);
+  const cyclePool = useMemo(
+    () => boardStudents.filter((s) => !isAbsentToday(s)),
+    [boardStudents],
+  );
   const focusStudent = focusId
     ? students.find((s) => s.id === focusId) ?? null
     : null;
@@ -590,6 +599,89 @@ function ClassBoardPage() {
     setSelectedIds(new Set());
   }
 
+  function spotlightStudent(s: Student) {
+    setFocusId(s.id);
+    requestAnimationFrame(() => {
+      document
+        .querySelector(`[data-student-id="${s.id}"]`)
+        ?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    });
+  }
+
+  function stopCycle() {
+    setCycleActive(false);
+    setCycleCurrentId(null);
+    setCyclePickedIds(new Set());
+    setFocusId(null);
+  }
+
+  function callInCycle(s: Student, picked: Set<string>) {
+    const next = new Set(picked);
+    next.add(s.id);
+    setCyclePickedIds(next);
+    setCycleCurrentId(s.id);
+    setCycleActive(true);
+    spotlightStudent(s);
+    toast.message(s.name.split(" ")[0] ?? s.name);
+    return next;
+  }
+
+  function startOneShotRandom() {
+    if (selectMode) exitSelectMode();
+    const s = pickRandomStudent(cyclePool);
+    if (!s) {
+      toast.message("No one to pick (everyone is out)");
+      return;
+    }
+    spotlightStudent(s);
+    toast.message(s.name.split(" ")[0] ?? s.name);
+  }
+
+  function startCycle() {
+    if (selectMode) exitSelectMode();
+    const s = pickRandomStudent(cyclePool);
+    if (!s) {
+      toast.message("No one to pick (everyone is out)");
+      return;
+    }
+    const picked = callInCycle(s, new Set());
+    if (picked.size >= cyclePool.length) {
+      toast.success("All called");
+    }
+  }
+
+  function cycleNext() {
+    const remaining = cyclePool.filter((s) => !cyclePickedIds.has(s.id));
+    const s = pickRandomStudent(remaining);
+    if (!s) {
+      toast.success("All called");
+      stopCycle();
+      return;
+    }
+    const picked = callInCycle(s, cyclePickedIds);
+    if (picked.size >= cyclePool.length) {
+      toast.success("All called");
+    }
+  }
+
+  function cycleRestart() {
+    const s = pickRandomStudent(cyclePool);
+    if (!s) {
+      toast.message("No one to pick (everyone is out)");
+      stopCycle();
+      return;
+    }
+    callInCycle(s, new Set());
+  }
+
+  useEffect(() => {
+    if (!cycleActive) return;
+    if (cyclePool.length === 0) return;
+    if (cyclePickedIds.size < cyclePool.length) return;
+    const t = window.setTimeout(() => stopCycle(), 1800);
+    return () => window.clearTimeout(t);
+  }, [cycleActive, cyclePickedIds, cyclePool.length]);
+
   function beginRearrange() {
     setRearrangeMode(true);
     setOrderDraft(
@@ -795,9 +887,6 @@ function ClassBoardPage() {
             <Swords className="size-4" />
           </Button>
           <ClassTimer />
-          <span data-chrome="teacher">
-            <RandomPicker students={activeRoster} pack={pack} classId={classId} />
-          </span>
           <BoardLockButton locked={locked} onLockedChange={setLocked} />
           <Button
             type="button"
@@ -887,6 +976,35 @@ function ClassBoardPage() {
             data-chrome="teacher"
           >
             {selectMode ? "Done" : "Select"}
+          </Button>
+          <Button
+            type="button"
+            size="sm"
+            variant="secondary"
+            className="gap-1"
+            disabled={cyclePool.length === 0 || cycleActive}
+            onClick={startOneShotRandom}
+            title="Pick one random student"
+            data-chrome="teacher"
+          >
+            <Dices className="size-3.5" />
+            1xRand
+          </Button>
+          <Button
+            type="button"
+            size="sm"
+            variant={cycleActive ? "default" : "secondary"}
+            className="gap-1"
+            disabled={cyclePool.length === 0}
+            onClick={() => {
+              if (cycleActive) return;
+              startCycle();
+            }}
+            title="Fair random cycle"
+            data-chrome="teacher"
+          >
+            <Shuffle className="size-3.5" />
+            RandCycle
           </Button>
           {selectMode && (
             <>
@@ -1063,6 +1181,21 @@ function ClassBoardPage() {
           </Dialog>
         </div>
       </div>
+
+      {cycleActive && cycleCurrentId && (
+        <CycleStrip
+          name={
+            (cyclePool.find((s) => s.id === cycleCurrentId) ??
+              students.find((s) => s.id === cycleCurrentId))?.name ?? "…"
+          }
+          called={cyclePickedIds.size}
+          total={cyclePool.length}
+          last={cyclePool.length > 0 && cyclePickedIds.size >= cyclePool.length}
+          onNext={cycleNext}
+          onRestart={cycleRestart}
+          onDone={stopCycle}
+        />
+      )}
 
       <div className="mb-2.5 flex gap-2" data-chrome="teacher">
         <div className="relative min-w-0 flex-1">
@@ -1243,6 +1376,7 @@ function ClassBoardPage() {
                 onDragOver={onDragOver}
                 onDragEnd={() => setDragFrom(null)}
                 focused={focusId === student.id}
+                cycleCalled={cyclePickedIds.has(student.id)}
               />
             );
           })}

@@ -41,6 +41,8 @@ interface StudentCardProps {
   onDragOver?: (index: number) => void;
   onDragEnd?: () => void;
   focused?: boolean;
+  /** RandCycle: already called this round */
+  cycleCalled?: boolean;
 }
 
 function StudentCardInner({
@@ -65,6 +67,7 @@ function StudentCardInner({
   onDragOver,
   onDragEnd,
   focused,
+  cycleCalled,
 }: StudentCardProps) {
   const shown = displayPoints ?? points;
   const positive = shown >= 0;
@@ -141,6 +144,14 @@ function StudentCardInner({
       {late && !absent && (
         <span className="absolute left-1.5 top-1.5 z-10 rounded-full bg-amber-500 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-white">
           Late
+        </span>
+      )}
+      {cycleCalled && !selectMode && (
+        <span
+          aria-label="Called"
+          className="pointer-events-none absolute right-1 top-1 z-10 flex size-8 items-center justify-center rounded-full bg-emerald-500 text-white shadow-md"
+        >
+          <Check className="size-4" strokeWidth={3} />
         </span>
       )}
       {selectMode && (
@@ -246,6 +257,7 @@ export const StudentCard = memo(StudentCardInner, (a, b) => {
     a.late === b.late &&
     a.rearrangeMode === b.rearrangeMode &&
     a.dragIndex === b.dragIndex &&
-    a.focused === b.focused
+    a.focused === b.focused &&
+    a.cycleCalled === b.cycleCalled
   );
 });
