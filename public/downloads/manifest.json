@@ -2,30 +2,30 @@
   "name": "classnest",
   "version": "0.048",
   "label": "v0.048",
-  "packVersion": "0.045",
-  "builtAt": "2026-09-11T13:17:33.929Z",
-  "builtLabel": "Sep 11, 2026, 7:17 AM MDT",
-  "stamp": "20260911-0717",
+  "packVersion": "0.048",
+  "builtAt": "2026-09-11T14:47:01.966Z",
+  "builtLabel": "Sep 11, 2026, 8:47 AM MDT",
+  "stamp": "20260911-0847",
   "files": {
     "portable": {
-      "file": "classnest-v0.045-20260908-0002-portable.zip",
-      "href": "/downloads/classnest-v0.045-20260908-0002-portable.zip",
-      "bytes": 13482766,
+      "file": "classnest-v0.048-20260911-0846-portable.zip",
+      "href": "/downloads/classnest-v0.048-20260911-0846-portable.zip",
+      "bytes": 13483107,
       "description": "Offline APP — unzip, then add Avatar media into avatars/",
-      "builtAt": "2026-09-08T06:02:24.135Z",
-      "builtLabel": "Sep 8, 2026, 12:02 AM MDT",
-      "stamp": "20260908-0002",
-      "downloadAs": "classnest-v0.045-20260908-0002-portable.zip"
+      "builtAt": "2026-09-11T14:46:22.306Z",
+      "builtLabel": "Sep 11, 2026, 8:46 AM MDT",
+      "stamp": "20260911-0846",
+      "downloadAs": "classnest-v0.048-20260911-0846-portable.zip"
     },
     "code": {
-      "file": "classnest-v0.048-20260911-0717-code.zip",
-      "href": "/downloads/classnest-v0.048-20260911-0717-code.zip",
-      "bytes": 374826,
+      "file": "classnest-v0.048-20260911-0847-code.zip",
+      "href": "/downloads/classnest-v0.048-20260911-0847-code.zip",
+      "bytes": 374820,
       "description": "Source only — no heavy assets",
-      "builtAt": "2026-09-11T13:17:33.929Z",
-      "builtLabel": "Sep 11, 2026, 7:17 AM MDT",
-      "stamp": "20260911-0717",
-      "downloadAs": "classnest-v0.048-20260911-0717-code.zip"
+      "builtAt": "2026-09-11T14:47:01.966Z",
+      "builtLabel": "Sep 11, 2026, 8:47 AM MDT",
+      "stamp": "20260911-0847",
+      "downloadAs": "classnest-v0.048-20260911-0847-code.zip"
     },
     "apk": {
       "file": "classnest-v0.025-20260819-2117.apk",

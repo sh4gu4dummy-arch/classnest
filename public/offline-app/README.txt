@@ -1,4 +1,4 @@
-ClassNest Offline APP  v0.045
+ClassNest Offline APP  v0.048
 ================================
 
 This zip is the APP ONLY (board, shop, spar, catalog, reports).

@@ -18,7 +18,7 @@ export const APP_VERSION_LABEL = `v${APP_VERSION}`;
 export const IS_PORTABLE = import.meta.env.VITE_PORTABLE === "true";
 
 /** Last time the Offline APP (no avatar media) was rebuilt. */
-export const PACK_VERSION = "0.045";
+export const PACK_VERSION = "0.048";
 export const PACK_VERSION_LABEL = `v${PACK_VERSION}`;
 
 /** Last sideload APK. Independent of the portable zip. */
@@ -33,10 +33,10 @@ export const AVATARS_STAMP = "20260830-0614";
 export const AVATARS_BUILT_LABEL = "Aug 30, 2026, 6:14 AM MDT";
 
 /** Filled by the pack script — ISO + classroom-local label + compact stamp. */
-export const PACK_BUILT_AT = "2026-09-08T06:02:24.135Z";
-export const PACK_BUILT_LABEL = "Sep 8, 2026, 12:02 AM MDT";
-export const PACK_STAMP = "20260908-0002";
-export const CODE_STAMP = "20260911-0717";
+export const PACK_BUILT_AT = "2026-09-11T14:46:22.306Z";
+export const PACK_BUILT_LABEL = "Sep 11, 2026, 8:46 AM MDT";
+export const PACK_STAMP = "20260911-0846";
+export const CODE_STAMP = "20260911-0847";
 
 function zipName(version: string, kind: string, stamp: string): string {
   return stamp
