@@ -507,6 +507,29 @@ html.projector .board-name {
   font-weight: 700;
 }
 
+/* Evolution / video theater — sibling of body so nothing can clip it. */
+html > #cn-overlay-root {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+  filter: none !important;
+  contain: none !important;
+  z-index: 2147483000 !important;
+  pointer-events: none;
+}
+html > #cn-overlay-root > * {
+  pointer-events: auto;
+}
+
 /* ─── Smartboard (Seewo / interactive whiteboard) — DEFAULT ON ─────
    Finger + infrared touch, large panels, teacher at arm’s length.
    Min ~48–56px hit targets, no hover reliance, prevent pinch-zoom

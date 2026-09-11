@@ -16,6 +16,7 @@ import {
   getMilestoneMark,
   POINTS_PER_LEVEL,
 } from "@/lib/evolution";
+import { getOverlayRoot } from "@/lib/overlay-root";
 import { cn } from "@/lib/utils";
 
 export type EvolutionBurstData = {
@@ -30,6 +31,21 @@ interface EvolutionBurstProps {
   data: EvolutionBurstData | null;
   onDone: () => void;
 }
+
+const COVER: CSSProperties = {
+  position: "absolute",
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
+  width: "auto",
+  height: "auto",
+  margin: 0,
+  transform: "none",
+  filter: "none",
+  // Never bg-ink / bg-bg — ink is the LIGHT foreground in dark mode.
+  background: "#05030d",
+};
 
 export function ArtZoom({
   src,
@@ -51,19 +67,11 @@ export function ArtZoom({
     return () => window.removeEventListener("keydown", onKey, true);
   }, [onClose]);
 
-  return (
+  if (typeof document === "undefined") return null;
+
+  return createPortal(
     <div
-      className="fixed inset-0 z-[400] flex items-center justify-center bg-bg/95 p-3 sm:p-6"
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        width: "100vw",
-        height: "100dvh",
-        zIndex: 400,
-      }}
+      style={{ ...COVER, zIndex: 2, display: "flex", alignItems: "center", justifyContent: "center", padding: "0.75rem" }}
       role="dialog"
       aria-modal="true"
       aria-label={title ?? "Enlarged art"}
@@ -72,7 +80,7 @@ export function ArtZoom({
     >
       <button
         type="button"
-        className="absolute right-3 top-3 z-10 flex size-12 items-center justify-center rounded-full border-2 border-border bg-surface text-fg shadow-lg hover:bg-surface-2"
+        className="absolute right-3 top-3 z-10 flex size-12 items-center justify-center rounded-full border-2 border-white/30 bg-black/60 text-white shadow-lg hover:bg-black/80"
         aria-label="Close enlarged image"
         onClick={onClose}
       >
@@ -85,15 +93,16 @@ export function ArtZoom({
         <img
           src={src}
           alt={title ?? ""}
-          className="max-h-[min(82dvh,52rem)] w-auto max-w-full rounded-2xl border-2 border-border bg-surface-2 object-contain shadow-2xl"
+          className="max-h-[min(82dvh,52rem)] w-auto max-w-full rounded-2xl border-2 border-white/20 bg-black object-contain shadow-2xl"
         />
         {title ? (
-          <figcaption className="rounded-full border border-border bg-surface px-4 py-1.5 text-sm font-bold text-fg">
+          <figcaption className="rounded-full border border-white/20 bg-black/70 px-4 py-1.5 text-sm font-bold text-white">
             {title}
           </figcaption>
         ) : null}
       </figure>
-    </div>
+    </div>,
+    getOverlayRoot(),
   );
 }
 
@@ -119,7 +128,7 @@ export function EvolutionBurst({ data, onDone }: EvolutionBurstProps) {
     return () => window.clearTimeout(t2);
   }, [data, onDone, zoom]);
 
-  if (!data) return null;
+  if (!data || typeof document === "undefined") return null;
 
   const avatar = getAvatar(data.avatarId, data.pack);
   const tier = getEvolutionTier(data.points);
@@ -161,19 +170,13 @@ export function EvolutionBurst({ data, onDone }: EvolutionBurstProps) {
 
   const overlay = (
     <div
-      className="flex items-center justify-center p-3 sm:p-5"
       style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        width: "100vw",
-        maxWidth: "100vw",
-        height: "100dvh",
-        zIndex: 400,
-        // Never use bg-ink — in dark mode ink is the LIGHT foreground.
-        background: "rgba(8, 6, 18, 0.94)",
+        ...COVER,
+        zIndex: 1,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "0.75rem",
       }}
       role="dialog"
       aria-modal="true"
@@ -186,12 +189,12 @@ export function EvolutionBurst({ data, onDone }: EvolutionBurstProps) {
 
       {milestone ? (
         <div
-          className="relative flex w-full max-w-md flex-col items-center gap-3 overflow-hidden rounded-3xl border-2 border-white/20 bg-surface p-4 shadow-2xl animate-evolve-panel sm:gap-4 sm:p-5"
+          className="relative flex w-full max-w-md flex-col items-center gap-3 overflow-hidden rounded-3xl border-2 border-white/20 bg-[#16102c] p-4 text-white shadow-2xl animate-evolve-panel sm:gap-4 sm:p-5"
           style={{ boxShadow: `0 0 60px ${tier.glow}, 0 25px 50px rgba(0,0,0,0.35)` }}
           onClick={(e) => e.stopPropagation()}
         >
           <BurstRays color={accent} />
-          <p className="relative z-10 text-xs font-bold uppercase tracking-[0.2em] text-muted-fg">
+          <p className="relative z-10 text-xs font-bold uppercase tracking-[0.2em] text-white/60">
             {heading}
           </p>
           <h2
@@ -201,11 +204,11 @@ export function EvolutionBurst({ data, onDone }: EvolutionBurstProps) {
             {headline}
           </h2>
           {mark ? (
-            <p className="relative z-10 text-center text-sm text-muted-fg">
+            <p className="relative z-10 text-center text-sm text-white/70">
               {mark.name} on their portrait — it stays on the board
             </p>
           ) : clip ? (
-            <p className="relative z-10 text-center text-sm text-muted-fg">{clip.subtitle}</p>
+            <p className="relative z-10 text-center text-sm text-white/70">{clip.subtitle}</p>
           ) : null}
           <div className="relative z-10 mt-1">
             <StudentAvatar
@@ -234,7 +237,7 @@ export function EvolutionBurst({ data, onDone }: EvolutionBurstProps) {
               />
             </button>
           )}
-          <p className="relative z-10 text-[11px] font-medium text-muted-fg">
+          <p className="relative z-10 text-[11px] font-medium text-white/60">
             Mark stays on their avatar
           </p>
           <AwesomeButton onClick={onDone} />
@@ -264,7 +267,7 @@ export function EvolutionBurst({ data, onDone }: EvolutionBurstProps) {
             type="button"
             title="Tap to enlarge"
             aria-label={`Enlarge ${morph ? toTitle : fromTitle}`}
-            className="relative z-10 aspect-square w-[min(86vw,min(62dvh,28rem))] overflow-hidden rounded-[2rem] border-2 border-white/25 bg-surface-2 shadow-2xl"
+            className="relative z-10 aspect-square w-[min(86vw,min(62dvh,28rem))] overflow-hidden rounded-[2rem] border-2 border-white/25 bg-black shadow-2xl"
             style={{ boxShadow: `0 0 48px ${tier.glow}` }}
             onClick={() =>
               setZoom({
@@ -301,7 +304,7 @@ export function EvolutionBurst({ data, onDone }: EvolutionBurstProps) {
                 el.src = getAvatarSrcAtStage(data.avatarId, data.pack, formStage, "board");
               }}
             />
-            <span className="absolute right-3 top-3 flex size-9 items-center justify-center rounded-full bg-fg/65 text-bg">
+            <span className="absolute right-3 top-3 flex size-9 items-center justify-center rounded-full bg-white/70 text-black">
               <Maximize2 className="size-4" />
             </span>
           </button>
@@ -319,7 +322,7 @@ export function EvolutionBurst({ data, onDone }: EvolutionBurstProps) {
     </div>
   );
 
-  return createPortal(overlay, document.body);
+  return createPortal(overlay, getOverlayRoot());
 }
 
 function BurstRays({ color }: { color: string }) {
