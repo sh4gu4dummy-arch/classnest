@@ -12,6 +12,12 @@ import {
 } from "@/lib/avatars";
 import { BANNER_STYLES, HOME_ITEM_META } from "@/lib/shop";
 import { getEvolutionTier, getMilestoneMark, pointsToNextLevel } from "@/lib/evolution";
+import { getUltraLore, ultraIntroSrc } from "@/lib/ultra-lore";
+import {
+  getUltraAdventure,
+  ultraAdventureSrc,
+  ULTRA_ADVENTURE_POSTER,
+} from "@/lib/ultra-adventures";
 import type { PointEvent, Student } from "@/lib/types";
 import { cn, formatRelative } from "@/lib/utils";
 
@@ -167,6 +173,10 @@ export function StudentHome({
           <EvolutionTrail avatarId={student.avatarId} pack={pack} points={points} />
         </div>
 
+        {pack === "ultra" && (
+          <NestVideos avatarId={student.avatarId} name={avatar.name} />
+        )}
+
         {homeItems.length > 0 && (
           <div className="mt-5">
             <p className="mb-2 text-xs font-bold uppercase tracking-wide text-muted-fg">
@@ -296,6 +306,158 @@ export function StudentHome({
             Hi-res
           </Button>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function padId(id: number) {
+  return String(id).padStart(2, "0");
+}
+
+function NestVideos({ avatarId, name }: { avatarId: number; name: string }) {
+  const lore = getUltraLore(avatarId);
+  const introSrc = ultraIntroSrc(avatarId);
+  const adventure = getUltraAdventure(avatarId);
+  const adventureSrc = ultraAdventureSrc(avatarId);
+  const [watch, setWatch] = useState<{
+    src: string;
+    poster?: string;
+    title: string;
+    sub?: string;
+  } | null>(null);
+
+  if (!introSrc && !adventureSrc && !lore) return null;
+
+  return (
+    <div className="mt-5 space-y-3">
+      {lore && (
+        <div className="rounded-xl border border-border bg-surface-2/40 px-3 py-2.5">
+          <p className="text-[11px] font-bold uppercase tracking-wide text-muted-fg">
+            Home
+          </p>
+          <p className="text-sm font-bold">{lore.home}</p>
+          <p className="text-xs text-muted-fg">{lore.setting}</p>
+        </div>
+      )}
+      {introSrc && (
+        <NestClip
+          heading="Meet · 10s"
+          src={introSrc}
+          poster={`/avatars/ultra/intros/${padId(avatarId)}.jpg`}
+          onExpand={() =>
+            setWatch({
+              src: introSrc,
+              poster: `/avatars/ultra/intros/${padId(avatarId)}.jpg`,
+              title: `${name} · Meet`,
+              sub: lore?.home,
+            })
+          }
+        />
+      )}
+      {adventureSrc && adventure && (
+        <NestClip
+          heading="Adventure · 30s"
+          title={adventure.title}
+          blurb={adventure.logline}
+          src={adventureSrc}
+          poster={ULTRA_ADVENTURE_POSTER(avatarId)}
+          onExpand={() =>
+            setWatch({
+              src: adventureSrc,
+              poster: ULTRA_ADVENTURE_POSTER(avatarId),
+              title: `${name} · ${adventure.title}`,
+              sub: "30s adventure",
+            })
+          }
+        />
+      )}
+      {watch && (
+        <div
+          className="fixed inset-0 z-[90] flex items-center justify-center bg-ink/92 p-3"
+          role="dialog"
+          aria-label={watch.title}
+          onClick={() => setWatch(null)}
+        >
+          <button
+            type="button"
+            onClick={() => setWatch(null)}
+            className="absolute right-3 top-3 flex size-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
+            aria-label="Close"
+          >
+            <X className="size-5" />
+          </button>
+          <div
+            className="w-full max-w-3xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <video
+              key={watch.src}
+              controls
+              autoPlay
+              playsInline
+              poster={watch.poster}
+              className="aspect-video w-full rounded-2xl bg-black"
+            >
+              <source src={watch.src} type="video/mp4" />
+            </video>
+            <p className="mt-2 text-center text-sm font-bold text-white">
+              {watch.title}
+            </p>
+            {watch.sub && (
+              <p className="text-center text-xs text-white/70">{watch.sub}</p>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function NestClip({
+  src,
+  poster,
+  heading,
+  title,
+  blurb,
+  onExpand,
+}: {
+  src: string;
+  poster?: string;
+  heading: string;
+  title?: string;
+  blurb?: string;
+  onExpand: () => void;
+}) {
+  return (
+    <div>
+      <p className="mb-1 text-[11px] font-bold uppercase tracking-wide text-muted-fg">
+        {heading}
+      </p>
+      {title ? <p className="text-sm font-bold">{title}</p> : null}
+      {blurb ? (
+        <p className="mb-1 text-xs leading-snug text-muted-fg">{blurb}</p>
+      ) : null}
+      <div className="relative">
+        <video
+          key={src}
+          controls
+          playsInline
+          preload="metadata"
+          poster={poster}
+          className="aspect-video w-full rounded-xl border-2 border-border bg-bg"
+        >
+          <source src={src} type="video/mp4" />
+        </video>
+        <button
+          type="button"
+          className="absolute right-2 top-2 z-10 flex size-10 items-center justify-center rounded-full border-2 border-white/40 bg-fg/75 text-bg shadow-lg hover:bg-fg"
+          aria-label="Watch full screen"
+          title="Watch full screen"
+          onClick={onExpand}
+        >
+          <Maximize2 className="size-4" />
+        </button>
       </div>
     </div>
   );

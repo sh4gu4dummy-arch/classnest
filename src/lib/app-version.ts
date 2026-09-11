@@ -11,7 +11,7 @@
  * art/videos change. Those keep PACK_VERSION / AVATARS_VERSION until then.
  * PACK_BUILT_* is written by scripts/build-portable.mjs.
  */
-export const APP_VERSION = "0.046";
+export const APP_VERSION = "0.047";
 export const APP_VERSION_LABEL = `v${APP_VERSION}`;
 
 /** True when this is the unzipped Offline APP (no server, no zip downloads). */
@@ -36,7 +36,7 @@ export const AVATARS_BUILT_LABEL = "Aug 30, 2026, 6:14 AM MDT";
 export const PACK_BUILT_AT = "2026-09-08T06:02:24.135Z";
 export const PACK_BUILT_LABEL = "Sep 8, 2026, 12:02 AM MDT";
 export const PACK_STAMP = "20260908-0002";
-export const CODE_STAMP = "20260910-1017";
+export const CODE_STAMP = "20260911-0712";
 
 function zipName(version: string, kind: string, stamp: string): string {
   return stamp
