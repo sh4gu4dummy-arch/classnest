@@ -78,6 +78,7 @@ function StudentProfilePage() {
     [studentEvents, studentId, ready],
   );
   const points = student ? studentPoints(student.id) : 0;
+  const spent = useClassStore((s) => s.studentSpent)(studentId);
   const seasonPoints = useMemo(() => {
     const start = classroom?.seasonStartAt;
     if (start == null) return null;
@@ -119,6 +120,7 @@ function StudentProfilePage() {
         student={student}
         points={points}
         seasonPoints={seasonPoints}
+        spent={spent}
         pack={pack}
         events={events}
         classmates={classmates}

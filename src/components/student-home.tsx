@@ -31,6 +31,7 @@ interface StudentHomeProps {
   points: number;
   pack: AvatarPack;
   seasonPoints?: number | null;
+  spent?: number;
   events?: PointEvent[];
   classmates?: Student[];
   onShop: () => void;
@@ -43,6 +44,7 @@ export function StudentHome({
   points,
   pack,
   seasonPoints = null,
+  spent = 0,
   events = [],
   classmates = [],
   onShop,
@@ -155,6 +157,13 @@ export function StudentHome({
                 value={points > 0 ? `+${points}` : String(points)}
                 good={points >= 0}
               />
+              {spent > 0 && <Stat label="Spent" value={String(spent)} />}
+              {spent > 0 && (
+                <Stat
+                  label="Wallet"
+                  value={String(Math.max(0, points - spent))}
+                />
+              )}
               {seasonPoints != null && (
                 <Stat
                   label="Season"

@@ -43,9 +43,13 @@ export function ShopPanel({
   const equipBanner = useClassStore((s) => s.equipBanner);
   const equipFrame = useClassStore((s) => s.equipFrame);
   const studentPoints = useClassStore((s) => s.studentPoints);
+  const studentSpent = useClassStore((s) => s.studentSpent);
+  const studentWallet = useClassStore((s) => s.studentWallet);
   const student = useClassStore((s) => s.students.find((x) => x.id === studentId));
   const classroom = useClassStore((s) => s.classes.find((c) => c.id === classId));
-  const pts = studentPoints(studentId);
+  const earned = studentPoints(studentId);
+  const spent = studentSpent(studentId);
+  const wallet = studentWallet(studentId);
   const pack = resolvePack(classroom?.avatarPack);
   const [tab, setTab] = useState<(typeof TABS)[number]["id"]>("all");
 
@@ -69,8 +73,12 @@ export function ShopPanel({
             Point Shop
           </DialogTitle>
           <DialogDescription>
-            {studentName.split(" ")[0]} ·{" "}
-            <span className="font-bold tabular-nums text-fg">{pts}</span> pts
+            {studentName.split(" ")[0]} · wallet{" "}
+            <span className="font-bold tabular-nums text-fg">{wallet}</span>
+            <span className="text-muted-fg">
+              {" "}
+              · earned {earned} · spent {spent}
+            </span>
           </DialogDescription>
         </DialogHeader>
 
@@ -80,7 +88,7 @@ export function ShopPanel({
               avatarId={student.avatarId}
               name={student.name}
               pack={pack}
-              points={pts}
+              points={earned}
               size="lg"
               stars={student.stars}
               frameId={student.frameId}
@@ -116,7 +124,7 @@ export function ShopPanel({
               <ShopCard
                 key={item.id}
                 item={item}
-                pts={pts}
+                pts={wallet}
                 student={student}
                 onBuy={() => buy(item.id)}
                 onEquipBanner={(id, off) => {

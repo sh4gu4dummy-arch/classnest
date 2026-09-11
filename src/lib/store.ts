@@ -7,6 +7,7 @@ import {
   type AvatarPack,
 } from "./avatars";
 import { getShopItem, type ShopItem } from "./shop";
+import { isShopSpend } from "./points";
 import { maxBet, resolveSpar, type SparResult } from "./spar";
 import type {
   Behavior,
@@ -83,10 +84,24 @@ export function pointsMapFromEvents(events: PointEvent[]): Map<string, number> {
   const m = new Map<string, number>();
   for (let i = 0; i < events.length; i++) {
     const e = events[i]!;
+    if (isShopSpend(e)) continue;
     m.set(e.studentId, (m.get(e.studentId) ?? 0) + e.points);
   }
   _ptsEvents = events;
   _ptsMap = m;
+  return m;
+}
+
+/** Points paid in the shop — not deducted from lifetime / evolution. */
+export function spentMapFromEvents(events: PointEvent[]): Map<string, number> {
+  const m = new Map<string, number>();
+  for (let i = 0; i < events.length; i++) {
+    const e = events[i]!;
+    if (!isShopSpend(e)) continue;
+    const cost = e.points < 0 ? -e.points : 0;
+    if (cost <= 0) continue;
+    m.set(e.studentId, (m.get(e.studentId) ?? 0) + cost);
+  }
   return m;
 }
 
@@ -116,6 +131,7 @@ export function multiPointsMaps(
 
   for (let i = 0; i < events.length; i++) {
     const e = events[i]!;
+    if (isShopSpend(e)) continue;
     const pts = e.points;
     classLifeTotal += pts;
     life.set(e.studentId, (life.get(e.studentId) ?? 0) + pts);
@@ -393,6 +409,10 @@ interface ClassStore {
     | { ok: false; error: string };
 
   studentPoints: (studentId: string) => number;
+  /** Lifetime shop spend (separate from earned points). */
+  studentSpent: (studentId: string) => number;
+  /** Earned minus spent — what the shop will take. */
+  studentWallet: (studentId: string) => number;
   classStudents: (classId: string) => Student[];
   classEvents: (classId: string) => PointEvent[];
   studentEvents: (studentId: string) => PointEvent[];
@@ -1260,7 +1280,7 @@ export const useClassStore = create<ClassStore>()(
         if (item.type === "star" && (st0.stars ?? 0) >= (item.max ?? 5)) {
           return { ok: false, error: "Max stars" };
         }
-        const pts = get().studentPoints(studentId);
+        const pts = get().studentWallet(studentId);
         if (pts < item.cost) return { ok: false, error: "Not enough points" };
 
         const event: PointEvent = {
@@ -1455,6 +1475,16 @@ export const useClassStore = create<ClassStore>()(
 
       studentPoints: (studentId) => {
         return pointsMapFromEvents(get().events).get(studentId) ?? 0;
+      },
+
+      studentSpent: (studentId) => {
+        return spentMapFromEvents(get().events).get(studentId) ?? 0;
+      },
+
+      studentWallet: (studentId) => {
+        const earned = get().studentPoints(studentId);
+        const spent = get().studentSpent(studentId);
+        return Math.max(0, earned - spent);
       },
 
       classStudents: (classId) => {

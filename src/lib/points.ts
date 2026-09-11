@@ -59,6 +59,10 @@ export function rangeForScope(
   return { scope: "all", from: null, to: null, label: "All time" };
 }
 
+export function isShopSpend(e: PointEvent): boolean {
+  return e.source === "shop" || e.behaviorId === "shop_buy";
+}
+
 export function eventInRange(e: PointEvent, range: TimeRange): boolean {
   if (range.from != null && e.createdAt < range.from) return false;
   if (range.to != null && e.createdAt >= range.to) return false;
@@ -93,7 +97,14 @@ export function filterEvents(
 }
 
 export function sumPoints(events: PointEvent[]): number {
-  return events.reduce((s, e) => s + e.points, 0);
+  return events.reduce((s, e) => (isShopSpend(e) ? s : s + e.points), 0);
+}
+
+export function sumShopSpent(events: PointEvent[]): number {
+  return events.reduce((s, e) => {
+    if (!isShopSpend(e) || e.points >= 0) return s;
+    return s + -e.points;
+  }, 0);
 }
 
 export function studentPointsInEvents(
