@@ -11,7 +11,9 @@ export type SoundId =
   | "evolve"
   | "spar"
   | "tournament"
-  | "ui";
+  | "ui"
+  | "tick"
+  | "land";
 
 export type SoundPack = "off" | "light" | "full";
 
@@ -202,6 +204,20 @@ function playUi() {
   tone(660, c.currentTime, 0.06, "sine", 0.12);
 }
 
+function playTick() {
+  const c = getCtx();
+  if (!c) return;
+  tone(880, c.currentTime, 0.035, "square", 0.06);
+}
+
+function playLand() {
+  const c = getCtx();
+  if (!c) return;
+  const t = c.currentTime;
+  tone(523.25, t, 0.1, "triangle", 0.22);
+  tone(783.99, t + 0.07, 0.18, "sine", 0.2);
+}
+
 export function playSound(id: SoundId) {
   if (!isSoundEnabled()) return;
   try {
@@ -226,6 +242,12 @@ export function playSound(id: SoundId) {
         break;
       case "ui":
         playUi();
+        break;
+      case "tick":
+        playTick();
+        break;
+      case "land":
+        playLand();
         break;
     }
   } catch {

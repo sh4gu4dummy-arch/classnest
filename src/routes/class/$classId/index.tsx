@@ -38,6 +38,7 @@ import { EvolutionBurst, type EvolutionBurstData } from "@/components/evolution-
 import { EvolutionCatalog } from "@/components/evolution-catalog";
 import { FavoriteSkillsBar } from "@/components/favorite-skills-bar";
 import { CycleStrip, pickRandomStudent } from "@/components/random-picker";
+import { RandomReel } from "@/components/random-reel";
 import { StudentCard } from "@/components/student-card";
 import { Button } from "@/components/ui/button";
 import {
@@ -237,6 +238,12 @@ function ClassBoardPage() {
   const [cycleActive, setCycleActive] = useState(false);
   const [cycleCurrentId, setCycleCurrentId] = useState<string | null>(null);
   const [cyclePickedIds, setCyclePickedIds] = useState<Set<string>>(() => new Set());
+  const [reel, setReel] = useState<{
+    pool: Student[];
+    winner: Student;
+    after: "once" | "cycle";
+    pickedBefore: Set<string>;
+  } | null>(null);
 
   useEffect(() => {
     document.documentElement.classList.toggle("presentation-mode", presentation);
@@ -628,29 +635,38 @@ function ClassBoardPage() {
 
   function startOneShotRandom() {
     if (selectMode) exitSelectMode();
+    if (reel) return;
     const s = pickRandomStudent(cyclePool);
     if (!s) {
       toast.message("No one to pick (everyone is out)");
       return;
     }
-    spotlightStudent(s);
-    toast.message(s.name.split(" ")[0] ?? s.name);
+    setReel({
+      pool: cyclePool,
+      winner: s,
+      after: "once",
+      pickedBefore: new Set(),
+    });
   }
 
   function startCycle() {
     if (selectMode) exitSelectMode();
+    if (reel) return;
     const s = pickRandomStudent(cyclePool);
     if (!s) {
       toast.message("No one to pick (everyone is out)");
       return;
     }
-    const picked = callInCycle(s, new Set());
-    if (picked.size >= cyclePool.length) {
-      toast.success("All called");
-    }
+    setReel({
+      pool: cyclePool,
+      winner: s,
+      after: "cycle",
+      pickedBefore: new Set(),
+    });
   }
 
   function cycleNext() {
+    if (reel) return;
     const remaining = cyclePool.filter((s) => !cyclePickedIds.has(s.id));
     const s = pickRandomStudent(remaining);
     if (!s) {
@@ -658,20 +674,42 @@ function ClassBoardPage() {
       stopCycle();
       return;
     }
-    const picked = callInCycle(s, cyclePickedIds);
-    if (picked.size >= cyclePool.length) {
-      toast.success("All called");
-    }
+    setReel({
+      pool: remaining,
+      winner: s,
+      after: "cycle",
+      pickedBefore: new Set(cyclePickedIds),
+    });
   }
 
   function cycleRestart() {
+    if (reel) return;
     const s = pickRandomStudent(cyclePool);
     if (!s) {
       toast.message("No one to pick (everyone is out)");
       stopCycle();
       return;
     }
-    callInCycle(s, new Set());
+    setReel({
+      pool: cyclePool,
+      winner: s,
+      after: "cycle",
+      pickedBefore: new Set(),
+    });
+  }
+
+  function finishReel() {
+    const job = reel;
+    setReel(null);
+    if (!job) return;
+    flashStudent(job.winner.id, "positive");
+    if (job.after === "once") {
+      spotlightStudent(job.winner);
+      toast.message(job.winner.name.split(" ")[0] ?? job.winner.name);
+      return;
+    }
+    const picked = callInCycle(job.winner, job.pickedBefore);
+    if (picked.size >= cyclePool.length) toast.success("All called");
   }
 
   useEffect(() => {
@@ -982,7 +1020,7 @@ function ClassBoardPage() {
             size="sm"
             variant="secondary"
             className="gap-1"
-            disabled={cyclePool.length === 0 || cycleActive}
+            disabled={cyclePool.length === 0 || cycleActive || !!reel}
             onClick={startOneShotRandom}
             title="Pick one random student"
             data-chrome="teacher"
@@ -995,7 +1033,7 @@ function ClassBoardPage() {
             size="sm"
             variant={cycleActive ? "default" : "secondary"}
             className="gap-1"
-            disabled={cyclePool.length === 0}
+            disabled={cyclePool.length === 0 || !!reel}
             onClick={() => {
               if (cycleActive) return;
               startCycle();
@@ -1459,6 +1497,15 @@ function ClassBoardPage() {
       </Suspense>
 
       <EvolutionBurst data={burst} onDone={() => setBurst(null)} />
+
+      {reel && (
+        <RandomReel
+          pool={reel.pool}
+          winner={reel.winner}
+          pack={pack}
+          onDone={finishReel}
+        />
+      )}
 
       <EvolutionCatalog
         open={catalogOpen}
