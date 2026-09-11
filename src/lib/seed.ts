@@ -4,7 +4,7 @@ import { uid } from "./utils";
 /** Double-tap board award — stable id, always +1. */
 export const QUICK_PLUS_BEHAVIOR: Behavior = {
   id: "b_quick_plus",
-  label: "Point",
+  label: "+1",
   kind: "positive",
   points: 1,
   icon: "plus",
@@ -16,13 +16,22 @@ export const QUICK_PLUS_BEHAVIOR: Behavior = {
  */
 export const BOOST_10_BEHAVIOR: Behavior = {
   id: "b_boost_10",
-  label: "Boost +10",
+  label: "+10",
   kind: "positive",
   points: 10,
   icon: "zap",
 };
 
-/** Penalty-free redirect — 0 pts, low warning tone. */
+/** Default penalty — name is the value. */
+export const MINUS_1_BEHAVIOR: Behavior = {
+  id: "b_minus_1",
+  label: "-1",
+  kind: "needs_work",
+  points: -1,
+  icon: "minus",
+};
+
+/** Old 0-pt warning — kept so past awards still resolve. Not a default. */
 export const WARNING_BEHAVIOR: Behavior = {
   id: "b_warning_0",
   label: "Warning",
@@ -35,7 +44,7 @@ export const WARNING_BEHAVIOR: Behavior = {
 export const CORE_BEHAVIOR_IDS = new Set([
   QUICK_PLUS_BEHAVIOR.id,
   BOOST_10_BEHAVIOR.id,
-  WARNING_BEHAVIOR.id,
+  MINUS_1_BEHAVIOR.id,
 ]);
 
 export function isCoreBehavior(id: string): boolean {
@@ -45,17 +54,7 @@ export function isCoreBehavior(id: string): boolean {
 export const DEFAULT_BEHAVIORS: Behavior[] = [
   QUICK_PLUS_BEHAVIOR,
   BOOST_10_BEHAVIOR,
-  { id: "b_positive_1", label: "Helping others", kind: "positive", points: 1, icon: "heart-handshake" },
-  { id: "b_positive_2", label: "On task", kind: "positive", points: 1, icon: "target" },
-  { id: "b_positive_3", label: "Teamwork", kind: "positive", points: 1, icon: "users" },
-  { id: "b_positive_4", label: "Participation", kind: "positive", points: 1, icon: "hand" },
-  { id: "b_positive_5", label: "Perseverance", kind: "positive", points: 2, icon: "flame" },
-  { id: "b_positive_6", label: "Kindness", kind: "positive", points: 1, icon: "sparkles" },
-  WARNING_BEHAVIOR,
-  { id: "b_needs_1", label: "Off task", kind: "needs_work", points: -1, icon: "eye-off" },
-  { id: "b_needs_2", label: "Talking out", kind: "needs_work", points: -1, icon: "message-circle-off" },
-  { id: "b_needs_3", label: "Not following directions", kind: "needs_work", points: -1, icon: "list-x" },
-  { id: "b_needs_4", label: "Disrespect", kind: "needs_work", points: -2, icon: "thumbs-down" },
+  MINUS_1_BEHAVIOR,
 ];
 
 const DEMO_NAMES = [

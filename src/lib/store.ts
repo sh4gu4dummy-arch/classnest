@@ -19,6 +19,7 @@ import type {
 import {
   QUICK_PLUS_BEHAVIOR,
   BOOST_10_BEHAVIOR,
+  MINUS_1_BEHAVIOR,
   WARNING_BEHAVIOR,
   isCoreBehavior,
   normalizeSkillPoints,
@@ -950,6 +951,9 @@ export const useClassStore = create<ClassStore>()(
         if (!behavior && behaviorId === BOOST_10_BEHAVIOR.id) {
           behavior = BOOST_10_BEHAVIOR;
         }
+        if (!behavior && behaviorId === MINUS_1_BEHAVIOR.id) {
+          behavior = MINUS_1_BEHAVIOR;
+        }
         if (!behavior && behaviorId === WARNING_BEHAVIOR.id) {
           behavior = WARNING_BEHAVIOR;
         }
@@ -982,6 +986,9 @@ export const useClassStore = create<ClassStore>()(
         }
         if (!behavior && behaviorId === BOOST_10_BEHAVIOR.id) {
           behavior = BOOST_10_BEHAVIOR;
+        }
+        if (!behavior && behaviorId === MINUS_1_BEHAVIOR.id) {
+          behavior = MINUS_1_BEHAVIOR;
         }
         if (!behavior && behaviorId === WARNING_BEHAVIOR.id) {
           behavior = WARNING_BEHAVIOR;

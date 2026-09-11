@@ -14,6 +14,7 @@ import {
   ListX,
   Medal,
   MessageCircleOff,
+  Minus,
   Music,
   Palette,
   Pencil,
@@ -33,6 +34,7 @@ export type SkillIconComp = ComponentType<{ className?: string }>;
 
 export const SKILL_ICON_MAP: Record<string, SkillIconComp> = {
   plus: Plus,
+  minus: Minus,
   sparkles: Sparkles,
   star: Star,
   zap: Zap,
@@ -87,6 +89,7 @@ export const POSITIVE_ICON_KEYS = [
 ] as const;
 
 export const NEEDS_ICON_KEYS = [
+  "minus",
   "alert-circle",
   "eye-off",
   "message-circle-off",

@@ -3,8 +3,8 @@ import type { Behavior } from "./types";
 import {
   BOOST_10_BEHAVIOR,
   DEFAULT_BEHAVIORS,
+  MINUS_1_BEHAVIOR,
   QUICK_PLUS_BEHAVIOR,
-  WARNING_BEHAVIOR,
 } from "./seed";
 
 const STORAGE_KEY = "classnest-skill-defaults-v1";
@@ -28,7 +28,7 @@ export function factorySkillDefaults(): Behavior[] {
 
 /**
  * Ensure protected core skills always exist:
- * quick +1, Boost +10, warning 0.
+ * +1, +10, -1.
  */
 export function ensureCoreSkills(list: Behavior[]): Behavior[] {
   const byId = new Map(
@@ -40,13 +40,13 @@ export function ensureCoreSkills(list: Behavior[]): Behavior[] {
   // Force core definitions (so points/label can't drift after migrate)
   byId.set(QUICK_PLUS_BEHAVIOR.id, { ...QUICK_PLUS_BEHAVIOR });
   byId.set(BOOST_10_BEHAVIOR.id, { ...BOOST_10_BEHAVIOR });
-  byId.set(WARNING_BEHAVIOR.id, { ...WARNING_BEHAVIOR });
+  byId.set(MINUS_1_BEHAVIOR.id, { ...MINUS_1_BEHAVIOR });
 
   const ordered: Behavior[] = [];
   const coreOrder = [
     QUICK_PLUS_BEHAVIOR.id,
     BOOST_10_BEHAVIOR.id,
-    WARNING_BEHAVIOR.id,
+    MINUS_1_BEHAVIOR.id,
   ];
   for (const id of coreOrder) {
     const b = byId.get(id);
