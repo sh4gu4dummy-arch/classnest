@@ -34,3 +34,22 @@ Read this before changing ClassNest. Direct chat instructions still win.
   chat with info / options / sizes. Do **not** edit files, rebuild packs,
   delete anything, or push. A later “do it” / “go ahead” is required.
 
+## Overlays (reel, evolution, catalog, theater)
+
+Repeated failures: half-screen panel, clipped avatars, winner name only in a
+toast that sits under the overlay or Grok banner.
+
+**Before saying an overlay is done, all of these must be true:**
+
+1. Mount on `#cn-overlay-root` (child of `html`, not `body`). Empty host
+   uses `:empty { display: none }`.
+2. Faces use **object-contain** (or square board thumbs). Window height
+   ≥ face + 48px. Do not `overflow-hidden` a box shorter than the art.
+   Never `object-cover` on full-body Ultra in a short strip.
+3. **Who got picked / evolved stays on that overlay ≥ 2 seconds** (name +
+   face). Toast is backup only, `bottom-center` or offset below the banner,
+   z-index above the overlay. Do not rely on toast as the only readout.
+4. Verify this turn: state the pixel math (window vs face) in the reply.
+   If Playwright can reach the board, screenshot mid-spin and landed.
+   Do not claim “fixed” without (3) + the math.
+

@@ -74,6 +74,8 @@ function RootDocument() {
             closeButton
             expand
             visibleToasts={3}
+            offset="4.5rem"
+            style={{ zIndex: 2147483646 }}
             toastOptions={{
               className: "font-sans",
               duration: 3200,

@@ -529,6 +529,9 @@ html > #cn-overlay-root {
 html > #cn-overlay-root > * {
   pointer-events: auto;
 }
+html > #cn-overlay-root:empty {
+  display: none !important;
+}
 
 /* ─── Smartboard (Seewo / interactive whiteboard) — DEFAULT ON ─────
    Finger + infrared touch, large panels, teacher at arm’s length.

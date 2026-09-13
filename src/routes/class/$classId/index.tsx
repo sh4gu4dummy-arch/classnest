@@ -244,6 +244,7 @@ function ClassBoardPage() {
     after: "once" | "cycle";
     pickedBefore: Set<string>;
   } | null>(null);
+  const [oneShotPick, setOneShotPick] = useState<Student | null>(null);
 
   useEffect(() => {
     document.documentElement.classList.toggle("presentation-mode", presentation);
@@ -629,7 +630,6 @@ function ClassBoardPage() {
     setCycleCurrentId(s.id);
     setCycleActive(true);
     spotlightStudent(s);
-    toast.message(s.name.split(" ")[0] ?? s.name);
     return next;
   }
 
@@ -703,9 +703,16 @@ function ClassBoardPage() {
     setReel(null);
     if (!job) return;
     flashStudent(job.winner.id, "positive");
+    const first = job.winner.name.split(" ")[0] ?? job.winner.name;
+    toast.success(first, {
+      description: job.winner.name,
+      duration: 6000,
+      position: "bottom-center",
+    });
     if (job.after === "once") {
       spotlightStudent(job.winner);
-      toast.message(job.winner.name.split(" ")[0] ?? job.winner.name);
+      setOneShotPick(job.winner);
+      window.setTimeout(() => setOneShotPick(null), 6000);
       return;
     }
     const picked = callInCycle(job.winner, job.pickedBefore);
@@ -1233,6 +1240,24 @@ function ClassBoardPage() {
           onRestart={cycleRestart}
           onDone={stopCycle}
         />
+      )}
+      {!cycleActive && oneShotPick && (
+        <div
+          className="mb-3 flex items-center gap-2 rounded-2xl border-2 border-accent/40 bg-surface px-3 py-2 shadow-md"
+          role="status"
+        >
+          <p className="flex-1 text-base font-black">
+            Picked: {oneShotPick.name.split(" ")[0] ?? oneShotPick.name}
+          </p>
+          <Button
+            type="button"
+            size="sm"
+            variant="ghost"
+            onClick={() => setOneShotPick(null)}
+          >
+            OK
+          </Button>
+        </div>
       )}
 
       <div className="mb-2.5 flex gap-2" data-chrome="teacher">
