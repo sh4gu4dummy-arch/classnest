@@ -34,22 +34,38 @@ Read this before changing ClassNest. Direct chat instructions still win.
   chat with info / options / sizes. Do **not** edit files, rebuild packs,
   delete anything, or push. A later “do it” / “go ahead” is required.
 
-## Overlays (reel, evolution, catalog, theater)
+## Process (do not turn bugs into a patch list)
 
-Repeated failures: half-screen panel, clipped avatars, winner name only in a
-toast that sits under the overlay or Grok banner.
+This file is **product** rules plus **one class of engineering invariant**.
+It is not an incident log.
 
-**Before saying an overlay is done, all of these must be true:**
+**Do not append** “never use `bg-ink`”, “mount on `#cn-overlay-root`”,
+“`REEL_WINDOW_H` must be 208”, “toast at `bottom-center`”. Those are
+patches from a single miss. If you catch yourself writing a selector,
+token, or constant into this file, stop — write the invariant instead.
 
-1. Mount on `#cn-overlay-root` (child of `html`, not `body`). Empty host
-   uses `:empty { display: none }`.
-2. Faces use **object-contain** (or square board thumbs). Window height
-   ≥ face + 48px. Do not `overflow-hidden` a box shorter than the art.
-   Never `object-cover` on full-body Ultra in a short strip.
-3. **Who got picked / evolved stays on that overlay ≥ 2 seconds** (name +
-   face). Toast is backup only, `bottom-center` or offset below the banner,
-   z-index above the overlay. Do not rely on toast as the only readout.
-4. Verify this turn: state the pixel math (window vs face) in the reply.
-   If Playwright can reach the board, screenshot mid-spin and landed.
-   Do not claim “fixed” without (3) + the math.
+When the same *kind* of failure happens twice (clipped art, half-screen
+panel, name only in a toast, overlay trapped in a parent), **fix the
+mechanism**, not the last CSS line. Then leave the invariant below as-is.
 
+### Visibility (the actual underlying issue)
+
+ClassNest is used on a board, at a distance, in a Grok preview iframe,
+and as an Offline APP. Anything that takes over the screen — evolution,
+random pick, catalog, video, dialog — must work in all of those.
+
+1. **The layer is the window.** Not a leftover parent, not half the
+   board, not “fixed” that is actually a column. Theme tokens for
+   *text* are not a scrim.
+2. **The subject is whole.** Face, art, and name are fully visible.
+   Clipping is a bug. If a box uses overflow hidden, it is larger than
+   what it contains. Prefer contain over cover for character art.
+3. **The outcome is on the surface.** After pick / evolve / award, the
+   teacher can read **who and what** on the overlay or board itself,
+   long enough to say the name out loud. A toast is never the only
+   announcement. Toasts are easy to miss (banner, overlay stacking,
+   3-second fade).
+
+**Done** means you treated this as the acceptance test, not “the code
+path runs.” Screenshot or say you could not. Do not claim a visibility
+fix from grep or a constant check alone.

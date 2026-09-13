@@ -558,6 +558,13 @@ play end-to-end, but inverted A/D must not ship.
 - **Games with movement:** A/D player-correct (chase cam, A = left) per
   **`.grok/skills/controls/SKILL.md`** — not screenshot-only.
 - User never blocked on an action they can't perform from chat + preview.
+- **Fix the class, not the last incident.** Do not grow `AGENTS.project.md`
+  (or this file) with selector/token/constant patches (“never `bg-ink`”,
+  “reel height 208px”). If a bug is clipped art, a half-screen overlay, or
+  an outcome that only exists in a toast, the invariant is: the layer is
+  the window, the subject is fully visible, the result is readable on the
+  surface. Product rules (don’t delete videos, “lmk”, git) stay specific.
+  Engineering failures do not.
 
 ---
 
