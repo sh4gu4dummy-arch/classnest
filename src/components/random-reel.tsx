@@ -8,7 +8,6 @@ import type { Student } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 const SLOT = 112;
-const DURATION = 1500;
 
 function prefersReduceMotion() {
   try {
@@ -18,49 +17,54 @@ function prefersReduceMotion() {
   }
 }
 
-function buildStrip(pool: Student[], winner: Student) {
-  const base = pool.length > 0 ? pool : [winner];
-  const strip: Student[] = [];
-  const landIndex = Math.max(12, base.length + 4);
-  while (strip.length < landIndex + 4) {
-    strip.push(base[strip.length % base.length]!);
-  }
-  strip[landIndex] = winner;
-  return { strip, landIndex };
+function wrapDelta(i: number, current: number, n: number) {
+  let delta = i - (((current % n) + n) % n);
+  while (delta > n / 2) delta -= n;
+  while (delta <= -n / 2) delta += n;
+  return delta;
 }
 
 export function RandomReel({
   pool,
   winner,
   pack,
+  pointsOf,
   onDone,
 }: {
   pool: Student[];
   winner: Student;
   pack: AvatarPack;
+  pointsOf: (id: string) => number;
   onDone: () => void;
 }) {
-  const { strip, landIndex } = useMemo(
-    () => buildStrip(pool, winner),
-    [pool, winner],
+  const faces = pool.length > 0 ? pool : [winner];
+  const n = faces.length;
+  const winnerIndex = Math.max(
+    0,
+    faces.findIndex((s) => s.id === winner.id),
   );
-  const trackRef = useRef<HTMLDivElement>(null);
+  const spins = n <= 6 ? 3 : 2;
+  const landAt = spins * n + winnerIndex;
+  const duration = Math.min(2200, Math.max(1200, 85 * landAt));
+
+  const windowRef = useRef<HTMLDivElement>(null);
   const lastSlot = useRef(-1);
+  const [offset, setOffset] = useState(0);
   const [landed, setLanded] = useState(false);
   const doneOnce = useRef(false);
+  const pointsMap = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const s of faces) m.set(s.id, pointsOf(s.id));
+    m.set(winner.id, pointsOf(winner.id));
+    return m;
+  }, [faces, winner.id, pointsOf]);
 
   useEffect(() => {
     unlockAudio();
-    const reduce = prefersReduceMotion() || pool.length <= 1;
-    const track = trackRef.current;
-    if (!track) return;
-
-    const windowW = track.parentElement?.clientWidth ?? 480;
-    const center = windowW / 2 - SLOT / 2;
-    const endX = -(landIndex * SLOT) + center;
+    const reduce = prefersReduceMotion() || n <= 1;
 
     const finish = () => {
-      track.style.transform = `translate3d(${endX}px,0,0)`;
+      setOffset(landAt);
       playSound("land");
       setLanded(true);
     };
@@ -70,15 +74,14 @@ export function RandomReel({
       return;
     }
 
-    track.style.transform = `translate3d(${center}px,0,0)`;
     const start = performance.now();
     let raf = 0;
     const tick = (now: number) => {
-      const t = Math.min(1, (now - start) / DURATION);
+      const t = Math.min(1, (now - start) / duration);
       const eased = 1 - (1 - t) ** 4;
-      const x = center + eased * (endX - center);
-      track.style.transform = `translate3d(${x}px,0,0)`;
-      const slot = Math.round((center - x) / SLOT);
+      const cur = eased * landAt;
+      setOffset(cur);
+      const slot = Math.floor(cur);
       if (slot !== lastSlot.current && slot >= 0) {
         lastSlot.current = slot;
         playSound("tick");
@@ -88,7 +91,7 @@ export function RandomReel({
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [landIndex, pool.length]);
+  }, [duration, landAt, n]);
 
   useEffect(() => {
     if (!landed) return;
@@ -103,6 +106,7 @@ export function RandomReel({
   if (typeof document === "undefined") return null;
 
   const first = winner.name.split(" ")[0] ?? winner.name;
+  const center = (windowRef.current?.clientWidth ?? 480) / 2;
 
   return createPortal(
     <div
@@ -125,32 +129,37 @@ export function RandomReel({
       <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-white/60">
         Rolling
       </p>
-      <div className="relative w-[min(92vw,36rem)] overflow-hidden rounded-3xl border-2 border-white/20 bg-black/40 py-4">
+      <div
+        ref={windowRef}
+        className="relative h-36 w-[min(92vw,36rem)] overflow-hidden rounded-3xl border-2 border-white/20 bg-black/40"
+      >
         <div
           aria-hidden
           className="pointer-events-none absolute inset-y-0 left-1/2 z-10 w-28 -translate-x-1/2 rounded-2xl border-2 border-accent shadow-[0_0_24px_var(--color-accent)]"
         />
-        <div
-          ref={trackRef}
-          className="flex will-change-transform"
-          style={{ width: strip.length * SLOT }}
-        >
-          {strip.map((s, i) => (
+        {faces.map((s, i) => {
+          const delta = wrapDelta(i, offset, n);
+          const x = center - SLOT / 2 + delta * SLOT;
+          return (
             <div
-              key={`${s.id}-${i}`}
-              className="flex shrink-0 flex-col items-center justify-center gap-1"
-              style={{ width: SLOT }}
+              key={s.id}
+              className="absolute top-1/2 flex -translate-y-1/2 flex-col items-center"
+              style={{
+                width: SLOT,
+                transform: `translate3d(${x}px,-50%,0)`,
+              }}
             >
               <StudentAvatar
                 avatarId={s.avatarId}
                 name={s.name}
                 pack={pack}
+                points={pointsMap.get(s.id) ?? 0}
                 size="xl"
                 showLevelBadge={false}
               />
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
       <p
         className={cn(

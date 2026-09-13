@@ -1503,6 +1503,7 @@ function ClassBoardPage() {
           pool={reel.pool}
           winner={reel.winner}
           pack={pack}
+          pointsOf={lifetimeOf}
           onDone={finishReel}
         />
       )}
