@@ -37,7 +37,7 @@ import { ClassTimer } from "@/components/class-timer";
 import { EvolutionBurst, type EvolutionBurstData } from "@/components/evolution-burst";
 import { EvolutionCatalog } from "@/components/evolution-catalog";
 import { FavoriteSkillsBar } from "@/components/favorite-skills-bar";
-import { CycleStrip, pickRandomStudent } from "@/components/random-picker";
+import { PickBanner, pickRandomStudent } from "@/components/random-picker";
 import { RandomReel } from "@/components/random-reel";
 import { StudentCard } from "@/components/student-card";
 import { Button } from "@/components/ui/button";
@@ -703,20 +703,13 @@ function ClassBoardPage() {
     setReel(null);
     if (!job) return;
     flashStudent(job.winner.id, "positive");
-    const first = job.winner.name.split(" ")[0] ?? job.winner.name;
-    toast.success(first, {
-      description: job.winner.name,
-      duration: 6000,
-      position: "bottom-center",
-    });
     if (job.after === "once") {
       spotlightStudent(job.winner);
       setOneShotPick(job.winner);
-      window.setTimeout(() => setOneShotPick(null), 6000);
+      window.setTimeout(() => setOneShotPick(null), 8000);
       return;
     }
-    const picked = callInCycle(job.winner, job.pickedBefore);
-    if (picked.size >= cyclePool.length) toast.success("All called");
+    callInCycle(job.winner, job.pickedBefore);
   }
 
   useEffect(() => {
@@ -1228,11 +1221,13 @@ function ClassBoardPage() {
       </div>
 
       {cycleActive && cycleCurrentId && (
-        <CycleStrip
-          name={
+        <PickBanner
+          student={
             (cyclePool.find((s) => s.id === cycleCurrentId) ??
-              students.find((s) => s.id === cycleCurrentId))?.name ?? "…"
+              students.find((s) => s.id === cycleCurrentId))!
           }
+          pack={pack}
+          points={lifetimeOf(cycleCurrentId)}
           called={cyclePickedIds.size}
           total={cyclePool.length}
           last={cyclePool.length > 0 && cyclePickedIds.size >= cyclePool.length}
@@ -1242,22 +1237,12 @@ function ClassBoardPage() {
         />
       )}
       {!cycleActive && oneShotPick && (
-        <div
-          className="mb-3 flex items-center gap-2 rounded-2xl border-2 border-accent/40 bg-surface px-3 py-2 shadow-md"
-          role="status"
-        >
-          <p className="flex-1 text-base font-black">
-            Picked: {oneShotPick.name.split(" ")[0] ?? oneShotPick.name}
-          </p>
-          <Button
-            type="button"
-            size="sm"
-            variant="ghost"
-            onClick={() => setOneShotPick(null)}
-          >
-            OK
-          </Button>
-        </div>
+        <PickBanner
+          student={oneShotPick}
+          pack={pack}
+          points={lifetimeOf(oneShotPick.id)}
+          onDone={() => setOneShotPick(null)}
+        />
       )}
 
       <div className="mb-2.5 flex gap-2" data-chrome="teacher">
