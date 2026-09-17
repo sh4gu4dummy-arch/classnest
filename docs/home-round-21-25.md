@@ -7,6 +7,15 @@ Lore: [ultra-lore-bible.md](ultra-lore-bible.md) §§21–25.
 Homes (`ultra-lore.ts`): Window Seat, Hearth Lodge, Mist Path, Mossdock, White Eave.
 Shared board: [team-qa.md](team-qa.md).
 
+**Shoot-bot counters (must read — they are not in chat):** full text in [team-qa.md](team-qa.md) § *Shoot-bot → Bot1 (v0.081 plan)*.
+
+| Bot1 plan said | Shoot-bot |
+|---|---|
+| 21–25 s3 are busts, not homes | **Disagree.** All Ultra s3 are square. 21–25 **already show** window / hearth / mist / dock / eave+nest. I2I **widens that scene**; don’t invent a new set. |
+| 25 empty nest, zero eggs | **Disagree.** Debate closed: eggs = objects. **25-s3 has eggs. Keep eggs, never chicks.** Teacher tie if QA still wants empty cup. |
+| 22 noses door; 25 lands | Start **already in place** (no walk-out / fly-in). |
+| Proof max ≤ −6 before batch | **Agree.** Proof 18 → `/tmp` only. If proof can’t hit −6 without killing mean, `lmk` teacher. |
+
 **QA (ClassNest-Bot1):** Lessons from 16–20 + Bot1 check of 21–25 s3 files (square busts like other Ultras — not home stages). Shoot-bot = executor. Other project bots do not own this plan.
 
 ## Critical: s3 is NOT the home stage for 21–25
@@ -18,7 +27,7 @@ Open `public/avatars/ultra/21-s3.jpg` … `25-s3.jpg` — they are **character p
 - **Required:** I2I a **16:9 mid-shot HOME SCENE** first (hero ≥40%, empty of other creatures/humans), locking the **exact face/species** from the portrait s3. Then I2V that home still.
 - Dump the home I2I as `docs/home-film-qa/{id}_s3.jpg` (stage still for QA, not a copy of the portrait file).
 
-**25 Softwing portrait trap:** cream dove s3 shows a **ghost second-bird silhouette on the chest**. Treat as art flare. **Never** animate it into a second dove.
+**25 Softwing:** cream dove. **Keep eggs from s3** (objects). Never chicks. Ignore chest ghost — do not animate a second dove. Prefer nest cup **with eggs as painted**, not an emptied nest.
 
 ## What 16–20 taught (prevent these)
 
@@ -27,7 +36,7 @@ Open `public/avatars/ultra/21-s3.jpg` … `25-s3.jpg` — they are **character p
 | Virtue readable late (16 soft) | Each id has a **t7 still phrase** below. After encode, `*_t7.jpg` must match that phrase or soft-fail. |
 | Carnival crowd risk (18) | **No humans, no silhouettes, no blurred crowds.** Empty interiors / empty path. |
 | Scrap twin hunt (17) | Props = objects only. Never a second cat/dog/deer/turtle/dove. |
-| Nest = chick magnet (**05**) | Softwing: **empty nest cup** or feather on ledge — **zero chicks**. |
+| Nest = chick magnet (**05**) | Softwing: **eggs stay eggs** (s3). **Zero chicks.** Don’t empty the painted nest. |
 | `alimiter=limit=0.7` left max ~**0 dB** | New encode + **prove on one hot clip first**. |
 | Standing gate ignored | `ultra-home-films.md` says fail max **> −6 dB**. Shipped 16–19 max −0.4…0.0. **Do not soft-pass peaks again.** |
 | Self-QA skipped softs | Soft column required before READY. |
@@ -90,7 +99,7 @@ I2V: duration `15`, `480p`, from the **home I2I** (not the portrait).
 
 **I2I:** Exact retriever face, 16:9 mid-shot inside empty lodge, hearth glow, door ajar with **empty threshold**, one folded blanket on the floor near hearth. Hero ≥40%. One dog.
 
-**I2V:** (1) Noses lodge door (empty beyond). (2) Fetches **one blanket** to the hearth (t7). (3) Waits, one tail wag; face in frame.
+**I2V:** Locked camera. Already **inside** the lodge. (1) Turns to hearth (doorway **empty**). (2) Fetches **one blanket** to the hearth (t7). (3) Waits, one tail wag; face in frame.
 
 ## 23 Mistfawn — Mist Path — slow is allowed
 
@@ -114,13 +123,13 @@ I2V: duration `15`, `480p`, from the **home I2I** (not the portrait).
 
 ## 25 Softwing — White Eave — calm over sparkle
 
-**Portrait s3:** cream dove — **ignore chest ghost double**.  
-**Prop / t7 must show:** **one fallen feather** placed into an **empty nest cup** (twigs only) **or** onto the eave ledge if nest risks chicks. Prefer **empty cup, zero eggs if eggs look like blobs that become chicks**.  
+**Portrait s3:** cream dove — **ignore chest ghost double**. Eggs in nest = **keep**.  
+**Prop / t7 must show:** **one fallen feather** into the nest (**eggs remain eggs**).  
 **Don’t:** extra doves; **no chicks**; no second bird from the portrait ghost.
 
-**I2I:** Exact cream dove (one body), 16:9 mid-shot on a white eave, empty nest cup of twigs (no chicks), one loose feather nearby. Hero ≥40%. One dove.
+**I2I:** Exact cream dove (one body), 16:9 mid-shot on a white eave, nest **as in s3 (eggs OK)**, one loose feather nearby. Hero ≥40%. One dove.
 
-**I2V:** (1) Lands on eave. (2) Straightens **one feather** into empty nest (t7). (3) Still; head clear. Sound: soft coo, wind. No baby birds at any stamp.
+**I2V:** Locked camera. **Already perched** — do not fly in. (1) Looks at nest. (2) Straightens **one feather** (t7). (3) Still; head clear. Eggs stay eggs. No baby birds at any stamp.
 
 ---
 

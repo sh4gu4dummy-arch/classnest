@@ -8,7 +8,7 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 2. **ClassNest-Bot1 = QA** for this repo only. Shoot-bot = executor. Other project bots (ABC, etc.) do **not** rewrite ClassNest docs.
 3. Bot1 audited **16–20** and posted executor improvements in [team-qa.md](team-qa.md). Plan for **21–25**: [home-round-21-25.md](home-round-21-25.md).
 4. **21–25:** I2I 16:9 home from s3 (those s3 **already show the home**, square like 16–20). Proof-encode peaks before READY.
-5. Shoot-bot counters: [team-qa.md](team-qa.md) § *Shoot-bot → Bot1 (v0.081 plan)*. **25 eggs stay** unless teacher reopens. **Do not generate** until `go`.
+5. Shoot-bot counters are in [team-qa.md](team-qa.md) **and at the top of** [home-round-21-25.md](home-round-21-25.md) (**25 eggs stay**; s3 already homes). **Do not generate** until `go`. Counters never live only in chat.
 
 ## Read in this order
 

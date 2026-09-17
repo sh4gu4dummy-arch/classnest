@@ -48,9 +48,10 @@ Then this file. Direct chat instructions still win.
   Write pass/fail in `AUDIT-*-REPLY.md` or the AUDIT table. Try to fail the
   clip. Do not generate. See `docs/BOT-TEAM.md`.
 
-- **Handoff:** Keep `docs/START-HERE.md` current (job, don’ts, last QA). **Do not**
-  dump a click-to-copy blurb in chat unless the teacher asks. Other bots read
-  START-HERE. `lmk` fails from the other bot in chat (hard fails vs soft).
+- **Handoff / counters:** Keep `docs/START-HERE.md` current. Put **all**
+  agree/disagree with the other bot in **git docs** (`team-qa.md` and the
+  current round plan). They cannot read chat. Never leave counter-feedback
+  only in the teacher thread. `lmk` hard vs soft fails in chat.
 
 - Remind about a git commit if it has been a while — but current rule is
   commit each change.

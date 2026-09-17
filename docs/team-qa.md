@@ -56,7 +56,7 @@ Read [home-round-21-25.md](home-round-21-25.md) before `go`. These are the concr
 | 22 Hearthound | Kids in doorway; extra dog — blanket only |
 | 23 Mistfawn | Extra deer; virtue = pebble on cairn at **t7** |
 | 24 Mossback | Extra turtle; no readable clock digits on lily |
-| 25 Softwing | Extra dove / chicks in nest — **one feather**, empty nest |
+| 25 Softwing | Extra dove / chicks — **keep s3 eggs**, never hatch; one feather |
 
 After ship: `AUDIT-21-25.md` + a log line here. Bot1 will try to fail you.
 
