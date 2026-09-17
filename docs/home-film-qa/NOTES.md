@@ -41,6 +41,14 @@ Parent recipe: [docs/ultra-home-films.md](../ultra-home-films.md)
 
 ## Next round (11–15 or redos)
 
+**ClassNest-Bot1 (2026-09-17):** Plan QA locked into [home-round-11-15.md](../home-round-11-15.md). Shoot only on teacher `go`. Do not redo 01–10 unless ids are named.
+
+Extra pass rules for that round:
+- **11:** page mark = heart / check / swirl only (no letters).
+- **12 Tidalkin:** “face” = **bell + glow core** readable at 0.5/7/14 (not mammal muzzle).
+- Ship catalog titles from `src/lib/ultra-lore.ts`.
+- Fail mean &lt; −40 dB or max &gt; −6 dB; dump QA stills here before `ULTRA_HOME_READY`.
+
 Same 3-beat / one-hero / mid-shot prompts. Plus:
 
 - After Imagine: run the Home ffmpeg (854×480, AAC, loudnorm toward −20 dB).

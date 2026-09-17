@@ -6,7 +6,7 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 
 1. Home films exist for **01–10** (15s, with sound). **01–05** are messy (extra animals). **06–10** are better (one hero). **Do not redo** until the teacher says `go redo …`.
 2. Teacher wants **meaningful** films. Every Ultra now has a story: [ultra-lore-bible.md](ultra-lore-bible.md).
-3. **Next shoot is 11–15, not redos.** Plan + full prompts (for teacher audit): [home-round-11-15.md](home-round-11-15.md).
+3. **Next shoot is 11–15, not redos.** Plan + full prompts (for teacher audit): [home-round-11-15.md](home-round-11-15.md). ClassNest-Bot1 QA notes are in that file (Quillburst mark, Tidalkin face bar) — read them before `go`.
 4. **Do not generate** those five until the teacher says **`go`**.
 
 ## Read in this order
