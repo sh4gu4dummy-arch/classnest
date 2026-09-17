@@ -26,6 +26,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { getUltraLore, ultraIntroSrc } from "@/lib/ultra-lore";
 import { getUltraAdventure, ultraAdventureSrc, ULTRA_ADVENTURE_POSTER } from "@/lib/ultra-adventures";
+import { ultraHomeSrc, ULTRA_HOME_POSTER } from "@/lib/ultra-homes";
 import { Maximize2, Play, X } from "lucide-react";
 
 
@@ -318,6 +319,8 @@ export function EvolutionCatalog({
   const adventure = pack === "ultra" && tab !== "archive" ? getUltraAdventure(safeId) : null;
   const adventureSrc =
     pack === "ultra" && tab !== "archive" ? ultraAdventureSrc(safeId) : null;
+  const homeSrc =
+    pack === "ultra" && tab !== "archive" ? ultraHomeSrc(safeId) : null;
   const archiveItem =
     archive.find((a) => a.id === archivePick) ?? archive[0] ?? null;
 
@@ -651,6 +654,26 @@ export function EvolutionCatalog({
                         )}
                       </div>
                     )}
+                    {homeSrc && lore ? (
+                      <div className="border-t border-border pt-2">
+                        <CatalogVideoClip
+                          src={homeSrc}
+                          poster={ULTRA_HOME_POSTER(safeId)}
+                          heading="Home · 15s · sound"
+                          title={lore.home}
+                          blurb="Final form in its place"
+                          onExpand={() =>
+                            setLightbox({
+                              kind: "video",
+                              src: homeSrc,
+                              poster: ULTRA_HOME_POSTER(safeId),
+                              title: `${avatar.name} · ${lore.home}`,
+                              sub: "15s home · sound on",
+                            })
+                          }
+                        />
+                      </div>
+                    ) : null}
                   </div>
                 )}
 
