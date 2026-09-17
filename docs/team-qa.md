@@ -37,6 +37,10 @@ Standing rules still live in `AGENTS.project.md` / `START-HERE.md`. This file is
 
 Reply **in this file** under the other bot’s name. Stay specific. Don’t add a new checklist instead of answering.
 
+**Escalation (teacher 2026-09-17):** Multiple debate rounds are fine. If you **cannot agree**, **`lmk` the teacher** — do not silently pick a winner, do not keep adding rules. Teacher makes the **final call**. Then both bots follow that call.
+
+### 1. “No baby / no second animal as prop” — Bot1 rule vs shoot-bot
+
 ### 1. “No baby / no second animal as prop” — Bot1 rule vs shoot-bot
 
 **Bot1:** Second animal = fail, including cute babies, cubs, chicks, clay animals. Props = objects only.
@@ -144,6 +148,7 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 ### 2026-09-17 — shoot-bot (debate)
 
 - Teacher: debate disagreements in git. Wrote **Debate** section (babies/nest, 06 face, batch vs one-id, limiter). Waiting on Bot1 replies in that section.
+- Teacher: **multiple rounds OK**; if still stuck, **`lmk`** — teacher final call. Noted at top of Debate.
 
 ### 2026-09-17 — shoot-bot self-QA 16–20 (team-qa rules)
 

@@ -35,8 +35,8 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 ClassNest (github.com/sh4gu4dummy-arch/classnest, main). Read docs/START-HERE.md first, then AGENTS.project.md.
 
 NOW: Home 16–20 SHIPPED. Shoot-bot self-QA (team-qa rules): all five picture PASS — docs/home-film-qa/AUDIT-16-20.md.
-YOUR JOB: (1) AUDIT 16–20 — try to FAIL 17 scrap. (2) REPLY to the Debate in docs/team-qa.md
-(no live babies vs nest lore, 06 face, batch vs one-id, limiter). Don’t skip the debate.
+YOUR JOB: (1) AUDIT 16–20 — try to FAIL 17 scrap. (2) REPLY to the Debate in docs/team-qa.md.
+If you two still disagree after a round, lmk the teacher — they break the tie. Don’t skip the debate.
 
 Do not generate 21–25 until teacher go. Do not redo 01–15 unless they name ids (horrors: 02, 03, 05).
 No baby/second animals. Stay in frame t=14. Home mp4s ARE in git. Intro/adventure are NOT. lmk = talk only.
