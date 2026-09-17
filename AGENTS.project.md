@@ -10,8 +10,11 @@ Read this before changing ClassNest. Direct chat instructions still win.
   **archive the old file** under `public/avatars/archive/` — do not trash it.
 - Do not strip audio from a video that already has it. Do not re-encode over
   the only copy. Copy first, then encode a new file.
-- Catalog videos are currently **silent on purpose** (encoded with no audio
-  track). Do not add voice/music until the teacher asks.
+- Catalog intros/adventures are **silent on purpose**. **Home films**
+  (`public/avatars/ultra/homes/`) are the exception: they keep diegetic
+  sound. Recipe + QA stills: `docs/ultra-home-films.md` and
+  `docs/home-film-qa/NOTES.md`. Do not generate or remake until the
+  teacher says `go`. Do not delete current Home mp4s without a yes.
 
 ## Other standing rules
 

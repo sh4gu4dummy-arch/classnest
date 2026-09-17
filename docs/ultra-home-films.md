@@ -12,10 +12,13 @@ mp4s are **not** in git (teacher backup). Posters (jpg) may be committed.
 | Ids | Code | Quality | Action |
 |---|---|---|---|
 | **01–05** | In `ULTRA_HOME_READY` | **Provisional.** Extra copies / limbs. Home slot works; not the quality bar. | Redo only if teacher asks. Do not delete current mp4s without a yes. |
-| **06–10** | In `ULTRA_HOME_READY` (v0.059) | Shot 2026-09-17 under one-hero / 3-beat / mid-shot recipe. Frame audit 0.5 / 7 / 14: **one creature each**. Still 736×400. | In catalog. Bloomkin t=14 heavy bloom on face (not a second animal). |
+| **06–10** | In `ULTRA_HOME_READY` | One hero each (better than 01–05). 06 face-lost at t14; 09 nearly silent (−53 dB). See NOTES. | Keep in catalog. Soft remake 06/09 only if teacher asks. |
 | **11+** | Not started | — | After teacher `go` |
 
 On disk: posters `homes/01.jpg`–`10.jpg` (git). mp4s `01.mp4`–`10.mp4` on this machine (gitignored).
+
+**Frame stills + remake verdicts (other bots start here):** [docs/home-film-qa/NOTES.md](home-film-qa/NOTES.md)  
+Stills: `docs/home-film-qa/{id}_t{0.5|7|14}.jpg`
 
 ### Shot 06–10 audit
 
@@ -109,15 +112,18 @@ Treat this as the gate. If any line fails, **redo that id** — do not add it to
 
 ### B. Frame audit (required)
 
-Pull stills at **0.5s / 7s / 14s** (or nearest keyframe). Fail if any frame shows:
+Pull stills at **0.5s / 7s / 14s** into **`docs/home-film-qa/`** (git). Fail if any frame shows:
 
 - [ ] A second creature / silhouette / cub clone
 - [ ] Extra legs, wings, heads, or fused limbs
 - [ ] Body melting into terrain (lava, glass, cloud, flowers)
+- [ ] **Face unreadable** (flower mound, smear, off-frame) — “one body” is not enough
 - [ ] Humans, readable text, logos
 - [ ] Hero tiny in a wide establishing shot (invites twins)
 
-Pass only if **one** clear hero, anatomy stable, prop readable.
+Pass only if **one** clear hero, **face readable on all three stamps**, anatomy stable, prop readable.
+
+Loudness (ffmpeg `volumedetect`): fail mean **< −40 dB** (silent); fail max **> −6 dB** (clip). Target mean **−22 to −18 dB**.
 
 ### C. Tech check
 
