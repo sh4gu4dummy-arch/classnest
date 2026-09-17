@@ -25,7 +25,19 @@ Thumbs.db
 .vscode/*
 !.vscode/extensions.json
 
-# Agent / local scratch
+# Grok Build sandbox / platform — never GitHub
+.grok/
+/startup.sh
+/AGENTS.md
+/attachments/
+/server/
+scripts/grok-pwa-*
+scripts/browser-smoke.mjs
+scripts/browser-guard.mjs
+public/downloads/*.apk
+public/downloads/imagine-video-*.txt
+public/downloads/imagine-videos-into-the-app.md
+
 artifacts/
 tmp_images/
 screenshots/
@@ -33,7 +45,6 @@ screenshots/
 /tmp/
 .cache/
 .project_id
-.grok/
 public/offline-app/__pycache__/
 public/offline-app/avatars/
 

@@ -21,6 +21,19 @@ else
 fi
 EOF
 chmod 700 "$ASK"
+# Refuse to push Grok Build / sandbox paths (even if someone force-adds them).
+forbidden=$(git ls-files | grep -E '^(\.grok/|startup\.sh$|AGENTS\.md$|attachments/|server/|scripts/grok-pwa-)' || true)
+if [ -n "$forbidden" ]; then
+  echo "Refusing push: Grok/sandbox files are tracked:" >&2
+  echo "$forbidden" >&2
+  echo "Remove them with: git rm -r --cached <paths>" >&2
+  exit 1
+fi
+if git ls-files | grep -q '\.keystore$'; then
+  echo "Refusing push: a keystore is tracked. git rm --cached it." >&2
+  exit 1
+fi
+
 GIT_ASKPASS="$ASK" SSH_ASKPASS="$ASK" GIT_TERMINAL_PROMPT=1 \
   git -c credential.helper= push origin HEAD:main "$@"
 echo "pushed HEAD -> origin/main"

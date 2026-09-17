@@ -20,12 +20,12 @@ Read this before changing ClassNest. Direct chat instructions still win.
 - Version bump + git commit on each change. Tell the teacher the new
   version number in the reply. Rebuild portable / full / APK **only when
   asked**. Rebuild code-only zip each change.
-- **Always push to GitHub after the commit** (`origin` =
-  `sh4gu4dummy-arch/classnest`, branch `main`). Use `sh scripts/push-github.sh`.
-  Auth is the connected GitHub account / `gh` — never paste a PAT in chat.
-  Zip packs stay out of git (100 MB cap). When the Offline APP is rebuilt,
-  also `gh release create` (or upload onto the version tag) with the portable
-  zip. Avatar media only on a release when that pack actually changed.
+- **Never commit Grok Build / sandbox files to GitHub.** That includes
+  `.grok/`, `startup.sh`, root `AGENTS.md`, `attachments/`, `server/`,
+  `scripts/grok-pwa-*`, keystores. ClassNest product rules stay in
+  `AGENTS.project.md`. `scripts/push-github.sh` refuses the push if
+  those paths are tracked.
+
 - Remind about a git commit if it has been a while — but current rule is
   commit each change.
 - Sounds on by default; no first-run sound pop-up.
