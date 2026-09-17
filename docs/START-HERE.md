@@ -7,7 +7,7 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 1. Home films **01–15** on disk. **01–05** messy; **06–10** better; **11–15 shipped** (v0.066, 854×480, one hero, faces at t=14). **Do not redo** until `go redo …`.
 2. Lore bible: [ultra-lore-bible.md](ultra-lore-bible.md).
 3. **Shoot-bot vs Bot1 (find this):** Kept Bot1 nits. **Counter used on 11–15:** prompt the **s3 painting** (11 = gold quill-peacock, not porcupine; 14 owl; 15 grove deer); Tidalkin steers around kelp; locked camera. Results: [home-film-qa/NOTES.md](home-film-qa/NOTES.md) § Round 11–15.
-4. **Current job for the other bot: AUDIT 11–15.** Packet: [home-film-qa/AUDIT-11-15.md](home-film-qa/AUDIT-11-15.md) (s3 + t0.5/3/7/11/14 stills in that folder). Teammate rules: [BOT-TEAM.md](BOT-TEAM.md). **Do not generate 16–20** until teacher `go`.
+4. **Current jobs:** (a) other bot may still **AUDIT 11–15** — [home-film-qa/AUDIT-11-15.md](home-film-qa/AUDIT-11-15.md). (b) **Next shoot plan is 16–20** — [home-round-16-20.md](home-round-16-20.md). **Do not generate 16–20** until teacher `go`.
 
 ## Read in this order
 
@@ -15,7 +15,8 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 |---|---|---|
 | 1 | This file | Orientation |
 | 2 | `AGENTS.project.md` | Standing rules (`lmk` = talk only, git, Home sound exception) |
-| 3 | [home-film-qa/AUDIT-11-15.md](home-film-qa/AUDIT-11-15.md) | **Current job = audit 11–15** |
+| 3 | [home-round-16-20.md](home-round-16-20.md) | **Next shoot (wait for `go`)** |
+| 3b | [home-film-qa/AUDIT-11-15.md](home-film-qa/AUDIT-11-15.md) | Optional: still audit 11–15 |
 | 4 | [ultra-lore-bible.md](ultra-lore-bible.md) | Virtue + 3-beat seed per id |
 | 5 | [ultra-home-films.md](ultra-home-films.md) | Recipe, ffmpeg, QA gate |
 | 6 | [home-film-qa/NOTES.md](home-film-qa/NOTES.md) | What failed last time (stills in that folder) |
@@ -33,14 +34,12 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 ```
 ClassNest (github.com/sh4gu4dummy-arch/classnest, main). Read docs/START-HERE.md first, then AGENTS.project.md.
 
-YOUR JOB: AUDIT Home films 11–15. Do not generate. Do not redo 01–10.
-Open docs/home-film-qa/AUDIT-11-15.md and look at the stills in that folder
-({id}_s3.jpg + {id}_t0.5/3/7/11/14.jpg). Fill the verdict table (or write
-docs/home-film-qa/AUDIT-11-15-REPLY.md). Teammate rules: docs/BOT-TEAM.md.
+NOW: Home 11–15 shipped. Next PLAN is 16–20 — docs/home-round-16-20.md. Do not generate until teacher go.
+Optional: finish AUDIT 11–15 (docs/home-film-qa/AUDIT-11-15.md + stills in that folder).
+Teammate rules: docs/BOT-TEAM.md. Lore: docs/ultra-lore-bible.md.
 
-Try to FAIL clips (extra body, lost face at t14, letters, wrong species vs s3).
-11 is a gold peacock not a porcupine. mp4s are gitignored — if you lack them, audit stills only and say so.
+16–20 s3: Prismite = crystal rabbit; Junkbyte = gear beetle (scrap is objects); Mirthling = round hatted party-creature (NO letters); Abyssrake = one eel; Solarox = scarab stays with the sun-disc.
 
-Commit + sh scripts/push-github.sh. lmk = talk only.
+DO NOT redo 01–15 unless they name ids. Do not delete mp4s. lmk = talk only.
 ```
 
