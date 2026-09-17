@@ -52,6 +52,13 @@ public/offline-app/avatars/
 /data/
 scripts/__pycache__/
 
+# Videos — kept on disk / teacher backup, not in git
+*.mp4
+*.webm
+*.mov
+*.mkv
+*.m4v
+
 # GitHub 100 MB file cap — zip packs stay on the live server
 public/downloads/*.zip
 public/downloads/*.apk.idsig

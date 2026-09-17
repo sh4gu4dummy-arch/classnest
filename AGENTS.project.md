@@ -23,9 +23,11 @@ Read this before changing ClassNest. Direct chat instructions still win.
 - **Always push to GitHub after the commit** (`origin` =
   `sh4gu4dummy-arch/classnest`, branch `main`). Use `sh scripts/push-github.sh`.
   Auth is the connected GitHub account / `gh` — never paste a PAT in chat.
-  Zip packs stay out of git (100 MB cap). When the Offline APP is rebuilt,
-  also `gh release create` (or upload onto the version tag) with the portable
-  zip. Avatar media only on a release when that pack actually changed.
+  Zip packs stay out of git (100 MB cap). Videos (`*.mp4` etc.) stay out of
+  git; the teacher has a backup. Avatar stills stay in git. When the
+  Offline APP is rebuilt, also `gh release create` (or upload onto the
+  version tag) with the portable zip. Avatar media only on a release when
+  that pack actually changed.
 - **Never commit Grok Build / sandbox files to GitHub.** That includes
   `.grok/`, `startup.sh`, root `AGENTS.md`, `attachments/`, `server/`,
   `scripts/grok-pwa-*`. ClassNest product rules stay in `AGENTS.project.md`.
