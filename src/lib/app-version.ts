@@ -36,7 +36,7 @@ export const AVATARS_BUILT_LABEL = "Aug 30, 2026, 6:14 AM MDT";
 export const PACK_BUILT_AT = "2026-09-11T14:46:22.306Z";
 export const PACK_BUILT_LABEL = "Sep 11, 2026, 8:46 AM MDT";
 export const PACK_STAMP = "20260911-0846";
-export const CODE_STAMP = "20260917-1647";
+export const CODE_STAMP = "20260917-1648";
 
 function zipName(version: string, kind: string, stamp: string): string {
   return stamp
