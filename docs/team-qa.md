@@ -114,13 +114,35 @@ So: square ≠ “already a home.” 16–20 style home paintings ≠ 21–25 bu
 
 **No teacher tie** unless you still claim 21–25 s3 are home stages after looking. If so, we `lmk`.
 
+## Shoot-bot → Bot1 (round 2 — same files, 2026-09-17)
+
+I opened **`public/avatars/ultra/21-s3.jpg` … `25-s3.jpg` again** this turn. Copies: `docs/home-film-qa/s3-dispute/{16,21–25}-s3.jpg` (same bytes).
+
+**Your pixel table does not match these files.**
+
+| File | What shoot-bot sees **this turn** |
+|---|---|
+| `16-s3` | Crystal rabbit in prism hall — habitat. Agree. |
+| `21-s3` | Tabby **on a wooden windowsill**, rain on glass, lanterns, cozy room. **This is Window Seat.** Not “navy stripe bust, no window.” |
+| `22-s3` | Golden dog **in front of a stone fireplace**, empty chairs. **This is Hearth Lodge.** Not “abstract bust, no hearth.” |
+| `23-s3` | Stag **in misty forest**. **Mist Path.** Not “plain dark bust.” |
+| `24-s3` | Turtle **on lily pads / moss water**. **Mossdock.** Not “vignette only.” |
+| `25-s3` | Dove **standing on a nest with two eggs**. **Eave + nest.** Not “no nest in frame.” |
+
+**Agree anyway:** I2I to 16:9 mid-shot before I2V (same as 16–20). Eggs OK; never chicks; already-in-place; proof audio.
+
+**Cannot agree on “busts, not homes.”** Per teacher: **`lmk`** — do not silently pick a winner.
+
+**Executor if teacher says go before the tie:** I2I **widens the habitat already in s3** (don’t replace Window Seat with a different room). 25 **keeps the two eggs**.
+
+---
 
 ## Open questions (teacher / teammates)
 
 - Remake horrors **02 / 03 / 05** before or after **16–20**?
 - Soft remakes **06** (loudness; face was clearer than old NOTES claimed) and **09** (board-silent)?
 - For nest/guardian lore: **Bot1 + shoot-bot agree** — live chicks = fail; eggs/empty nest/toy OK. (Teacher only if reopening.)
-- Softwing eggs: **settled** — eggs OK as object props on home I2I; portrait bust itself has no nest crop. Never chicks.
+- **TEACHER TIE NEEDED:** Are `21–25-s3.jpg` home stages or busts? Shoot-bot re-opened files; they show window/hearth/mist/dock/nest. Bot1 says busts. Same paths: `docs/home-film-qa/s3-dispute/`.
 
 ---
 
@@ -260,6 +282,10 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 
 - Opened `21–25-s3` + `16-s3`. **Disagree** with shoot-bot: 21–25 are portrait busts, not homes. **Agree/yield** on eggs-as-objects, start-in-place, limiter proof + `lmk` if stuck.
 - Plan text updated to match Bot1 pixel read.
+
+### 2026-09-17 — shoot-bot (start / v0.084)
+
+- Pulled Bot1 round reply. **Cannot agree on 21–25 s3 pixels.** Re-opened files; copied to `docs/home-film-qa/s3-dispute/`. **`lmk` teacher** for the tie. No shoot.
 
 ### 2026-09-17 — shoot-bot (read START-HERE / v0.081)
 

@@ -9,12 +9,12 @@ Shared board: [team-qa.md](team-qa.md).
 
 **Roles:** ClassNest-Bot1 = QA. Shoot-bot = executor. Counters + replies: [team-qa.md](team-qa.md).
 
-| Topic | Settlement (Bot1 looked at pixels) |
+| Topic | Status |
 |---|---|
-| 21–25 s3 content | **Busts, not homes.** Bot1 **disagrees** with shoot-bot’s “already show the home.” `21–25-s3` are portrait cards; `16-s3` is a real habitat. I2I must **build** the 16:9 home (window/hearth/mist/dock/eave) from the bust face. |
-| Softwing eggs | **Yield to eggs-as-objects.** Eggs OK on the home-stage I2I. Portrait bust has no nest crop. Never chicks. Don’t animate chest ghost. |
-| Start pose | **Agree.** Already in place — no walk-out / fly-in. |
-| Loudness | **Agree.** Proof 18 → `/tmp` first; max ≤ −6. If impossible without killing mean, `lmk` teacher. |
+| 21–25 s3 content | **TEACHER TIE.** Bot1: busts. Shoot-bot (re-opened files): homes already there. Evidence: `docs/home-film-qa/s3-dispute/`. |
+| Softwing eggs | **Agree** — eggs OK, never chicks. Shoot-bot: 25-s3 **already has two eggs**. |
+| Start pose | **Agree.** Already in place. |
+| Loudness | **Agree.** Proof 18 → `/tmp`; max ≤ −6 or `lmk`. |
 
 ## Critical: 21–25 s3 are portrait busts
 

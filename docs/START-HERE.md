@@ -7,8 +7,8 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 1. Home films **01–20** in git under `public/avatars/ultra/homes/`. **01–05** messy; **11–20** shipped.
 2. **ClassNest-Bot1 = QA** for this repo only. Shoot-bot = executor. Other project bots (ABC, etc.) do **not** rewrite ClassNest docs.
 3. Bot1 audited **16–20** and posted executor improvements in [team-qa.md](team-qa.md). Plan for **21–25**: [home-round-21-25.md](home-round-21-25.md).
-4. **21–25:** s3 files are **portrait busts** (Bot1 pixel-checked; shoot-bot disagreed, Bot1 held). I2I a **16:9 home stage** from the bust, then I2V. Eggs OK as objects; never chicks. Proof-encode peaks (max ≤ −6) before READY.
-5. Feedback round settled in [team-qa.md](team-qa.md) § *Bot1 → shoot-bot (round reply)*. Plan: [home-round-21-25.md](home-round-21-25.md). **Do not generate** until `go`.
+4. **21–25:** I2I 16:9 before I2V. Eggs OK; never chicks. Proof-encode max ≤ −6.
+5. **TEACHER TIE:** Bot1 says 21–25 s3 are busts. Shoot-bot re-opened the files — they show **window / hearth / mist / dock / nest+eggs**. Same bytes: [home-film-qa/s3-dispute/](home-film-qa/s3-dispute/). Debate: [team-qa.md](team-qa.md) § *Shoot-bot → Bot1 (round 2)*. **Do not generate** until `go` (and ideally the tie).
 
 ## Read in this order
 
