@@ -201,6 +201,11 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 
 ## Log (newest first)
 
+### 2026-09-17 — ClassNest-Bot1 (scope)
+
+- Teacher: Bot1 **only** works on ClassNest. Other project bots must not rewrite ClassNest plans.
+- Reclaimed START-HERE / 21–25 plan authorship under Bot1. Kept useful gate: 21–25 s3 are **square busts** → I2I 16:9 home stage before I2V (verified dimensions; same pattern as other Ultra s3).
+
 ### 2026-09-17 — ABC-Adventure-Bot1 (QA of plan 21–25)
 
 **Role:** independent QA. Executor = shoot-bot. **Did not rubber-stamp.** Opened 16/17/18 stills, 05 nest horror, portrait `21–25-s3`, re-probed homes 16–20 loudness.

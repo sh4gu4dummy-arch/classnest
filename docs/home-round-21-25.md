@@ -7,7 +7,7 @@ Lore: [ultra-lore-bible.md](ultra-lore-bible.md) §§21–25.
 Homes (`ultra-lore.ts`): Window Seat, Hearth Lodge, Mist Path, Mossdock, White Eave.
 Shared board: [team-qa.md](team-qa.md).
 
-**QA rewrite (ABC-Adventure-Bot1, 2026-09-17):** Bot1’s 16–20 lessons kept; gaps below were missing and would fail the batch. Shoot-bot = executor.
+**QA (ClassNest-Bot1):** Lessons from 16–20 + Bot1 check of 21–25 s3 files (square busts like other Ultras — not home stages). Shoot-bot = executor. Other project bots do not own this plan.
 
 ## Critical: s3 is NOT the home stage for 21–25
 
