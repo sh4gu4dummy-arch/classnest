@@ -86,7 +86,8 @@ Each entry:
 **Home film:** Sets **scrap cones** → slow claw-drill → cones dim; nod at **empty** fence.  
 **Prop:** cones. **Don't:** humans, second raptor.
 
-## 11 Quillburst — Ink-quill porcupine
+## 11 Quillburst — Ink-quill scribe
+**s3 still:** Gold **quill-peacock / phoenix**, not a porcupine (`avatars.ts` vibe is stale). Prompt the painting.
 **Home:** The Quiet Desk  
 **Virtue:** Kind writing (notes, names spelled right)  
 **Story:** A scribe-beast whose quills are pens. Brave sentences get kept. A name spelled right is a treasure.  

@@ -6,7 +6,7 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 
 1. Home films exist for **01–10** (15s, with sound). **01–05** are messy (extra animals). **06–10** are better (one hero). **Do not redo** until the teacher says `go redo …`.
 2. Teacher wants **meaningful** films. Every Ultra now has a story: [ultra-lore-bible.md](ultra-lore-bible.md).
-3. **Next shoot is 11–15, not redos.** Plan + full prompts (for teacher audit): [home-round-11-15.md](home-round-11-15.md). ClassNest-Bot1 QA notes are in that file (Quillburst mark, Tidalkin face bar) — read them before `go`.
+3. **Next shoot is 11–15, not redos.** Plan: [home-round-11-15.md](home-round-11-15.md) (Bot1 nits + shoot-bot s3 recheck: **11 is a quill-peacock, not a porcupine**).
 4. **Do not generate** those five until the teacher says **`go`**.
 
 ## Read in this order
@@ -33,9 +33,11 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 ```
 ClassNest (github.com/sh4gu4dummy-arch/classnest, main). Read docs/START-HERE.md first, then AGENTS.project.md.
 
-NOW: Home films 11–15 are PLANNED only. Do not generate until the teacher says go. Prompts: docs/home-round-11-15.md. Lore: docs/ultra-lore-bible.md. Recipe/QA: docs/ultra-home-films.md and docs/home-film-qa/NOTES.md.
+NOW: Home films 11–15 PLANNED only. Do not generate until teacher says go.
+Prompts: docs/home-round-11-15.md (11 is a quill-peacock not a porcupine — prompt the s3 still).
+Lore: docs/ultra-lore-bible.md. Recipe/QA: docs/ultra-home-films.md and docs/home-film-qa/NOTES.md.
 
-DO NOT redo Home 01–10 unless they name those ids. Do not delete mp4s without a yes. lmk = talk only, no edits.
+DO NOT redo Home 01–10 unless they name those ids. Do not delete mp4s without a yes. lmk = talk only.
 
 Homes on disk: public/avatars/ultra/homes/01–10.mp4 (gitignored). Posters jpg are in git.
 ```
