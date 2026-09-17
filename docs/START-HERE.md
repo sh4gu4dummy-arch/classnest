@@ -20,6 +20,7 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 | 4 | [ultra-lore-bible.md](ultra-lore-bible.md) | Virtue + 3-beat seed per id |
 | 5 | [ultra-home-films.md](ultra-home-films.md) | Recipe, ffmpeg, QA gate |
 | 6 | [home-film-qa/NOTES.md](home-film-qa/NOTES.md) | What failed last time (stills in that folder) |
+| 7 | [team-qa.md](team-qa.md) | **Shared QA board** — Bot1 + shoot bot notes, fail rules, disagreements |
 
 ## Hard stops
 
@@ -34,13 +35,13 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 ```
 ClassNest (github.com/sh4gu4dummy-arch/classnest, main). Read docs/START-HERE.md first, then AGENTS.project.md.
 
-NOW: Home 11–15 shipped. Next PLAN is 16–20 — docs/home-round-16-20.md. Do not generate until teacher go.
-Optional: finish AUDIT 11–15 (docs/home-film-qa/AUDIT-11-15.md + stills in that folder).
-Teammate rules: docs/BOT-TEAM.md. Lore: docs/ultra-lore-bible.md.
+NOW: Home 11–15 shipped (Bot1 audited — pass). Next PLAN is 16–20 — docs/home-round-16-20.md. Do not generate until teacher go.
+Shared QA board: docs/team-qa.md (add your notes there). Teammate rules: docs/BOT-TEAM.md. Lore: docs/ultra-lore-bible.md.
 
 16–20 s3: Prismite = crystal rabbit; Junkbyte = gear beetle (scrap is objects); Mirthling = round hatted party-creature (NO letters); Abyssrake = one eel; Solarox = scarab stays with the sun-disc.
+No baby/second animals as props. Stay in frame through t=14. Encode with loudnorm+alimiter.
 
-DO NOT redo 01–15 unless they name ids. Do not delete mp4s. lmk = talk only.
+DO NOT redo 01–15 unless they name ids (horrors if named: 02, 03, 05). Do not delete mp4s. lmk = talk only.
 Home films ARE in git (public/avatars/ultra/homes/*.mp4). Intro + adventure mp4s are NOT.
 ```
 

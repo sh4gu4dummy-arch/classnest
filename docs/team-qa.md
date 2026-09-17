@@ -1,0 +1,120 @@
+# Team QA (shared scratchpad)
+
+**Who:** ClassNest-Bot1 (this bot) + shoot / audit teammates.  
+**Why:** Hone the Home-film QA plan together. Put findings, disagreements, and recipe tweaks **here** so the next bot does not only get chat.
+
+Standing rules still live in `AGENTS.project.md` / `START-HERE.md`. This file is the **working board**.
+
+---
+
+## How we cooperate
+
+1. **Look at stills (and mp4s when present).** Home films `public/avatars/ultra/homes/*.mp4` **are in git** (from v0.069). Intro/adventure mp4s are not.
+2. **Write in git**, not only chat. Prefer a short row in a table below, or a dated note.
+3. **Disagree on purpose.** Rubber-stamp is useless (`BOT-TEAM.md`).
+4. **Do not shoot** until teacher `go`. Do not delete mp4s. Do not redo unless ids are named.
+5. After a useful note: version bump + push, and refresh the paste blurb in `START-HERE.md` if the current job changed.
+
+### Suggested roles
+
+| Role | Does | Does not |
+|---|---|---|
+| **Shoot bot** | Generate on `go`, encode, dump stills, ship passers | Mark own work “perfect” without stills |
+| **QA bot (Bot1 / other)** | Fail clips, fill AUDIT tables, improve next-round plan | Generate without `go` |
+| **Either** | Add a dated note in this file when you learn something | Append endless checklists without opening frames |
+
+---
+
+## Open questions (teacher / teammates)
+
+- Remake horrors **02 / 03 / 05** before or after **16–20**?
+- Soft remakes **06** (loudness; face was clearer than old NOTES claimed) and **09** (board-silent)?
+- For nest/guardian lore (like Stormwyrm): are **chicks allowed as props**, or must props stay non-animal objects only?
+
+---
+
+## Shared fail rules (honed 2026-09-17 — Bot1 visual pass of 01–15)
+
+Use these for 16–20 and any redo. Update this list when both bots agree.
+
+1. **Second animal = fail**, including cute babies, cubs, chicks, clay animals, paper creatures. Prop must be an **object** (mitten, ribbon, cog, lantern, crystal, disc…).
+2. **Extra limbs / melt into terrain** at any stamp = fail (01 t7 leap).
+3. **Face (or species face-bar) readable at t=14.** Jelly: bell + glow / tiny face. Beetle/scarab/eel: head/eyes readable. Hero must **not** walk/fly/swim out of frame (05 t14 dragon leaves).
+4. **Virtue visible in a still at t≈7** (heart on page, mitten in mouth, ribbon in beak, cube clear…).
+5. **Match s3 species** (11 = gold peacock, not porcupine nickname).
+6. **No readable letters / student names.**
+7. **Loudness:** mean **&lt; −40 dB** = fail (board-silent). Peaks near **0 dB** = note + use **alimiter** on encode (11 max −0.9). Prefer fail only on true clip ~0 dB after limiter.
+8. **Encode:** 854×480 + AAC + loudnorm + alimiter. Do not ship raw 736×400 as “done” for new rounds.
+9. Dump stills into `docs/home-film-qa/` **before** `ULTRA_HOME_READY`. Audit packet for the other bot after each batch.
+
+---
+
+## ClassNest-Bot1 — independent QA of Home 01–15 (2026-09-17)
+
+**mp4s available:** yes (now in git). Re-probed loudness. Opened t7/t14 (and 11–15 s3/t14) stills.
+
+### Tech
+
+| Batch | Size | Notes |
+|---|---|---|
+| 01–10 | **736×400** | Old encode; all have AAC |
+| 11–15 | **854×480** | loudnorm applied; some peaks hot |
+
+Silent fails (mean &lt; −40): **06 −45**, **09 −53**. Hot peaks: **07 −3.6**, **11 −0.9**, **15 −1.9**.
+
+### Visual verdicts
+
+| Id | Verdict | Evidence | Remake? |
+|---|---|---|---|
+| 01 | **fail** | t7: leap / lantern OK story but anatomy risk (extra legs historically); keep provisional | with 01–05 set |
+| 02 | **fail — horror** | t7: **two animals** (panther + glowing cub) | **yes — first** |
+| 03 | **fail — horror** | t7: **adult fox + stone cub** (second creature) | **yes** |
+| 04 | **borderline / fail** | t7: one lynx + orb (this stamp looks single); NOTES reported twin at other moment — treat as **soft fail** with 01–05 set | with set |
+| 05 | **fail — horror** | t7: dragon + **three chicks**; t14: dragon **leaving** over sea, chicks still in nest (extra animals + exit frame) | **yes** |
+| 06 | **soft fail** | t14: face **readable** looking at bottle-garden (better than old “buried” note); mean **−45** board-silent | loudnorm remake if asked |
+| 07 | **borderline** | shipable picture; max **−3.6** spike | soft if slot |
+| 08 | **pass — keep** | t7: one wolf, red mitten, cabin edge | **keep** |
+| 09 | **soft fail** | picture one fairy + orb; mean **−53** silent | loudnorm or soft remake |
+| 10 | **pass — keep** | keep unless tighter drill wanted | **keep** |
+| 11 | **pass** | peacock = s3; **heart** on page; face at t14; peak hot | keep |
+| 12 | **pass** | one jelly; **tiny face in bell** at t14; lantern/kelp objects | keep |
+| 13 | **pass** | one neon fox + cube; face at t14 | keep |
+| 14 | **pass** | one owl; **ribbon in beak** at t7; kind | keep |
+| 15 | **pass** | one deer; stump + leaf; face at t14; stays in frame | keep |
+
+**Would redo before 16–20?** Only if teacher names ids. Suggested horror order: **02 → 03 → 05**. Soft: **06, 09**. Keep: **08, 10, 11–15**.
+
+Filled audit table also in [home-film-qa/AUDIT-11-15.md](home-film-qa/AUDIT-11-15.md).
+
+---
+
+## Ideas for 16–20 (from 01–15)
+
+Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further after this pass:
+
+- **17 Junkbyte:** scrap pile is twin-magnet — every scrap piece must read as **object**, never a second beetle silhouette.
+- **19 Abyssrake:** spare lantern = object; lure is **same body**, not a second head; **do not swim away** (05 lesson).
+- **20 Solarox:** stay with sun-disc through t=14 (no bow-and-leave).
+- **18 Mirthling:** no banner letters; confetti = paper bits, not creatures.
+- **Any “nest / babies” lore:** do **not** put live chicks/cubs in frame — use eggs, toys, or empty nest objects.
+- After shoot: write `AUDIT-16-20.md` and add a short note **in this file**.
+
+---
+
+## Log (newest first)
+
+### 2026-09-17 — ClassNest-Bot1
+
+- Created this file.
+- Visual QA 01–15 with mp4s + stills; loudness re-probe.
+- Updated 16–20 plan + AUDIT-11-15 + NOTES + BOT-TEAM (homes now in git).
+- Waiting on teacher `go` for 16–20 or named redos.
+
+### (next bot — add your block here)
+
+```
+### YYYY-MM-DD — <bot name>
+- Looked at: …
+- Agree / disagree with Bot1 on ids: …
+- Recipe change proposed: …
+```

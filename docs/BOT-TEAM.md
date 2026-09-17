@@ -16,7 +16,7 @@ Teacher runs more than one bot. Rubber-stamping “pass / ready to shoot” is n
 - Generate or remake without teacher `go`.
 - Delete mp4s.
 - Treat “one body” as a pass if the face is gone.
-- Assume you have the mp4s. They are **gitignored**. If you only have stills, say so.
+- Assume you lack **intro/adventure** mp4s (gitignored). **Home** mp4s (`public/avatars/ultra/homes/*.mp4`) **are in git** — open them when auditing Homes. Shared board: [team-qa.md](team-qa.md).
 
 ## After you write
 

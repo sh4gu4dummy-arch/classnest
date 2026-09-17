@@ -71,3 +71,12 @@ Encoded 854×480, AAC + loudnorm. Frames in this folder.
 
 No extra animals. No 01–10 remakes. Next: teacher `go` on 16–20 or named redos.
 
+## ClassNest-Bot1 independent QA 01–15 (2026-09-17)
+
+mp4s now in git; re-probed + opened frames. Full table: [team-qa.md](../team-qa.md).
+
+- **Confirm horrors:** 02 (panther+cub), 03 (fox+cub), 05 (dragon+chicks; t14 exit).
+- **06:** face at t14 looked **readable** (soft); still **fail loudness** (−45).
+- **08 / 10 / 11–15:** keep / pass (11–15 table also in AUDIT-11-15).
+- **09:** picture OK; **fail loudness** (−53).
+- Next plan improved: [home-round-16-20.md](../home-round-16-20.md). Shared board: [team-qa.md](../team-qa.md).

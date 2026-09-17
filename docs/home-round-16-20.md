@@ -7,6 +7,22 @@ Stills: `public/avatars/ultra/16-s3.jpg` … `20-s3.jpg`. **Prompt the painting.
 Lore: [ultra-lore-bible.md](ultra-lore-bible.md) §§16–20.  
 Homes in `ultra-lore.ts`: **Prism Cathedral, The Scrap Yard Chapel, The Party Pocket, The Lantern Trench, The Dawn Ziggurat.**
 
+
+## ClassNest-Bot1 — extra lessons from full 01–15 QA (2026-09-17)
+
+See [team-qa.md](team-qa.md) for the shared board and full 01–15 table.
+
+| Finding from 01–15 | Apply on 16–20 |
+|---|---|
+| Cute **babies still fail** (02 cub, 03 stone fox, 05 chicks) | Props = objects only. No chicks/cubs/clay animals in frame — ever. |
+| 05 t14 dragon **flew away** | Locked camera + **stay in frame** through last second (already on 19/20). Fail if hero exits. |
+| 06 picture OK but **−45 dB**; 09 **−53 dB** | loudnorm + **alimiter** (below). Re-probe mean; fail &lt; −40. |
+| 11 peak **−0.9 dB** | alimiter required; do not ship raw hot peaks to the board. |
+| 11 peacock ≠ porcupine nickname | **Open s3 before I2V** (18 = hatted party-creature). |
+| Twin magnet scrap / nest / lanterns | 17: every scrap piece reads as object. 19: spare lantern = object; lure = same eel. |
+
+**Audit after shoot:** stills → `docs/home-film-qa/` → fill `AUDIT-16-20.md` → add a dated note in `team-qa.md`.
+
 ## What 11–15 taught (use this)
 
 | Finding | Next round |
