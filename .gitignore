@@ -52,8 +52,10 @@ public/offline-app/avatars/
 /data/
 scripts/__pycache__/
 
-# Videos — kept on disk / teacher backup, not in git
+# Videos — intros/adventures stay on disk / teacher backup, not in git.
+# Home films (4th clip) ARE tracked (teacher 2026-09-17).
 *.mp4
+!public/avatars/ultra/homes/*.mp4
 *.webm
 *.mov
 *.mkv

@@ -29,8 +29,10 @@ Then this file. Direct chat instructions still win.
 - **Always push to GitHub after the commit** (`origin` =
   `sh4gu4dummy-arch/classnest`, branch `main`). Use `sh scripts/push-github.sh`.
   Auth is the connected GitHub account / `gh` — never paste a PAT in chat.
-  Zip packs stay out of git (100 MB cap). Videos (`*.mp4` etc.) stay out of
-  git; the teacher has a backup. Avatar stills stay in git. When the
+  Zip packs stay out of git (100 MB cap). Intro/adventure videos (`*.mp4`
+  except Home films) stay out of git. **Home films**
+  (`public/avatars/ultra/homes/*.mp4`) **are tracked** — add new ones when
+  they ship. Avatar stills stay in git. When the
   Offline APP is rebuilt, also `gh release create` (or upload onto the
   version tag) with the portable zip. Avatar media only on a release when
   that pack actually changed.

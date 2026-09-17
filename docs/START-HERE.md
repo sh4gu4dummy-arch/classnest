@@ -41,5 +41,6 @@ Teammate rules: docs/BOT-TEAM.md. Lore: docs/ultra-lore-bible.md.
 16–20 s3: Prismite = crystal rabbit; Junkbyte = gear beetle (scrap is objects); Mirthling = round hatted party-creature (NO letters); Abyssrake = one eel; Solarox = scarab stays with the sun-disc.
 
 DO NOT redo 01–15 unless they name ids. Do not delete mp4s. lmk = talk only.
+Home films ARE in git (public/avatars/ultra/homes/*.mp4). Intro + adventure mp4s are NOT.
 ```
 

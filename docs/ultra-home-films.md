@@ -3,7 +3,7 @@
 Fourth clip per legend: **final form in its home**, 15s, **with sound**.
 Path: `public/avatars/ultra/homes/{id}.mp4` (+ `.jpg` poster).
 Catalog: **Home · 15s · sound** (`src/lib/ultra-homes.ts` → `evolution-catalog.tsx`).
-mp4s are **not** in git (teacher backup). Posters (jpg) may be committed.
+mp4s **are in git** (`public/avatars/ultra/homes/*.mp4`). Intros/adventures stay gitignored.
 
 **Do not generate the next batch until the teacher says `go` on this recipe.**
 
@@ -18,7 +18,7 @@ mp4s are **not** in git (teacher backup). Posters (jpg) may be committed.
 | **11–15** | In `ULTRA_HOME_READY` (v0.066) | Shot. 854×480 + loudnorm. One hero each; face/bell at t=14. | In catalog. QA stills in `docs/home-film-qa/`. |
 | **16–20** | Prompts ready | Prismite → Solarox. Plan: [home-round-16-20.md](home-round-16-20.md). Uses 11–15 QA (limiter, stay in frame, prompt s3). | Shoot only on **`go`**. |
 
-On disk: posters `homes/01.jpg`–`15.jpg` (git). mp4s `01.mp4`–`15.mp4` on this machine (gitignored).
+On disk and in git: posters + **mp4s** `homes/01`–`15`.
 
 **Frame stills + remake verdicts (other bots start here):** [docs/home-film-qa/NOTES.md](home-film-qa/NOTES.md)  
 Stills: `docs/home-film-qa/{id}_t{0.5|7|14}.jpg`
@@ -237,7 +237,7 @@ Still files for 06–10 **are in git** and ready.
 2. Run QA sections **B** and **C**. Failures: redo; do not touch `ULTRA_HOME_READY`.
 3. Add only **passing** ids to `ULTRA_HOME_READY`.
 4. Bump `VERSION` / `package.json` / `APP_VERSION`, rebuild code-only zip, commit, `sh scripts/push-github.sh`.
-5. mp4s stay gitignored; posters (jpg) may be committed.
+5. Home **mp4s are tracked**; intros/adventures stay gitignored.
 6. Do not pack avatars zip unless asked.
 7. Tell the teacher which ids passed, which failed, and the new version.
 
