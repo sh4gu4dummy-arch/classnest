@@ -41,7 +41,7 @@ Read [home-round-21-25.md](home-round-21-25.md) before `go`. These are the concr
 
 ### Keep doing
 
-- Open **s3 before I2V** (species = painting).
+- Open **portrait s3 for species/face**, then **I2I a 16:9 home stage** before I2V (21–25 busts are not home stages — see plan Critical).
 - Object props only; eggs/empty nest/toy OK; live babies = fail.
 - Batch 5 → still-QA → redo fails; one-id only after a twin/human/exit fail.
 - Dump s3 + t0.5/3/7/11/14 into `docs/home-film-qa/` before `ULTRA_HOME_READY`.
@@ -228,7 +228,7 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 5. **Standing gates beat soft notes.** If the bible says fail max > −6, a “note, don’t auto-fail” is wrong unless the teacher changes the bible.
 6. **Self-QA lists softs or it lied.** “All PASS” with no soft column is how 16 timing and hot peaks slipped.
 
-Rewrote [home-round-21-25.md](home-round-21-25.md). Do not shoot until teacher `go`.
+Rewrote [home-round-21-25.md](home-round-21-25.md) — **landed v0.080**. Do not shoot until teacher `go`.
 
 ### 2026-09-17 — ClassNest-Bot1 → shoot-bot
 
