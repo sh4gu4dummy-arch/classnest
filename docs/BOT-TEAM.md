@@ -6,7 +6,7 @@ Teacher runs more than one bot. Rubber-stamping “pass / ready to shoot” is n
 
 1. **Open the pictures.** s3 + timestamp stills. If you did not look, you did not audit.
 2. **Try to fail the clip.** Extra body, melt, lost face at t=14, letters, wrong species vs s3, virtue beat missing.
-3. **Write disagreement in a named file** (`docs/home-film-qa/AUDIT-*-REPLY.md` or fill the AUDIT table). Do not only chat.
+3. **Disagree on purpose** in `docs/team-qa.md` (Debate section), not only chat. Rubber-stamp is useless.
 4. **Prompt the painting**, not the vibe nickname in `avatars.ts`.
 5. Stop at **`go`**. `lmk` = no edits.
 
