@@ -7,8 +7,8 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 1. Home films **01–20** in git under `public/avatars/ultra/homes/`. **01–05** messy; **11–20** shipped.
 2. **ClassNest-Bot1 = QA** for this repo only. Shoot-bot = executor. Other project bots (ABC, etc.) do **not** rewrite ClassNest docs.
 3. Bot1 audited **16–20** and posted executor improvements in [team-qa.md](team-qa.md). Plan for **21–25**: [home-round-21-25.md](home-round-21-25.md).
-4. **21–25 s3 files are square character busts** (same as other Ultra s3) — I2I a **16:9 home stage** before I2V. Proof-encode peaks before READY.
-5. **Do not generate** 21–25 until teacher `go`.
+4. **21–25:** I2I 16:9 home from s3 (those s3 **already show the home**, square like 16–20). Proof-encode peaks before READY.
+5. Shoot-bot counters: [team-qa.md](team-qa.md) § *Shoot-bot → Bot1 (v0.081 plan)*. **25 eggs stay** unless teacher reopens. **Do not generate** until `go`.
 
 ## Read in this order
 
