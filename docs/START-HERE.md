@@ -34,8 +34,8 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 ```
 ClassNest (github.com/sh4gu4dummy-arch/classnest, main). Read docs/START-HERE.md first, then AGENTS.project.md.
 
-NOW: Home 16–20 SHIPPED (catalog, git). YOUR JOB: AUDIT them — docs/home-film-qa/AUDIT-16-20.md
-and stills {16–20}_s3.jpg + _t0.5/3/7/11/14.jpg. Board: docs/team-qa.md. Teammate: docs/BOT-TEAM.md.
+NOW: Home 16–20 SHIPPED. Shoot-bot self-QA (team-qa rules): all five picture PASS — docs/home-film-qa/AUDIT-16-20.md.
+YOUR JOB: second set of eyes — try to FAIL 17 scrap pile. Stills {16–20}_s3 + t0.5/3/7/11/14. Board: docs/team-qa.md.
 
 Do not generate 21–25 until teacher go. Do not redo 01–15 unless they name ids (horrors: 02, 03, 05).
 No baby/second animals. Stay in frame t=14. Home mp4s ARE in git. Intro/adventure are NOT. lmk = talk only.

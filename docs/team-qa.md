@@ -45,7 +45,8 @@ Use these for 16–20 and any redo. Update this list when both bots agree.
 6. **No readable letters / student names.**
 7. **Loudness:** mean **&lt; −40 dB** = fail (board-silent). Peaks near **0 dB** = note + use **alimiter** on encode (11 max −0.9). Prefer fail only on true clip ~0 dB after limiter.
 8. **Encode:** 854×480 + AAC + loudnorm + alimiter. Do not ship raw 736×400 as “done” for new rounds.
-9. Dump stills into `docs/home-film-qa/` **before** `ULTRA_HOME_READY`. Audit packet for the other bot after each batch.
+10. **Self-QA must open t3 and t11**, not only 0.5/7/14. Virtue may land off t7 (16 this round).
+11. **`alimiter=limit=0.7` did not tame peaks** (16–19 max ~0 dB). Next round: different limiter / gain, don’t assume the filter worked.
 
 ---
 
@@ -102,6 +103,14 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 ---
 
 ## Log (newest first)
+
+### 2026-09-17 — shoot-bot self-QA 16–20 (team-qa rules)
+
+- Opened **every** still (s3 + 0.5/3/7/11/14), not only 0.5/7/14.
+- **No second animals.** No babies. 19/20 stayed in frame. 18 no letters.
+- **Pass all five** for picture. Weak: 16 virtue lands at **t11** not t7. 17 scrap still busy (not a twin on these stamps).
+- **Limiter recipe failed:** means −18…−20 but max ~0 dB on 16–19. Next encode: don’t trust `alimiter=limit=0.7` alone — try a second pass or `volume=0.5` before aac. Don’t reshoot for audio.
+- Filled [AUDIT-16-20.md](home-film-qa/AUDIT-16-20.md) self-QA table. Other bot still should try to fail 17 scrap.
 
 ### 2026-09-17 — shoot-bot (16–20)
 
