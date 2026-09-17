@@ -11,11 +11,21 @@ mp4s are **not** in git (teacher backup). Posters (jpg) may be committed.
 
 | Ids | Code | Quality | Action |
 |---|---|---|---|
-| **01–05** | In `ULTRA_HOME_READY` | **Provisional.** Every clip failed the one-creature / anatomy audit (extra copies or limbs). Shipped so the Home slot works; not the quality bar. | Do **not** treat as golden examples. Prefer redo with the new recipe when the teacher asks. Do **not** delete current mp4s without a yes. |
-| **06–10** | Not ready | Prompts below are locked for shoot | Wait for **`go`**, then shoot → frame-audit → ship only passers |
-| **11+** | Not started | — | After 06–10 land clean |
+| **01–05** | In `ULTRA_HOME_READY` | **Provisional.** Extra copies / limbs. Home slot works; not the quality bar. | Redo only if teacher asks. Do not delete current mp4s without a yes. |
+| **06–10** | In `ULTRA_HOME_READY` (v0.059) | Shot 2026-09-17 under one-hero / 3-beat / mid-shot recipe. Frame audit 0.5 / 7 / 14: **one creature each**. Still 736×400. | In catalog. Bloomkin t=14 heavy bloom on face (not a second animal). |
+| **11+** | Not started | — | After teacher `go` |
 
-On disk right now (git): posters `homes/01.jpg`–`05.jpg`. mp4s live only on the machine / teacher backup (gitignored).
+On disk: posters `homes/01.jpg`–`10.jpg` (git). mp4s `01.mp4`–`10.mp4` on this machine (gitignored).
+
+### Shot 06–10 audit
+
+| Id | Pass? | Notes |
+|---|---|---|
+| 06 Bloomkin | ship | One panther. Bottle stays. End t=14 face buried in a huge bloom. |
+| 07 Chronomech | ship | One bot. Oils a gear. t=14 leftover brass bits, not a second spider. |
+| 08 Frosthowl | ship | Cleanest. One wolf, mitten, cabin. |
+| 09 Luminara | ship | One fairy. Extra glow is orbs, not a swarm. |
+| 10 Ironclaw | ship | One raptor, cones, no kid silhouette. |
 
 ---
 
@@ -246,4 +256,4 @@ Ready to shoot **06–10** when the teacher says **`go`**. Not before.
 - Whether to **redo 01–05** after 06–10, or leave provisional clips in catalog
 - Whether loudness normalization should be forced in ffmpeg (e.g. `loudnorm`) on every Home encode
 
-**Verdict:** Plan is ready. Say **`go`** to shoot 06–10 under this recipe. Say **`go redo 01-05`** if those should regenerate first instead.
+**Verdict:** 06–10 shot and shipped in catalog (v0.059). 01–05 still provisional. Next: teacher `go` on 11–15 or `go redo 01-05`.
