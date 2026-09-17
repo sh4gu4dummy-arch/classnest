@@ -554,4 +554,4 @@ Each entry:
 
 - Lift these **Story** paragraphs into the in-app catalog, or keep this file as the shoot bible only?  
 - Any legend whose virtue should change?  
-- Remake horrors **02, 03, 05** next, or start **11–15** on this bible?
+- **Next shoot locked:** 11–15 (not redos). Prompts: [home-round-11-15.md](home-round-11-15.md). Redos of 01–10 wait until named.

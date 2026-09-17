@@ -3,6 +3,8 @@
 Classroom points, Ultra evolutions, shop, and spar. Teachers run it in the
 browser or as an Offline APP on a USB stick.
 
+**Bots / next session:** start at [docs/START-HERE.md](docs/START-HERE.md).
+
 ## Run (this repo)
 
 ```bash

@@ -15,7 +15,8 @@ mp4s are **not** in git (teacher backup). Posters (jpg) may be committed.
 |---|---|---|---|
 | **01–05** | In `ULTRA_HOME_READY` | **Provisional.** Extra copies / limbs. Home slot works; not the quality bar. | Redo only if teacher asks. Do not delete current mp4s without a yes. |
 | **06–10** | In `ULTRA_HOME_READY` | One hero each (better than 01–05). 06 face-lost at t14; 09 nearly silent (−53 dB). See NOTES. | Keep in catalog. Soft remake 06/09 only if teacher asks. |
-| **11+** | Not started | — | After teacher `go` |
+| **11–15** | Prompts ready | Quillburst → Sapwood. Lore-first, 854×480 + loudnorm, face at t=14. | **Audit** [home-round-11-15.md](home-round-11-15.md). Shoot only on **`go`**. Do not redo 01–10 first. |
+| **16+** | Not started | — | After 11–15 land |
 
 On disk: posters `homes/01.jpg`–`10.jpg` (git). mp4s `01.mp4`–`10.mp4` on this machine (gitignored).
 
