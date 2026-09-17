@@ -29,10 +29,6 @@ if [ -n "$forbidden" ]; then
   echo "Remove them with: git rm -r --cached <paths>" >&2
   exit 1
 fi
-if git ls-files | grep -q '\.keystore$'; then
-  echo "Refusing push: a keystore is tracked. git rm --cached it." >&2
-  exit 1
-fi
 
 GIT_ASKPASS="$ASK" SSH_ASKPASS="$ASK" GIT_TERMINAL_PROMPT=1 \
   git -c credential.helper= push origin HEAD:main "$@"

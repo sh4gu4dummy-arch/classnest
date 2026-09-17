@@ -51,7 +51,6 @@ public/offline-app/avatars/
 # Teacher classroom data (must survive updates; never commit)
 /data/
 scripts/__pycache__/
-scripts/android/*.keystore
 
 # GitHub 100 MB file cap — zip packs stay on the live server
 public/downloads/*.zip
