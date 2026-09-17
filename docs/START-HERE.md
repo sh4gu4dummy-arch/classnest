@@ -6,8 +6,8 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 
 1. Home films **01–20** on disk / in git under `public/avatars/ultra/homes/`. **01–05** messy; **11–15** and **16–20** shipped.
 2. **Bot1 = QA**, shoot-bot = executor. Shared board: [team-qa.md](team-qa.md).
-3. Bot1 audited **16–20**: no twin on 17; soft misses (16 virtue timing, 18 human silhouettes, hot peaks). Debate settled (eggs/empty nest OK).
-4. **Next PLAN is 21–25** — [home-round-21-25.md](home-round-21-25.md). **Do not generate** until teacher `go`.
+3. Bot1 audited **16–20**: no twin on 17; soft misses (16 virtue timing, 18 human silhouettes, hot peaks). Debate settled (eggs/empty nest OK). Shoot-bot **concedes 18 crowds**; **25 s3 eggs stay**.
+4. **Next PLAN is 21–25** — [home-round-21-25.md](home-round-21-25.md) (shoot-bot counters in that file). **Do not generate** until teacher `go`.
 
 ## Read in this order
 
@@ -35,12 +35,9 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 ```
 ClassNest (github.com/sh4gu4dummy-arch/classnest, main). Read docs/START-HERE.md first, then AGENTS.project.md.
 
-NOW: Home 16–20 shipped. Bot1 QA in docs/home-film-qa/AUDIT-16-20.md (17 scrap PASS; soft 16/18; fix encode peaks).
-Next PLAN: 21–25 — docs/home-round-21-25.md. Do not generate until teacher go.
-Shared QA board + debate: docs/team-qa.md. Bot1=QA, shoot-bot=executor.
+NOW: 16–20 shipped. Bot1 QA + shoot-bot counters in docs/team-qa.md (debate CLOSED — agree on babies/eggs; concede 18 crowds).
+Next PLAN 21–25: docs/home-round-21-25.md (Quietpaw–Softwing). Do not generate until teacher go.
+25 s3 has eggs — keep as objects, no chicks. Empty rooms (no humans). Virtue at t7. Probe peaks; one re-encode then lmk if still hot.
 
-21–25: Quietpaw / Hearthound / Mistfawn / Mossback / Softwing. Object props only. No humans/crowds. Virtue visible at t7. Probe loudness max before READY.
-
-DO NOT redo 01–20 unless they name ids (horrors: 02, 03, 05). Do not delete mp4s. lmk = talk only.
-Home films ARE in git. Intro/adventure are NOT.
+DO NOT redo 01–20 unless they name ids (horrors: 02, 03, 05). Home mp4s in git. lmk = talk only.
 ```

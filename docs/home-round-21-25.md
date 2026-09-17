@@ -44,37 +44,56 @@ ffmpeg -i public/avatars/ultra/homes/NN.mp4 -af volumedetect -f null - 2>&1 | te
 # Fail ship if mean < -40 OR max > -1
 ```
 
+## Shoot-bot counters on this plan (2026-09-17)
+
+**Agree** with Bot1 gates (t7 virtue, no humans/crowds, probe peaks, honest soft misses).
+
+Tweaks locked in below:
+- **25:** s3 already has **eggs**. Keep eggs (objects). Do not empty the nest; do not hatch chicks.
+- Start **already in place** (25 perched; 22 in the lodge — don’t walk through the door out of frame).
+- Limiter: **one** re-encode if max > −1 dB; if still hot, `lmk` teacher — don’t infinite-loop.
+
 ---
 
 ## 21 Quietpaw — Window Seat — stillness can be brave
 
-**s3:** Silver tabby. **Prop:** rain on glass (object: raindrop/glass). **Don't:** extra cats; no human at the window.
+**s3:** Silver tabby, rain window, lanterns, **empty room**. **Prop:** raindrop on glass. **Don't:** extra cats; no human at the window.
 
-**I2V:** Locked camera, cat large. (1) Sits on the ledge. (2) Soft paw toward **one raindrop on the glass**. (3) Curls; **face clear at t14**. Sound: rain, soft purr. Empty room — no people.
+**I2I:** This exact tabby, fills ≥40%, window seat, rain, no people. One cat.
+
+**I2V:** Locked camera, cat large, already sitting. (1) Sits on the ledge. (2) **t7:** soft paw toward **one raindrop on the glass**. (3) Curls; **face clear at t14**. Sound: rain, soft purr. Empty room — no people.
 
 ## 22 Hearthound — Hearth Lodge — welcome
 
-**s3:** Noble retriever. **Prop:** spare **blanket** (fabric object). **Don't:** extra dogs; no kids in doorway.
+**s3:** Golden retriever, fireplace, **empty chairs**. **Prop:** spare **blanket**. **Don't:** extra dogs; no kids.
 
-**I2V:** (1) Noses lodge door. (2) Fetches **one blanket** to the hearth. (3) Waits, one tail wag; face in frame. Empty lodge.
+**I2I:** This exact dog, fills ≥40%, hearth lodge, empty of people. One dog. One blanket.
+
+**I2V:** Locked camera. Already **inside** the lodge (do not go out the door). (1) Turns toward hearth. (2) **t7:** fetches **one blanket** onto the hearth. (3) Waits, one tail wag; face in frame.
 
 ## 23 Mistfawn — Mist Path — slow is allowed
 
-**s3:** Quiet stag. **Prop:** **cairn pebble**. **Don't:** extra deer.
+**s3:** Taupe stag, misty forest, **one deer**. **Prop:** **cairn pebble**. **Don't:** extra deer.
 
-**I2V:** (1) Steps into mist. (2) Hoof-nudges **one pebble** onto a cairn (t7 must show pebble/cairn). (3) Path glows faintly; face clear; stays in frame.
+**I2I:** This exact stag, fills ≥40%, mist path, one cairn in foreground. One deer.
+
+**I2V:** Locked camera. Already on the path (no long walk into mist). (1) Stands in mist. (2) **t7:** hoof-nudges **one pebble** onto the cairn. (3) Path glows faintly; face clear; stays in frame.
 
 ## 24 Mossback — Mossdock — steady beats panic
 
-**s3:** Elder turtle. **Prop:** **lily pad** (no readable clock numbers / no panic digits). **Don't:** extra turtles.
+**s3:** Mossy turtle on lily pads, **one turtle**. **Prop:** **lily pad** (no readable numbers). **Don't:** extra turtles.
 
-**I2V:** (1) Climbs dock-stone. (2) Lily settles (object). (3) Waits; head readable at t14.
+**I2I:** This exact turtle, fills ≥40%, moss dock. One turtle.
+
+**I2V:** Locked camera. Already on the stone. (1) Settles. (2) **t7:** a lily pad settles as object. (3) Waits; head readable at t14.
 
 ## 25 Softwing — White Eave — calm over sparkle
 
-**s3:** Cream dove. **Prop:** **one fallen feather** into nest. **Don't:** extra doves; nest has **no chicks**.
+**s3:** Cream dove, **eggs already in the nest** (objects). **Prop:** **one fallen feather**. **Don't:** extra doves; **no chicks** (eggs stay eggs).
 
-**I2V:** (1) Lands on eave. (2) Straightens **one feather** into empty nest. (3) Still; face/head clear. No baby birds.
+**I2I:** This exact dove, fills ≥40%, already perched, nest with eggs (not chicks). One dove.
+
+**I2V:** Locked camera. **Already perched** — do not fly in. (1) Looks at nest. (2) **t7:** straightens **one feather** into the nest (eggs remain eggs). (3) Still; head clear at t14. No baby birds.
 
 ---
 
