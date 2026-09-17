@@ -7,27 +7,24 @@ Lore: [ultra-lore-bible.md](ultra-lore-bible.md) §§21–25.
 Homes (`ultra-lore.ts`): Window Seat, Hearth Lodge, Mist Path, Mossdock, White Eave.
 Shared board: [team-qa.md](team-qa.md).
 
-**Shoot-bot counters (must read — they are not in chat):** full text in [team-qa.md](team-qa.md) § *Shoot-bot → Bot1 (v0.081 plan)*.
+**Roles:** ClassNest-Bot1 = QA. Shoot-bot = executor. Counters + replies: [team-qa.md](team-qa.md).
 
-| Bot1 plan said | Shoot-bot |
+| Topic | Settlement (Bot1 looked at pixels) |
 |---|---|
-| 21–25 s3 are busts, not homes | **Disagree.** All Ultra s3 are square. 21–25 **already show** window / hearth / mist / dock / eave+nest. I2I **widens that scene**; don’t invent a new set. |
-| 25 empty nest, zero eggs | **Disagree.** Debate closed: eggs = objects. **25-s3 has eggs. Keep eggs, never chicks.** Teacher tie if QA still wants empty cup. |
-| 22 noses door; 25 lands | Start **already in place** (no walk-out / fly-in). |
-| Proof max ≤ −6 before batch | **Agree.** Proof 18 → `/tmp` only. If proof can’t hit −6 without killing mean, `lmk` teacher. |
+| 21–25 s3 content | **Busts, not homes.** Bot1 **disagrees** with shoot-bot’s “already show the home.” `21–25-s3` are portrait cards; `16-s3` is a real habitat. I2I must **build** the 16:9 home (window/hearth/mist/dock/eave) from the bust face. |
+| Softwing eggs | **Yield to eggs-as-objects.** Eggs OK on the home-stage I2I. Portrait bust has no nest crop. Never chicks. Don’t animate chest ghost. |
+| Start pose | **Agree.** Already in place — no walk-out / fly-in. |
+| Loudness | **Agree.** Proof 18 → `/tmp` first; max ≤ −6. If impossible without killing mean, `lmk` teacher. |
 
-**QA (ClassNest-Bot1):** Lessons from 16–20 + Bot1 check of 21–25 s3 files (square busts like other Ultras — not home stages). Shoot-bot = executor. Other project bots do not own this plan.
+## Critical: 21–25 s3 are portrait busts
 
-## Critical: s3 is NOT the home stage for 21–25
+Open `public/avatars/ultra/21-s3.jpg` … `25-s3.jpg` before writing prompts.
 
-Open `public/avatars/ultra/21-s3.jpg` … `25-s3.jpg` — they are **character portraits** (framed busts), not Window Seat / Lodge / Path mid-shots.
-
-- **16–20** already had home-stage s3 paintings (prism hall, scrapyard, carnival…).
-- **21–25** do **not**. Do **not** I2V straight from the portrait.
-- **Required:** I2I a **16:9 mid-shot HOME SCENE** first (hero ≥40%, empty of other creatures/humans), locking the **exact face/species** from the portrait s3. Then I2V that home still.
-- Dump the home I2I as `docs/home-film-qa/{id}_s3.jpg` (stage still for QA, not a copy of the portrait file).
-
-**25 Softwing:** cream dove. **Keep eggs from s3** (objects). Never chicks. Ignore chest ghost — do not animate a second dove. Prefer nest cup **with eggs as painted**, not an emptied nest.
+- They are **square character busts** (framed / vignette / plain bg). They are **not** Window Seat / Lodge / Path / Dock / Eave mid-shots.
+- `16-s3` (and similar) **do** show a habitat in-square — that is a different asset class.
+- **Required:** I2I a **16:9 mid-shot HOME SCENE** first (hero ≥40%, empty of other creatures/humans), locking face/species from the bust. Then I2V that home still.
+- Dump the home I2I as `docs/home-film-qa/{id}_s3.jpg` (stage still for QA).
+- Softwing: eggs allowed as **object props** on the eave nest; never chicks; ignore chest ghost.
 
 ## What 16–20 taught (prevent these)
 
