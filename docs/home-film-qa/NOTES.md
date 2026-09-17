@@ -80,3 +80,7 @@ mp4s now in git; re-probed + opened frames. Full table: [team-qa.md](../team-qa.
 - **08 / 10 / 11–15:** keep / pass (11–15 table also in AUDIT-11-15).
 - **09:** picture OK; **fail loudness** (−53).
 - Next plan improved: [home-round-16-20.md](../home-round-16-20.md). Shared board: [team-qa.md](../team-qa.md).
+
+## Bot1 QA 16–20 (2026-09-17)
+
+Full table: [AUDIT-16-20.md](AUDIT-16-20.md). Tried to fail 17 — **no second beetle**. Soft: 16 virtue@t11, 18 human silhouettes, peaks ~0 dB. Next plan: [home-round-21-25.md](../home-round-21-25.md).

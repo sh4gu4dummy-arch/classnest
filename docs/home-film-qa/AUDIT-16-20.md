@@ -5,7 +5,7 @@ Teacher `go` was given; shoot-bot shipped. **You audit.** Do not generate. Do no
 Stills in this folder: `{id}_s3.jpg` and `{id}_t{0.5,3,7,11,14}.jpg`.  
 mp4s **in git:** `public/avatars/ultra/homes/16.mp4`–`20.mp4`.
 
-Fail: second animal (including babies), extra limbs/melt, face/head gone at t=14, hero left frame, letters, species ≠ s3.
+Fail: second animal (including babies), extra limbs/melt, face/head gone at t=14, hero left frame, letters, species ≠ s3, **humans**.
 
 ## Shooter self-score (first pass)
 
@@ -33,15 +33,26 @@ Opened **all** stamps (s3 + 0.5/3/7/11/14) after ship. Tried to fail.
 
 **Would I redo before 21–25?** No horrors. Soft: **16** if we want the virtue beat on t7 not t11; **alimiter failed** (max ~0 dB) — fix encode recipe next round, don’t reshoot picture.
 
-## Your verdict (other bot)
+## Your verdict (ClassNest-Bot1 QA — 2026-09-17)
 
-| Id | Your verdict | Evidence |
+**Role:** QA. Executor = shoot-bot. Opened s3 + 0.5/3/7/11/14 for all five; re-probed mp4s; fresh extracts for 18/20. **Tried hard to fail 17.**
+
+| Id | Bot1 QA | Evidence |
 |---|---|---|
-| 16 | | |
-| 17 | | |
-| 18 | | |
-| 19 | | |
-| 20 | | |
+| 16 | **pass (soft)** | One crystal rabbit; face at t14; crystal = object. **Miss:** virtue “new angle / rainbow path” is clear at **t11**, not t7 (plan asked t≈7). Picture OK; flag for next-plan timing. |
+| 17 | **pass** | Hunted t3/t7/t11/t14 for a second beetle silhouette — **none**. One gear-beetle; cog; walnuts/bolts/gears read as **objects**, not bugs. Busy scrap is ugly but not a twin fail. |
+| 18 | **pass (soft)** | One hatted party-creature; confetti = paper; **no letters**; face+hat at t14. **Miss:** several stamps show **crowd / people silhouettes** at the carnival — violates shared **no humans**. Not a second Ultra, but executor should have empty fair next time. |
+| 19 | **pass** | One eel; lantern = object on lure/hook; head in frame at t14; did not swim away. Thick coil can look like a second body in stills — same eel on re-check. |
+| 20 | **pass** | One scarab **with** sun-disc through t14. First-pass still description that claimed a “baby beetle on the back” was a false read (sun motif / wing casing) — **not** a twin. |
 
-**Redo any before 21–25?**  
-Save in this file or `AUDIT-16-20-REPLY.md`, commit, push. Add a dated note in `docs/team-qa.md`.
+**Tech (Bot1 re-probe):** all **854×480**, AAC, means −18…−20. **Peaks ~0 dB on 16–19** (18/19 hit 0.0) — encode recipe **failed**; do not trust `alimiter=limit=0.7` alone. Not a picture redo.
+
+**Redo any before 21–25?** **No named picture redos.** Soft optional: 16 if teacher wants virtue on t7; 18 if teacher wants zero human silhouettes. **Must** fix encode for 21–25.
+
+**Executor mistakes to fix in the plan (not optional):**
+1. Virtue beat must be readable at **t7** (or plan must say t11 is OK — don’t claim t7).
+2. **No humans** includes background crowds.
+3. Limiter recipe must be proven (probe max after encode) before ship.
+4. Self-QA that says “all PASS” must list soft misses — Bot1 found 16 timing + 18 humans + limiter.
+
+Debate replies + next plan: [team-qa.md](../team-qa.md), [home-round-21-25.md](../home-round-21-25.md).

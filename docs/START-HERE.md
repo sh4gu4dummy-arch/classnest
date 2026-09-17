@@ -4,10 +4,10 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 
 ## What just happened (2026-09-17)
 
-1. Home films **01–20** on disk and in git. **01–05** messy; **06–10** mixed; **11–15** Bot1 pass; **16–20 just shipped** (v0.072). **Do not redo** until `go redo …`.
-2. Lore bible: [ultra-lore-bible.md](ultra-lore-bible.md).
-3. **Current job for other bot: AUDIT 16–20** — [home-film-qa/AUDIT-16-20.md](home-film-qa/AUDIT-16-20.md). Stills in that folder. Board: [team-qa.md](team-qa.md).
-4. **Do not generate 21–25** until teacher `go`.
+1. Home films **01–20** on disk / in git under `public/avatars/ultra/homes/`. **01–05** messy; **11–15** and **16–20** shipped.
+2. **Bot1 = QA**, shoot-bot = executor. Shared board: [team-qa.md](team-qa.md).
+3. Bot1 audited **16–20**: no twin on 17; soft misses (16 virtue timing, 18 human silhouettes, hot peaks). Debate settled (eggs/empty nest OK).
+4. **Next PLAN is 21–25** — [home-round-21-25.md](home-round-21-25.md). **Do not generate** until teacher `go`.
 
 ## Read in this order
 
@@ -15,11 +15,12 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 |---|---|---|
 | 1 | This file | Orientation |
 | 2 | `AGENTS.project.md` | Standing rules (`lmk` = talk only, git, Home sound exception) |
-| 3 | [home-film-qa/AUDIT-16-20.md](home-film-qa/AUDIT-16-20.md) | **Current job = audit 16–20** |
-| 4 | [ultra-lore-bible.md](ultra-lore-bible.md) | Virtue + 3-beat seed per id |
-| 5 | [ultra-home-films.md](ultra-home-films.md) | Recipe, ffmpeg, QA gate |
-| 6 | [home-film-qa/NOTES.md](home-film-qa/NOTES.md) | What failed last time (stills in that folder) |
-| 7 | [team-qa.md](team-qa.md) | **Shared QA board** — Bot1 + shoot bot notes, fail rules, disagreements |
+| 3 | [home-round-21-25.md](home-round-21-25.md) | **Next shoot (wait for `go`)** |
+| 3b | [home-film-qa/AUDIT-16-20.md](home-film-qa/AUDIT-16-20.md) | Bot1 QA of last batch |
+| 4 | [team-qa.md](team-qa.md) | Shared QA board + debate |
+| 5 | [ultra-lore-bible.md](ultra-lore-bible.md) | Virtue + 3-beat seed per id |
+| 6 | [ultra-home-films.md](ultra-home-films.md) | Recipe, ffmpeg, QA gate |
+| 7 | [home-film-qa/NOTES.md](home-film-qa/NOTES.md) | Older stills / horrors |
 
 ## Hard stops
 
@@ -34,11 +35,12 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 ```
 ClassNest (github.com/sh4gu4dummy-arch/classnest, main). Read docs/START-HERE.md first, then AGENTS.project.md.
 
-NOW: Home 16–20 SHIPPED. Shoot-bot self-QA (team-qa rules): all five picture PASS — docs/home-film-qa/AUDIT-16-20.md.
-YOUR JOB: (1) AUDIT 16–20 — try to FAIL 17 scrap. (2) REPLY to the Debate in docs/team-qa.md.
-If you two still disagree after a round, lmk the teacher — they break the tie. Don’t skip the debate.
+NOW: Home 16–20 shipped. Bot1 QA in docs/home-film-qa/AUDIT-16-20.md (17 scrap PASS; soft 16/18; fix encode peaks).
+Next PLAN: 21–25 — docs/home-round-21-25.md. Do not generate until teacher go.
+Shared QA board + debate: docs/team-qa.md. Bot1=QA, shoot-bot=executor.
 
-Do not generate 21–25 until teacher go. Do not redo 01–15 unless they name ids (horrors: 02, 03, 05).
-No baby/second animals. Stay in frame t=14. Home mp4s ARE in git. Intro/adventure are NOT. lmk = talk only.
+21–25: Quietpaw / Hearthound / Mistfawn / Mossback / Softwing. Object props only. No humans/crowds. Virtue visible at t7. Probe loudness max before READY.
+
+DO NOT redo 01–20 unless they name ids (horrors: 02, 03, 05). Do not delete mp4s. lmk = talk only.
+Home films ARE in git. Intro/adventure are NOT.
 ```
-
