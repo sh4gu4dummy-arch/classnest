@@ -13,7 +13,8 @@ Read this before changing ClassNest. Direct chat instructions still win.
 - Catalog intros/adventures are **silent on purpose**. **Home films**
   (`public/avatars/ultra/homes/`) are the exception: they keep diegetic
   sound. Recipe + QA stills: `docs/ultra-home-films.md` and
-  `docs/home-film-qa/NOTES.md`. Do not generate or remake until the
+  `docs/home-film-qa/NOTES.md`. Full legend stories for films:
+  `docs/ultra-lore-bible.md`. Do not generate or remake until the
   teacher says `go`. Do not delete current Home mp4s without a yes.
 
 ## Other standing rules

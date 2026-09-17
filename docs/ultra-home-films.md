@@ -7,6 +7,8 @@ mp4s are **not** in git (teacher backup). Posters (jpg) may be committed.
 
 **Do not generate the next batch until the teacher says `go` on this recipe.**
 
+**Lore for every Ultra (shoot bible, 01–75):** [docs/ultra-lore-bible.md](ultra-lore-bible.md) — origin, virtue, 3-beat Home seed, prop, don'ts.
+
 ## Status (read this first)
 
 | Ids | Code | Quality | Action |
