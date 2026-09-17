@@ -1,6 +1,6 @@
 {
   "name": "classnest",
-  "version": "0.057",
+  "version": "0.058",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -20,7 +20,6 @@
     "pack:code": "node scripts/build-portable.mjs --code-only",
     "pack:portable": "node scripts/build-portable.mjs --portable",
     "pack:avatars": "node scripts/build-portable.mjs --avatars"
-
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.3",
