@@ -42,6 +42,11 @@ Then this file. Direct chat instructions still win.
   The Android keystore **is** tracked (private hobby app; needed to sign
   the same APK).
 
+- **Handoff habit:** When you change bot-facing docs or finish a batch, give
+  the teacher a **copy-paste message for the next bot** (where to start,
+  current job, what not to do). Keep that blurb in sync with
+  `docs/START-HERE.md` (section “Paste this to the next bot”).
+
 - Remind about a git commit if it has been a while — but current rule is
   commit each change.
 - Sounds on by default; no first-run sound pop-up.

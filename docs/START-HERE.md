@@ -27,3 +27,16 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 - `lmk` = do not edit.
 - mp4s gitignored; posters jpg OK; no Grok sandbox files on GitHub.
 - After a pass: `ULTRA_HOME_READY`, version bump, `npm run pack:code`, `sh scripts/push-github.sh`.
+
+## Paste this to the next bot
+
+```
+ClassNest (github.com/sh4gu4dummy-arch/classnest, main). Read docs/START-HERE.md first, then AGENTS.project.md.
+
+NOW: Home films 11–15 are PLANNED only. Do not generate until the teacher says go. Prompts: docs/home-round-11-15.md. Lore: docs/ultra-lore-bible.md. Recipe/QA: docs/ultra-home-films.md and docs/home-film-qa/NOTES.md.
+
+DO NOT redo Home 01–10 unless they name those ids. Do not delete mp4s without a yes. lmk = talk only, no edits.
+
+Homes on disk: public/avatars/ultra/homes/01–10.mp4 (gitignored). Posters jpg are in git.
+```
+
