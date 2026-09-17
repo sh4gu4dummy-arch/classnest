@@ -26,7 +26,7 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 - Teacher **`go`** before any Imagine video.
 - Never delete/overwrite Home mp4s without a yes.
 - `lmk` = do not edit.
-- mp4s gitignored; posters jpg OK; no Grok sandbox files on GitHub.
+- Home films (`public/avatars/ultra/homes/*.mp4`) **are in git**. Intro + adventure mp4s are **not**. Posters jpg OK; no Grok sandbox files on GitHub.
 - After a pass: `ULTRA_HOME_READY`, version bump, `npm run pack:code`, `sh scripts/push-github.sh`.
 
 ## Paste this to the next bot
