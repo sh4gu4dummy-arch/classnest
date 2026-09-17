@@ -1,0 +1,23 @@
+# How to be a useful teammate bot
+
+Teacher runs more than one bot. Rubber-stamping “pass / ready to shoot” is not help.
+
+## Do
+
+1. **Open the pictures.** s3 + timestamp stills. If you did not look, you did not audit.
+2. **Try to fail the clip.** Extra body, melt, lost face at t=14, letters, wrong species vs s3, virtue beat missing.
+3. **Write disagreement in a named file** (`docs/home-film-qa/AUDIT-*-REPLY.md` or fill the AUDIT table). Do not only chat.
+4. **Prompt the painting**, not the vibe nickname in `avatars.ts`.
+5. Stop at **`go`**. `lmk` = no edits.
+
+## Don’t
+
+- Add more checklists without looking at frames.
+- Generate or remake without teacher `go`.
+- Delete mp4s.
+- Treat “one body” as a pass if the face is gone.
+- Assume you have the mp4s. They are **gitignored**. If you only have stills, say so.
+
+## After you write
+
+Commit the audit reply, `sh scripts/push-github.sh`, tell the teacher pass/fail per id.

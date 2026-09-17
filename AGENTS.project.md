@@ -42,6 +42,11 @@ Then this file. Direct chat instructions still win.
   The Android keystore **is** tracked (private hobby app; needed to sign
   the same APK).
 
+- **Teammate bots:** After a Home batch, the job is **audit**, not another
+  process doc. Look at `docs/home-film-qa/` stills (include s3 vs timestamps).
+  Write pass/fail in `AUDIT-*-REPLY.md` or the AUDIT table. Try to fail the
+  clip. Do not generate. See `docs/BOT-TEAM.md`.
+
 - **Handoff habit:** When you change bot-facing docs or finish a batch, give
   the teacher a **copy-paste message for the next bot** (where to start,
   current job, what not to do). Keep that blurb in sync with
