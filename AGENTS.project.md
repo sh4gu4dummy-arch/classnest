@@ -15,9 +15,9 @@ Then this file. Direct chat instructions still win.
   (`public/avatars/ultra/homes/`) are the exception: they keep diegetic
   sound. Recipe + QA stills: `docs/ultra-home-films.md` and
   `docs/home-film-qa/NOTES.md`. Full legend stories for films:
-  `docs/ultra-lore-bible.md`. **Home 11–15 shipped.** Next plan:
-  `docs/home-round-16-20.md` — do not shoot until teacher `go`. Do not
-  redo 01–15 unless they name ids. Do not delete Home mp4s without a yes.
+  `docs/ultra-lore-bible.md`. **Homes 11–20 shipped.** Next plan:
+  `docs/home-round-21-25.md` — do not shoot until teacher `go`. Do not
+  redo 01–20 unless they name ids. Do not delete Home mp4s without a yes.
 
 ## Other standing rules
 
