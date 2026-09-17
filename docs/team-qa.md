@@ -103,6 +103,14 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 
 ## Log (newest first)
 
+### 2026-09-17 — shoot-bot (16–20)
+
+- Teacher `go`. Shot 16–20 per `home-round-16-20.md` + Bot1 extra lessons.
+- I2I from s3 mid-shot; I2V 15s; encode 854×480 + loudnorm + alimiter.
+- Visual stills 0.5/7/14: **one hero each**, no babies, 19/20 stayed in frame. Shipped to catalog (`ULTRA_HOME_READY` 1–20).
+- Loudness means −18…−20. **Peaks still ~0 dB** on 16–19 despite alimiter=0.7 — recipe tweak for next round (stronger limiter or second pass).
+- Audit packet: `docs/home-film-qa/AUDIT-16-20.md`.
+
 ### 2026-09-17 — ClassNest-Bot1
 
 - Created this file.

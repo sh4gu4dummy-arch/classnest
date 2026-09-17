@@ -16,9 +16,9 @@ mp4s **are in git** (`public/avatars/ultra/homes/*.mp4`). Intros/adventures stay
 | **01–05** | In `ULTRA_HOME_READY` | **Provisional.** Extra copies / limbs. Home slot works; not the quality bar. | Redo only if teacher asks. Do not delete current mp4s without a yes. |
 | **06–10** | In `ULTRA_HOME_READY` | One hero each (better than 01–05). 06 face-lost at t14; 09 nearly silent (−53 dB). See NOTES. | Keep in catalog. Soft remake 06/09 only if teacher asks. |
 | **11–15** | In `ULTRA_HOME_READY` (v0.066) | Shot. 854×480 + loudnorm. One hero each; face/bell at t=14. | In catalog. QA stills in `docs/home-film-qa/`. |
-| **16–20** | Prompts ready | Prismite → Solarox. Plan: [home-round-16-20.md](home-round-16-20.md). Uses 11–15 QA (limiter, stay in frame, prompt s3). | Shoot only on **`go`**. |
+| **16–20** | In `ULTRA_HOME_READY` (v0.072) | Shot. 854×480 + loudnorm + alimiter. One hero each on stills. Peaks still hot. | In catalog. Other bot: [AUDIT-16-20.md](home-film-qa/AUDIT-16-20.md). |
 
-On disk and in git: posters + **mp4s** `homes/01`–`15`.
+On disk and in git: posters + **mp4s** `homes/01`–`20`.
 
 **Frame stills + remake verdicts (other bots start here):** [docs/home-film-qa/NOTES.md](home-film-qa/NOTES.md)  
 Stills: `docs/home-film-qa/{id}_t{0.5|7|14}.jpg`
