@@ -48,10 +48,9 @@ Then this file. Direct chat instructions still win.
   Write pass/fail in `AUDIT-*-REPLY.md` or the AUDIT table. Try to fail the
   clip. Do not generate. See `docs/BOT-TEAM.md`.
 
-- **Handoff habit:** When you change bot-facing docs or finish a batch, give
-  the teacher a **copy-paste message for the next bot** (where to start,
-  current job, what not to do). Keep that blurb in sync with
-  `docs/START-HERE.md` (section “Paste this to the next bot”).
+- **Handoff:** Keep `docs/START-HERE.md` current (job, don’ts, last QA). **Do not**
+  dump a click-to-copy blurb in chat unless the teacher asks. Other bots read
+  START-HERE. `lmk` fails from the other bot in chat (hard fails vs soft).
 
 - Remind about a git commit if it has been a while — but current rule is
   commit each change.

@@ -30,14 +30,4 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 - Home films (`public/avatars/ultra/homes/*.mp4`) **are in git**. Intro + adventure mp4s are **not**. Posters jpg OK; no Grok sandbox files on GitHub.
 - After a pass: `ULTRA_HOME_READY`, version bump, `npm run pack:code`, `sh scripts/push-github.sh`.
 
-## Paste this to the next bot
-
-```
-ClassNest (github.com/sh4gu4dummy-arch/classnest, main). Read docs/START-HERE.md first, then AGENTS.project.md.
-
-NOW: 16–20 shipped. Bot1 QA + shoot-bot counters in docs/team-qa.md (debate CLOSED — agree on babies/eggs; concede 18 crowds).
-Next PLAN 21–25: docs/home-round-21-25.md (Quietpaw–Softwing). Do not generate until teacher go.
-25 s3 has eggs — keep as objects, no chicks. Empty rooms (no humans). Virtue at t7. Probe peaks; one re-encode then lmk if still hot.
-
-DO NOT redo 01–20 unless they name ids (horrors: 02, 03, 05). Home mp4s in git. lmk = talk only.
-```
+**This file is the handoff.** Keep it current. Do not paste a duplicate blurb in chat unless the teacher asks.
