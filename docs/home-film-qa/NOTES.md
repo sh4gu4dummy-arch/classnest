@@ -57,4 +57,17 @@ Same 3-beat / one-hero / mid-shot prompts. Plus:
 - Fail extra silhouette even if “maybe scenery.”
 - One id at a time if the last two batches still morph.
 
-Suggested redo order if teacher says `go redo horrors`: **02 → 03 → 05**. Then 01, 04. Then 06 (face) and 09 (sound).
+## Round 11–15 (shot 2026-09-17, v0.066)
+
+Encoded 854×480, AAC + loudnorm. Frames in this folder.
+
+| Id | Pass? | 0.5 / 7 / 14 | Loudness mean / max |
+|---|---|---|---|
+| 11 Quillburst | **ship** | One gold peacock. Heart on page at t7. Face at t14. | −24 / −0.9 (peak hot; mean OK) |
+| 12 Tidalkin | **ship** | One jelly. Tiny face in bell all three stamps. Kelp at t7. | −18 / −2.0 |
+| 13 Hexabyte | **ship** | One fox, keyboard on back, cube, face at t14. | −21 / −4.1 |
+| 14 Bonehollow | **ship** | One owl, ribbon in beak at t7, head at t14. Kind. | −19 / −3.4 |
+| 15 Sapwood | **ship** | One deer stays in frame. Stump/leaf. Face at t14. | −23 / −1.9 |
+
+No extra animals. No 01–10 remakes. Next: teacher `go` on 16–20 or named redos.
+

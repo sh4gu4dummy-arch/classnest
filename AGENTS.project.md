@@ -15,10 +15,10 @@ Then this file. Direct chat instructions still win.
   (`public/avatars/ultra/homes/`) are the exception: they keep diegetic
   sound. Recipe + QA stills: `docs/ultra-home-films.md` and
   `docs/home-film-qa/NOTES.md`. Full legend stories for films:
-  `docs/ultra-lore-bible.md`. **Next Home batch (do not shoot until `go`):**
-  `docs/home-round-11-15.md` (ids 11–15). Do not generate or remake until the
-  teacher says `go`. Do not redo 01–10 unless they name those ids. Do not
-  delete current Home mp4s without a yes.
+  `docs/ultra-lore-bible.md`. **Home 11–15 shipped.** Next batch only after
+  teacher `go` (likely 16–20). Do not generate or remake until `go`. Do not
+  redo 01–10 unless they name those ids. Do not delete current Home mp4s
+  without a yes. Counter-feedback vs Bot1: `docs/START-HERE.md`.
 
 ## Other standing rules
 
