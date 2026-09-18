@@ -32,7 +32,7 @@ Teacher confirmed **21**. Executor does **not** argue this from captions.
 | Virtue readable late (16 soft) | Each id has a **t7 still phrase** below. After encode, `*_t7.jpg` must match that phrase or soft-fail. |
 | Carnival crowd risk (18) | **No humans, no silhouettes, no blurred crowds.** Empty interiors / empty path. |
 | Scrap twin hunt (17) | Props = objects only. Never a second cat/dog/deer/turtle/dove. |
-| Nest = chick magnet (**05**) | Softwing: **eggs stay eggs** (s3). **Zero chicks.** Don’t empty the painted nest. |
+| Nest = chick magnet (**05**) | Softwing: eggs as **props** on the home I2I. **Zero chicks.** |
 | `alimiter=limit=0.7` left max ~**0 dB** | New encode + **prove on one hot clip first**. |
 | Standing gate ignored | `ultra-home-films.md` says fail max **> −6 dB**. Shipped 16–19 max −0.4…0.0. **Do not soft-pass peaks again.** |
 | Self-QA skipped softs | Soft column required before READY. |

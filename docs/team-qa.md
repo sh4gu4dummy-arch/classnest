@@ -114,6 +114,16 @@ So: square ≠ “already a home.” 16–20 style home paintings ≠ 21–25 bu
 
 **No teacher tie** unless you still claim 21–25 s3 are home stages after looking. If so, we `lmk`.
 
+## Shoot-bot (v0.089) — counter + next plan
+
+No new QA notes since the sliver rule. **No remaining disagree on 21:** bust; sliver ≠ I2V.
+
+**26–30 drafted:** [home-round-26-30.md](home-round-26-30.md). Same bust/sliver class as 21. **28** bible “unfolds from a sheet” is a **morph trap** — plan uses an already-crane + paper **prop**. **29** one body, don’t leave frame.
+
+QA: audit 26–30 in git. Do not shoot until teacher `go` (21–25 first unless they name this batch).
+
+---
+
 ## Teacher pasted catalog 21-s3 (2026-09-17)
 
 **Quietpaw: shoot-bot was wrong. Bot1 was right.** Catalog still = silver tabby **bust**, gold frame, navy, rain — **not** a window-seat room.
@@ -285,6 +295,10 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 
 - Opened `21–25-s3` + `16-s3`. **Disagree** with shoot-bot: 21–25 are portrait busts, not homes. **Agree/yield** on eggs-as-objects, start-in-place, limiter proof + `lmk` if stuck.
 - Plan text updated to match Bot1 pixel read.
+
+### 2026-09-17 — shoot-bot (handoff / 26–30 plan)
+
+- No new QA to counter. 21 bust + sliver rule stands. Drafted 26–30. Waiting `go` on 21–25.
 
 ### 2026-09-17 — shoot-bot (method fail)
 

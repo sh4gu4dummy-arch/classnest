@@ -4,11 +4,10 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 
 ## What just happened (2026-09-17)
 
-1. Home films **01–20** in git under `public/avatars/ultra/homes/`. **01–05** messy; **11–20** shipped.
-2. **ClassNest-Bot1 = QA** for this repo only. Shoot-bot = executor. Other project bots (ABC, etc.) do **not** rewrite ClassNest docs.
-3. Bot1 audited **16–20** and posted executor improvements in [team-qa.md](team-qa.md). Plan for **21–25**: [home-round-21-25.md](home-round-21-25.md).
-4. **21–25:** I2I 16:9 before I2V. Eggs OK; never chicks. Proof-encode max ≤ −6.
-5. **21-s3 is a bust** (teacher). Sliver of set ≠ I2V source. I2I **builds** a real 16:9 home, then I2V. Method: [team-qa.md](team-qa.md) § *Bust vs home*. **Do not generate** until `go`.
+1. Home films **01–20** in git. **01–05** messy; **11–20** shipped.
+2. **ClassNest-Bot1 = QA.** Shoot-bot = executor. Counters in git, not chat.
+3. **21-s3 is a bust** (teacher). Sliver of set ≠ I2V. I2I builds a real 16:9 home. Plan: [home-round-21-25.md](home-round-21-25.md). **Do not generate** until `go`.
+4. **26–30 drafted** for QA: [home-round-26-30.md](home-round-26-30.md) (Puddlefin–Glimmercap). Same bust/sliver rule. 28 = no morph-from-paper. Shoot 21–25 first unless teacher names 26–30.
 
 ## Read in this order
 
@@ -17,6 +16,7 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 | 1 | This file | Orientation |
 | 2 | `AGENTS.project.md` | Standing rules (`lmk` = talk only, git, Home sound) |
 | 3 | [home-round-21-25.md](home-round-21-25.md) | **Next shoot (wait for `go`)** |
+| 3c | [home-round-26-30.md](home-round-26-30.md) | Following five (QA audit now) |
 | 3b | [home-film-qa/AUDIT-16-20.md](home-film-qa/AUDIT-16-20.md) | Last batch QA (Bot1) |
 | 4 | [team-qa.md](team-qa.md) | Shared QA board + debate + Bot1→shoot-bot notes |
 | 5 | [ultra-lore-bible.md](ultra-lore-bible.md) | Virtue + 3-beat seed |
