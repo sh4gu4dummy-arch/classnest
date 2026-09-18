@@ -3,7 +3,7 @@
 **Trial-first = 31.** 32–35 **not shot** (twin lock).
 
 Stills: `31_s3.jpg` (I2I gate — one owl, ≥50%, battlement) + `31_t*`.  
-`public/avatars/ultra/homes/31.mp4` on disk. **Not READY.**
+`public/avatars/ultra/homes/31.mp4` on disk. **In catalog (v0.100)** so the teacher can watch. Remake later — not a quality pass.
 
 ## 31 Rookplate — two I2V takes
 

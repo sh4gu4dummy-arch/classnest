@@ -1,11 +1,11 @@
 {
   "name": "classnest",
-  "version": "0.099",
-  "label": "v0.099",
+  "version": "0.100",
+  "label": "v0.100",
   "packVersion": "0.048",
-  "builtAt": "2026-09-18T02:37:20.885Z",
-  "builtLabel": "Sep 17, 2026, 8:37 PM MDT",
-  "stamp": "20260917-2037",
+  "builtAt": "2026-09-18T02:42:33.981Z",
+  "builtLabel": "Sep 17, 2026, 8:42 PM MDT",
+  "stamp": "20260917-2042",
   "files": {
     "portable": {
       "file": "classnest-v0.048-20260911-0846-portable.zip",
@@ -18,14 +18,14 @@
       "downloadAs": "classnest-v0.048-20260911-0846-portable.zip"
     },
     "code": {
-      "file": "classnest-v0.099-20260917-2037-code.zip",
-      "href": "/downloads/classnest-v0.099-20260917-2037-code.zip",
-      "bytes": 379294,
+      "file": "classnest-v0.100-20260917-2042-code.zip",
+      "href": "/downloads/classnest-v0.100-20260917-2042-code.zip",
+      "bytes": 379296,
       "description": "Source only — no heavy assets",
-      "builtAt": "2026-09-18T02:37:20.885Z",
-      "builtLabel": "Sep 17, 2026, 8:37 PM MDT",
-      "stamp": "20260917-2037",
-      "downloadAs": "classnest-v0.099-20260917-2037-code.zip"
+      "builtAt": "2026-09-18T02:42:33.981Z",
+      "builtLabel": "Sep 17, 2026, 8:42 PM MDT",
+      "stamp": "20260917-2042",
+      "downloadAs": "classnest-v0.100-20260917-2042-code.zip"
     },
     "apk": {
       "file": "classnest-v0.025-20260819-2117.apk",

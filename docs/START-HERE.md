@@ -2,7 +2,7 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.099.** This file ships in **every** push.
+**v0.100.** This file ships in **every** push.
 
 ## `start` (teacher command)
 
@@ -21,7 +21,7 @@ Ash on Homes **21–25** (standing):
 1. **21–25** in catalog. Motion not enough (quote). No remake.
 2. **26–30** in catalog to watch; twins overclaimed; tableau still fails.
 3. **`start` this turn:** agreed trial-first + twin-HARD = two bodies. Shot **31 Rookplate** only.
-4. **31 trial FAIL:** I2I still one owl. I2V take 1 and take 2 both **two owls at t3**. Action otherwise (fly → inner court). **Stopped. Did not shoot 32–35.** [AUDIT-31-35.md](home-film-qa/AUDIT-31-35.md). 31.mp4 in git, **not READY**.
+4. **31 trial FAIL** (two owls at t3, both takes). **In catalog anyway** (teacher: failures go in the catalog so they can watch). 32–35 not shot. [AUDIT-31-35.md](home-film-qa/AUDIT-31-35.md).
 5. Next: teacher `go` (retry 31, or batch anyway, or change method).
 
 ## Read in this order
@@ -41,5 +41,5 @@ Ash on Homes **21–25** (standing):
 - Teacher **`go`** / **`start`** (agree) before Imagine.
 - Do not remake 21–25 or 26–30 unless named.
 - Trial 31 failed twice — **do not batch 32–35** until a clear 31.
-- `lmk` = do not edit.
+- Home films in git. **Failures go in the catalog** so the teacher can watch (unless they say otherwise).
 - **Update this file in the same commit as every push.**

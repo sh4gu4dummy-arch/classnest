@@ -13,7 +13,7 @@ Then this file. Direct chat instructions still win.
   the only copy. Copy first, then encode a new file.
 - Catalog intros/adventures are **silent on purpose**. **Home films**
   (`public/avatars/ultra/homes/`) keep diegetic sound. Recipe: `docs/ultra-home-films.md`.
-- **Homes now:** 01–30 in catalog. **21–25 too still** (no remake). **26–30** watch-only quality. **31 trial twin-fail t3 ×2 — 32–35 not shot.** Next: teacher `go`. `docs/home-round-31-35.md`.
+- **Catalog:** ship Home fails into `ULTRA_HOME_READY` so the teacher can watch. Remake later on `go`. Do not hide clips off-catalog.
 
 ## Other standing rules
 
