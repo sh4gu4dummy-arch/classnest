@@ -2,10 +2,12 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
+**v0.095.** This file ships in **every** push (`push-github.sh` refuses otherwise).
+
 ## What just happened (2026-09-17)
 
-1. Home films **01–25** in catalog. **26–30 were shot but FAILED self-QA (extra animals mid/end).** mp4s in git, **not** READY.
-2. QA: [home-film-qa/AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md). Do not generate a remake until teacher `go` names ids.
+1. Home films **01–25** in catalog. **26–30 shot, self-QA FAIL (extra animals mid/end).** mp4s in git, **not** READY.
+2. QA: [home-film-qa/AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md). Remake only on teacher `go` (name ids or all five).
 3. 21–25 stay shipped. Do not delete 26–30 mp4s without a yes.
 
 ## Read in this order
@@ -29,5 +31,6 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 - `lmk` = do not edit.
 - Home films (`public/avatars/ultra/homes/*.mp4`) **are in git**. Intro + adventure mp4s are **not**.
 - After a pass: `ULTRA_HOME_READY`, version bump, `npm run pack:code`, `sh scripts/push-github.sh`.
+- **Update this file in the same commit as every push** (version + current job + wait).
 
-**This file is the handoff.** Keep it current. Do not paste a duplicate blurb in chat unless the teacher asks.
+**This file is the handoff.** Do not paste a duplicate blurb in chat unless the teacher asks.

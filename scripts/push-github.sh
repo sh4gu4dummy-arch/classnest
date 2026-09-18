@@ -29,6 +29,12 @@ if [ -n "$forbidden" ]; then
   echo "Remove them with: git rm -r --cached <paths>" >&2
   exit 1
 fi
+# Teacher: START-HERE is the handoff. Every push commit must include it.
+if ! git diff --name-only HEAD~1 HEAD 2>/dev/null | grep -qx 'docs/START-HERE.md'; then
+  echo "Refusing push: docs/START-HERE.md not in this commit." >&2
+  echo "Update the handoff (version + current job + wait) in the same commit, then retry." >&2
+  exit 1
+fi
 
 GIT_ASKPASS="$ASK" SSH_ASKPASS="$ASK" GIT_TERMINAL_PROMPT=1 \
   git -c credential.helper= push origin HEAD:main "$@"

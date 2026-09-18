@@ -12,12 +12,8 @@ Then this file. Direct chat instructions still win.
 - Do not strip audio from a video that already has it. Do not re-encode over
   the only copy. Copy first, then encode a new file.
 - Catalog intros/adventures are **silent on purpose**. **Home films**
-  (`public/avatars/ultra/homes/`) are the exception: they keep diegetic
-  sound. Recipe + QA stills: `docs/ultra-home-films.md` and
-  `docs/home-film-qa/NOTES.md`. Full legend stories for films:
-  `docs/ultra-lore-bible.md`. **Homes 11–20 shipped.** Next plan:
-  `docs/home-round-21-25.md` — do not shoot until teacher `go`. Do not
-  redo 01–20 unless they name ids. Do not delete Home mp4s without a yes.
+  (`public/avatars/ultra/homes/`) keep diegetic sound. Recipe: `docs/ultra-home-films.md`.
+- **Homes now:** 01–25 in catalog. **26–30 shot, twins, not READY.** Next: teacher `go` to remake named ids. Do not delete Home mp4s without a yes.
 
 ## Other standing rules
 
@@ -48,10 +44,10 @@ Then this file. Direct chat instructions still win.
   Write pass/fail in `AUDIT-*-REPLY.md` or the AUDIT table. Try to fail the
   clip. Do not generate. See `docs/BOT-TEAM.md`.
 
-- **Handoff / counters:** Keep `docs/START-HERE.md` current. Put **all**
-  agree/disagree with the other bot in **git docs** (`team-qa.md` and the
-  current round plan). They cannot read chat. Never leave counter-feedback
-  only in the teacher thread. `lmk` hard vs soft fails in chat.
+- **Handoff:** `docs/START-HERE.md` **in the same commit as every push.**
+  `scripts/push-github.sh` refuses the push if that file is missing from
+  HEAD. Write: version, what just shipped, current wait (`go` / QA / stop).
+  Counters live in git (`team-qa.md` + the round plan), not only chat.
 
 - Remind about a git commit if it has been a while — but current rule is
   commit each change.
