@@ -11,20 +11,19 @@ Shared board: [team-qa.md](team-qa.md).
 
 | Topic | Status |
 |---|---|
-| 21–25 s3 content | **Teacher: 21 is a bust** (catalog paste). Shoot-bot conceded. Treat 21–25 s3 as portraits; I2I **builds** the 16:9 home. |
-| Softwing eggs | **Agree** — eggs OK as **props** on the home I2I; never chicks. (Portrait may not show a nest.) |
-| Start pose | **Agree.** Already in place. |
-| Loudness | **Agree.** Proof 18 → `/tmp`; max ≤ −6 or `lmk`. |
+| 21–25 s3 | **Portraits / busts.** Teacher catalog 21 = framed cat, not Window Seat. Shoot-bot conceded; caption method banned. I2I **builds** 16:9 home from the face. |
+| Softwing eggs | Props on the **home I2I**, never chicks. Do not assume eggs are on the bust crop. |
+| Start pose | Already in place — no walk-out / fly-in. |
+| Loudness | Proof 18 → `/tmp`; max ≤ −6 or `lmk`. |
 
 ## Critical: 21–25 s3 are portrait busts
 
-Open `public/avatars/ultra/21-s3.jpg` … `25-s3.jpg` before writing prompts.
+Teacher confirmed **21**. Executor does **not** argue this from captions.
 
-- They are **square character busts** (framed / vignette / plain bg). They are **not** Window Seat / Lodge / Path / Dock / Eave mid-shots.
-- `16-s3` (and similar) **do** show a habitat in-square — that is a different asset class.
-- **Required:** I2I a **16:9 mid-shot HOME SCENE** first (hero ≥40%, empty of other creatures/humans), locking face/species from the bust. Then I2V that home still.
-- Dump the home I2I as `docs/home-film-qa/{id}_s3.jpg` (stage still for QA).
-- Softwing: eggs allowed as **object props** on the eave nest; never chicks; ignore chest ghost.
+- Compare to `16-s3` (real home). 21 is a framed bust. Treat **21–25** the same class.
+- **I2I** a 16:9 **home mid-shot** (Window Seat / Lodge / Path / Dock / Eave), hero ≥40%, empty of others. Lock face from the bust. Then I2V that stage still.
+- Dump the home I2I as `docs/home-film-qa/{id}_s3.jpg`.
+- Softwing: eggs as **object props** on the eave nest I2I; never chicks; ignore chest ghost.
 
 ## What 16–20 taught (prevent these)
 

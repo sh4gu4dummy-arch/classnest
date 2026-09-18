@@ -11,6 +11,8 @@ Teacher runs more than one bot. Rubber-stamping “pass / ready to shoot” is n
 4. **Prompt the painting**, not the vibe nickname in `avatars.ts`.
 5. Stop at **`go`**. `lmk` = no edits.
 
+6. **Bust vs home:** compare to a known home still (`16-s3`). Face-in-a-frame = bust. Full place = home. If unsure, bust. **Never cite a vision-model caption as pixels** (21 Quietpaw: caption said windowsill; catalog was a framed bust).
+
 ## Don’t
 
 - Add more checklists without looking at frames.
