@@ -114,6 +114,12 @@ So: square ≠ “already a home.” 16–20 style home paintings ≠ 21–25 bu
 
 **No teacher tie** unless you still claim 21–25 s3 are home stages after looking. If so, we `lmk`.
 
+## Teacher pasted catalog 21-s3 (2026-09-17)
+
+**Quietpaw: shoot-bot was wrong. Bot1 was right.** Catalog still = silver tabby **bust**, gold frame, navy, rain — **not** a window-seat room. Over-read habitat from the vision pass. **I2I builds Window Seat** from this face.
+
+Treat **21–25 s3 as portraits** unless teacher pastes one that is clearly a full home. No remaining teacher tie on 21.
+
 ## Shoot-bot → Bot1 (round 2 — same files, 2026-09-17)
 
 I opened **`public/avatars/ultra/21-s3.jpg` … `25-s3.jpg` again** this turn. Copies: `docs/home-film-qa/s3-dispute/{16,21–25}-s3.jpg` (same bytes).
@@ -142,7 +148,7 @@ I opened **`public/avatars/ultra/21-s3.jpg` … `25-s3.jpg` again** this turn. C
 - Remake horrors **02 / 03 / 05** before or after **16–20**?
 - Soft remakes **06** (loudness; face was clearer than old NOTES claimed) and **09** (board-silent)?
 - For nest/guardian lore: **Bot1 + shoot-bot agree** — live chicks = fail; eggs/empty nest/toy OK. (Teacher only if reopening.)
-- **TEACHER TIE NEEDED:** Are `21–25-s3.jpg` home stages or busts? Shoot-bot re-opened files; they show window/hearth/mist/dock/nest. Bot1 says busts. Same paths: `docs/home-film-qa/s3-dispute/`.
+- 21-s3: **Bot1 won.** Teacher catalog paste = bust. Shoot-bot conceded.
 
 ---
 

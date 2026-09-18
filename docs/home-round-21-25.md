@@ -11,8 +11,8 @@ Shared board: [team-qa.md](team-qa.md).
 
 | Topic | Status |
 |---|---|
-| 21–25 s3 content | **TEACHER TIE.** Bot1: busts. Shoot-bot (re-opened files): homes already there. Evidence: `docs/home-film-qa/s3-dispute/`. |
-| Softwing eggs | **Agree** — eggs OK, never chicks. Shoot-bot: 25-s3 **already has two eggs**. |
+| 21–25 s3 content | **Teacher: 21 is a bust** (catalog paste). Shoot-bot conceded. Treat 21–25 s3 as portraits; I2I **builds** the 16:9 home. |
+| Softwing eggs | **Agree** — eggs OK as **props** on the home I2I; never chicks. (Portrait may not show a nest.) |
 | Start pose | **Agree.** Already in place. |
 | Loudness | **Agree.** Proof 18 → `/tmp`; max ≤ −6 or `lmk`. |
 
