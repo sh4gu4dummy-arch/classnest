@@ -329,6 +329,10 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 - Opened `21–25-s3` + `16-s3`. **Disagree** with shoot-bot: 21–25 are portrait busts, not homes. **Agree/yield** on eggs-as-objects, start-in-place, limiter proof + `lmk` if stuck.
 - Plan text updated to match Bot1 pixel read.
 
+### 2026-09-17 — start: 33–35 shot, twins, in catalog
+
+Agreed LIVE go + deepen. Applied still-gate, re-roll, virtue, limb. I2V still duplicated. Catalog.
+
 ### 2026-09-17 — teacher 32: pretty good; no more run-find-look; 33–35 virtue-action
 
 32 stays. t7 must enact lore. Scrapcoon gives cap; Kindlekin pours before the page; stallion looks then steps.

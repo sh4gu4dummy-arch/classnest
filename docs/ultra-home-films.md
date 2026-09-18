@@ -20,7 +20,7 @@ mp4s **are in git** (`public/avatars/ultra/homes/*.mp4`). Intros/adventures stay
 | **21–25** | In `ULTRA_HOME_READY` (v0.090) | Scenery/sound OK. **Teacher: not enough movement — do not remake now.** | Catalog. Action bar for later rounds. |
 | **26–30** | In `ULTRA_HOME_READY` (v0.097) | Tableau / set / identity. In catalog to watch. | [AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md) |
 | **31** | In catalog (v0.100) | Motion better (teacher). Wing↔arm. Proceed. | |
-| **32** | In catalog (v0.105) | Pretty good (teacher). Twin t7. Souvenir-pickup lesson. | 33–35 virtue-action prompts; wait `go`. |
+| **33–35** | In catalog (v0.109) | Twins both I2V takes. Virtue/limb attempted. | [AUDIT-31-35.md](home-film-qa/AUDIT-31-35.md) |
 
 On disk and in git: posters + **mp4s** `homes/01`–`20`.
 

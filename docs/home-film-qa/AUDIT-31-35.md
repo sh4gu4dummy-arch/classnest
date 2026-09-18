@@ -26,6 +26,20 @@ Audio take 2: mean −28.9, max −6.9. 15s 854×480.
 
 Teacher 32: pretty good. Lesson: not just run-find-look. 33–35 prompts rewritten (virtue-action). Wait `go`.
 
+## 33–35 batch (`start` / Ash go LIVE)
+
+I2I still-gate: first stills twins → redid. I2V take 1 twins throughout. Take 2 still twins mid/end. **In catalog.** Not quality pass.
+
+Audio take 2: 33 −26.5/−7.8; 34 −28.4/−7.1; 35 −26.7/−10.1. 15s 854×480.
+
+| Id | Take 2 t0.5 | t3 | t7 | t14 | Virtue | Verdict |
+|---|---|---|---|---|---|---|
+| 33 Scrapcoon | 1 raccoon | **2** | **2** | **2** | cap-on-lamp not clean | twin HARD |
+| 34 Kindlekin | 1 panda | 1? | **2** | **2** | pour mixed with extra panda | twin HARD |
+| 35 Riftstallion | **2** | **2** | **2** | **2** | look-up not readable | twin HARD |
+
+Lesson applied: rewrite I2I, one-hero still, re-roll, virtue prompts, limb, catalog fails. I2V still duplicates on this model/path.
+
 ## 33–35
 
-Not generated.
+Shot. In catalog. Twins.
