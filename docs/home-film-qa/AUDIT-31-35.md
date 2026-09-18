@@ -18,6 +18,6 @@ Action bar: start vs end **do** change (air → inner court). Fail is **twin**, 
 
 **Stop.** No 32–35 until teacher `go` after this trial.
 
-## 32–35
+## Teacher on 31 (2026-09-17) — proceed
 
-Not generated.
+Action/movement **better**. Wings sometimes **arms**. Good enough — **do not remake**. Limb lock from 32. 32 prompt in [home-round-31-35.md](../home-round-31-35.md). Wait `go`.

@@ -26,9 +26,11 @@ Exactly ONE creature in every frame including the last second. No second copy, n
 One body, one shadow, one pair of eyes. Match catalog face/species. Face readable through t14.
 Hero ≥50% mid-shot. Props are objects. No humans, no crowds, no readable letters, no song, no speech.
 Follow-cam OK; do not lose the hero. At most three travel beats in 15s.
+Wings stay wings, tails stay tails, fins stay fins, ears stay ears — never human arms/hands.
+If the catalog still is a quadruped, stay on four legs the whole clip. No standing like a person.
 ```
 
-I2V: `15s`, `480p`, from **clean** home I2I only. Dump `docs/home-film-qa/{id}_s3.jpg` before video.
+**31 teacher (proceed):** motion better; wing↔arm morph; good enough. Do not remake 31. Limb lock applies from **32** on.
 
 ---
 
@@ -40,13 +42,37 @@ I2V: `15s`, `480p`, from **clean** home I2I only. Dump `docs/home-film-qa/{id}_s
 **Don’t:** extra owls; no soldiers; don’t fly out of frame.  
 **Sound:** wing whoosh, metal hook, wind.
 
-## 32 Sandwisp — Star Dune Cut — listen / catch what was missed
+## 32 Sandwisp — Star Dune Cut — NEXT SHOOT (wait `go`)
 
-**Catalog s3:** white fennec, huge ears, desert. I2I 16:9 dune + cut.  
-**Travel:** sprint down the dune face → ears perk mid-run → **dive/skid** to pin **one map-scrap** under a stone in the cut → dash onward, face readable.  
-**t7:** scrap **being pinned**.  
-**Don’t:** extra foxes; no hikers; map has **no readable letters** (blank/blurred).  
-**Sound:** sand hiss, skid, wind.
+**Catalog s3:** white fennec, huge ears, **quadruped**. I2I 16:9 dune + cut. Hero ≥50%. Empty of other foxes/people.
+
+**Limb lock (teacher 31):** four legs every frame. Ears stay ears (not arms). One tail stays a tail. Paws stay paws — no hands. Never stands like a person. No blurry limb-merge.
+
+**Travel (≤3 beats):**
+1. Already **sprinting** down the dune face (four-leg run).
+2. **t7:** ears perk, **skid/dive**, pins **one blank map-scrap** under a stone (no letters). Pinning is the action.
+3. Dashes onward into the cut; face + ears readable t14; still quadruped.
+
+**Don’t:** extra foxes; hikers; readable text on the map; biped pose; ear-arms.  
+**Sound:** sand hiss, skid, wind — energetic, still max ≤ −6.
+
+### I2I prompt
+
+```
+Cinematic 16:9 mid-shot of Star Dune Cut at dusk. This exact white fennec fox from the reference, huge ears. QUADRUPED on four legs, already running down a sand dune. One tail. Hero fills at least 50%. Empty desert canyon, no people, no second fox. Ears are ears not arms. Paws not hands. Photoreal, no text.
+```
+
+### I2V prompt
+
+```
+15 seconds, sound, 480p. This exact white fennec. Exactly ONE fox. Four legs the entire time — never stands like a person. Ears stay ears, one tail stays a tail, paws stay paws. No human arms. No second fox.
+
+Follow-cam. Hero stays large.
+
+(1) Already sprinting down the dune. (2) Mid-clip: skids and pins one blank map-scrap under a stone with a paw — pinning obvious. (3) Dashes into the cut; face and ears readable last second; still on four legs.
+
+Sound: sand hiss, skid, wind. No speech, no song.
+```
 
 ## 33 Scrapcoon — Neon Night Market — fair trade / fix first
 
@@ -83,4 +109,4 @@ Even a “chill” sage **must move** (teacher: 21–25 pets were too still).
 
 ## Teacher
 
-Say **`go`** to shoot 31–35. 26–30 remake is a **separate** `go` (needs twins **and** this action bar).
+Say **`go`** to shoot **32 only** (31 proceeded). 33–35 still wait. 26–30 remake is a separate `go`.

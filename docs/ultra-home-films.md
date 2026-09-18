@@ -19,7 +19,7 @@ mp4s **are in git** (`public/avatars/ultra/homes/*.mp4`). Intros/adventures stay
 | **16–20** | In `ULTRA_HOME_READY` (v0.072) | Shot. 854×480 + loudnorm + alimiter. One hero each on stills. Peaks still hot. | In catalog. Other bot: [AUDIT-16-20.md](home-film-qa/AUDIT-16-20.md). |
 | **21–25** | In `ULTRA_HOME_READY` (v0.090) | Scenery/sound OK. **Teacher: not enough movement — do not remake now.** | Catalog. Action bar for later rounds. |
 | **26–30** | In `ULTRA_HOME_READY` (v0.097) | Tableau / set / identity. In catalog to watch. | [AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md) |
-| **31** | In `ULTRA_HOME_READY` (v0.100) | Trial twin at t3 ×2. **In catalog to watch.** 32–35 not shot. | [AUDIT-31-35.md](home-film-qa/AUDIT-31-35.md) |
+| **31** | In catalog (v0.100) | Motion better (teacher). Wing↔arm. **Proceed.** | 32 prompt; wait `go`. |
 
 On disk and in git: posters + **mp4s** `homes/01`–`20`.
 
@@ -77,7 +77,13 @@ Catalog 21–25 **stay**. Exact Ash quote (do not paraphrase away):
 
 Self-QA: if three stamps could be three still photos of one pose → **fail movement** (do not READY).
 
-## Twin evidence rule (AUDIT)
+## Teacher 31 — limb lock (proceed, do not remake 31)
+
+Ash: action/movement **better**. Good enough to proceed. Wings became **arms**; messy on biped/humanized animals.
+
+**Later ids:** tails, wings, fins, ears stay that anatomy. No human arms/hands. Catalog quadruped → four legs the whole clip. Self-QA: wing→arm / tail→extra limb / fin→hand = **fail limb** (re-roll). Soft on 31 only.
+
+---
 
 Twin **HARD** only when stamps show **two distinct heads/bodies**. Do **not** call twin HARD for: water **reflection**, one long body looping in/out of water, horn/leg anatomy softs without a second creature, or a mushroom/prop. Homes 26–30 corrected: twin column was overclaimed; fails were tableau / set-drift / identity.
 
@@ -90,7 +96,7 @@ Negatives alone do not stop I2V merge on later rounds. Use this stack:
 3. **≤3 travel beats** in 15s (six story beats invite twins).
 4. **Mandatory re-roll.** Any stamp with two distinct bodies → discard clip, do not encode to `homes/`, do not continue the batch.
 5. **Long-body special:** single continuous spine; do not miscount one serpent as two — but a real second head still fails.
-6. **Trial before batch.** One id until stamps clear **twins + action**. First generate-go: **31 Rookplate**.
+6. **Trial before batch.** 31 proceeded (teacher). Next generate is **32 only** on `go`.
 
 ## Trial-first (process)
 
@@ -101,7 +107,7 @@ Negatives alone do not stop I2V merge on later rounds. Use this stack:
 
 1. **Exactly one creature.** Never a baby clone, never a second silhouette. Props are **objects**.
 2. **Three beats with TRAVEL:** start in the home → **move** (new spot or big physical action) with one prop → land readable. Not sit-paw-sit. Not six story beats.
-3. **Lock anatomy:** same skeleton the whole shot; tails/wings/legs do not become terrain.
+3. **Lock anatomy:** same skeleton; tails/wings/fins/ears do not become arms, terrain, or extra limbs. Quadruped s3 → four legs.
 4. **Mid-shot**, hero large. Camera **may follow**. Wide empty landscapes still invite twins — keep hero ≥40%.
 5. **I2I a 16:9 home** from the catalog s3 if s3 is a bust/sliver, then I2V that still. Duration **`15`**, **`480p`**.
 6. **854×480** after encode.
@@ -114,7 +120,8 @@ Shared negative line (append to every prompt):
 
 ```
 Exactly ONE creature in every frame. No second copy, no cub duplicate, no extra legs/wings/heads.
-Anatomy locked. No morphing into lava, glass, clouds, or flowers.
+Anatomy locked. Wings stay wings, tails stay tails, fins stay fins, ears stay ears — never arms/hands.
+If the catalog still is a quadruped, stay on four legs. No morphing into lava, glass, clouds, or flowers.
 No humans, no text, no logos, no song, no speech.
 ```
 
