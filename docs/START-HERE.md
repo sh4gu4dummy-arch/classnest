@@ -2,11 +2,11 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.120.** This file ships in **every** push.
+**v0.121.** This file ships in **every** push.
 
 ## `start`
 
-Filmed this pass: **45, 48, 50.** Already on GitHub: **41–43**. **GitHub token invalid** — 45/48/50 local until reconnect.
+Filmed this pass: **45, 46, 48, 50.** Already on GitHub: **41–43**. **Not shot: 44, 47, 49.**
 
 **Not shot:** 44 Duskwyn, 46 Palevow, 47 Viridelle, 49 Inkstride (still-A twins; image API 404).
 

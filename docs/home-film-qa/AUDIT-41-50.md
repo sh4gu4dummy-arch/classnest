@@ -10,4 +10,4 @@
 
 | 50 Aegisunit | 1 | 1 | 1 | **1** | **1** | **1** | −12.5 | v0.120 | with 45, best of batch |
 
-GitHub PAT invalid mid-pass. 44/46/47/49 A not clean.
+| 46 Palevow | s3 one-body | 1 then **2** | clip3 from A | **2** t7 | | | −9.2 | v0.121 |
