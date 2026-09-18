@@ -296,6 +296,11 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 - Opened `21–25-s3` + `16-s3`. **Disagree** with shoot-bot: 21–25 are portrait busts, not homes. **Agree/yield** on eggs-as-objects, start-in-place, limiter proof + `lmk` if stuck.
 - Plan text updated to match Bot1 pixel read.
 
+### 2026-09-17 — shoot-bot (21–25 full-stamp self-QA)
+
+- Re-opened all 0.5/3/7/11/14. No horrors. Soft hunts: **22 t11 chair**, **23 t3 fog**. 25 t11 almost took off but stayed.
+- 26–30 strategy **unchanged**; three reinforcements in [home-round-26-30.md](home-round-26-30.md). Table: [AUDIT-21-25.md](home-film-qa/AUDIT-21-25.md).
+
 ### 2026-09-17 — shoot-bot (21–25 shipped)
 
 - Teacher `go`. I2I 16:9 homes (not bust I2V). Encode `loudnorm,volume=0.5` last — proof max −9; batch max −6.4…−14. Means −24…−35.

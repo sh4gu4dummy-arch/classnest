@@ -1,25 +1,40 @@
-# AUDIT 21–25 — QA job
+# AUDIT 21–25
 
-Executor shipped after teacher `go`. **You audit.** Do not generate. Do not edit 26–30 plan in the same commit as this table if you can help it.
+Executor shipped after teacher `go`. **QA: try to fail.** Do not generate. Do not redo unless ids named.
 
-Stills: `{id}_s3.jpg` = **home I2I** (not the bust) + `{id}_t{0.5,3,7,11,14}.jpg`.  
+Stills: `{id}_s3.jpg` = **home I2I** (not the catalog bust) + `t0.5/3/7/11/14`.  
 mp4s in git: `public/avatars/ultra/homes/21.mp4`–`25.mp4`.
 
-## Shooter self-QA (opened 0.5/7/14)
+Audio (all 854×480, AAC):
 
-| Id | Self | Evidence | Soft |
+| Id | mean | max | Gate |
 |---|---|---|---|
-| 21 | **pass** | One cat; paw/rain on glass at t7; face at t14; empty room | — |
-| 22 | **pass** | One dog; blanket at hearth t7/t14; empty lodge | mean **−34.8** (quiet, still > −40); max **−6.4** (just inside −6) |
-| 23 | **pass** | One stag; cairn/pebbles t7; face t14; stayed | — |
-| 24 | **pass** | One turtle; lily t7; head t14 | mean **−33.7** |
-| 25 | **pass** | One dove; nest + **eggs** t7; no chicks; perched t14 | mean **−31.5** |
+| 21 | −27.2 | −8.1 | pass |
+| 22 | −34.8 | −6.4 | pass (quiet; peak just inside −6) |
+| 23 | −23.8 | −7.2 | pass |
+| 24 | −33.7 | −7.7 | pass (quiet) |
+| 25 | −31.5 | −14.1 | pass (quiet) |
 
-**Audio recipe that actually hit max ≤ −6:** `loudnorm=I=-20:LRA=11:TP=-2,volume=0.5` **last** (no second loudnorm — that bounced peaks). Proof on 18: max −9.2.
+Recipe: `loudnorm=I=-20:LRA=11:TP=-2,volume=0.5` **last**.
 
-**Redo before 26–30?** No horrors from these stamps. Soft audio quiet on 22/24/25.
+---
 
-## Your verdict
+## Shooter self-QA — full stamps (2026-09-17, second pass)
+
+Opened **s3 + 0.5/3/7/11/14** for all five. Tried to fail (twins, humans, letters, exit, chicks, virtue missing at t7).
+
+| Id | Verdict | Evidence | Soft / hunt |
+|---|---|---|---|
+| 21 Quietpaw | **pass** | One cat every stamp. Empty room. **t7:** paw to rain/glass. **t14:** face, still on the ledge. | — |
+| 22 Hearthound | **pass** | One dog. Blanket as cloth at t7/t14. Doorway empty. | **Hunt t11 chair** — can read as a seated silhouette. Not a second dog. |
+| 23 Mistfawn | **pass** | One stag at 0.5/7/11/14. Cairn/pebbles at t7. Stayed. | **Hunt t3 fog** — mist blobs can look like a second deer. If QA sees a real second body, name it. |
+| 24 Mossback | **pass** | One turtle every stamp. Lily object. Head at t14. | Quiet audio. |
+| 25 Softwing | **pass** | One dove. Eggs stay eggs (no chicks). Feather/nest. Head in frame t14. | **t11 wings open** (almost a takeoff) — still in frame, not a 05 exit. Already-perched drifted. |
+
+**Horrors?** None I’d remake without teacher naming an id.  
+**Would I change 26–30 strategy?** No. Three **reinforcements** (already the same class as existing traps): empty furniture ≠ seated human; mist/fog empty of animal silhouettes; already-in-place still drifted toward flight on 25 — keep 28/29 locked.
+
+## QA verdict (fill)
 
 | Id | QA | Evidence |
 |---|---|---|

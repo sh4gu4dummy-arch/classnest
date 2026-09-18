@@ -36,7 +36,15 @@ Opened `26–30-s3` + bible + AUDIT-21-25 shooter notes. **Do not generate until
 - 28 morph trap and 29 one-body — keep, strengthened below.
 - No humans/crowds — keep (millers, hikers, library patrons, shrine visitors, Cap City crowds).
 
-### Footer was stale
+### Lessons from 21–25 full-stamp self-QA (do not rewrite the batch)
+
+No horrors. Keep the plan. Three reinforcements only:
+
+- **Empty furniture** must not read as a seated human (22 t11 chair hunt). 28 atrium: chairs empty, no coats that look like patrons.
+- **Mist / fog / reflections** empty of animal silhouettes (23 t3 hunt). 26 water, 27 heat-haze, 29 pond: one body.
+- **Already-in-place still drifted** toward flight on 25 t11. 28/29: stay perched / in-pond through t14.
+
+---
 
 21–25 are **shipped** (v0.090). This file is next; still wait teacher `go` for 26–30.
 

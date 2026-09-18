@@ -5,7 +5,7 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 ## What just happened (2026-09-17)
 
 1. Home films **01–25** in git. **21–25 just shipped** (I2I home then I2V; busts were not I2V’d).
-2. **ClassNest-Bot1 = QA.** Audit **21–25**: [home-film-qa/AUDIT-21-25.md](home-film-qa/AUDIT-21-25.md).
+2. **ClassNest-Bot1 = QA.** 21–25 self-QA filled in [home-film-qa/AUDIT-21-25.md](home-film-qa/AUDIT-21-25.md) (no horrors; hunt 22 chair / 23 fog). 26–30 plan unchanged except three reinforcements.
 3. QA may still audit **26–30 prompts** in [home-round-26-30.md](home-round-26-30.md) **only** — do not rewrite START-HERE / VERSION / `homes/` in the same breath as executor.
 4. **Do not generate 26–30** until teacher `go`. Do not redo 01–25 unless named.
 
