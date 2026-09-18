@@ -45,7 +45,8 @@ Then this file. Direct chat instructions still win.
   Write pass/fail in `AUDIT-*-REPLY.md` or the AUDIT table. Try to fail the
   clip. Do not generate. See `docs/BOT-TEAM.md`.
 
-- **`start`:** pull git, read QA, shoot if you agree, `lmk` if you disagree. If there is **no new QA** since the last trial-stop, `lmk` — do not auto-retry. Always refresh `docs/START-HERE.md` in that push. Fold teacher quotes into SOP.
+- **`start`:** pull git, read QA, shoot if you agree, `lmk` if you disagree. Refresh `docs/START-HERE.md` every push.
+- **Home shoot 41–50+:** after each id is in `homes/` + catalog, **git commit that id** before starting the next. Prompt batches can be one commit; **films are per-id commits**.
 
 - Remind about a git commit if it has been a while — but current rule is
   commit each change.

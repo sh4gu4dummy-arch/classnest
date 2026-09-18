@@ -336,6 +336,10 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 - Opened `21–25-s3` + `16-s3`. **Disagree** with shoot-bot: 21–25 are portrait busts, not homes. **Agree/yield** on eggs-as-objects, start-in-place, limiter proof + `lmk` if stuck.
 - Plan text updated to match Bot1 pixel read.
 
+### 2026-09-17 — expedite 41–50: last-frame extend, 10-in-one-pass, commit-per-id
+
+Teacher: better than 36–40. Drop B/C I2I (twins). Still A ≥65% → 6s → extract last frame → gate → extend. Commit each id after filming. QA audit `home-round-41-50.md`. Do not generate until go.
+
 ### 2026-09-17 — start: 36–40 shot one pass, twins, in catalog
 
 Keyframe A + 6s clips. Dirty B/C not I2V’d. xfade vs `-af` → concat. 40 least-bad (twin t14).
