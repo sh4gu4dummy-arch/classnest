@@ -2,13 +2,13 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.125.** This file ships in **every** push.
+**v0.126.** This file ships in **every** push.
 
 ## `start`
 
-**01–51 in catalog.** Remaining Home films: **52–75** (24). Same protocol: 6s I2V sound 480p, last-frame extend, crop A if s3 two-body, commit-per-id. Image API still 404.
+**01–52 in catalog.** Remaining: **53–75** (23). Same protocol (6s×3, 480p sound, crop A, commit-per-id). Image API 404.
 
-**51 Gleamward** this commit: twins on stamps. Continue 52 Magmaheart.
+This go: **51 Gleamward, 52 Magmaheart** (twins on stamps; 52 no-melt). Next: 53 Rimeveil.
 
 ## Hard stops
 

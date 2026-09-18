@@ -6,4 +6,6 @@ Protocol: A from one-body s3 or tight crop (image API 404). 6s ×3, last-frame e
 |---|---|---|---|---|---|---|
 | 51 Gleamward | s3 one | **2** | **2** | **2** | −9.7 | v0.125 |
 
-**Due:** 52–75.
+| 52 Magmaheart | tight crop (1) | | **2** t7 | | −10.9 | v0.126 | no-melt in prompt |
+
+**Due:** 53–75.
