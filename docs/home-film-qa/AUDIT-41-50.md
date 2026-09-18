@@ -10,4 +10,6 @@
 
 | 50 Aegisunit | 1 | 1 | 1 | **1** | **1** | **1** | −12.5 | v0.120 | with 45, best of batch |
 
-| 46 Palevow | s3 one-body | 1 then **2** | clip3 from A | **2** t7 | | | −9.2 | v0.121 |
+| 47 Viridelle | s3 one-body | **2** | clip2/3 from A | **1** t7 | | | −13.6 | v0.122 |
+
+**Still due:** 44, 49 (A and s3 both two-body).

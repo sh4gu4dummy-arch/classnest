@@ -2,19 +2,17 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.121.** This file ships in **every** push.
+**v0.122.** This file ships in **every** push.
 
 ## `start`
 
-Filmed this pass: **45, 46, 48, 50.** Already on GitHub: **41–43**. **Not shot: 44, 47, 49.**
-
-**Not shot:** 44 Duskwyn, 46 Palevow, 47 Viridelle, 49 Inkstride (still-A twins; image API 404).
+**41–43, 45–48, 50 in catalog.** **Still due: 44 Duskwyn, 49 Inkstride** (A stills kept twinning; s3 also two-body).
 
 ## What just happened
 
-1. **45 Brinecrown** and **50 Aegisunit**: one hero on t0.5/t7/t14 (tight A + last-frame extend).
-2. **48 Quartzarch**: twins (ext dirty; clip2/3 from A).
-3. Next `start`: retry 44/46/47/49 A when image gen works; push local 0.118–0.120.
+This `start` filmed **45, 46, 47, 48, 50** (commit-per-id). **45 and 50** one hero on all stamps. Tight A + last-frame extend when ext is clean.
+
+Next `start`: 44 + 49 only (need a one-body A).
 
 ## Hard stops
 
