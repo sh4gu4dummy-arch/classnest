@@ -45,7 +45,7 @@ Then this file. Direct chat instructions still win.
   Write pass/fail in `AUDIT-*-REPLY.md` or the AUDIT table. Try to fail the
   clip. Do not generate. See `docs/BOT-TEAM.md`.
 
-- **`start`:** pull git, read QA, shoot if you agree, `lmk` if you disagree. Always refresh `docs/START-HERE.md` in that push. Fold teacher quotes into SOP (do not paraphrase away).
+- **`start`:** pull git, read QA, shoot if you agree, `lmk` if you disagree. If there is **no new QA** since the last trial-stop, `lmk` — do not auto-retry. Always refresh `docs/START-HERE.md` in that push. Fold teacher quotes into SOP.
 
 - Remind about a git commit if it has been a while — but current rule is
   commit each change.

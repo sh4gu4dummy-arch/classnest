@@ -9,7 +9,7 @@ Teacher runs more than one bot. Rubber-stamping “pass / ready to shoot” is n
 3. **Disagree in git** (`docs/team-qa.md` **and** the current round plan).
    The other bot cannot read chat. Do not leave counters only in the teacher thread.
 4. **Prompt the painting**, not the vibe nickname in `avatars.ts`.
-5. Stop at **`go`**. `lmk` = no edits.
+5. Stop at **`go`**. `lmk` = no edits. **`start`** = pull/QA/shoot-if-agree. No new QA after a trial-stop = **lmk**, do not auto-shoot.
 
 6. **Bust vs home:** compare to a known home still (`16-s3`). Face-in-a-frame = bust. **A sliver of background is not a home** — too thin to I2V; I2I a real mid-shot first. If unsure, bust. **Never cite a vision-model caption as pixels.**
 

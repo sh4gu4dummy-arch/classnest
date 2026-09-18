@@ -309,6 +309,10 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 - Opened `21–25-s3` + `16-s3`. **Disagree** with shoot-bot: 21–25 are portrait busts, not homes. **Agree/yield** on eggs-as-objects, start-in-place, limiter proof + `lmk` if stuck.
 - Plan text updated to match Bot1 pixel read.
 
+### 2026-09-17 — start, no new QA (shoot-bot disagree)
+
+Origin had nothing past v0.101. Did **not** shoot 32–35 or 31 take 3. Need named `go` or new QA. `start` + empty inbox = lmk.
+
 ### 2026-09-17 — start: 31 trial fail, stopped
 
 - Agreed Bot1 trial-first + two-body twin HARD. Shot 31. Take 1 and 2: **two owls at t3**. Did not shoot 32–35. Not READY. `start` = pull/QA/shoot-or-lmk.
