@@ -18,7 +18,7 @@ mp4s **are in git** (`public/avatars/ultra/homes/*.mp4`). Intros/adventures stay
 | **11–15** | In `ULTRA_HOME_READY` (v0.066) | Shot. 854×480 + loudnorm. One hero each; face/bell at t=14. | In catalog. QA stills in `docs/home-film-qa/`. |
 | **16–20** | In `ULTRA_HOME_READY` (v0.072) | Shot. 854×480 + loudnorm + alimiter. One hero each on stills. Peaks still hot. | In catalog. Other bot: [AUDIT-16-20.md](home-film-qa/AUDIT-16-20.md). |
 | **21–25** | In `ULTRA_HOME_READY` (v0.090) | I2I home then I2V. 854×480. Audio: LN + volume=0.5 last (max ≤ −6). | Catalog. QA: [AUDIT-21-25.md](home-film-qa/AUDIT-21-25.md). |
-| **26–30** | Plan only | Same bust/sliver rule. [home-round-26-30.md](home-round-26-30.md) | After 21–25 unless teacher names this batch. |
+| **26–30** | Shot, **not READY** | Twin animals mid/end. [AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md) | Redo on teacher `go`. |
 
 On disk and in git: posters + **mp4s** `homes/01`–`20`.
 
