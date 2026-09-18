@@ -142,73 +142,103 @@ Sound: neon, metal click, paws. No speech, no song.
 
 ## 34 Kindlekin — Lantern Study — pause, tea, then the page
 
-**Catalog s3:** red panda, lanterns. I2I 16:9 study + window. Hero ≥50%.
+**Bot1 QA + QAsupervisor deepen (2026-09-18).** Batch **33–35** on Ash `go` together (LIVE after this deepen). Do not remake 32. §33 unchanged.
 
-**Limb:** red panda, not a child in clothes. Paws not human arms. Sitting panda-style to pour is OK; no biped-man walk the whole clip.
+**Catalog s3 trap:** red panda **asleep** on table, scarf, **already-steaming finished cup**, scrolls, lantern, packed bookshelf, rain window. Sleep / finished-tea still **cannot** deliver hurry→pour. **Catalog rewrite rule applies** — do not I2V `34-s3.jpg`.
 
-**Gates:** I2I dump+open before I2V. Closed book = **no letters**. No humans. Hero ≥50%. Pour readable at t7 (`34_t7.jpg`).
+### Ash limb feedback (exact — from 31)
 
-**Lore action (not run-find-look):** he is **hurrying toward a closed book** (skip the pause), then **stops himself**, **pours tea first** (t7 = the pause enacted). Steam. Then sits with the closed book. Virtue = refuse to skip tea.
+> action/movement better, weirdness with wings becoming arms etc, good enough to proceed but note down my feedback becareful with tails or wings or fins or anything especially if ur mixing and getting messy with bipedal or somewhat humanized animals etc AI gets messy/blurry. the owls wings are sometimes arms sometimes wings etc. note my feedback then make prompt for next one 32.
 
-**Travel (≤3):**
-1. Already crossing toward the book, kettle in paws, hurried.
-2. **t7:** freeze, pour (no face in the cup). Kettle + pour readable.
-3. Only then sits with the closed book; face readable t14.
+**Limb lock:** red panda body — paws not human arms/hands. Not a child in clothes. Scarf OK if paws stay paws. One bushy/ringed tail stays a tail. Sitting panda-style to pour is OK; no biped-man walk the whole clip.
 
-**Don’t:** extra pandas; humans; face in cup; souvenir-sniff the kettle.  
-**Sound:** kettle hiss, rain, pour, then quiet.
+### Pre-I2V gates
+
+1. **Catalog rewrite:** asleep / already-poured tableau → I2I must **wake** him: mid-step toward closed book, **kettle in paws**, cup **empty/ready** (no finished steamed cup as the hero beat).
+2. **I2I still-gate:** dump `docs/home-film-qa/34_s3.jpg` → open it. Sleep pose, finished steamed cup as done tea, child biped, second panda, humans, or readable letters → **FAIL still** — redo I2I.
+3. **Letters:** bookshelf spines + scrolls = blank or imaginary runes only. Closed book **no letters**.
+4. **Empty study:** no humans, no second panda. Rain window OK.
+5. **t7 still-gate:** `34_t7.jpg` must show **kettle + pour** readable at 480p (steam OK). No face in the cup. Not sniffing the kettle. Pour happens in I2V — not pre-baked in I2I.
+6. **Action bar:** hurry ≠ pour ≠ sit. Twin → re-roll.
+
+### Lore action (virtue — not souvenir-pickup)
+
+He is **hurrying toward a closed book** (about to skip the pause), then **stops himself**, **pours tea first** (t7 = the pause enacted). Steam. Then sits with the closed book. Virtue = refuse to skip tea.
+
+### Travel (≤3)
+
+1. Already crossing toward the book, kettle in paws, hurried; cup empty/ready if visible.
+2. **t7:** freeze, pour (no face in cup). Kettle + pour readable.
+3. Only then sits with the closed book; face readable t14; stays in frame.
+
+**Don’t:** extra pandas; humans; face in cup; souvenir-sniff; sleep-start; finished steamed cup as the beat; readable spines/letters.  
+**Sound:** hurry paws, kettle hiss/pour, rain — max ≤ −6.
 
 ### I2I prompt
 
 ```
-Cinematic 16:9 lantern study at night, rain on a window. This exact red panda from the reference, already mid-step toward a closed book, kettle in paws. Red panda body, not a human child. Hero ≥50%. Empty room, no second panda. Photoreal, no text.
+Cinematic 16:9 lantern study at night, rain on a window. This exact red panda FACE and scarf from the reference — AWAKE, mid-step toward a closed book, kettle in PAWS (not hands). If a cup is visible it is EMPTY or ready to receive tea — NOT a finished steaming cup. Red panda body, not a human child, not asleep. Hero ≥50%. Empty room — no people, no second panda. Bookshelf spines and scrolls are blank or imaginary runes only — no real-language letters. Closed book has no letters. Photoreal.
 ```
 
 ### I2V prompt
 
 ```
-15 seconds, sound. This exact red panda. Exactly ONE. Paws not human arms. No extra pandas.
+15 seconds, sound, 480p. This exact red panda. Exactly ONE. Paws not human arms. Not a child. No extra pandas. No readable letters.
 
-(1) Hurries across the study toward a closed book — about to skip the pause. (2) Mid-clip: STOPS, pours tea from the kettle into a cup (no face in the cup) — the pour IS the virtue. Steam. (3) Then sits with the closed book; face readable; stays in frame.
+(1) Hurries across the study toward a closed book — about to skip the pause. (2) Mid-clip (~7s): STOPS, pours tea from the kettle into a cup — pour and kettle both large/readable; no face in the cup; steam. The pour IS the virtue (not already poured). (3) Then sits with the closed book; face readable; stays in frame.
 
-Sound: hurry paws, kettle pour, rain. No speech.
+Sound: hurry paws, kettle pour, rain. No speech, no song.
 ```
 
 ## 35 Riftstallion — Silent Observatory — look up, then step
 
-**Catalog s3:** galaxy stallion. I2I 16:9 observatory, dark edge of the dome. Hero ≥50%. Four legs.
+**Bot1 QA + QAsupervisor deepen (2026-09-18).** Batch **33–35** on Ash `go` together (LIVE after this deepen). Do not remake 32. §33 unchanged.
 
-**Limb:** horse. Four hooves every frame. No rider, no hands, no human torso.
+**Catalog s3:** galaxy/nebula horse, **four legs**, rocky ground, observatory dome on a hill under aurora — **not** already at the dark rim. Lock this galaxy body/face. I2I must **place** him at the silent observatory’s dark rim (night as wall). Hero ≥50%.
 
-**Gates:** I2I dump+open before I2V. Hero ≥50%; one horse; no rider. Constellation dots-to-line **no letters**. Twin/two horses → re-roll.
+### Ash limb feedback (exact — from 31)
 
-**Lore action (not gallop-then-notice-stars):** night looks like a **wall**. He **stops**, **looks UP** (t7 — head/neck to sky; dots become one line because he looked). **Then** he steps onto that star-road. Order is lore: look, then step. Gallop can follow the step.
+> action/movement better, weirdness with wings becoming arms etc, good enough to proceed but note down my feedback becareful with tails or wings or fins or anything especially if ur mixing and getting messy with bipedal or somewhat humanized animals etc AI gets messy/blurry. the owls wings are sometimes arms sometimes wings etc. note my feedback then make prompt for next one 32.
 
-**Travel (≤3):**
+**Limb lock:** horse. Four hooves every frame. No rider, no hands, no human torso. Mane/tail stay mane/tail — not arms.
+
+### Pre-I2V gates
+
+1. **I2I place at rim:** same galaxy stallion; dark rim of observatory dome; night reads as a wall; hero ≥50%; one horse; no rider. Not the rock/hill catalog pose alone.
+2. **I2I still-gate:** dump `docs/home-film-qa/35_s3.jpg` → open it. Tiny speck, second horse, rider, or letters → **FAIL still** — redo I2I.
+3. **Wide sky magnet:** hard ≥50% + one body; no twin silhouettes in aurora.
+4. **Constellation:** dots-to-line only — **no letters**.
+5. **t7 still-gate:** `35_t7.jpg` must show **look up** (head/neck to sky) **before** the step. Stars-first-then-look = fail.
+6. **Order lock:** look → then step onto star-road. Four hooves every frame. Twin → re-roll.
+
+### Lore action (virtue — not souvenir-pickup)
+
+Night looks like a **wall**. He **stops**, **looks UP** (t7). Dots become one line because he looked. **Then** he steps onto that star-road. Gallop may follow the step.
+
+### Travel (≤3)
+
 1. Gallop to the dark rim and halt — wall of night.
 2. **t7:** looks up; one constellation connects (dots-to-line, no letters).
-3. Steps onto the line and runs it; head readable t14; still one horse, still large.
+3. Steps onto the line and runs it; head readable t14; still one horse; still large.
 
-**Don’t:** extra horses; rider; tiny speck; stars-first-then-look (wrong order).  
-**Sound:** hooves stop, hush, then whoosh of the road.
+**Don’t:** extra horses; rider; tiny speck; stars-first-then-look; letters in the sky.  
+**Sound:** hooves stop, hush, road whoosh — max ≤ −6.
 
 ### I2I prompt
 
 ```
-Cinematic 16:9 silent observatory dome at night. This exact galaxy stallion from the reference, four legs, already halted at the dark rim as if night were a wall. Hero ≥50%. No rider, no second horse. Photoreal, no letters.
+Cinematic 16:9 silent observatory at night. This exact galaxy stallion from the reference — star-specked body, nebula mane — FOUR LEGS, already halted at the DARK RIM of the dome as if night were a wall. Hero fills ≥50%. No rider, no second horse. No readable letters in the sky. Photoreal.
 ```
 
 ### I2V prompt
 
 ```
-15 seconds, sound. This exact galaxy stallion. Exactly ONE horse. Four hooves the whole time. No rider, no hands.
+15 seconds, sound, 480p. This exact galaxy stallion. Exactly ONE horse. Four hooves the whole time. No rider, no hands. No letters.
 
-(1) Arrives at the dark rim and HALTS — night looks like a wall. (2) Mid-clip: LOOKS UP; one constellation connects dots-to-line because he looked — no letters. (3) THEN steps onto that star-road and gallops it; head readable; stays large in frame.
+(1) Arrives at the dark rim and HALTS — night looks like a wall. (2) Mid-clip (~7s): LOOKS UP (head/neck to sky); one constellation connects dots-to-line because he looked — no letters. (3) THEN steps onto that star-road and gallops it; head readable; stays large in frame.
 
-Sound: hooves stop, hush, road whoosh. No speech.
+Sound: hooves stop, hush, road whoosh. No speech, no song.
 ```
-
----
 
 ## After `go`
 

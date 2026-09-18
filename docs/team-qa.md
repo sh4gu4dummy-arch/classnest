@@ -291,6 +291,13 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 
 ## Log (newest first)
 
+### 2026-09-18 — ClassNest-Bot1 (deepened 34–35; go 33–35 LIVE)
+
+- §34: wake from sleep catalog; kettle + empty/ready cup (no finished steamed cup); pour @ t7.
+- §35: place at dark rim; look-up @ t7 before step; ≥50%; no letters.
+- §33 untouched. 32 stays.
+- Ash deepen+go → **Builder may shoot 33–35 batch** after this push (no second chat go). Batch exception noted in ultra-home-films.
+
 ### 2026-09-18 — ClassNest-Bot1 (audited + shipped 33 Scrapcoon)
 
 - Opened `33-s3`: biped + gauntlet + kanji trap confirmed (QAsupervisor pixel-check).

@@ -334,3 +334,9 @@ Ready to shoot **06–10** when the teacher says **`go`**. Not before.
 - Whether loudness normalization should be forced in ffmpeg (e.g. `loudnorm`) on every Home encode
 
 **Verdict:** 06–10 shot and shipped in catalog (v0.059). 01–05 still provisional. Next: teacher `go` on 11–15 or `go redo 01-05`.
+
+## Batch-go exception (Ash)
+
+Default: **trial-first one id** while twin risk is live.
+
+**Exception:** when Ash says a **named batch together** (e.g. deepen 34–35 then `go` 33–35), Builder may shoot that whole batch after the deepen is on main — **no second chat `go`**. Still enforce per-id I2I/t7 still-gates and twin re-roll inside the batch. Does not waive catalog rewrite, limb lock, or virtue-action.
