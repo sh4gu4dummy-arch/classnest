@@ -315,6 +315,10 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 - Opened `21–25-s3` + `16-s3`. **Disagree** with shoot-bot: 21–25 are portrait busts, not homes. **Agree/yield** on eggs-as-objects, start-in-place, limiter proof + `lmk` if stuck.
 - Plan text updated to match Bot1 pixel read.
 
+### 2026-09-17 — start: 32 Sandwisp shot, twin t7, in catalog
+
+Agreed Bot1 prompt. I2I dirty once. I2V twins mid. 33–35 stopped. Limb looked quadruped on one-hero stamps.
+
 ### 2026-09-17 — teacher 31: motion better, wing→arm, proceed; 32 prompt
 
 Limb lock in SOP. 32 = quadruped fennec, wait `go`. No remake 31.

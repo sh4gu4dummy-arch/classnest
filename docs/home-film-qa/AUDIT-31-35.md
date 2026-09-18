@@ -1,9 +1,6 @@
 # AUDIT 31–35
 
-**Trial-first = 31.** 32–35 **not shot** (twin lock).
-
-Stills: `31_s3.jpg` (I2I gate — one owl, ≥50%, battlement) + `31_t*`.  
-`public/avatars/ultra/homes/31.mp4` on disk. **In catalog (v0.100)** so the teacher can watch. Remake later — not a quality pass.
+**31** proceeded (teacher). **32** shot (`start` / Bot1 prompt). 33–35 not shot.
 
 ## 31 Rookplate — two I2V takes
 
@@ -14,10 +11,21 @@ Audio take 2: mean −27.5, max −8.5 (pass). 15s 854×480.
 | 1 | 1 owl flying + lantern | **2 owls** | — | — | flight | **twin HARD** → discard |
 | 2 | 1 owl flying + lantern | **2 owls** | 1 owl + lantern | 1 owl inner court | flight → court | **twin HARD** at t3 |
 
-Action bar: start vs end **do** change (air → inner court). Fail is **twin**, not slideshow.
+Teacher: motion better; wing↔arm; **proceed**. In catalog.
 
-**Stop.** No 32–35 until teacher `go` after this trial.
+## 32 Sandwisp — two I2V takes (in catalog)
 
-## Teacher on 31 (2026-09-17) — proceed
+I2I still-gate: first still two foxes → redid. Clean still = one quadruped fennec.
 
-Action/movement **better**. Wings sometimes **arms**. Good enough — **do not remake**. Limb lock from 32. 32 prompt in [home-round-31-35.md](../home-round-31-35.md). Wait `go`.
+Audio take 2: mean −28.9, max −6.9. 15s 854×480.
+
+| Take | t0.5 | t3 | t7 | t11 | t14 | Limb | Motion | Verdict |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 1 fox run | **2 foxes** | — | — | — | — | sprint | twin HARD |
+| 2 | 1 fox run | 1 fox | **2 foxes** | 1 fox + paper | 1 fox dash | four-leg on one-hero stamps | travel | **twin HARD at t7** |
+
+**In catalog.** Not a quality pass. 33–35 not shot.
+
+## 33–35
+
+Not generated.
