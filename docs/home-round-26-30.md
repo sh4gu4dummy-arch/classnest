@@ -1,6 +1,6 @@
 # Home round 26–30 (PLAN only — audit, then teacher `go` after 21–25)
 
-**Do not generate until `go`.** Shoot **21–25 first** unless teacher names this batch. Do not redo 01–25 unless ids named.
+**Parallel (teacher):** QA may edit **this file only** while 21–25 media is in flight. Do not touch `homes/`, AUDIT-21-25, START-HERE, or VERSION — those clash with the executor.
 
 Ids: **26 Puddlefin, 27 Ashenhoof, 28 Paperwing, 29 Voltkoi, 30 Glimmercap.**  
 Lore: [ultra-lore-bible.md](ultra-lore-bible.md) §§26–30.  

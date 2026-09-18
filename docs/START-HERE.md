@@ -4,10 +4,10 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 
 ## What just happened (2026-09-17)
 
-1. Home films **01–20** in git. **01–05** messy; **11–20** shipped.
-2. **ClassNest-Bot1 = QA.** Shoot-bot = executor. Counters in git, not chat.
-3. **21-s3 is a bust** (teacher). Sliver of set ≠ I2V. I2I builds a real 16:9 home. Plan: [home-round-21-25.md](home-round-21-25.md). **Do not generate** until `go`.
-4. **26–30 drafted** for QA: [home-round-26-30.md](home-round-26-30.md) (Puddlefin–Glimmercap). Same bust/sliver rule. 28 = no morph-from-paper. Shoot 21–25 first unless teacher names 26–30.
+1. Home films **01–25** in git. **21–25 just shipped** (I2I home then I2V; busts were not I2V’d).
+2. **ClassNest-Bot1 = QA.** Audit **21–25**: [home-film-qa/AUDIT-21-25.md](home-film-qa/AUDIT-21-25.md).
+3. QA may still audit **26–30 prompts** in [home-round-26-30.md](home-round-26-30.md) **only** — do not rewrite START-HERE / VERSION / `homes/` in the same breath as executor.
+4. **Do not generate 26–30** until teacher `go`. Do not redo 01–25 unless named.
 
 ## Read in this order
 
@@ -15,8 +15,8 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 |---|---|---|
 | 1 | This file | Orientation |
 | 2 | `AGENTS.project.md` | Standing rules (`lmk` = talk only, git, Home sound) |
-| 3 | [home-round-21-25.md](home-round-21-25.md) | **Next shoot (wait for `go`)** |
-| 3c | [home-round-26-30.md](home-round-26-30.md) | Following five (QA audit now) |
+| 3 | [home-film-qa/AUDIT-21-25.md](home-film-qa/AUDIT-21-25.md) | **QA: audit 21–25** |
+| 3c | [home-round-26-30.md](home-round-26-30.md) | Following five (prompts only; wait `go`) |
 | 3b | [home-film-qa/AUDIT-16-20.md](home-film-qa/AUDIT-16-20.md) | Last batch QA (Bot1) |
 | 4 | [team-qa.md](team-qa.md) | Shared QA board + debate + Bot1→shoot-bot notes |
 | 5 | [ultra-lore-bible.md](ultra-lore-bible.md) | Virtue + 3-beat seed |

@@ -17,7 +17,7 @@ mp4s **are in git** (`public/avatars/ultra/homes/*.mp4`). Intros/adventures stay
 | **06–10** | In `ULTRA_HOME_READY` | One hero each (better than 01–05). 06 face-lost at t14; 09 nearly silent (−53 dB). See NOTES. | Keep in catalog. Soft remake 06/09 only if teacher asks. |
 | **11–15** | In `ULTRA_HOME_READY` (v0.066) | Shot. 854×480 + loudnorm. One hero each; face/bell at t=14. | In catalog. QA stills in `docs/home-film-qa/`. |
 | **16–20** | In `ULTRA_HOME_READY` (v0.072) | Shot. 854×480 + loudnorm + alimiter. One hero each on stills. Peaks still hot. | In catalog. Other bot: [AUDIT-16-20.md](home-film-qa/AUDIT-16-20.md). |
-| **21–25** | Plan only | Busts; I2I builds home. [home-round-21-25.md](home-round-21-25.md) | Shoot on **`go`**. |
+| **21–25** | In `ULTRA_HOME_READY` (v0.090) | I2I home then I2V. 854×480. Audio: LN + volume=0.5 last (max ≤ −6). | Catalog. QA: [AUDIT-21-25.md](home-film-qa/AUDIT-21-25.md). |
 | **26–30** | Plan only | Same bust/sliver rule. [home-round-26-30.md](home-round-26-30.md) | After 21–25 unless teacher names this batch. |
 
 On disk and in git: posters + **mp4s** `homes/01`–`20`.

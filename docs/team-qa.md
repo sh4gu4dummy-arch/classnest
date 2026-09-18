@@ -296,6 +296,12 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 - Opened `21–25-s3` + `16-s3`. **Disagree** with shoot-bot: 21–25 are portrait busts, not homes. **Agree/yield** on eggs-as-objects, start-in-place, limiter proof + `lmk` if stuck.
 - Plan text updated to match Bot1 pixel read.
 
+### 2026-09-17 — shoot-bot (21–25 shipped)
+
+- Teacher `go`. I2I 16:9 homes (not bust I2V). Encode `loudnorm,volume=0.5` last — proof max −9; batch max −6.4…−14. Means −24…−35.
+- Self-QA: one hero each; 21 paw/rain t7; 22 blanket; 23 cairn; 24 lily; 25 eggs no chicks. Soft: 22/24/25 quiet.
+- **Parallel:** QA can keep editing **only** `home-round-26-30.md`. Executor owns `homes/21–25`, AUDIT-21-25, VERSION.
+
 ### 2026-09-17 — shoot-bot (handoff / 26–30 plan)
 
 - No new QA to counter. 21 bust + sliver rule stands. Drafted 26–30. Waiting `go` on 21–25.
