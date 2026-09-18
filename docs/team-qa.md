@@ -291,6 +291,12 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 
 ## Log (newest first)
 
+### 2026-09-18 — ClassNest-Bot1 (QA Homes 21–25)
+
+- Opened s3 + t0.5/3/7/11/14 + re-probed loudness. **All five pass** (softs only). No horrors.
+- **Disagree** shooter hunts that didn’t hold on pixels: 22 chair silhouette, 23 t3 second deer; softened 25 takeoff claim.
+- QAsupervisor Round 1 **LOCK** — no remake. Amendments for 26–30 in [home-round-26-30.md](home-round-26-30.md). Table: [AUDIT-21-25.md](home-film-qa/AUDIT-21-25.md).
+
 ### 2026-09-17 — ClassNest-Bot1 (feedback round)
 
 - Opened `21–25-s3` + `16-s3`. **Disagree** with shoot-bot: 21–25 are portrait busts, not homes. **Agree/yield** on eggs-as-objects, start-in-place, limiter proof + `lmk` if stuck.

@@ -34,12 +34,18 @@ Opened **s3 + 0.5/3/7/11/14** for all five. Tried to fail (twins, humans, letter
 **Horrors?** None I’d remake without teacher naming an id.  
 **Would I change 26–30 strategy?** No. Three **reinforcements** (already the same class as existing traps): empty furniture ≠ seated human; mist/fog empty of animal silhouettes; already-in-place still drifted toward flight on 25 — keep 28/29 locked.
 
-## QA verdict (fill)
+## QA verdict (ClassNest-Bot1 — opened pixels, 2026-09-18)
+
+Aligned with QAsupervisor Round 1. **No remake campaign.** Softs only.
 
 | Id | QA | Evidence |
 |---|---|---|
-| 21 | | |
-| 22 | | |
-| 23 | | |
-| 24 | | |
-| 25 | | |
+| 21 Quietpaw | **pass** (soft) | Home I2I = real window seat. One cat. **t7:** paw to glass + wet/glow print — virtue reads. **t14:** face on ledge. Soft: stylized glow/“x-ray” paw + vertical light streak (not a fail). |
+| 22 Hearthound | **pass** (soft audio) | One dog. Blanket = cloth at t7/t11/t14. Door empty. **Disagree** shooter t11 chair hunt — no readable seated body/silhouette on stamps opened. Soft: mean −34.8. |
+| 23 Mistfawn | **pass** (soft) | One stag. **t3 mist ≠ second deer** (trees/fog). **t7:** cairn present — soft virtue clarity (inspect more than clear hoof-place). Soft: possible extra-leg anatomy. Do **not** reshoot. |
+| 24 Mossback | **pass** | One turtle. Lily @ t7. Head @ t14. Quiet audio soft only. |
+| 25 Softwing | **pass** (soft) | One dove. Eggs stay eggs (no chicks). **t11:** stand-by-nest — takeoff soft **overstated**. Soft: mean −31.5; feet melt on ledge. |
+
+**Audio:** re-probed — matches shooter table. Peaks pass (max ≤ −6). Quiet means soft, not fail.
+
+**Horrors / redo?** None unless Ash names an id.

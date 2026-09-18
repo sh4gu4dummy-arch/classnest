@@ -50,6 +50,18 @@ No horrors. Keep the plan. Three reinforcements only:
 
 ---
 
+
+## Amendments from Homes 21–25 QA (Bot1 + QAsupervisor LOCK, 2026-09-18)
+
+Ship notes only — **do not reshoot 21–25** unless Ash names an id.
+
+1. **Virtue @ t7 = action.** Phrase must show the prop **being done** (e.g. hoof **placing** a pebble), not only standing near the object. Soft clarity on 23; harden prompts here.
+2. **Empty furniture ≠ human.** Fail only on a **readable body/silhouette**, not vague chair shapes (22 chair hunt cleared).
+3. **Rain/wet virtue:** wet print or streak — **avoid** glowing skeletal / morph paw effects (21 soft).
+4. **I2I-first** still required (bust/sliver ≠ I2V source).
+5. **Loudness:** keep proven `loudnorm=…,volume=0.5` **last**; max ≤ −6 hard. Prefer mean closer to hearable (−22…−18) **without** breaking max. Quiet soft OK if mean > −40.
+6. Mist/fog empty of animal-shaped silhouettes; already-in-place / no takeoff drift (28/29).
+
 ## Critical: do not I2V the catalog s3
 
 - Compare to `16-s3`. If a stranger cannot name the **PLACE**, or the hero fills the square → treat as bust/sliver → **I2I first**.
