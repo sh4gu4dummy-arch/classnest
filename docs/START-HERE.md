@@ -2,7 +2,7 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.103.** This file ships in **every** push.
+**v0.104.** This file ships in **every** push.
 
 ## `start` (teacher command)
 
@@ -21,7 +21,7 @@ Pull git → read QA → **shoot if you agree** → **`lmk` if you disagree**. F
 ## What just happened
 
 1. 01–31 Home clips in catalog (fails included).
-2. **32 Sandwisp prompt ready** — quadruped lock, travel, pin map-scrap. [home-round-31-35.md](home-round-31-35.md). **Do not generate until `go`.**
+2. **32 Sandwisp** — Bot1 audited + tightened (limb quote exact, I2I gate, twin/skid/t7/exit). [home-round-31-35.md](home-round-31-35.md) §32. **Do not generate until `go`.**
 3. 33–35 not shot.
 
 ## Read in this order

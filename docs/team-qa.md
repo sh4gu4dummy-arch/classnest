@@ -291,6 +291,12 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 
 ## Log (newest first)
 
+### 2026-09-18 — ClassNest-Bot1 (audited 32 Sandwisp prompt)
+
+- Teacher `start` = audit next prompt. Opened `32-s3` + §32.
+- QAsupervisor LOCK: Ash exact limb quote pasted; I2I gate; desert twin; four-leg skid; species lock; t7 pin readable; no exit.
+- Wait teacher `go`. Do not remake 31. [home-round-31-35.md](home-round-31-35.md) §32.
+
 ### 2026-09-18 — ClassNest-Bot1 (improvement package — revised twin LOCK)
 
 - Ash **exact** 21–25 motion quote in START-HERE + ultra-home-films.

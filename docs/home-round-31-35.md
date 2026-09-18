@@ -44,32 +44,48 @@ If the catalog still is a quadruped, stay on four legs the whole clip. No standi
 
 ## 32 Sandwisp — Star Dune Cut — NEXT SHOOT (wait `go`)
 
-**Catalog s3:** white fennec, huge ears, **quadruped**. I2I 16:9 dune + cut. Hero ≥50%. Empty of other foxes/people.
+**Bot1 QA (2026-09-18) + QAsupervisor LOCK.** Do not generate until teacher `go`. Do not remake 31.
 
-**Limb lock (teacher 31):** four legs every frame. Ears stay ears (not arms). One tail stays a tail. Paws stay paws — no hands. Never stands like a person. No blurry limb-merge.
+**Catalog s3:** square star-dust **white fennec**, huge ears, **quadruped** mid-stride on sand (canyon behind). Lock **this** face/fur glow — not a tan generic fox, not biped kitsune. I2I **16:9** Star Dune Cut (widen; hero ≥50%). Dump `docs/home-film-qa/32_s3.jpg` and **open it** before I2V (still-gate).
 
-**Travel (≤3 beats):**
-1. Already **sprinting** down the dune face (four-leg run).
-2. **t7:** ears perk, **skid/dive**, pins **one blank map-scrap** under a stone (no letters). Pinning is the action.
-3. Dashes onward into the cut; face + ears readable t14; still quadruped.
+### Ash limb feedback (exact — from 31)
 
-**Don’t:** extra foxes; hikers; readable text on the map; biped pose; ear-arms.  
-**Sound:** sand hiss, skid, wind — energetic, still max ≤ −6.
+> action/movement better, weirdness with wings becoming arms etc, good enough to proceed but note down my feedback becareful with tails or wings or fins or anything especially if ur mixing and getting messy with bipedal or somewhat humanized animals etc AI gets messy/blurry. the owls wings are sometimes arms sometimes wings etc. note my feedback then make prompt for next one 32.
+
+**Limb lock on 32:** four legs every frame. Ears stay ears (not arms). One tail stays a tail. Paws stay paws — no hands. Never stands like a person. No blurry limb-merge. Tails/wings/fins/ears stay that anatomy especially on bipedal-leaning morphs.
+
+### Pre-I2V gates
+
+1. **I2I still-gate:** open dumped home still — extra limb/face/second fox → redo I2I. Never I2V a dirty still.
+2. **Desert twin magnet:** canyon walls close; hero ≥50%; empty of second-fox silhouettes in sand/shadows. Two distinct bodies on any stamp → mandatory re-roll (do not encode).
+3. **Skid = four-leg skid / dig with front paws** — not belly-slide biped crouch; not dive that merges legs.
+4. **Species lock:** star-dust white fennec from catalog.
+5. **t7 pin readable at 480p:** blank map-scrap + stone both large; paw pinning obvious on `32_t7.jpg` or soft-fail redo.
+6. **No exit:** dash into cut keeps face+ears in frame @ t14; hero still large.
+
+### Travel (≤3 beats)
+
+1. Already **sprinting** down the dune (four-leg run).
+2. **t7:** ears perk, **four-leg skid**, pins **one blank map-scrap** under a stone with a paw (no letters / no real-language text). Pinning is the action.
+3. Dashes onward into the cut; face + ears readable t14; still quadruped; still in frame.
+
+**Don’t:** extra foxes; hikers; readable text on the map; biped pose; ear-arms; tiny hero on a huge empty dune.  
+**Sound:** sand hiss, skid, wind — energetic, still max ≤ −6 (`loudnorm…,volume=0.5` last).
 
 ### I2I prompt
 
 ```
-Cinematic 16:9 mid-shot of Star Dune Cut at dusk. This exact white fennec fox from the reference, huge ears. QUADRUPED on four legs, already running down a sand dune. One tail. Hero fills at least 50%. Empty desert canyon, no people, no second fox. Ears are ears not arms. Paws not hands. Photoreal, no text.
+Cinematic 16:9 mid-shot of Star Dune Cut at dusk. This exact star-dust white fennec from the reference — huge ears, glowing white fur, QUADRUPED on four legs, already running down a sand dune between close canyon walls. One tail. Hero fills at least 50% of the frame. Empty desert — no people, no second fox, no fox-shaped sand shadows. Ears are ears not arms. Paws not hands. Photoreal. No text, no letters.
 ```
 
 ### I2V prompt
 
 ```
-15 seconds, sound, 480p. This exact white fennec. Exactly ONE fox. Four legs the entire time — never stands like a person. Ears stay ears, one tail stays a tail, paws stay paws. No human arms. No second fox.
+15 seconds, sound, 480p. This exact star-dust white fennec. Exactly ONE fox. Four legs the entire time — never stands like a person, never biped crouch. Ears stay ears, one tail stays a tail, paws stay paws. No human arms or hands. No second fox. No blurry limb-merge.
 
-Follow-cam. Hero stays large.
+Follow-cam. Hero stays large (≥50%). Close canyon — not a tiny speck on a wide empty dune.
 
-(1) Already sprinting down the dune. (2) Mid-clip: skids and pins one blank map-scrap under a stone with a paw — pinning obvious. (3) Dashes into the cut; face and ears readable last second; still on four legs.
+(1) Already sprinting down the dune on four legs. (2) Mid-clip (~7s): four-leg skid, pins one large blank map-scrap under a stone with a front paw — scrap and stone both readable, pinning obvious. No letters on the scrap. (3) Dashes into the cut; face and ears readable last second; still on four legs; stays in frame.
 
 Sound: sand hiss, skid, wind. No speech, no song.
 ```
