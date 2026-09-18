@@ -336,6 +336,10 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 - Opened `21–25-s3` + `16-s3`. **Disagree** with shoot-bot: 21–25 are portrait busts, not homes. **Agree/yield** on eggs-as-objects, start-in-place, limiter proof + `lmk` if stuck.
 - Plan text updated to match Bot1 pixel read.
 
+### 2026-09-17 — start: 36–40 shot one pass, twins, in catalog
+
+Keyframe A + 6s clips. Dirty B/C not I2V’d. xfade vs `-af` → concat. 40 least-bad (twin t14).
+
 ### 2026-09-17 — expedite 36–40: keyframe A/B/C + 5-in-one-pass
 
 Teacher: improve prompts; all five one pass; lock stills as frames; smoother I2V. 15s-from-one-still is the twin factory. QA audit `home-round-36-40.md` now. Do not generate until go.

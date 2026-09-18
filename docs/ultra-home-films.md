@@ -21,7 +21,7 @@ mp4s **are in git** (`public/avatars/ultra/homes/*.mp4`). Intros/adventures stay
 | **26–30** | In `ULTRA_HOME_READY` (v0.097) | Tableau / set / identity. In catalog to watch. | [AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md) |
 | **31** | In catalog (v0.100) | Motion better (teacher). Wing↔arm. Proceed. | |
 | **33–35** | In catalog (v0.109) | Twins both I2V takes. Virtue/limb attempted. | [AUDIT-31-35.md](home-film-qa/AUDIT-31-35.md) |
-| **36–40** | PLAN audited | Keyframe A/B/C + five-pass; wait `go`. | [home-round-36-40.md](home-round-36-40.md) |
+| **36–40** | In catalog (v0.112) | Keyframe 6s concat. Twins t7 (40 twins t14). | [AUDIT-36-40.md](home-film-qa/AUDIT-36-40.md) |
 
 On disk and in git: posters + **mp4s** `homes/01`–`20`.
 
@@ -79,7 +79,9 @@ Catalog 21–25 **stay**. Exact Ash quote (do not paraphrase away):
 
 Self-QA: if three stamps could be three still photos of one pose → **fail movement** (do not READY).
 
-## Expedite + keyframe I2V (teacher 36–40)
+**36–40 lesson:** put `loudnorm` **inside** `filter_complex` (not `-af` next to xfade). API **duration 6** works. Dirty B/C stills must not be I2V sources — 36/39 B never cleaned.
+
+---
 
 **Problem:** 15s from one still **twins** (31–35). Re-rolls ate the clock.
 
