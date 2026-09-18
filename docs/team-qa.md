@@ -291,6 +291,12 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 
 ## Log (newest first)
 
+### 2026-09-18 — ClassNest-Bot1 (audited + shipped 41–50 prompts)
+
+- Method v2 LOCK: A≥65%, no B/C I2I, last-frame extend, loudnorm in filter_complex, commit-per-id hard gate.
+- Catalog traps: 41 flyer rewrite; 43 empty bazaar; 50 empty hangar. Wait Ash `go`.
+- [home-round-41-50.md](home-round-41-50.md).
+
 ### 2026-09-18 — ClassNest-Bot1 (audited + shipped 36–40 prompts)
 
 - Five-in-one-pass + keyframe A/B/C + lock-frame clips (Extend or concat).

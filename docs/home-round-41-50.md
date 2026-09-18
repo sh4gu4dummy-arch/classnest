@@ -1,35 +1,44 @@
-# Home round 41–50 (PLAN — QA audit, then `go` / `start`)
+# Home round 41–50 (PLAN — QA audited; wait teacher `go`)
 
-**Expedite (teacher):** all **ten in one pass**. No trial-stop between ids.
+**Expedite (Ash):** all **ten in one pass**. No trial-stop between ids.
 
-**When shooting (not now):** **git commit each id** as soon as that Home mp4 is encoded + stamped + in `ULTRA_HOME_READY`. Do not wait for 50 to commit 41.
+**HARD shoot gate:** after **each** id is filmed + encoded + stamped + in catalog/`ULTRA_HOME_READY`, **git commit that id** before starting the next. Do not ten-pack without per-id commits (work-loss risk).
 
-**Do not generate until `go`/`start`.** Do not remake 36–40 unless named.
+**Do not generate until `go`.** Do not remake 36–40 unless named. 32 stays.
 
-Ids: **41 Sparkgrit → 50 Aegisunit.** Lore: [ultra-lore-bible.md](ultra-lore-bible.md) §§41–50.
+Ids: **41 Sparkgrit → 50 Aegisunit.** Lore: [ultra-lore-bible.md](ultra-lore-bible.md) §§41–50.  
+Bot1 + QAsupervisor LOCK (2026-09-18).
+
+### Ash limb feedback (exact — from 31)
+
+> action/movement better, weirdness with wings becoming arms etc, good enough to proceed but note down my feedback becareful with tails or wings or fins or anything especially if ur mixing and getting messy with bipedal or somewhat humanized animals etc AI gets messy/blurry. the owls wings are sometimes arms sometimes wings etc. note my feedback then make prompt for next one 32.
+
+**Humanoid ≠ animalize** where applicable. Twin HARD = **two distinct bodies** only. No real-language letters (blank/rune/seal only).
+
+---
 
 ## Method v2 (better than 36–40)
 
-36–40: I2I **B/C stills grew twins**; 6s I2V from a clean A **still twinned at t7**; xfade broke because `-af` + `filter_complex`.
+36–40: B/C I2I stills twinned; 6s from clean A still twinned at t7; xfade broke with `-af` outside `filter_complex`.
 
-**Do this instead:**
+**Do this:**
 
-1. **Still A only.** Tight mid-shot, **hero ≥65%** (no empty hall for a twin). Dump `{id}_A.jpg`. Open it. Two bodies → redo A. Never I2V a dirty A.
-2. **Do not I2I B/C stills.** That chain duplicated last time.
-3. **Clip1** = I2V **duration 6** from A (start beat).
-4. **Extend:** extract **last frame** of clip1 → open it. Twin → **re-roll clip1**, do not extend. Clean → **Clip2** I2V 6s from that frame (virtue beat).
-5. Same for **Clip3** from clip2 last frame (aftermath).
-6. Concat with xfade; put **loudnorm inside `filter_complex`** (not `-af`):
+1. **Still A only.** Mid-shot **hero ≥65%**. Dump `{id}_A.jpg`. Open. Two bodies → redo A. Never I2V dirty A. **No B/C I2I.**
+2. **Clip1** = I2V duration **6** from A.
+3. Extract **last frame** → dump/open `{id}_ext1.jpg`. Twin or hero lost ≥65% → **re-roll clip1** (do not extend a dirty frame). Clean → **Clip2** I2V 6s from that frame (virtue).
+4. Same for **Clip3** from clip2 last frame (`{id}_ext2.jpg`).
+5. Concat; **loudnorm inside filter_complex**:
 
 ```bash
 ffmpeg -y -i c1.mp4 -i c2.mp4 -i c3.mp4 \
-  -filter_complex "[0:v][1:v]xfade=transition=fade:duration=0.4:offset=4.6[ab];[ab][2:v]xfade=transition=fade:duration=0.4:offset=9.2[v];
-[0:a][1:a]acrossfade=d=0.4[a1];[a1][2:a]acrossfade=d=0.4,loudnorm=I=-20:LRA=11:TP=-2,volume=0.5[a]" \
+  -filter_complex "[0:v][1:v]xfade=transition=fade:duration=0.4:offset=4.6[ab];[ab][2:v]xfade=transition=fade:duration=0.4:offset=9.2[v];[0:a][1:a]acrossfade=d=0.4[a1];[a1][2:a]acrossfade=d=0.4,loudnorm=I=-20:LRA=11:TP=-2,volume=0.5[a]" \
   -map "[v]" -map "[a]" -c:v libx264 -preset veryfast -crf 28 -pix_fmt yuv420p \
   -c:a aac -b:a 128k -movflags +faststart public/avatars/ultra/homes/NN.mp4
 ```
 
-7. Stamps 0.5/3/7/11/14. Twin HARD = two distinct bodies. One re-roll of that clip then catalog. **Commit that id.** Next id.
+6. Stamps 0.5/3/7/11/14. One re-roll of a bad clip then catalog. **Commit that id.** Next id.
+
+**Soft preference:** prove method on **41** first then continue the ten — do not block the pass unless Ash says.
 
 Shared negative:
 
@@ -41,129 +50,231 @@ Virtue is being DONE, not looking at a souvenir.
 
 ---
 
-## 41 Sparkgrit — Sky-Dock 7 — working ugly beats pretty parked
+## 41 Sparkgrit — Sky-Dock 7
 
-**Virtue:** he **tightens the bolt** so the ugly flyer **lives**, then docks it. Not “look at a bolt.”
+**Virtue:** Tightens the bolt so the ugly flyer **lives**, then docks it — not “look at a bolt.”
 
-| Clip | Beat |
-|---|---|
-| 1 from A | One goblin at a messy sky-dock, **ugly mini-flyer** in paws, bolt loose. Hero ≥65%. Empty dock. |
-| 2 extend | **Tightening the bolt**; flyer starts to hover. |
-| 3 extend | Flyer docks; he grins; **no trophy pose**. One goblin.
+**Catalog trap:** s3 bust + glowing hand-device + floating city — **not** dock flyer. **Rewrite.**
 
-**A still:** 16:9 dock, this goblin face, one ugly flyer, no extra goblins, no letters.  
-**Sound:** ratchet, hover buzz, dock clunk.
+### Still A (gate before any I2V)
+Dump `docs/home-film-qa/41_A.jpg` → open. Two bodies or hero <65% → redo A.
 
-## 42 Gravemason — Carved Mountain — heavy work is allowed; rest is allowed
+```
+Cinematic 16:9 Sky-Dock 7. This exact goblin face from the reference. ONE goblin, hero ≥65%, holding an UGLY mini-flyer with a LOOSE bolt visible. Empty dock — no second goblin, no floating-city crowd behind. Photoreal. No letters.
+```
 
-**Virtue:** he **sits as a seat** (rest) while one abstract rune carves. Being the bench is the act.
+### Clips (method v2)
+| Clip | Source | Beat |
+|---|---|---|
+| 1 | I2V 6s from A | Ugly flyer in paws, bolt loose; empty dock. |
+| 2 | last frame of 1 → open `41_ext1.jpg` → if twin/lost ≥65% **re-roll clip1**; else I2V 6s | **Tightening the bolt**; flyer starts to hover. |
+| 3 | last frame of 2 → open `41_ext2.jpg` → same gate → I2V 6s | Flyer docks; he grins; **no trophy pose**. One goblin. |
 
-| Clip | Beat |
-|---|---|
-| 1 | One stone golem, mountain hall, starting to sit. ≥65%. |
-| 2 | Seated; **one abstract rune** carves (not a real name). |
-| 3 | Stays as a seat. Empty. No second golem.
+**Don’t:** extra goblins; letters; tiny hero; city swarm behind  
+**Sound:** ratchet, hover buzz, dock clunk
 
-**Don’t:** extra golems; readable names. **Sound:** stone grind, chisel, hush.
+## 42 Gravemason — Carved Mountain
 
-## 43 Cinderwish — Thousand-Lamp Bazaar — shy wish, one more try
+**Virtue:** Sits as a seat (rest) while one abstract rune carves — being the bench is the act.
 
-**s3 trap:** crowded bazaar. **Rewrite:** empty aisle. **Virtue:** **lights one unlit lamp** and **leaves it** (grants the unspoken). No people.
+### Still A (gate before any I2V)
+Dump `docs/home-film-qa/42_A.jpg` → open. Two bodies or hero <65% → redo A.
 
-| Clip | Beat |
-|---|---|
-| 1 | One lantern-djinn, empty bazaar, one **dark** lamp. ≥65%. |
-| 2 | **Lights** that lamp. |
-| 3 | Sets it on a sill and **walks on**. No extra djinn.
+```
+Cinematic 16:9 carved mountain hall. This exact stone golem face from the reference. ONE golem starting to sit as a bench, hero ≥65%. Empty hall — no second golem. Photoreal. Abstract marks only — no readable names.
+```
 
-**Don’t:** patrons; extra djinn; letters on lamps. **Sound:** match/glass, quiet market.
+### Clips (method v2)
+| Clip | Source | Beat |
+|---|---|---|
+| 1 | I2V 6s from A | Starting to sit. ≥65%. |
+| 2 | last frame of 1 → open `42_ext1.jpg` → if twin/lost ≥65% **re-roll clip1**; else I2V 6s | Seated; **one abstract rune** carves (not a real name). |
+| 3 | last frame of 2 → open `42_ext2.jpg` → same gate → I2V 6s | Stays as a seat. Empty. One golem. |
 
-## 44 Duskwyn — Eclipse Terrace — courtesy as armor
+**Don’t:** extra golems; readable names  
+**Sound:** stone grind, chisel, hush
 
-**Virtue:** **sets a second teacup** and **waits without staring**. Invitation, not a test. No guest faces.
+## 43 Cinderwish — Thousand-Lamp Bazaar
 
-| Clip | Beat |
-|---|---|
-| 1 | One moonlit noble, terrace night, **one** cup. ≥65%. Empty. |
-| 2 | Places **the second cup**; steam. Does not stare at the empty chair. |
-| 3 | Waits, looking aside. One noble.
+**Virtue:** Lights one unlit lamp and **leaves it** (grants the unspoken).
 
-**Don’t:** extra nobles; guest faces; letters. **Sound:** porcelain, night wind.
+**Catalog trap:** s3 colossal djinn over crowded desert city + lantern swarm. **Rewrite:** empty aisle, mid-shot ≥65%, one dark lamp, no patrons.
 
-## 45 Brinecrown — Glassreef Palace — wait your turn; swim together
+### Still A (gate before any I2V)
+Dump `docs/home-film-qa/43_A.jpg` → open. Two bodies or hero <65% → redo A.
 
-**Virtue:** **stills the water** so a **tiny fish-school (env, not monarchs)** can pass. Fins stay fins.
+```
+Cinematic 16:9 empty night bazaar aisle. This exact lantern-djinn face from the reference. ONE djinn, mid-shot hero ≥65%, beside ONE DARK unlit lamp. Empty aisle — no patrons, no tiny-city god-scale, no lantern swarm. Photoreal. No letters on lamps.
+```
 
-| Clip | Beat |
-|---|---|
-| 1 | One merfolk monarch, palace gate, water choppy. ≥65%. |
-| 2 | Palm stills water; **tiny fish** line up (props). **Still one merfolk.** |
-| 3 | Fish pass; they watch. No second merfolk.
+### Clips (method v2)
+| Clip | Source | Beat |
+|---|---|---|
+| 1 | I2V 6s from A | One dark lamp; empty bazaar. |
+| 2 | last frame of 1 → open `43_ext1.jpg` → if twin/lost ≥65% **re-roll clip1**; else I2V 6s | **Lights** that lamp. |
+| 3 | last frame of 2 → open `43_ext2.jpg` → same gate → I2V 6s | Sets it on a sill and **walks on**. One djinn. |
 
-**Don’t:** second merfolk; letters. **Sound:** water hush.
+**Don’t:** patrons; extra djinn; letters; god-scale city  
+**Sound:** match/glass, quiet market
 
-## 46 Palevow — Sunlit Ossuary — keep the promise
+## 44 Duskwyn — Eclipse Terrace
 
-**Virtue:** **catches a slipping oath-scroll** and **pins it over the heart**. Not horror.
+**Virtue:** Sets a second teacup and waits without staring — invitation, not a test.
 
-| Clip | Beat |
-|---|---|
-| 1 | One bone paladin, sunlit ossuary, scroll starting to slip. ≥65%. Warm light. |
-| 2 | **Catches and pins** the scroll. |
-| 3 | Sunlight hardens it. Face readable. Not scary. One knight.
+### Still A (gate before any I2V)
+Dump `docs/home-film-qa/44_A.jpg` → open. Two bodies or hero <65% → redo A.
 
-**Don’t:** horror; extra knights; readable text on the scroll (blank/seal only). **Sound:** cloth, pin, soft choir-air.
+```
+Cinematic 16:9 Eclipse Terrace at night. This exact moonlit noble face from the reference. ONE noble, hero ≥65%, one teacup visible. Empty terrace — no guest faces, no second noble. Photoreal. No letters.
+```
 
-## 47 Viridelle — World-Tree Nave — tend the scrape
+### Clips (method v2)
+| Clip | Source | Beat |
+|---|---|---|
+| 1 | I2V 6s from A | One cup; empty terrace. |
+| 2 | last frame of 1 → open `44_ext1.jpg` → if twin/lost ≥65% **re-roll clip1**; else I2V 6s | Places **the second cup**; steam; does not stare at empty chair. |
+| 3 | last frame of 2 → open `44_ext2.jpg` → same gate → I2V 6s | Waits, looking aside. One noble. |
 
-**Virtue:** **pours one jar** into a **cracked root**; green fills the crack.
+**Don’t:** extra nobles; guest faces; letters  
+**Sound:** porcelain, night wind
 
-| Clip | Beat |
-|---|---|
-| 1 | One dryad, nave, cracked root, jar in hands. ≥65%. |
-| 2 | **Pouring**; green filling the crack. |
-| 3 | Crack sealed; small smile. One dryad.
+## 45 Brinecrown — Glassreef Palace
 
-**Don’t:** extra dryads; letters. **Sound:** water, wood.
+**Virtue:** Stills the water so a tiny fish-school (env props) can pass. Fins stay fins.
 
-## 48 Quartzarch — Infinite Prism — another facet
+**Catalog trap:** s3 waist-up merfolk + trident + glowing city — keep face; place at palace gate mid ≥65%.
 
-**Virtue:** **rotates a crystal cube** until a **new corridor of light** opens, then walks it.
+### Still A (gate before any I2V)
+Dump `docs/home-film-qa/45_A.jpg` → open. Two bodies or hero <65% → redo A.
 
-| Clip | Beat |
-|---|---|
-| 1 | One crystal mage, prism hall, cube in hands. ≥65%. |
-| 2 | **Rotating**; new light-corridor opens. |
-| 3 | Walks into it. One mage.
+```
+Cinematic 16:9 Glassreef Palace gate underwater. This exact merfolk monarch face from the reference. ONE merfolk, fins stay fins, hero ≥65%, water slightly choppy. Empty gate — no second merfolk. Photoreal. No letters.
+```
 
-**Don’t:** extra mages; letters in the glass. **Sound:** crystal tick, whoosh of the hall.
+### Clips (method v2)
+| Clip | Source | Beat |
+|---|---|---|
+| 1 | I2V 6s from A | Water choppy; one merfolk. |
+| 2 | last frame of 1 → open `45_ext1.jpg` → if twin/lost ≥65% **re-roll clip1**; else I2V 6s | Palm stills water; **tiny fish** line up as environment props. Still ONE merfolk. |
+| 3 | last frame of 2 → open `45_ext2.jpg` → same gate → I2V 6s | Fish pass; they watch. No second merfolk. |
 
-## 49 Inkstride — Ink Roof — say the brave sentence
+**Don’t:** second merfolk; letters; fish that read as monarchs  
+**Sound:** water hush
 
-**Virtue:** a **ribbon of ink follows a step**, then **settles as one stroke** on paper. **No readable words.**
+## 46 Palevow — Sunlit Ossuary
 
-| Clip | Beat |
-|---|---|
-| 1 | One ink dancer on a roof, paper waiting, ink at a foot. ≥65%. |
-| 2 | Ink ribbon **follows the step**. |
-| 3 | Settles as a single abstract stroke (not letters). One dancer.
+**Virtue:** Catches a slipping oath-scroll and pins it over the heart. Not horror.
 
-**Don’t:** extra dancers; real-language writing. **Sound:** wind, ink drip.
+**Catalog trap:** s3 serene cathedral paladin — keep face; warm sunlit ossuary not horror.
 
-## 50 Aegisunit — Dome Watch — stand between
+### Still A (gate before any I2V)
+Dump `docs/home-film-qa/46_A.jpg` → open. Two bodies or hero <65% → redo A.
 
-**Virtue:** **plants feet**, **shield-dome ripples once** over an **empty** hangar, visor dims to rest. Not combat.
+```
+Cinematic 16:9 sunlit ossuary, warm light. This exact bone paladin face from the reference. ONE knight, hero ≥65%, blank oath-scroll starting to slip. Not scary. Empty — no second knight. Photoreal. Scroll blank/seal only — no readable text.
+```
 
-| Clip | Beat |
-|---|---|
-| 1 | One mech, empty hangar, starting to plant feet. ≥65%. |
-| 2 | **Dome shimmer** over empty floor. |
-| 3 | Visor dims; rest. One mech. No extra units.
+### Clips (method v2)
+| Clip | Source | Beat |
+|---|---|---|
+| 1 | I2V 6s from A | Scroll starting to slip; warm light. |
+| 2 | last frame of 1 → open `46_ext1.jpg` → if twin/lost ≥65% **re-roll clip1**; else I2V 6s | **Catches and pins** the blank scroll over the heart. |
+| 3 | last frame of 2 → open `46_ext2.jpg` → same gate → I2V 6s | Sunlight hardens it. Face readable. Not scary. One knight. |
 
-**Don’t:** extra mechs; combat; letters. **Sound:** servo, one shield hum, rest.
+**Don’t:** horror; extra knights; readable scroll text  
+**Sound:** cloth, pin, soft choir-air
+
+## 47 Viridelle — World-Tree Nave
+
+**Virtue:** Pours one jar into a cracked root; green fills the crack.
+
+### Still A (gate before any I2V)
+Dump `docs/home-film-qa/47_A.jpg` → open. Two bodies or hero <65% → redo A.
+
+```
+Cinematic 16:9 World-Tree Nave. This exact dryad face from the reference. ONE dryad, hero ≥65%, cracked root + jar in hands. Empty nave — no second dryad. Photoreal. No letters.
+```
+
+### Clips (method v2)
+| Clip | Source | Beat |
+|---|---|---|
+| 1 | I2V 6s from A | Cracked root, jar in hands. |
+| 2 | last frame of 1 → open `47_ext1.jpg` → if twin/lost ≥65% **re-roll clip1**; else I2V 6s | **Pouring**; green filling the crack (pour readable). |
+| 3 | last frame of 2 → open `47_ext2.jpg` → same gate → I2V 6s | Crack sealed; small smile. One dryad. |
+
+**Don’t:** extra dryads; letters  
+**Sound:** water, wood
+
+## 48 Quartzarch — Infinite Prism
+
+**Virtue:** Rotates a crystal cube until a new corridor of light opens, then walks it.
+
+### Still A (gate before any I2V)
+Dump `docs/home-film-qa/48_A.jpg` → open. Two bodies or hero <65% → redo A.
+
+```
+Cinematic 16:9 Infinite Prism hall. This exact crystal mage face from the reference. ONE mage, hero ≥65%, crystal cube in hands. Empty hall — no second mage. Photoreal. No letters in the glass.
+```
+
+### Clips (method v2)
+| Clip | Source | Beat |
+|---|---|---|
+| 1 | I2V 6s from A | Cube in hands. |
+| 2 | last frame of 1 → open `48_ext1.jpg` → if twin/lost ≥65% **re-roll clip1**; else I2V 6s | **Rotating**; new light-corridor opens. |
+| 3 | last frame of 2 → open `48_ext2.jpg` → same gate → I2V 6s | Walks into it. One mage. |
+
+**Don’t:** extra mages; letters in glass  
+**Sound:** crystal tick, whoosh
+
+## 49 Inkstride — Ink Roof
+
+**Virtue:** Ink ribbon follows a step, settles as one abstract stroke. No readable words.
+
+### Still A (gate before any I2V)
+Dump `docs/home-film-qa/49_A.jpg` → open. Two bodies or hero <65% → redo A.
+
+```
+Cinematic 16:9 Ink Roof at dusk. This exact ink dancer face from the reference. ONE dancer, hero ≥65%, blank paper waiting, ink at a foot. Empty roof — no second dancer. Photoreal. No letters.
+```
+
+### Clips (method v2)
+| Clip | Source | Beat |
+|---|---|---|
+| 1 | I2V 6s from A | Paper waiting; ink at foot. |
+| 2 | last frame of 1 → open `49_ext1.jpg` → if twin/lost ≥65% **re-roll clip1**; else I2V 6s | Ink ribbon **follows the step**. |
+| 3 | last frame of 2 → open `49_ext2.jpg` → same gate → I2V 6s | Settles as a single abstract stroke (not letters). One dancer. |
+
+**Don’t:** extra dancers; real-language writing  
+**Sound:** wind, ink drip
+
+## 50 Aegisunit — Dome Watch
+
+**Virtue:** Plants feet; shield-dome ripples once over empty hangar; visor dims to rest. Not combat.
+
+**Catalog trap:** s3 mega-mech over city with dome already on. **Rewrite:** empty hangar mid ≥65%; no city-crowd scale.
+
+### Still A (gate before any I2V)
+Dump `docs/home-film-qa/50_A.jpg` → open. Two bodies or hero <65% → redo A.
+
+```
+Cinematic 16:9 empty Dome Watch hangar. This exact mech face/visor from the reference. ONE mech, mid-shot hero ≥65%, starting to plant feet. Empty hangar — no city swarm, no second unit. Photoreal. No letters.
+```
+
+### Clips (method v2)
+| Clip | Source | Beat |
+|---|---|---|
+| 1 | I2V 6s from A | Planting feet; empty hangar. |
+| 2 | last frame of 1 → open `50_ext1.jpg` → if twin/lost ≥65% **re-roll clip1**; else I2V 6s | **Dome shimmer once** over empty floor. |
+| 3 | last frame of 2 → open `50_ext2.jpg` → same gate → I2V 6s | Visor dims; rest. One mech. No combat. |
+
+**Don’t:** extra mechs; combat; city scale; letters  
+**Sound:** servo, one shield hum, rest
 
 ---
 
-## After `go` / `start`
+## After `go`
 
-Shoot **41–50** with method v2. After each id: stamps + catalog + **commit that id**. `AUDIT-41-50.md` can accumulate per commit. No zip/APK unless asked.
+1. Shoot **41–50** with method v2.
+2. After each id: stamps + catalog + **commit that id** → then next.
+3. Soft: prove on 41 first if Builder wants, then continue.
+4. `AUDIT-41-50.md` may accumulate per commit. No zip/APK unless asked.

@@ -22,7 +22,7 @@ mp4s **are in git** (`public/avatars/ultra/homes/*.mp4`). Intros/adventures stay
 | **31** | In catalog (v0.100) | Motion better (teacher). Wing↔arm. Proceed. | |
 | **33–35** | In catalog (v0.109) | Twins both I2V takes. Virtue/limb attempted. | [AUDIT-31-35.md](home-film-qa/AUDIT-31-35.md) |
 | **36–40** | In catalog (v0.112) | Keyframe 6s concat. Twins t7 (40 twins t14). | [AUDIT-36-40.md](home-film-qa/AUDIT-36-40.md) |
-| **41–50** | PLAN | Method v2 last-frame extend; 10-in-one-pass; commit-per-id. | [home-round-41-50.md](home-round-41-50.md) — QA audit, wait `go`. |
+| **41–50** | PLAN audited | Method v2 last-frame extend; 10-pass; commit-per-id; wait `go`. | [home-round-41-50.md](home-round-41-50.md) |
 
 On disk and in git: posters + **mp4s** `homes/01`–`20`.
 
@@ -358,3 +358,13 @@ Ready to shoot **06–10** when the teacher says **`go`**. Not before.
 Default: **trial-first one id** while twin risk is live.
 
 **Exception:** when Ash says a **named batch together** (e.g. deepen 34–35 then `go` 33–35), Builder may shoot that whole batch after the deepen is on main — **no second chat `go`**. Still enforce per-id I2I/t7 still-gates and twin re-roll inside the batch. Does not waive catalog rewrite, limb lock, or virtue-action.
+
+## Method v2 — last-frame extend (41–50)
+
+Better than 36–40 keyframe B/C I2I (those stills twinned).
+
+1. Still **A only**, hero **≥65%**, still-gate.
+2. No B/C I2I.
+3. Clip1 = 6s I2V from A → open last frame → re-roll if twin/lost size → Clip2 extend → Clip3 same.
+4. loudnorm **inside** `filter_complex` with xfade.
+5. Shoot: **commit each id** before the next.
