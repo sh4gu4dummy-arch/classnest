@@ -2,17 +2,13 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.122.** This file ships in **every** push.
+**v0.123.** This file ships in **every** push.
 
 ## `start`
 
-**41–43, 45–48, 50 in catalog.** **Still due: 44 Duskwyn, 49 Inkstride** (A stills kept twinning; s3 also two-body).
+**41–48, 50 in catalog. 44 Duskwyn in this commit.** 49 filming.
 
-## What just happened
-
-This `start` filmed **45, 46, 47, 48, 50** (commit-per-id). **45 and 50** one hero on all stamps. Tight A + last-frame extend when ext is clean.
-
-Next `start`: 44 + 49 only (need a one-body A).
+Crop lesson: s3 two-body → **tight face crop** as A (image API 404). 44 start one-body; t7/t14 grew a guest (second-cup magnet).
 
 ## Hard stops
 

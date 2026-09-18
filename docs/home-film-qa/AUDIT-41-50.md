@@ -12,4 +12,4 @@
 
 | 47 Viridelle | s3 one-body | **2** | clip2/3 from A | **1** t7 | | | −13.6 | v0.122 |
 
-**Still due:** 44, 49 (A and s3 both two-body).
+| 44 Duskwyn | face-crop A (1) | 1 | 1 | **1** t0.5 | **2** t7 | **2** t14 | −12.5 | v0.123 | second-cup invited a guest |
