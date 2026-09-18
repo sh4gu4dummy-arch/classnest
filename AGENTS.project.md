@@ -13,7 +13,7 @@ Then this file. Direct chat instructions still win.
   the only copy. Copy first, then encode a new file.
 - Catalog intros/adventures are **silent on purpose**. **Home films**
   (`public/avatars/ultra/homes/`) keep diegetic sound. Recipe: `docs/ultra-home-films.md`.
-- **Homes now:** 01–25 in catalog (teacher: 21–25 too still — **do not remake now**). **26–30 not READY** (twins + tableau). Next plan: `docs/home-round-31-35.md` — **travel/action bar**. Do not delete Home mp4s without a yes.
+- **Homes now:** 01–30 in catalog. **21–25 too still** (do not remake now). **26–30 twins + tableau** (in catalog; remake later). Next plan: `docs/home-round-31-35.md` — **travel/action bar**. Do not delete Home mp4s without a yes.
 
 ## Other standing rules
 

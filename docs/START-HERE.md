@@ -2,12 +2,12 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.096.** This file ships in **every** push.
+**v0.097.** This file ships in **every** push.
 
 ## What just happened (2026-09-17)
 
 1. **Teacher on 21–25:** catalog stays — **do not remake**. Scenery good, sound OK, **not enough movement/action** (slideshow). Later rounds: **much more travel**, new beat of place OK, more exciting diegetic sound. SOP: [ultra-home-films.md](ultra-home-films.md) § *ACTION BAR*.
-2. **26–30:** shot, **not READY**. Twins mid/end **and** tableaus. [AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md). Remake only on named `go`.
+2. **26–30:** in catalog **anyway** (teacher: look now, remake later). Twins + tableaus. [AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md).
 3. **Next prompts (QA now):** [home-round-31-35.md](home-round-31-35.md) — Rookplate / Sandwisp / Scrapcoon / Kindlekin / Riftstallion. **Do not generate** until `go`.
 
 ## Read in this order

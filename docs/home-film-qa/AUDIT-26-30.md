@@ -3,7 +3,7 @@
 Teacher `go` (agree with Bot1 plan). Executor shot. **Do not catalog READY** until twins are gone.
 
 Stills: `{id}_s3.jpg` = 16:9 home still + t0.5/3/7/11/14.  
-mp4s on disk (git): `public/avatars/ultra/homes/26.mp4`–`30.mp4`. **Not** in `ULTRA_HOME_READY`.
+mp4s on disk (git): `public/avatars/ultra/homes/26.mp4`–`30.mp4`. **In catalog (v0.097)** so the teacher can watch. Remake later — not a quality pass.
 
 ## Audio (854×480, volume=0.5 last)
 

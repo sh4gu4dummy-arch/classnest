@@ -18,7 +18,7 @@ mp4s **are in git** (`public/avatars/ultra/homes/*.mp4`). Intros/adventures stay
 | **11–15** | In `ULTRA_HOME_READY` (v0.066) | Shot. 854×480 + loudnorm. One hero each; face/bell at t=14. | In catalog. QA stills in `docs/home-film-qa/`. |
 | **16–20** | In `ULTRA_HOME_READY` (v0.072) | Shot. 854×480 + loudnorm + alimiter. One hero each on stills. Peaks still hot. | In catalog. Other bot: [AUDIT-16-20.md](home-film-qa/AUDIT-16-20.md). |
 | **21–25** | In `ULTRA_HOME_READY` (v0.090) | Scenery/sound OK. **Teacher: not enough movement — do not remake now.** | Catalog. Action bar for later rounds. |
-| **26–30** | Shot, **not READY** | Twins mid/end **and** mostly tableau. [AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md) | Redo on `go` with action bar + one-hero. |
+| **26–30** | In `ULTRA_HOME_READY` (v0.097) | Twins + tableaus. **In catalog so teacher can watch.** Remake later. | [AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md) |
 
 On disk and in git: posters + **mp4s** `homes/01`–`20`.
 
