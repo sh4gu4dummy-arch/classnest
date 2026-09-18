@@ -4,4 +4,6 @@
 |---|---|---|---|---|---|---|---|---|
 | 41 Sparkgrit | A redid (2→1) | 1 goblin | 1 goblin | **2** | **2** | **2** | −7.2 | v0.115 |
 
-| 42 Gravemason | 1 | 1 | 1 | 1 | 1 | **2** t14 | −10.1 | v0.116 |
+| 43 Cinderwish | 1 | 1 | 1 | **2** | **2** | 1 t14 | −8.0 | v0.117 |
+
+**Pause:** 44–50 not shot this turn (method proven; remaining seven on next `start`).
