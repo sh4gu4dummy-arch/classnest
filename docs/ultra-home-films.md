@@ -59,19 +59,42 @@ Root cause: I2V from a **wide** 16:9 still + **6 story beats** in 15s. The model
 
 ---
 
-## Teacher 21–25 (2026-09-17) — ACTION BAR (do not remake 21–25 now)
+## Teacher 21–25 — ACTION BAR (do not remake 21–25 now)
 
-Catalog 21–25 **stay**. Teacher: scenery good, sound fine for a quiet clip, **motion not even close**. Soft pets still looked like a slideshow.
+Catalog 21–25 **stay**. Exact Ash quote (do not paraphrase away):
+
+> I just audited 21-25. not even close to enough movement or action. we won't remake for now, but I want MUCH more movement. maybe those were more chill cuz they are soft pets etc, but they are so boring. I want the character to be moving a lot, maybe to an entire new scene or at least having a lot of action. significantly more entertaining. but the quality of the imagery scenery is good. the sound was good for the boring videos hopefully it will have more exciting sound in the more exciting videos. include my feedback for 21-25 in the next start here. hope to see improvements for subsequent rounds. also do a self audit of your last 26-30 round and fold in any results, prepare everything for QA, including prompts for next round of 5 (do prompts of next round after you read my feedback and do yourself audit to learn any new lessons). mark my requirements down and update any protocol SOP documents you refer to when self auditing.
+
+**Locks:** no remake 21–25; keep scenery quality; **action bar hard** for later rounds; exciting diegetic sound with the motion.
 
 **Subsequent rounds must:**
 
-- **Much more movement.** Hero travels — run / leap / swim / fly / gallop — not sit-paw-sit.
-- **New beat of place OK** (window → room, battlement → inner wall, dune → cut) as long as **one** readable hero stays large.
-- **Entertaining**, not a tableau. t0.5 / t7 / t14 must **not** be the same pose.
+- **MUCH more movement.** Hero travels — run / leap / swim / fly / gallop — not sit-paw-sit. New beat of place OK.
+- **Significantly more entertaining.** t0.5 / t7 / t14 must **not** be the same pose (slideshow = fail).
 - Keep scenery quality. Sound should **match the action** (whoosh, hooves, splash, metal) — still diegetic, still max ≤ −6.
-- Locked-camera / already-still is **not** the default anymore. Slow follow is OK. Twins / lost face still fail.
+- Locked sit-still is **not** the default. Slow follow OK. Twins / lost face still fail.
 
 Self-QA: if three stamps could be three still photos of one pose → **fail movement** (do not READY).
+
+## Twin evidence rule (AUDIT)
+
+Twin **HARD** only when stamps show **two distinct heads/bodies**. Do **not** call twin HARD for: water **reflection**, one long body looping in/out of water, horn/leg anatomy softs without a second creature, or a mushroom/prop. Homes 26–30 corrected: twin column was overclaimed; fails were tableau / set-drift / identity.
+
+## Anti-twin prevention (method — still ship)
+
+Negatives alone do not stop I2V merge on later rounds. Use this stack:
+
+1. **I2I still-gate.** Dump home I2I → open it. Extra limb/face/second silhouette → redo I2I. Never I2V a dirty still.
+2. **Hero ≥50% mid-shot.** “One body, one shadow, one pair of eyes.”
+3. **≤3 travel beats** in 15s (six story beats invite twins).
+4. **Mandatory re-roll.** Any stamp with two distinct bodies → discard clip, do not encode to `homes/`, do not continue the batch.
+5. **Long-body special:** single continuous spine; do not miscount one serpent as two — but a real second head still fails.
+6. **Trial before batch.** One id until stamps clear **twins + action**. First generate-go: **31 Rookplate**.
+
+## Trial-first (process)
+
+- Do not five-at-once while twin risk is live.
+- Bot1 **fills AUDIT QA column** before READY / catalog celebration. Empty QA after a failed batch = process fail.
 
 ---
 

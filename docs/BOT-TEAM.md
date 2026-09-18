@@ -21,6 +21,16 @@ Teacher runs more than one bot. Rubber-stamping “pass / ready to shoot” is n
 - Treat “one body” as a pass if the face is gone.
 - Assume you lack **intro/adventure** mp4s (gitignored). **Home** mp4s (`public/avatars/ultra/homes/*.mp4`) **are in git** — open them when auditing Homes. Shared board: [team-qa.md](team-qa.md).
 
+
+## Teacher bar (Ash — exact quote lives in START-HERE)
+
+Do **not** paraphrase Ash’s 21–25 motion feedback. Read the blockquote in [START-HERE.md](START-HERE.md) and ACTION BAR / anti-twin prevention in [ultra-home-films.md](ultra-home-films.md).
+
+- **Slideshow** (t0.5/t7/t14 same pose) = **fail** movement.
+- **Twin HARD** only with **two distinct heads/bodies** (not reflection, looped tail, prop). Merged second body still fails when real.
+- **Trial one id** before batching while twin risk is live (first generate-go: **31 Rookplate**).
+- Negatives alone are not anti-twin prevention — follow the SOP stack.
+
 ## After you write
 
 Commit the audit reply, `sh scripts/push-github.sh`, tell the teacher pass/fail per id.

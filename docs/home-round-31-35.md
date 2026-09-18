@@ -1,33 +1,34 @@
-# Home round 31–35 (PLAN only — QA audit, then teacher `go`)
+# Home round 31–35 (PLAN only — teacher `go`)
 
-**Do not generate until `go`.** Do not remake 21–25. Do not remake 26–30 unless teacher names those ids.
+**Do not generate until `go`.** Do not remake 21–25 or 26–30 unless Ash names ids.
 
 Ids: **31 Rookplate, 32 Sandwisp, 33 Scrapcoon, 34 Kindlekin, 35 Riftstallion.**  
 Lore: [ultra-lore-bible.md](ultra-lore-bible.md) §§31–35.  
 Homes: Night Battlement, Star Dune Cut, Neon Night Market, Lantern Study, Silent Observatory.
 
-## Why this round is different
+## Ash requirements (exact quote in START-HERE)
 
-Teacher on **21–25:** scenery good, sound OK, **motion not even close** — do not remake those now.  
-**26–30:** twins + tableaus; not READY.
+Action bar hard. Scenery quality keep. Exciting diegetic sound with motion. No remake 21–25. Lessons from 26–30: **tableau fails**; twin HARD only with two distinct bodies; keep anti-twin **prevention**.
 
-**Bar for 31–35:**
+## Pre-go locks (QAsupervisor LOCK)
 
-- **Travel.** Hero runs / leaps / flies / gallops. t0.5, t7, t14 must look like different moments, not a slideshow.
-- **New beat of place OK** (wall → inner court, dune → cut, stall → roof, study → window, floor → star-road). One readable hero ≥40% the whole time.
-- **Exciting diegetic sound** (whoosh, hooves, neon, metal, wind) — still max ≤ −6, `loudnorm…,volume=0.5` last until proven hotter.
-- Still: one body, no humans, no letters, I2I 16:9 home from catalog s3 if bust/sliver, virtue = **action** at t7.
+1. **Trial first = 31 Rookplate.** Full stamps + loudness. Twin (two bodies) or slideshow → stop. Only then batch 32–35.
+2. **Action bar:** t0.5 / t7 / t14 = different moments. Mid still shows **travel or new beat of place**. Sit/perch/stand-only = **FAIL**.
+3. **Anti-twin prevention** ([ultra-home-films.md](ultra-home-films.md)): I2I still-gate → hero ≥50% → ≤3 travel beats → mandatory re-roll on two distinct bodies.
+4. **Bot1 fills AUDIT** before READY theater.
+5. No readable real-language letters (rune-type marks only if any marks). No humans/crowds.
+6. Encode: `loudnorm=I=-20:LRA=11:TP=-2,volume=0.5` last; max ≤ −6.
 
-Camera **may follow**. Locked sit-paw-sit is a **movement fail**.
-
-Shared negative:
+Shared negative (every I2I/I2V) — **method above still required**:
 
 ```
 Exactly ONE creature in every frame including the last second. No second copy, no baby, no extra legs/wings/heads.
-Match this hero’s face and species from the catalog reference. Anatomy locked. Face readable through t14.
-Hero stays large (≥40%). No humans, no crowds, no readable letters, no song, no speech.
-Props are objects. Follow-cam OK; do not lose the hero.
+One body, one shadow, one pair of eyes. Match catalog face/species. Face readable through t14.
+Hero ≥50% mid-shot. Props are objects. No humans, no crowds, no readable letters, no song, no speech.
+Follow-cam OK; do not lose the hero. At most three travel beats in 15s.
 ```
+
+I2V: `15s`, `480p`, from **clean** home I2I only. Dump `docs/home-film-qa/{id}_s3.jpg` before video.
 
 ---
 

@@ -291,6 +291,13 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 
 ## Log (newest first)
 
+### 2026-09-18 — ClassNest-Bot1 (improvement package — revised twin LOCK)
+
+- Ash **exact** 21–25 motion quote in START-HERE + ultra-home-films.
+- **26–30:** twin column **overclaim corrected** — no twin HARD (26 reflection; 27 one ibex; 29 one long body; 28/30 no second creature). Still HARD FAIL tableau/set/identity. [AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md).
+- Process: trial-first (**31 Rookplate**), action bar, anti-twin **prevention** (I2I gate + ≥50% + ≤3 beats + mandatory re-roll), Bot1 fills AUDIT before READY.
+- Next: [home-round-31-35.md](home-round-31-35.md). No generate until `go`.
+
 ### 2026-09-18 — ClassNest-Bot1 (QA Homes 21–25)
 
 - Opened s3 + t0.5/3/7/11/14 + re-probed loudness. **All five pass** (softs only). No horrors.
