@@ -2,11 +2,11 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.118.** This file ships in **every** push.
+**v0.119.** This file ships in **every** push.
 
 ## `start`
 
-**41–43, 45 in catalog.** 44/46/47/49 still-A twins + image API 404. **48, 50 have clean A — filming next.** Ten-pass continues.
+**41–43, 45, 48 in catalog.** GitHub token invalid — local commits until reconnect. 50 filming. 44/46/47/49 A still blocked.
 
 ## What just happened
 
