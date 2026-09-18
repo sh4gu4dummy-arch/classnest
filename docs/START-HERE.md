@@ -2,15 +2,15 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.128.** This file ships in **every** push.
+**v0.129.** This file ships in **every** push.
 
 ## `start`
 
-**01–53 in catalog.** Remaining Home films: **54–75**. Still-gen 404 **fixed**: model is `grok-imagine-image` (not `-2.0`). See [imagine-stills.md](imagine-stills.md). Palabra FUSE/JWT rules still apply.
+**01–55 in catalog.** Teacher said stop after 54–55. Remaining: **56–75**. Still model is `grok-imagine-image` ([imagine-stills.md](imagine-stills.md)). T2I still twins; crop A then 6s I2V.
 
-Next shoot: **54 Solstice** (wait `start`/`go`).
+Next on `start`: **56 Noxquill**.
 
 ## Hard stops
 
-- Failures in catalog. Commit-per-id.
+- Failures in catalog. Commit-per-id (this wrap: 54+55 together as asked).
 - **Update this file every push.**

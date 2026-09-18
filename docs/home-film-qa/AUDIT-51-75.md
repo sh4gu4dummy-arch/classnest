@@ -10,4 +10,7 @@ Protocol: A from one-body s3 or tight crop (image API 404). 6s ×3, last-frame e
 
 | 53 Rimeveil | face crop (1) | ext twin | clip2/3 from A | | −7.8 | v0.127 |
 
-**Due:** 54–75.
+| 54 Solstice | crop A (1) | ext **2** | clip2/3 from A | **2** t7 | −8.5 | v0.129 |
+| 55 Hollowplate | crop A (1) | ext **2** | clip2/3 from A | | −9.9 | v0.129 |
+
+**Stopped** per teacher. Due: 56–75.
