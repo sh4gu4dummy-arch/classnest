@@ -24,7 +24,7 @@ Audio take 2: mean −28.9, max −6.9. 15s 854×480.
 | 1 | 1 fox run | **2 foxes** | — | — | — | — | sprint | twin HARD |
 | 2 | 1 fox run | 1 fox | **2 foxes** | 1 fox + paper | 1 fox dash | four-leg on one-hero stamps | travel | **twin HARD at t7** |
 
-**In catalog.** Not a quality pass. 33–35 not shot.
+Teacher 32: pretty good. Lesson: not just run-find-look. 33–35 prompts rewritten (virtue-action). Wait `go`.
 
 ## 33–35
 

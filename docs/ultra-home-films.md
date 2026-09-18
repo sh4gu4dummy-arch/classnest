@@ -20,7 +20,7 @@ mp4s **are in git** (`public/avatars/ultra/homes/*.mp4`). Intros/adventures stay
 | **21–25** | In `ULTRA_HOME_READY` (v0.090) | Scenery/sound OK. **Teacher: not enough movement — do not remake now.** | Catalog. Action bar for later rounds. |
 | **26–30** | In `ULTRA_HOME_READY` (v0.097) | Tableau / set / identity. In catalog to watch. | [AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md) |
 | **31** | In catalog (v0.100) | Motion better (teacher). Wing↔arm. Proceed. | |
-| **32** | In catalog (v0.105) | Twin at t7 (take 2). Motion/quadruped otherwise. | [AUDIT-31-35.md](home-film-qa/AUDIT-31-35.md) |
+| **32** | In catalog (v0.105) | Pretty good (teacher). Twin t7. Souvenir-pickup lesson. | 33–35 virtue-action prompts; wait `go`. |
 
 On disk and in git: posters + **mp4s** `homes/01`–`20`.
 
@@ -78,7 +78,15 @@ Catalog 21–25 **stay**. Exact Ash quote (do not paraphrase away):
 
 Self-QA: if three stamps could be three still photos of one pose → **fail movement** (do not READY).
 
-## Teacher 31 — limb lock (proceed, do not remake 31)
+## Teacher 32 — virtue-action (2026-09-17)
+
+Ash: 32 **pretty good**, setting good. Do **not** only “run, find object, look at object.” The mid beat must **enact the lore/virtue**, not inspect set dressing.
+
+**Later ids:** t7 = the character’s virtue *done* (repair, pause-and-pour, look-then-step). Travel is fine; souvenir-pickup is not. 32 stays (pretty good). If remade later: listen/catch = intercept what was almost missed, not pin a still map.
+
+Self-QA: if t7 is “hero next to a prop” with no lore-readable act → **fail virtue** (re-roll).
+
+---
 
 Ash: action/movement **better**. Good enough to proceed. Wings became **arms**; messy on biped/humanized animals.
 

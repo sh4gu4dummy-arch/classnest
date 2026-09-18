@@ -90,28 +90,103 @@ Follow-cam. Hero stays large (≥50%). Close canyon — not a tiny speck on a wi
 Sound: sand hiss, skid, wind. No speech, no song.
 ```
 
-## 33 Scrapcoon — Neon Night Market — fair trade / fix first
+## 33 Scrapcoon — Neon Night Market — fair trade, fix first, brag later
 
-**Catalog s3:** raccoon, bottle-cap helm, neon. I2I 16:9 **empty** market (no patrons).  
-**Travel:** vault a stall → tightens **one bottle-cap** on a stall lamp (t7) → lamp lights → **roof-run** to the next stall, still one raccoon.  
-**Don’t:** extra raccoons; **no people** at stalls; cap is an object.  
+**Do not generate until `go`.** 32 stays (pretty good). Setting can stay this good; **t7 is the virtue, not a souvenir.**
+
+**Catalog s3:** raccoon, bottle-cap helm, neon. I2I 16:9 **empty** night market (no patrons). Hero ≥50%. Lock this face/helm.
+
+**Limb:** raccoon body, one ringed tail. Paws may twist a cap (raccoon), **not** human arms/hands. No little-man walk.
+
+**Lore action (not run-find-look):** a stall lamp is **dark/broken**. He **unscrews his own helm-cap** and **fits it onto the lamp** (fix first / fair — he gives the cap). Lamp lights. He **leaves without a victory pose** (brag later). Parkour only to *reach* the lamp.
+
+**Travel (≤3):**
+1. Vault onto the stall — lamp is obviously dark.
+2. **t7:** own cap going onto the lamp (both readable at 480p). Not “sniff the cap.”
+3. Lamp on; he drops to the next aisle and goes. Face readable t14. Empty of people.
+
+**Don’t:** extra raccoons; patrons; readable letters on signs; human arms; tiny hero.  
 **Sound:** neon buzz, metal click, paws on tin.
+
+### I2I prompt
+
+```
+Cinematic 16:9 mid-shot of an empty neon night market. This exact raccoon with a bottle-cap helm from the reference. One raccoon, raccoon body, one ringed tail, paws not human hands. Already on a stall beside a DARK unlit lamp. Hero ≥50%. No people, no second raccoon. Photoreal, no readable letters.
+```
+
+### I2V prompt
+
+```
+15 seconds, sound. This exact raccoon. Exactly ONE. Raccoon anatomy — paws not human arms, one tail stays a tail. No people.
+
+(1) Vaults onto a stall; the stall lamp is dark. (2) Mid-clip: takes HIS OWN bottle-cap helm and screws it onto the lamp — repair is obvious; lamp lights. Not looking at a found object; he is giving the cap to fix the lamp. (3) Leaves down the aisle without a victory pose; face readable; stays in frame.
+
+Sound: neon, metal click, paws. No speech.
+```
 
 ## 34 Kindlekin — Lantern Study — pause, tea, then the page
 
-Even a “chill” sage **must move** (teacher: 21–25 pets were too still).  
-**Catalog s3:** red panda, lanterns. I2I 16:9 study with a window.  
-**Travel:** already carrying kettle → **crosses the room** to the window as weather hits → pours (no face in the cup) → steam; **dash** back to catch a sliding closed book; sits only at t14.  
-**t7:** pour **in motion** or book-save — not seated the whole time.  
-**Don’t:** extra pandas; no humans; kettle/cup = objects.  
-**Sound:** kettle hiss, rain on glass, paws, book thump.
+**Catalog s3:** red panda, lanterns. I2I 16:9 study + window. Hero ≥50%.
 
-## 35 Riftstallion — Silent Observatory — the dark is a road
+**Limb:** red panda, not a child in clothes. Paws not human arms. Sitting panda-style to pour is OK; no biped-man walk the whole clip.
 
-**Catalog s3:** galaxy stallion. I2I 16:9 observatory floor + dome, then the star-road.  
-**Travel:** **gallop** onto the dome → **one constellation** connects under the hooves (t7, dots-to-line, no letters) → **runs the line** into a second beat of sky, still one horse, face/head readable t14.  
-**Don’t:** extra horses; don’t shrink to a speck; no riders.  
-**Sound:** hooves on stone then whoosh of the road.
+**Lore action (not run-find-look):** he is **hurrying toward a closed book** (skip the pause), then **stops himself**, **pours tea first** (t7 = the pause enacted). Steam. Then sits with the closed book. Virtue = refuse to skip tea.
+
+**Travel (≤3):**
+1. Already crossing toward the book, kettle in paws, hurried.
+2. **t7:** freeze, pour (no face in the cup). Kettle + pour readable.
+3. Only then sits with the closed book; face readable t14.
+
+**Don’t:** extra pandas; humans; face in cup; souvenir-sniff the kettle.  
+**Sound:** kettle hiss, rain, pour, then quiet.
+
+### I2I prompt
+
+```
+Cinematic 16:9 lantern study at night, rain on a window. This exact red panda from the reference, already mid-step toward a closed book, kettle in paws. Red panda body, not a human child. Hero ≥50%. Empty room, no second panda. Photoreal, no text.
+```
+
+### I2V prompt
+
+```
+15 seconds, sound. This exact red panda. Exactly ONE. Paws not human arms. No extra pandas.
+
+(1) Hurries across the study toward a closed book — about to skip the pause. (2) Mid-clip: STOPS, pours tea from the kettle into a cup (no face in the cup) — the pour IS the virtue. Steam. (3) Then sits with the closed book; face readable; stays in frame.
+
+Sound: hurry paws, kettle pour, rain. No speech.
+```
+
+## 35 Riftstallion — Silent Observatory — look up, then step
+
+**Catalog s3:** galaxy stallion. I2I 16:9 observatory, dark edge of the dome. Hero ≥50%. Four legs.
+
+**Limb:** horse. Four hooves every frame. No rider, no hands, no human torso.
+
+**Lore action (not gallop-then-notice-stars):** night looks like a **wall**. He **stops**, **looks UP** (t7 — head/neck to sky; dots become one line because he looked). **Then** he steps onto that star-road. Order is lore: look, then step. Gallop can follow the step.
+
+**Travel (≤3):**
+1. Gallop to the dark rim and halt — wall of night.
+2. **t7:** looks up; one constellation connects (dots-to-line, no letters).
+3. Steps onto the line and runs it; head readable t14; still one horse, still large.
+
+**Don’t:** extra horses; rider; tiny speck; stars-first-then-look (wrong order).  
+**Sound:** hooves stop, hush, then whoosh of the road.
+
+### I2I prompt
+
+```
+Cinematic 16:9 silent observatory dome at night. This exact galaxy stallion from the reference, four legs, already halted at the dark rim as if night were a wall. Hero ≥50%. No rider, no second horse. Photoreal, no letters.
+```
+
+### I2V prompt
+
+```
+15 seconds, sound. This exact galaxy stallion. Exactly ONE horse. Four hooves the whole time. No rider, no hands.
+
+(1) Arrives at the dark rim and HALTS — night looks like a wall. (2) Mid-clip: LOOKS UP; one constellation connects dots-to-line because he looked — no letters. (3) THEN steps onto that star-road and gallops it; head readable; stays large in frame.
+
+Sound: hooves stop, hush, road whoosh. No speech.
+```
 
 ---
 
@@ -125,4 +200,4 @@ Even a “chill” sage **must move** (teacher: 21–25 pets were too still).
 
 ## Teacher
 
-Say **`go`** to shoot **32 only** (31 proceeded). 33–35 still wait. 26–30 remake is a separate `go`.
+Say **`go`** to shoot **33** (32 pretty good, stays). Then 34, 35. One id while twins are live.

@@ -2,36 +2,42 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.105.** This file ships in **every** push.
+**v0.106.** This file ships in **every** push.
 
 ## `start` (teacher command)
 
 Pull git → read QA → **shoot if you agree** → **`lmk` if you disagree**. Fold Ash’s feedback into SOP. Update this file every push.
 
-## Teacher feedback (standing)
+## Teacher feedback (exact — do not paraphrase away)
 
-**21–25:** not enough movement; do not remake.  
-**31:** motion better; wing↔arm; proceed. Limb lock.  
-**Fails in catalog.** Home 4th-clip tracked.
+**21–25:** not enough movement; scenery/sound OK; do not remake.
+
+**31:** motion better; wings became arms; proceed. Limb lock.
+
+**32 (this turn):**
+
+> pretty good, but I don't just want only "run, find object, look at object" think of an action that applies to their lore too not only just the setting, but the settings pretty good recently. make rest of the plans for 33-35 prompts after self reflecting and tweaking.
+
+**Locks:** 32 stays. Settings can stay this good. **t7 = lore/virtue enacted**, not souvenir-pickup. 33–35 prompts rewritten. Wait `go` (33 first).
 
 ## What just happened
 
-1. **`start`:** agreed Bot1 32 tighten. Shot **32 Sandwisp** only.
-2. I2I: first still two foxes → redid. I2V take 1 twin t3; take 2 **twin t7**. Motion/quadruped otherwise. **In catalog.** [AUDIT-31-35.md](home-film-qa/AUDIT-31-35.md).
-3. **33–35 not shot** (twin still live). Next: teacher `go` for 33 or retry 32.
+1. 01–32 Home clips in catalog.
+2. **33–35 prompts** are virtue-actions: Scrapcoon *gives his cap to fix the lamp*; Kindlekin *stops a rush and pours tea first*; Riftstallion *looks up, then steps*. [home-round-31-35.md](home-round-31-35.md).
+3. **Do not generate** until `go`.
 
 ## Read in this order
 
 | # | File | Why |
 |---|---|---|
 | 1 | This file | Orientation |
-| 2 | [home-film-qa/AUDIT-31-35.md](home-film-qa/AUDIT-31-35.md) | 31 proceed; **32 twin t7** |
-| 3 | [home-round-31-35.md](home-round-31-35.md) | 33–35 prompts |
-| 4 | [ultra-home-films.md](ultra-home-films.md) | ACTION + limb + anti-twin |
-| 5 | [BOT-TEAM.md](BOT-TEAM.md) | |
+| 2 | [home-round-31-35.md](home-round-31-35.md) | **33–35 prompts** (wait `go`) |
+| 3 | [ultra-home-films.md](ultra-home-films.md) | ACTION + limb + **virtue-action** |
+| 4 | [home-film-qa/AUDIT-31-35.md](home-film-qa/AUDIT-31-35.md) | 31–32 |
+| 5 | [BOT-TEAM.md](BOT-TEAM.md) | souvenir-pickup = fail |
 
 ## Hard stops
 
-- Twin still live — **do not batch 33–35** until `go`.
-- Failures stay in the catalog.
+- **`go`** before Imagine. Failures stay in the catalog.
+- Home 4th-clip tracked. Intro/adventure mp4s not.
 - **Update this file in the same commit as every push.**
