@@ -17,8 +17,8 @@ mp4s **are in git** (`public/avatars/ultra/homes/*.mp4`). Intros/adventures stay
 | **06–10** | In `ULTRA_HOME_READY` | One hero each (better than 01–05). 06 face-lost at t14; 09 nearly silent (−53 dB). See NOTES. | Keep in catalog. Soft remake 06/09 only if teacher asks. |
 | **11–15** | In `ULTRA_HOME_READY` (v0.066) | Shot. 854×480 + loudnorm. One hero each; face/bell at t=14. | In catalog. QA stills in `docs/home-film-qa/`. |
 | **16–20** | In `ULTRA_HOME_READY` (v0.072) | Shot. 854×480 + loudnorm + alimiter. One hero each on stills. Peaks still hot. | In catalog. Other bot: [AUDIT-16-20.md](home-film-qa/AUDIT-16-20.md). |
-| **21–25** | In `ULTRA_HOME_READY` (v0.090) | I2I home then I2V. 854×480. Audio: LN + volume=0.5 last (max ≤ −6). | Catalog. QA: [AUDIT-21-25.md](home-film-qa/AUDIT-21-25.md). |
-| **26–30** | Shot, **not READY** | Twin animals mid/end. [AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md) | Redo on teacher `go`. |
+| **21–25** | In `ULTRA_HOME_READY` (v0.090) | Scenery/sound OK. **Teacher: not enough movement — do not remake now.** | Catalog. Action bar for later rounds. |
+| **26–30** | Shot, **not READY** | Twins mid/end **and** mostly tableau. [AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md) | Redo on `go` with action bar + one-hero. |
 
 On disk and in git: posters + **mp4s** `homes/01`–`20`.
 
@@ -59,18 +59,32 @@ Root cause: I2V from a **wide** 16:9 still + **6 story beats** in 15s. The model
 
 ---
 
-## Recipe for next films (do this)
+## Teacher 21–25 (2026-09-17) — ACTION BAR (do not remake 21–25 now)
+
+Catalog 21–25 **stay**. Teacher: scenery good, sound fine for a quiet clip, **motion not even close**. Soft pets still looked like a slideshow.
+
+**Subsequent rounds must:**
+
+- **Much more movement.** Hero travels — run / leap / swim / fly / gallop — not sit-paw-sit.
+- **New beat of place OK** (window → room, battlement → inner wall, dune → cut) as long as **one** readable hero stays large.
+- **Entertaining**, not a tableau. t0.5 / t7 / t14 must **not** be the same pose.
+- Keep scenery quality. Sound should **match the action** (whoosh, hooves, splash, metal) — still diegetic, still max ≤ −6.
+- Locked-camera / already-still is **not** the default anymore. Slow follow is OK. Twins / lost face still fail.
+
+Self-QA: if three stamps could be three still photos of one pose → **fail movement** (do not READY).
+
+---
 
 1. **Exactly one creature.** Never a baby clone, never a second silhouette. Props are **objects**.
-2. **Three beats only:** enter → one trick with a prop → leave. Not six.
+2. **Three beats with TRAVEL:** start in the home → **move** (new spot or big physical action) with one prop → land readable. Not sit-paw-sit. Not six story beats.
 3. **Lock anatomy:** same skeleton the whole shot; tails/wings/legs do not become terrain.
-4. **Mid-shot**, hero large in frame. Wide landscapes invite a twin in the background.
-5. **I2V from `public/avatars/ultra/{id}-s3.jpg`** (or a 16:9 still that still reads as a close/mid of that s3). Tool: `imagine_image_to_video`, duration **`15`**, resolution **`480p`**.
-6. **854×480** if the tool allows; otherwise crop/pad after. Do **not** accept 736×400 as “good enough” without noting it in the audit log.
-7. **Audio** diegetic only; target mean **~−20 dB** (match Stormwyrm, lift quiet ones). **Keep AAC when encoding** (see below).
+4. **Mid-shot**, hero large. Camera **may follow**. Wide empty landscapes still invite twins — keep hero ≥40%.
+5. **I2I a 16:9 home** from the catalog s3 if s3 is a bust/sliver, then I2V that still. Duration **`15`**, **`480p`**.
+6. **854×480** after encode.
+7. **Audio** diegetic and **energetic with the action**; target mean **~−20 dB**; fail max **> −6**. Keep AAC. `loudnorm=I=-20:LRA=11:TP=-2,volume=0.5` last until a hotter chain is proven.
 8. **No humans**, no text, no song, no dialogue.
-9. **Audit before catalog:** pull frames at 0.5s / 7s / 14s. Extra body or melt = redo that id, don’t ship.
-10. **One id at a time.** Copy into `homes/` the **same turn** you get a locker path. Never leave the only copy in `/workspace/artifacts/imagine_videos/`.
+9. **Audit before catalog:** 0.5 / 3 / 7 / 11 / 14. Extra body, melt, **or three identical poses** = redo, don’t READY.
+10. Copy into `homes/` the same turn. Home mp4s **are in git**.
 
 Shared negative line (append to every prompt):
 
@@ -111,7 +125,7 @@ Treat this as the gate. If any line fails, **redo that id** — do not add it to
 - [ ] Teacher said **`go`** for this batch (06–10 or named redos).
 - [ ] You are editing ClassNest only (`sh4gu4dummy-arch/classnest`), not another app.
 - [ ] Still exists: `public/avatars/ultra/{id}-s3.jpg`.
-- [ ] Prompt has **3 beats**, one prop, mid-shot, shared negative line appended.
+- [ ] Prompt has **travel + action** (not a locked tableau), one prop, mid-shot, shared negative.
 - [ ] Lore home name matches `src/lib/ultra-lore.ts` (`home` field) — catalog title uses that string.
 - [ ] You will **keep audio** (no `-an`).
 
@@ -125,8 +139,9 @@ Pull stills at **0.5s / 7s / 14s** into **`docs/home-film-qa/`** (git). Fail if 
 - [ ] **Face unreadable** (flower mound, smear, off-frame) — “one body” is not enough
 - [ ] Humans, readable text, logos
 - [ ] Hero tiny in a wide establishing shot (invites twins)
+- [ ] **Movement miss:** t0.5, t7, t14 are the same pose / slideshow (teacher 21–25)
 
-Pass only if **one** clear hero, **face readable on all three stamps**, anatomy stable, prop readable.
+Pass only if **one** clear hero, **face readable on all stamps**, anatomy stable, prop readable, **and the hero clearly moved**.
 
 Loudness (ffmpeg `volumedetect`): fail mean **< −40 dB** (silent); fail max **> −6 dB** (clip). Target mean **−22 to −18 dB**.
 
@@ -137,7 +152,7 @@ Loudness (ffmpeg `volumedetect`): fail mean **< −40 dB** (silent); fail max **
 - [ ] Has **AAC audio** track (not muted silent)
 - [ ] Loudness mean roughly **−22 to −18 dB** (lift quiet clips; don’t clip board speakers)
 - [ ] Files on disk: `public/avatars/ultra/homes/{id}.mp4` + `{id}.jpg` (zero-pad, e.g. `06`)
-- [ ] mp4 **not** staged for git; jpg **may** be committed
+- [ ] Home **mp4s are tracked in git** when they ship (or when QA must see a fail)
 - [ ] Id added to `ULTRA_HOME_READY` in `src/lib/ultra-homes.ts` **only after** A–C pass
 - [ ] Version bump + commit + `sh scripts/push-github.sh` the same turn (code/poster only)
 - [ ] Do **not** rebuild avatars zip / portable / APK unless asked

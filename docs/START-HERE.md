@@ -2,35 +2,34 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.095.** This file ships in **every** push (`push-github.sh` refuses otherwise).
+**v0.096.** This file ships in **every** push.
 
 ## What just happened (2026-09-17)
 
-1. Home films **01–25** in catalog. **26–30 shot, self-QA FAIL (extra animals mid/end).** mp4s in git, **not** READY.
-2. QA: [home-film-qa/AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md). Remake only on teacher `go` (name ids or all five).
-3. 21–25 stay shipped. Do not delete 26–30 mp4s without a yes.
+1. **Teacher on 21–25:** catalog stays — **do not remake**. Scenery good, sound OK, **not enough movement/action** (slideshow). Later rounds: **much more travel**, new beat of place OK, more exciting diegetic sound. SOP: [ultra-home-films.md](ultra-home-films.md) § *ACTION BAR*.
+2. **26–30:** shot, **not READY**. Twins mid/end **and** tableaus. [AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md). Remake only on named `go`.
+3. **Next prompts (QA now):** [home-round-31-35.md](home-round-31-35.md) — Rookplate / Sandwisp / Scrapcoon / Kindlekin / Riftstallion. **Do not generate** until `go`.
 
 ## Read in this order
 
 | # | File | Why |
 |---|---|---|
 | 1 | This file | Orientation |
-| 2 | `AGENTS.project.md` | Standing rules (`lmk` = talk only, git, Home sound) |
-| 3 | [home-film-qa/AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md) | **QA: 26–30 twins (not READY)** |
-| 3c | [home-round-26-30.md](home-round-26-30.md) | Prompts used |
-| 3b | [home-film-qa/AUDIT-16-20.md](home-film-qa/AUDIT-16-20.md) | Last batch QA (Bot1) |
-| 4 | [team-qa.md](team-qa.md) | Shared QA board + debate + Bot1→shoot-bot notes |
-| 5 | [ultra-lore-bible.md](ultra-lore-bible.md) | Virtue + 3-beat seed |
-| 6 | [ultra-home-films.md](ultra-home-films.md) | Recipe / ffmpeg / QA gate |
-| 7 | [home-film-qa/NOTES.md](home-film-qa/NOTES.md) | Older stills / horrors |
+| 2 | `AGENTS.project.md` | Standing rules |
+| 3 | [home-round-31-35.md](home-round-31-35.md) | **Next shoot (wait `go`) — action bar** |
+| 3b | [home-film-qa/AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md) | Last shoot: twins + still |
+| 3c | [home-film-qa/AUDIT-21-25.md](home-film-qa/AUDIT-21-25.md) | Teacher: boring motion |
+| 4 | [team-qa.md](team-qa.md) | Shared board |
+| 5 | [ultra-lore-bible.md](ultra-lore-bible.md) | Virtue + seed |
+| 6 | [ultra-home-films.md](ultra-home-films.md) | Recipe + **movement fail** |
+| 7 | [BOT-TEAM.md](BOT-TEAM.md) | Slideshow = fail |
 
 ## Hard stops
 
-- Teacher **`go`** before any Imagine video.
-- Never delete/overwrite Home mp4s without a yes.
+- Teacher **`go`** before Imagine video.
+- Never delete Home mp4s without a yes. **Do not remake 21–25** unless they name ids.
 - `lmk` = do not edit.
-- Home films (`public/avatars/ultra/homes/*.mp4`) **are in git**. Intro + adventure mp4s are **not**.
-- After a pass: `ULTRA_HOME_READY`, version bump, `npm run pack:code`, `sh scripts/push-github.sh`.
-- **Update this file in the same commit as every push** (version + current job + wait).
+- Home films in git. Intro/adventure mp4s are not.
+- **Update this file in the same commit as every push.**
 
-**This file is the handoff.** Do not paste a duplicate blurb in chat unless the teacher asks.
+**This file is the handoff.**

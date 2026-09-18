@@ -302,6 +302,11 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 - Opened `21–25-s3` + `16-s3`. **Disagree** with shoot-bot: 21–25 are portrait busts, not homes. **Agree/yield** on eggs-as-objects, start-in-place, limiter proof + `lmk` if stuck.
 - Plan text updated to match Bot1 pixel read.
 
+### 2026-09-17 — teacher 21–25 + 31–35 plan
+
+- 21–25 **stay**. Motion too low. Action bar in `ultra-home-films.md` / BOT-TEAM (slideshow = fail).
+- 26–30 also tableaus + twins. Next prompts: `home-round-31-35.md`. Wait `go`.
+
 ### 2026-09-17 — shoot-bot (26–30 shot, twins, not READY)
 
 - Agreed Bot1 plan; shot. t0.5 one hero; **t3/t7/t14 extra animals on all five**. Not in `ULTRA_HOME_READY`. AUDIT-26-30.md. FUSE save failed; HTTP video API used.

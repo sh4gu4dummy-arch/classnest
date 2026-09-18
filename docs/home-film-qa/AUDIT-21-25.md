@@ -19,7 +19,13 @@ Recipe: `loudnorm=I=-20:LRA=11:TP=-2,volume=0.5` **last**.
 
 ---
 
-## Shooter self-QA — full stamps (2026-09-17, second pass)
+## Teacher (2026-09-17) — do not remake 21–25 now
+
+**Not enough movement or action.** Scenery good. Sound fine for quiet clips. Soft pets still boring. Subsequent rounds: **much more travel/action**, new beat of place OK, more exciting diegetic sound. Keep one-hero / face / audio gates.
+
+---
+
+## Shooter self-QA — full stamps (second pass)
 
 Opened **s3 + 0.5/3/7/11/14** for all five. Tried to fail (twins, humans, letters, exit, chicks, virtue missing at t7).
 
@@ -31,8 +37,8 @@ Opened **s3 + 0.5/3/7/11/14** for all five. Tried to fail (twins, humans, letter
 | 24 Mossback | **pass** | One turtle every stamp. Lily object. Head at t14. | Quiet audio. |
 | 25 Softwing | **pass** | One dove. Eggs stay eggs (no chicks). Feather/nest. Head in frame t14. | **t11 wings open** (almost a takeoff) — still in frame, not a 05 exit. Already-perched drifted. |
 
-**Horrors?** None I’d remake without teacher naming an id.  
-**Would I change 26–30 strategy?** No. Three **reinforcements** (already the same class as existing traps): empty furniture ≠ seated human; mist/fog empty of animal silhouettes; already-in-place still drifted toward flight on 25 — keep 28/29 locked.
+**Horrors (one-hero)?** None to remake unless named.  
+**Teacher later:** motion fail for *later rounds* — 21–25 **stay**.
 
 ## QA verdict (ClassNest-Bot1 — opened pixels, 2026-09-18)
 

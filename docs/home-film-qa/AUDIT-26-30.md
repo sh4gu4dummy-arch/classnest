@@ -17,19 +17,21 @@ mp4s on disk (git): `public/avatars/ultra/homes/26.mp4`–`30.mp4`. **Not** in `
 
 Peaks pass. 27 mean a bit hot.
 
-## Shooter self-QA (full stamps) — twins
+## Shooter self-QA (full stamps) — twins **and** motion
 
 t0.5 was one hero. **Mid/end frames grew a second body.** Second I2V pass did not fix it.
 
-| Id | Verdict | Evidence |
-|---|---|---|
-| 26 Puddlefin | **fail** | t7/t14 **two otters** |
-| 27 Ashenhoof | **fail** | t3 **two ibex** (t7/t14 looked one) |
-| 28 Paperwing | **fail** | t3/t11 **second bird** |
-| 29 Voltkoi | **fail** | t7/t14 **second dragon** |
-| 30 Glimmercap | **fail** | t3/t7/t14 **two frogs** |
+Fold-in after teacher 21–25: these are **also tableaus** (sit/stand/perch). Even a clean one-hero recut would fail the new **action bar**.
 
-**Horrors:** all five — extra animal. **No READY.** Redo when teacher names ids / says go again.
+| Id | One-hero | Movement | Verdict |
+|---|---|---|---|
+| 26 Puddlefin | **fail** t7/t14 two otters | mostly in-place | **fail** |
+| 27 Ashenhoof | **fail** t3 two ibex | mostly standing | **fail** |
+| 28 Paperwing | **fail** t3/t11 second bird | perched | **fail** |
+| 29 Voltkoi | **fail** t7/t14 second dragon | slow circle at best | **fail** |
+| 30 Glimmercap | **fail** t3/t7/t14 two frogs | on the log | **fail** |
+
+**Horrors:** twins. **Also:** not entertaining enough for the new bar. **No READY.** Redo on `go` must fix **both**.
 
 **Tech note:** `artifacts/` FUSE would not save Imagine this session. Stills via `scripts/imagine-image.py`; clips via `POST /v1/videos/generations` + poll `GET /v1/videos/{id}` (session JWT). Copy into `public/` same turn.
 
