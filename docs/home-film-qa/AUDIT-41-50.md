@@ -6,4 +6,6 @@
 
 | 43 Cinderwish | 1 | 1 | 1 | **2** | **2** | 1 t14 | −8.0 | v0.117 |
 
-**Pause:** 44–50 not shot this turn (method proven; remaining seven on next `start`).
+| 45 Brinecrown | 1 (tight) | 1 | 1 | **1** | **1** | **1** | −12.4 | v0.118 | best so far; fish=env |
+
+**Stuck A (twins / image API 404):** 44, 46, 47, 49. **Clean A waiting I2V:** 48, 50. Continue.

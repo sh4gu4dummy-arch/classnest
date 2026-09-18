@@ -2,17 +2,17 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.117.** This file ships in **every** push.
+**v0.118.** This file ships in **every** push.
 
 ## `start`
 
-Builder: pull → QA → shoot if agree. **41–43 filmed (commit-per-id). 44–50 still due** on next `start` (ten-pass continues).
+**41–43, 45 in catalog.** 44/46/47/49 still-A twins + image API 404. **48, 50 have clean A — filming next.** Ten-pass continues.
 
 ## What just happened
 
-1. Agreed Bot1 v2. xfade loudnorm-in-complex works. Last-frame ext often one body; **concat stamps still twin** (41, 43). 42 cleaner mid.
-2. In catalog: **41 Sparkgrit, 42 Gravemason, 43 Cinderwish.** [AUDIT-41-50.md](home-film-qa/AUDIT-41-50.md)
-3. Next shoot: **44 Duskwyn → 50 Aegisunit** same method.
+1. **45 Brinecrown:** tight one-body A → last-frame extend → **one merfolk on t0.5/t7/t14.** Best of 41–45.
+2. Image model `grok-imagine-image-2.0` 404 mid-batch; video still works.
+3. Next: 48 Quartzarch, 50 Aegisunit, then retry 44/46/47/49 A.
 
 ## Hard stops
 
