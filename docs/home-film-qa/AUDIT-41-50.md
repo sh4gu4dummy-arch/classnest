@@ -8,4 +8,6 @@
 
 | 45 Brinecrown | 1 (tight) | 1 | 1 | **1** | **1** | **1** | −12.4 | v0.118 | best so far; fish=env |
 
-| 48 Quartzarch | 1 | **2** (re-roll still 2) | clip2/3 from A | **2** t7 | | | −11.8 | v0.119 |
+| 50 Aegisunit | 1 | 1 | 1 | **1** | **1** | **1** | −12.5 | v0.120 | with 45, best of batch |
+
+GitHub PAT invalid mid-pass. 44/46/47/49 A not clean.

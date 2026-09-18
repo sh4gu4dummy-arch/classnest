@@ -2,17 +2,19 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.119.** This file ships in **every** push.
+**v0.120.** This file ships in **every** push.
 
 ## `start`
 
-**41–43, 45, 48 in catalog.** GitHub token invalid — local commits until reconnect. 50 filming. 44/46/47/49 A still blocked.
+Filmed this pass: **45, 48, 50.** Already on GitHub: **41–43**. **GitHub token invalid** — 45/48/50 local until reconnect.
+
+**Not shot:** 44 Duskwyn, 46 Palevow, 47 Viridelle, 49 Inkstride (still-A twins; image API 404).
 
 ## What just happened
 
-1. **45 Brinecrown:** tight one-body A → last-frame extend → **one merfolk on t0.5/t7/t14.** Best of 41–45.
-2. Image model `grok-imagine-image-2.0` 404 mid-batch; video still works.
-3. Next: 48 Quartzarch, 50 Aegisunit, then retry 44/46/47/49 A.
+1. **45 Brinecrown** and **50 Aegisunit**: one hero on t0.5/t7/t14 (tight A + last-frame extend).
+2. **48 Quartzarch**: twins (ext dirty; clip2/3 from A).
+3. Next `start`: retry 44/46/47/49 A when image gen works; push local 0.118–0.120.
 
 ## Hard stops
 
