@@ -2,13 +2,13 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.127.** This file ships in **every** push.
+**v0.128.** This file ships in **every** push.
 
 ## `start`
 
-**01–53 in catalog.** Remaining Home films: **54–75** (22). Same protocol: 6s I2V sound 480p, last-frame extend, crop A if s3 two-body, commit-per-id.
+**01–53 in catalog.** Remaining Home films: **54–75**. Still-gen 404 **fixed**: model is `grok-imagine-image` (not `-2.0`). See [imagine-stills.md](imagine-stills.md). Palabra FUSE/JWT rules still apply.
 
-This go: 51 Gleamward, 52 Magmaheart, 53 Rimeveil. Next: **54 Solstice**.
+Next shoot: **54 Solstice** (wait `start`/`go`).
 
 ## Hard stops
 
