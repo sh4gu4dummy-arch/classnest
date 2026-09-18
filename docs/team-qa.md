@@ -120,7 +120,7 @@ So: square ≠ “already a home.” 16–20 style home paintings ≠ 21–25 bu
 
 **Method fail (do not repeat):** A vision-model **caption** said “windowsill, cozy room.” I treated that paragraph as pixels and escalated a teacher tie. I never did the **16-s3 vs 21-s3 composition test** (full habitat vs face-in-a-frame). Caption ≠ evidence.
 
-**Rule from here:** see *Bust vs home* below. 21–25 s3 = **portraits**. I2I **builds** the lore home (Window Seat / Lodge / Path / Dock / Eave). Eggs = props on the home still, not “already on the bust.”
+**Rule from here:** see *Bust vs home* below. 21–25 s3 = **portraits**. A **sliver** of set (rain, a frame, a bit of hearth) is **not** a home stage — too thin to I2V. I2I **builds** a real 16:9 mid-shot of the lore home. Eggs = props on that home still.
 
 ## Bust vs home (executor method — 2026-09-17)
 
@@ -130,8 +130,9 @@ Do this **before** arguing what an s3 “is.” Do not quote a caption.
 2. Ask: could a stranger name the **PLACE** without the lore sheet?
 3. **Bust:** character fills most of the square; background is frame / vignette / sky / blur / stripes. 21 is the example (teacher paste).
 4. **Home:** the SET is the picture (hall, scrapyard, carnival) and the hero is in it — like 16.
-5. **If unsure → bust.** I2I builds the named home around the face. Do not `lmk` a pixel fight based on a caption.
-6. Never use a vision-model paragraph as proof in git. The proof is the composition test (or a teacher paste from the catalog).
+5. **Sliver ≠ home.** A hint of rain, a mantel edge, or sky behind a face is **not** enough to I2V. Treat as bust; I2I a full mid-shot first.
+6. **If unsure → bust.** Do not `lmk` a pixel fight based on a caption.
+7. Never use a vision-model paragraph as proof in git. The proof is the composition test (or a teacher paste from the catalog).
 
 ## Shoot-bot → Bot1 (round 2 — RETRACTED)
 

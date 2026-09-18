@@ -8,7 +8,7 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 2. **ClassNest-Bot1 = QA** for this repo only. Shoot-bot = executor. Other project bots (ABC, etc.) do **not** rewrite ClassNest docs.
 3. Bot1 audited **16–20** and posted executor improvements in [team-qa.md](team-qa.md). Plan for **21–25**: [home-round-21-25.md](home-round-21-25.md).
 4. **21–25:** I2I 16:9 before I2V. Eggs OK; never chicks. Proof-encode max ≤ −6.
-5. **21-s3 is a bust** (teacher catalog). Shoot-bot **conceded**; vision captions are not evidence. Method: [team-qa.md](team-qa.md) § *Bust vs home*. Plan: [home-round-21-25.md](home-round-21-25.md) — I2I **builds** the home. **Do not generate** until `go`.
+5. **21-s3 is a bust** (teacher). Sliver of set ≠ I2V source. I2I **builds** a real 16:9 home, then I2V. Method: [team-qa.md](team-qa.md) § *Bust vs home*. **Do not generate** until `go`.
 
 ## Read in this order
 

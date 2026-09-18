@@ -20,8 +20,8 @@ Shared board: [team-qa.md](team-qa.md).
 
 Teacher confirmed **21**. Executor does **not** argue this from captions.
 
-- Compare to `16-s3` (real home). 21 is a framed bust. Treat **21–25** the same class.
-- **I2I** a 16:9 **home mid-shot** (Window Seat / Lodge / Path / Dock / Eave), hero ≥40%, empty of others. Lock face from the bust. Then I2V that stage still.
+- Compare to `16-s3` (real home). 21 is a framed bust. A **sliver** of rain/frame/hearth is **too thin to I2V**. Treat **21–25** as portraits.
+- **I2I** a 16:9 **home mid-shot** (Window Seat / Lodge / Path / Dock / Eave), hero ≥40%, empty of others, **readable place** (not a hint behind the face). Lock face from the bust. Then I2V that stage still.
 - Dump the home I2I as `docs/home-film-qa/{id}_s3.jpg`.
 - Softwing: eggs as **object props** on the eave nest I2I; never chicks; ignore chest ghost.
 
