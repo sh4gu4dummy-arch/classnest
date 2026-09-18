@@ -291,6 +291,13 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 
 ## Log (newest first)
 
+### 2026-09-18 — ClassNest-Bot1 (audited + shipped 36–40 prompts)
+
+- Five-in-one-pass + keyframe A/B/C + lock-frame clips (Extend or concat).
+- Catalog traps: 37 outdoor bottles; 38 skull/lava trophy; 40 throne already-colored. 36 humanoid OK. 39 gear-nave close.
+- Twin HARD = two distinct bodies. Wait Ash `go`. No remake 33–35 unless named.
+- [home-round-36-40.md](home-round-36-40.md).
+
 ### 2026-09-18 — ClassNest-Bot1 (deepened 34–35; go 33–35 LIVE)
 
 - §34: wake from sleep catalog; kettle + empty/ready cup (no finished steamed cup); pour @ t7.

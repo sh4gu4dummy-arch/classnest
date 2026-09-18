@@ -21,7 +21,7 @@ mp4s **are in git** (`public/avatars/ultra/homes/*.mp4`). Intros/adventures stay
 | **26–30** | In `ULTRA_HOME_READY` (v0.097) | Tableau / set / identity. In catalog to watch. | [AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md) |
 | **31** | In catalog (v0.100) | Motion better (teacher). Wing↔arm. Proceed. | |
 | **33–35** | In catalog (v0.109) | Twins both I2V takes. Virtue/limb attempted. | [AUDIT-31-35.md](home-film-qa/AUDIT-31-35.md) |
-| **36–40** | PLAN | Keyframe A/B/C + 5-in-one-pass. | [home-round-36-40.md](home-round-36-40.md) — QA audit, wait `go`. |
+| **36–40** | PLAN audited | Keyframe A/B/C + five-pass; wait `go`. | [home-round-36-40.md](home-round-36-40.md) |
 
 On disk and in git: posters + **mp4s** `homes/01`–`20`.
 
@@ -102,6 +102,14 @@ Ash: action/movement **better**. Good enough to proceed. Wings became **arms**; 
 ---
 
 Twin **HARD** only when stamps show **two distinct heads/bodies**. Do **not** call twin HARD for: water **reflection**, one long body looping in/out of water, horn/leg anatomy softs without a second creature, or a mushroom/prop. Homes 26–30 corrected: twin column was overclaimed; fails were tableau / set-drift / identity.
+
+## Keyframe I2V + humanoid wave (36–40)
+
+**Problem:** 15s from one still twins (31–35).
+
+**Method:** locked stills A (start) → B (virtue-in-action) → C (aftermath). Still-gate **A before B before C** before any I2V. Video = Clip1←A, Clip2←B, Clip3←C (Extend if UI allows, else concat + crossfade). Twin HARD = **two distinct bodies** only.
+
+**Humanoid ≠ animalize:** wave 36–40 (elf/witch/orc/paladin/crystal diplomat) stay people-shaped. Do not four-leg-animalize them. Limb lock still applies (no extra arms).
 
 ## Anti-twin prevention (method — still ship)
 
