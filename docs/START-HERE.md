@@ -2,7 +2,7 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.106.** This file ships in **every** push.
+**v0.107.** This file ships in **every** push.
 
 ## `start` (teacher command)
 
@@ -23,8 +23,8 @@ Pull git → read QA → **shoot if you agree** → **`lmk` if you disagree**. F
 ## What just happened
 
 1. 01–32 Home clips in catalog.
-2. **33–35 prompts** are virtue-actions: Scrapcoon *gives his cap to fix the lamp*; Kindlekin *stops a rush and pours tea first*; Riftstallion *looks up, then steps*. [home-round-31-35.md](home-round-31-35.md).
-3. **Do not generate** until `go`.
+2. **33 Scrapcoon audited** — catalog s3 was biped/gauntlet/kanji; I2I must animalize + blank/rune only. [home-round-31-35.md](home-round-31-35.md) §33. 34–35 light gates.
+3. **Do not generate** until `go` (**33 first**). No remake 32.
 
 ## Read in this order
 

@@ -30,6 +30,7 @@ Do **not** paraphrase Ash’s 21–25 motion feedback. Read the blockquote in [S
 - **Twin HARD** only with **two distinct heads/bodies** (not reflection, looped tail, prop). Merged second body still fails when real.
 - **Trial one id** before batching while twin risk is live (first generate-go: **31 Rookplate**).
 - Negatives alone are not anti-twin prevention — follow the SOP stack.
+- Catalog s3 with humanized limbs or real-language glyphs → I2I must rewrite before I2V (`ultra-home-films.md`).
 
 ## After you write
 

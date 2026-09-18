@@ -107,6 +107,17 @@ Negatives alone do not stop I2V merge on later rounds. Use this stack:
 5. **Long-body special:** single continuous spine; do not miscount one serpent as two — but a real second head still fails.
 6. **Trial before batch.** 31 proceeded (teacher). Next generate is **32 only** on `go`.
 
+## Catalog s3 rewrite rule (standing — 33 lesson)
+
+If the catalog still shows **humanized limbs** (gauntlet-hands, wing→arm, biped little-man) or **real-language glyphs** (kanji, letters on signs/lanterns):
+
+1. **Do not I2V that file.**
+2. **I2I must rewrite** the home still first (animal anatomy, blank/rune marks only, empty of crowds).
+3. Open the dumped home still — gauntlet/hands/letters/second body = **FAIL still**, redo I2I.
+4. Only then I2V.
+
+Self-audit: “prompt hope” over a dirty catalog s3 is a process fail.
+
 ## Trial-first (process)
 
 - Do not five-at-once while twin risk is live.

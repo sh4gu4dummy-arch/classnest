@@ -92,36 +92,52 @@ Sound: sand hiss, skid, wind. No speech, no song.
 
 ## 33 Scrapcoon — Neon Night Market — fair trade, fix first, brag later
 
-**Do not generate until `go`.** 32 stays (pretty good). Setting can stay this good; **t7 is the virtue, not a souvenir.**
+**Bot1 QA + QAsupervisor LOCK (2026-09-18).** Do not generate until teacher `go`. **33 first.** Do not remake 32.
 
-**Catalog s3:** raccoon, bottle-cap helm, neon. I2I 16:9 **empty** night market (no patrons). Hero ≥50%. Lock this face/helm.
+**Catalog s3 trap:** upright/humanized raccoon, **metal gauntlet + fingered hand**, vest, dense neon market, lanterns with **real-language glyphs**. Do **not** I2V that still. I2I must **rewrite**.
 
-**Limb:** raccoon body, one ringed tail. Paws may twist a cap (raccoon), **not** human arms/hands. No little-man walk.
+### Ash limb feedback (exact — from 31)
 
-**Lore action (not run-find-look):** a stall lamp is **dark/broken**. He **unscrews his own helm-cap** and **fits it onto the lamp** (fix first / fair — he gives the cap). Lamp lights. He **leaves without a victory pose** (brag later). Parkour only to *reach* the lamp.
+> action/movement better, weirdness with wings becoming arms etc, good enough to proceed but note down my feedback becareful with tails or wings or fins or anything especially if ur mixing and getting messy with bipedal or somewhat humanized animals etc AI gets messy/blurry. the owls wings are sometimes arms sometimes wings etc. note my feedback then make prompt for next one 32.
 
-**Travel (≤3):**
-1. Vault onto the stall — lamp is obviously dark.
-2. **t7:** own cap going onto the lamp (both readable at 480p). Not “sniff the cap.”
-3. Lamp on; he drops to the next aisle and goes. Face readable t14. Empty of people.
+**Limb lock:** animal raccoon — four-leg or haunch on the stall. **Paws not gauntlet-hands.** Keep face + **bottle-cap helm** (needed for give-cap beat). Drop gauntlet. Drop little-man / human-hand silhouette. Vest only if it does not force biped-man; default strip metal arm armor. One ringed tail stays a tail.
 
-**Don’t:** extra raccoons; patrons; readable letters on signs; human arms; tiny hero.  
-**Sound:** neon buzz, metal click, paws on tin.
+### Pre-I2V gates
+
+1. **Catalog rewrite rule:** humanized limbs or real-language glyphs on s3 → I2I must rewrite before I2V (not prompt hope).
+2. **I2I still-gate:** dump `docs/home-film-qa/33_s3.jpg` → open it. Gauntlet, fingered hands, second raccoon, patrons, or readable letters → **FAIL still** — redo I2I. Never I2V a dirty still.
+3. **Empty stall aisle:** no patrons, no crowd silhouettes.
+4. **Blank / imaginary-rune lanterns and signs only** — no kanji, no copied catalog glyphs.
+5. **t7 still-gate:** `33_t7.jpg` must show **cap-on-lamp** (own helm-cap + dark→lit lamp readable at 480p), not sniff.
+6. **Twin:** two raccoons on any stamp → mandatory re-roll.
+
+### Lore action (virtue — not souvenir-pickup)
+
+Stall lamp is **dark/broken**. He **unscrews his own helm-cap** and **fits it onto the lamp** (fix first / fair — he gives the cap). Lamp lights. He **leaves without a victory pose**. Parkour only to reach the lamp.
+
+### Travel (≤3)
+
+1. Vault onto the stall — lamp obviously dark; aisle empty.
+2. **t7:** own cap going onto the lamp (both readable).
+3. Lamp on; drops to next aisle and goes. Face readable t14. No victory pose.
+
+**Don’t:** extra raccoons; patrons; readable letters; gauntlet/hands; tiny hero.  
+**Sound:** neon buzz, metal click, paws on tin — max ≤ −6.
 
 ### I2I prompt
 
 ```
-Cinematic 16:9 mid-shot of an empty neon night market. This exact raccoon with a bottle-cap helm from the reference. One raccoon, raccoon body, one ringed tail, paws not human hands. Already on a stall beside a DARK unlit lamp. Hero ≥50%. No people, no second raccoon. Photoreal, no readable letters.
+Cinematic 16:9 mid-shot of an EMPTY neon night-market aisle. This exact raccoon FACE and bottle-cap helm from the reference — but ANIMAL body: on four legs or haunches on a stall, PAWS not hands, NO metal gauntlet, NO fingered human hands, NO little-man biped walk pose. One ringed tail. Already beside a DARK unlit stall lamp. Hero fills ≥50%. No people, no crowd silhouettes, no second raccoon. Lanterns and signs are blank or imaginary runes only — no kanji, no real-language letters. Photoreal.
 ```
 
 ### I2V prompt
 
 ```
-15 seconds, sound. This exact raccoon. Exactly ONE. Raccoon anatomy — paws not human arms, one tail stays a tail. No people.
+15 seconds, sound, 480p. This exact raccoon face and bottle-cap helm. Exactly ONE raccoon. Animal anatomy the whole time — paws not human arms or gauntlet-hands, one tail stays a tail. No people. No readable letters.
 
-(1) Vaults onto a stall; the stall lamp is dark. (2) Mid-clip: takes HIS OWN bottle-cap helm and screws it onto the lamp — repair is obvious; lamp lights. Not looking at a found object; he is giving the cap to fix the lamp. (3) Leaves down the aisle without a victory pose; face readable; stays in frame.
+(1) Vaults onto a stall; the stall lamp is dark; aisle empty. (2) Mid-clip (~7s): unscrews HIS OWN bottle-cap helm and screws it onto the lamp — cap and lamp both large/readable; lamp lights. Repair is obvious — not sniffing a found object. (3) Leaves down the aisle without a victory pose; face readable; stays in frame.
 
-Sound: neon, metal click, paws. No speech.
+Sound: neon, metal click, paws. No speech, no song.
 ```
 
 ## 34 Kindlekin — Lantern Study — pause, tea, then the page
@@ -129,6 +145,8 @@ Sound: neon, metal click, paws. No speech.
 **Catalog s3:** red panda, lanterns. I2I 16:9 study + window. Hero ≥50%.
 
 **Limb:** red panda, not a child in clothes. Paws not human arms. Sitting panda-style to pour is OK; no biped-man walk the whole clip.
+
+**Gates:** I2I dump+open before I2V. Closed book = **no letters**. No humans. Hero ≥50%. Pour readable at t7 (`34_t7.jpg`).
 
 **Lore action (not run-find-look):** he is **hurrying toward a closed book** (skip the pause), then **stops himself**, **pours tea first** (t7 = the pause enacted). Steam. Then sits with the closed book. Virtue = refuse to skip tea.
 
@@ -161,6 +179,8 @@ Sound: hurry paws, kettle pour, rain. No speech.
 **Catalog s3:** galaxy stallion. I2I 16:9 observatory, dark edge of the dome. Hero ≥50%. Four legs.
 
 **Limb:** horse. Four hooves every frame. No rider, no hands, no human torso.
+
+**Gates:** I2I dump+open before I2V. Hero ≥50%; one horse; no rider. Constellation dots-to-line **no letters**. Twin/two horses → re-roll.
 
 **Lore action (not gallop-then-notice-stars):** night looks like a **wall**. He **stops**, **looks UP** (t7 — head/neck to sky; dots become one line because he looked). **Then** he steps onto that star-road. Order is lore: look, then step. Gallop can follow the step.
 

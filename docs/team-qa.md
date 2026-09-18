@@ -291,6 +291,13 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 
 ## Log (newest first)
 
+### 2026-09-18 — ClassNest-Bot1 (audited + shipped 33 Scrapcoon)
+
+- Opened `33-s3`: biped + gauntlet + kanji trap confirmed (QAsupervisor pixel-check).
+- §33 rewritten: animalize I2I, Ash 31 limb quote, blank/rune only, empty aisle, t7 cap-on-lamp, gauntlet = FAIL still.
+- Standing catalog-rewrite rule in ultra-home-films. Light gates on 34/35.
+- Wait teacher `go` on **33 first**. No remake 32.
+
 ### 2026-09-18 — ClassNest-Bot1 (audited 32 Sandwisp prompt)
 
 - Teacher `start` = audit next prompt. Opened `32-s3` + §32.
