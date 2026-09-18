@@ -2,15 +2,21 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.123.** This file ships in **every** push.
+**v0.124.** This file ships in **every** push.
 
 ## `start`
 
-**41–48, 50 in catalog. 44 Duskwyn in this commit.** 49 filming.
+**01–50 Home clips in catalog.** 41–50 ten-pass complete.
 
-Crop lesson: s3 two-body → **tight face crop** as A (image API 404). 44 start one-body; t7/t14 grew a guest (second-cup magnet).
+## What just happened
+
+**44 Duskwyn** (v0.123) + **49 Inkstride** (this): s3 two-body → **tight crop A** (image API 404). 44 one-body start, guest at t7 (second-cup). 49 one-body start, twins + letters at t7/t14.
+
+Best of 41–50: **45 Brinecrown, 50 Aegisunit** (one hero all stamps).
+
+Next: teacher watch / named remake / 51+ prompts.
 
 ## Hard stops
 
-- Failures in catalog. Commit-per-id.
+- Failures stay in the catalog unless named.
 - **Update this file every push.**

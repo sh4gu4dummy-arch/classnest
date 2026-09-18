@@ -22,7 +22,7 @@ mp4s **are in git** (`public/avatars/ultra/homes/*.mp4`). Intros/adventures stay
 | **31** | In catalog (v0.100) | Motion better (teacher). Wing↔arm. Proceed. | |
 | **33–35** | In catalog (v0.109) | Twins both I2V takes. Virtue/limb attempted. | [AUDIT-31-35.md](home-film-qa/AUDIT-31-35.md) |
 | **36–40** | In catalog (v0.112) | Keyframe 6s concat. Twins t7 (40 twins t14). | [AUDIT-36-40.md](home-film-qa/AUDIT-36-40.md) |
-| **41–50** | PLAN audited | Method v2 last-frame extend; 10-pass; commit-per-id; wait `go`. | [home-round-41-50.md](home-round-41-50.md) |
+| **41–50** | In catalog (v0.124) | Ten-pass. Best 45/50. Crop A if s3 is two-body. | [AUDIT-41-50.md](home-film-qa/AUDIT-41-50.md) |
 
 On disk and in git: posters + **mp4s** `homes/01`–`20`.
 

@@ -12,4 +12,6 @@
 
 | 47 Viridelle | s3 one-body | **2** | clip2/3 from A | **1** t7 | | | −13.6 | v0.122 |
 
-| 44 Duskwyn | face-crop A (1) | 1 | 1 | **1** t0.5 | **2** t7 | **2** t14 | −12.5 | v0.123 | second-cup invited a guest |
+| 49 Inkstride | crop A (1) | 1 | 1 | **1** t0.5 | **2** + letters t7 | **2** t14 | −6.3 | v0.124 |
+
+**41–50 all in catalog.** Best: 45, 50. Crop A when s3 is two-body.
