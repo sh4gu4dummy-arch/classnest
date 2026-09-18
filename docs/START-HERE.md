@@ -2,7 +2,7 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.100.** This file ships in **every** push.
+**v0.101.** This file ships in **every** push.
 
 ## `start` (teacher command)
 
@@ -22,7 +22,8 @@ Ash on Homes **21–25** (standing):
 2. **26–30** in catalog to watch; twins overclaimed; tableau still fails.
 3. **`start` this turn:** agreed trial-first + twin-HARD = two bodies. Shot **31 Rookplate** only.
 4. **31 trial FAIL** (two owls at t3, both takes). **In catalog anyway** (teacher: failures go in the catalog so they can watch). 32–35 not shot. [AUDIT-31-35.md](home-film-qa/AUDIT-31-35.md).
-5. Next: teacher `go` (retry 31, or batch anyway, or change method).
+5. **Archive folder deleted** (pre-git / pre-Home-4 stills). Teacher has that backup. **Home films (4th clip) 01–31 jpg+mp4 stay tracked.** Intro/adventure mp4s stay gitignored. Catalog Archive tab removed.
+6. Next: teacher `go` (retry 31, or batch 32–35, or change method).
 
 ## Read in this order
 

@@ -7,8 +7,9 @@ Then this file. Direct chat instructions still win.
 
 - **Never delete, overwrite, or “clean up” Ultra videos** (intros, adventures,
   posters, shot stills) without asking first and getting a yes.
-- Same for Ultra character stills (s1/s2/s3, board thumbs). If art is replaced,
-  **archive the old file** under `public/avatars/archive/` — do not trash it.
+- Same for Ultra character stills (s1/s2/s3, board thumbs). Git tracks current art;
+  do not keep a parallel `public/avatars/archive/` (teacher has a backup). Home
+  films (4th clip) **must stay tracked**. Intro/adventure mp4s stay gitignored.
 - Do not strip audio from a video that already has it. Do not re-encode over
   the only copy. Copy first, then encode a new file.
 - Catalog intros/adventures are **silent on purpose**. **Home films**

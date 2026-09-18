@@ -8,10 +8,6 @@ import {
   ULTRA_FORM_NAMES,
   PACK_LABELS,
 } from "@/lib/avatars";
-import {
-  loadArchiveManifest,
-  type ArchiveItem,
-} from "@/lib/avatar-archive";
 import { getMilestoneMark } from "@/lib/evolution";
 import { EvolutionBurst } from "@/components/evolution-burst";
 import { StudentAvatar } from "@/components/student-avatar";
@@ -36,13 +32,12 @@ type Props = {
   defaultPack?: AvatarPack;
 };
 
-type CatalogTab = AvatarPack | "archive";
+type CatalogTab = AvatarPack;
 
 const TABS: { id: CatalogTab; label: string }[] = [
   { id: "ultra", label: "Ultra" },
   { id: "kids", label: "Kids" },
   { id: "teens", label: "Teens" },
-  { id: "archive", label: "Archive" },
 ];
 
 type Lightbox = {
@@ -307,23 +302,18 @@ export function EvolutionCatalog({
   const [morphFrom, setMorphFrom] = useState<1 | 2 | 3>(1);
   const [morphTo, setMorphTo] = useState<1 | 2 | 3>(2);
   const [morphing, setMorphing] = useState(false);
-  const [archive, setArchive] = useState<ArchiveItem[]>([]);
-  const [archivePick, setArchivePick] = useState<string | null>(null);
 
-  const pack: AvatarPack = tab === "archive" ? "ultra" : tab;
+  const pack: AvatarPack = tab;
   const list = useMemo(() => getAvatars(pack), [pack]);
   const safeId = Math.min(Math.max(1, selectedId), list.length) || 1;
   const avatar = getAvatar(safeId, pack);
-  const lore = pack === "ultra" && tab !== "archive" ? getUltraLore(safeId) : null;
-  const introSrc = pack === "ultra" && tab !== "archive" ? ultraIntroSrc(safeId) : null;
-  const adventure = pack === "ultra" && tab !== "archive" ? getUltraAdventure(safeId) : null;
+  const lore = pack === "ultra" ? getUltraLore(safeId) : null;
+  const introSrc = pack === "ultra" ? ultraIntroSrc(safeId) : null;
+  const adventure = pack === "ultra" ? getUltraAdventure(safeId) : null;
   const adventureSrc =
-    pack === "ultra" && tab !== "archive" ? ultraAdventureSrc(safeId) : null;
+    pack === "ultra" ? ultraAdventureSrc(safeId) : null;
   const homeSrc =
-    pack === "ultra" && tab !== "archive" ? ultraHomeSrc(safeId) : null;
-  const archiveItem =
-    archive.find((a) => a.id === archivePick) ?? archive[0] ?? null;
-
+    pack === "ultra" ? ultraHomeSrc(safeId) : null;
   useEffect(() => {
     if (open) {
       setTab(defaultPack);
@@ -331,10 +321,6 @@ export function EvolutionCatalog({
       setLightbox(null);
       setBurst(null);
       setMorphing(false);
-      void loadArchiveManifest().then((items) => {
-        setArchive(items);
-        setArchivePick(items[0]?.id ?? null);
-      });
     } else {
       setLightbox(null);
       setBurst(null);
@@ -428,7 +414,7 @@ export function EvolutionCatalog({
           <DialogHeader className="shrink-0 border-b border-border px-4 py-3 sm:px-5">
             <DialogTitle>Teacher catalog</DialogTitle>
             <DialogDescription>
-              Browse art, play videos full screen, enlarge images. Archive keeps retired art.
+              Browse art, play videos full screen, enlarge images.
             </DialogDescription>
           </DialogHeader>
 
@@ -446,99 +432,13 @@ export function EvolutionCatalog({
                 }}
               >
                 {t.label}
-                {t.id === "archive" && archive.length > 0 ? (
-                  <span className="ml-1 tabular-nums opacity-80">
-                    {archive.length}
-                  </span>
-                ) : null}
               </Button>
             ))}
             <span className="ml-auto self-center text-xs font-medium text-muted-fg">
-              {tab === "archive"
-                ? "Retired art (not used in class)"
-                : PACK_LABELS[pack]}
+              {PACK_LABELS[pack]}
             </span>
           </div>
 
-          {tab === "archive" ? (
-            <div className="grid min-h-0 flex-1 overflow-hidden md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
-              <div
-                data-scroll
-                className="min-h-0 max-h-[32dvh] overflow-y-auto overscroll-contain border-b border-border p-3 md:max-h-none md:border-b-0 md:border-r"
-              >                {archive.length === 0 ? (
-                  <p className="p-4 text-sm text-muted-fg">
-                    No retired art yet. When we replace an evolution, the old one
-                    lands here.
-                  </p>
-                ) : (
-                  <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
-                    {archive.map((item) => {
-                      const on = item.id === archiveItem?.id;
-                      return (
-                        <button
-                          key={item.id}
-                          type="button"
-                          onClick={() => setArchivePick(item.id)}
-                          className={cn(
-                            "flex flex-col items-center gap-1 rounded-xl border-2 p-1.5 transition active:scale-[0.97]",
-                            on
-                              ? "border-accent bg-accent/10"
-                              : "border-border bg-surface-2/50",
-                          )}
-                        >
-                          <img
-                            src={item.src}
-                            alt=""
-                            loading="lazy"
-                            className="aspect-square w-full rounded-lg object-cover"
-                          />
-                          <span className="w-full truncate text-center text-[10px] font-bold">
-                            {item.label}
-                          </span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-              <div
-                data-scroll
-                className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-4 sm:p-5"
-              >
-                {archiveItem ? (
-                  <>
-                    <h3 className="text-lg font-bold">{archiveItem.label}</h3>
-                    <p className="text-sm text-muted-fg">
-                      Ultra #{archiveItem.avatarId} · stage {archiveItem.stage} ·{" "}
-                      {archiveItem.version} · {archiveItem.note}
-                    </p>
-                    <button
-                      type="button"
-                      className="group relative mt-3 w-full overflow-hidden rounded-2xl border-2 border-border"
-                      onClick={() =>
-                        setLightbox({
-                          src: archiveItem.src,
-                          title: archiveItem.label,
-                          sub: "Retired — not shown to students",
-                        })
-                      }
-                    >
-                      <img
-                        src={archiveItem.src}
-                        alt={archiveItem.label}
-                        className="mx-auto max-h-80 w-full object-contain bg-surface-2"
-                      />
-                      <span className="absolute right-2 top-2 flex size-8 items-center justify-center rounded-full bg-fg/60 text-bg shadow-sm">
-                        <Maximize2 className="size-4" />
-                      </span>
-                    </button>
-                  </>
-                ) : (
-                  <p className="text-sm text-muted-fg">Select an archived piece.</p>
-                )}
-              </div>
-            </div>
-          ) : (
             <div className="grid min-h-0 flex-1 overflow-hidden md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
               <div
                 data-scroll
@@ -863,7 +763,7 @@ export function EvolutionCatalog({
                 </p>
               </div>
             </div>
-          )}
+
 
           <div className="flex shrink-0 justify-end border-t border-border px-4 py-3">
             <Button type="button" onClick={() => onOpenChange(false)}>
