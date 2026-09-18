@@ -21,6 +21,7 @@ mp4s **are in git** (`public/avatars/ultra/homes/*.mp4`). Intros/adventures stay
 | **26–30** | In `ULTRA_HOME_READY` (v0.097) | Tableau / set / identity. In catalog to watch. | [AUDIT-26-30.md](home-film-qa/AUDIT-26-30.md) |
 | **31** | In catalog (v0.100) | Motion better (teacher). Wing↔arm. Proceed. | |
 | **33–35** | In catalog (v0.109) | Twins both I2V takes. Virtue/limb attempted. | [AUDIT-31-35.md](home-film-qa/AUDIT-31-35.md) |
+| **36–40** | PLAN | Keyframe A/B/C + 5-in-one-pass. | [home-round-36-40.md](home-round-36-40.md) — QA audit, wait `go`. |
 
 On disk and in git: posters + **mp4s** `homes/01`–`20`.
 
@@ -78,7 +79,13 @@ Catalog 21–25 **stay**. Exact Ash quote (do not paraphrase away):
 
 Self-QA: if three stamps could be three still photos of one pose → **fail movement** (do not READY).
 
-## Teacher 32 — virtue-action (2026-09-17)
+## Expedite + keyframe I2V (teacher 36–40)
+
+**Problem:** 15s from one still **twins** (31–35). Re-rolls ate the clock.
+
+**Method:** three **locked stills** (A start, B virtue-in-action, C aftermath), each still-gated, **same face** (B from A, C from B). Video = **three short I2Vs concatenated** (or reference-to-video with A,B,C) — not one 15s pray. 36–40 = **five in one pass** (named-batch exception).
+
+---
 
 Ash: 32 **pretty good**, setting good. Do **not** only “run, find object, look at object.” The mid beat must **enact the lore/virtue**, not inspect set dressing.
 

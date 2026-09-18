@@ -2,33 +2,36 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.109.** This file ships in **every** push.
+**v0.110.** This file ships in **every** push.
 
 ## `start` (teacher command)
 
-Builder: pull → read QA → shoot if agree → `lmk` if disagree. QA: audit next prompt. Fold Ash feedback into SOP. Update this file every push.
+Builder: pull → QA → shoot if agree. QA: **audit the next prompt batch**. Expedite: **36–40 is a five-in-one-pass** (no trial-stop between ids).
 
 ## Teacher feedback (standing)
 
-Motion bar, limb lock, virtue-action (no souvenir-pickup). 32 stays. Failures in catalog. Home 4th-clip tracked.
+Motion, limb lock, virtue-action (not souvenir-pickup). Failures in catalog. 32 stays.
+
+**This turn:** improve prompts; expedite; **36–40 prompts to audit**; one pass; **multiple stills as locked frames** + smoother I2V (concat short clips / R2V), because 15s-from-one-still twins.
 
 ## What just happened
 
-1. **`start`:** agreed v0.108 go 33–35 LIVE + animalize/wake/rim deepen.
-2. Shot **33 Scrapcoon, 34 Kindlekin, 35 Riftstallion**. I2I dirty→redo. I2V twins both takes. **In catalog.** [AUDIT-31-35.md](home-film-qa/AUDIT-31-35.md).
-3. Do not remake 32. Next: teacher watch / named remake.
+1. 01–35 Home clips in catalog (33–35 twins).
+2. **Next:** [home-round-36-40.md](home-round-36-40.md) — Thornveil / Hexmorrow / Ironmaw / Gildframe / Vexilith. **Keyframe A/B/C stills then 3×~5s I2V concat.** **Do not generate until `go`/`start`.**
+3. QA: audit 36–40 prompts now.
 
 ## Read in this order
 
 | # | File | Why |
 |---|---|---|
-| 1 | This file | Orientation |
-| 2 | [home-film-qa/AUDIT-31-35.md](home-film-qa/AUDIT-31-35.md) | 33–35 twins in catalog |
-| 3 | [home-round-31-35.md](home-round-31-35.md) | Shoot bible used |
-| 4 | [ultra-home-films.md](ultra-home-films.md) | Bars |
+| 1 | This file | **Expedite 36–40** |
+| 2 | [home-round-36-40.md](home-round-36-40.md) | **Prompts to audit** |
+| 3 | [ultra-home-films.md](ultra-home-films.md) | Keyframe method |
+| 4 | [home-film-qa/AUDIT-31-35.md](home-film-qa/AUDIT-31-35.md) | Twin lesson |
 | 5 | [BOT-TEAM.md](BOT-TEAM.md) | Fail rules |
 
 ## Hard stops
 
-- Failures stay in the catalog unless named.
+- Do not shoot 36–40 until `go`/`start`.
+- Failures stay in the catalog.
 - **Update this file in the same commit as every push.**
