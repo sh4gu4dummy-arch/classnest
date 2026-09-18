@@ -4,4 +4,4 @@
 |---|---|---|---|---|---|---|---|---|
 | 41 Sparkgrit | A redid (2→1) | 1 goblin | 1 goblin | **2** | **2** | **2** | −7.2 | v0.115 |
 
-Clip last-frames were one body; concat t-stamps still twins. xfade+loudnorm-in-complex **worked**. Continue 42–50.
+| 42 Gravemason | 1 | 1 | 1 | 1 | 1 | **2** t14 | −10.1 | v0.116 |
