@@ -1,3 +1,4 @@
+import type { AvatarPack } from "@/lib/avatars";
 /** Lightweight UI prefs (localStorage) — not in class backup. */
 
 const KEYS = {
@@ -13,6 +14,8 @@ const KEYS = {
   lastSkill: "classnest-last-skill-id",
   projector: "classnest-projector",
   smartboard: "classnest-smartboard",
+  catalogPack: "classnest-catalog-pack",
+  catalogRecent: "classnest-catalog-recent-v1",
 } as const;
 
 export type BoardSort =
@@ -225,3 +228,51 @@ export function suggestSmartboard(): boolean {
 }
 
 export { MAX_FAVORITES };
+
+const PACKS: AvatarPack[] = ["kids", "teens", "ultra"];
+
+export function loadCatalogPack(fallback: AvatarPack = "ultra"): AvatarPack {
+  const v = get(KEYS.catalogPack);
+  if (v === "kids" || v === "teens" || v === "ultra") return v;
+  return fallback;
+}
+
+export function saveCatalogPack(pack: AvatarPack) {
+  set(KEYS.catalogPack, pack);
+}
+
+export type CatalogRecentItem = { pack: AvatarPack; id: number; at: number };
+
+export function loadCatalogRecent(limit = 5): CatalogRecentItem[] {
+  const raw = get(KEYS.catalogRecent);
+  if (!raw) return [];
+  try {
+    const parsed = JSON.parse(raw) as CatalogRecentItem[];
+    if (!Array.isArray(parsed)) return [];
+    return parsed
+      .filter(
+        (x) =>
+          x &&
+          PACKS.includes(x.pack) &&
+          Number.isFinite(x.id) &&
+          x.id >= 1,
+      )
+      .slice(0, limit);
+  } catch {
+    return [];
+  }
+}
+
+/** Newest first; dedupe by pack+id; keep at most `limit`. */
+export function pushCatalogRecent(
+  pack: AvatarPack,
+  id: number,
+  limit = 5,
+): CatalogRecentItem[] {
+  const next: CatalogRecentItem[] = [
+    { pack, id, at: Date.now() },
+    ...loadCatalogRecent(20).filter((x) => !(x.pack === pack && x.id === id)),
+  ].slice(0, limit);
+  set(KEYS.catalogRecent, JSON.stringify(next));
+  return next;
+}

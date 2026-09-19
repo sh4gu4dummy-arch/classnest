@@ -2,7 +2,7 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.131.** This file ships in **every** push.
+**v0.133.** This file ships in **every** push.
 
 **Meta-QA / supervisor protocol:** [QA-SUPERVISOR.md](QA-SUPERVISOR.md) (QAsup sleeping 2026-09-19 — **Ash-direct** until a supervisor returns).
 
@@ -12,7 +12,7 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 
 Next on `start`: **56 Noxquill**.
 
-**UI:** Teacher catalog opens from the **main page** (no need to enter a class).
+**UI:** Teacher catalog on the **main page**; remembers last pack; recently viewed strip.
 
 ## Hard stops
 

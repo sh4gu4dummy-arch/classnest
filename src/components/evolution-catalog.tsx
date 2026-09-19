@@ -24,6 +24,13 @@ import { getUltraLore, ultraIntroSrc } from "@/lib/ultra-lore";
 import { getUltraAdventure, ultraAdventureSrc, ULTRA_ADVENTURE_POSTER } from "@/lib/ultra-adventures";
 import { ultraHomeSrc, ULTRA_HOME_POSTER } from "@/lib/ultra-homes";
 import { Maximize2, Play, X } from "lucide-react";
+import {
+  loadCatalogPack,
+  loadCatalogRecent,
+  pushCatalogRecent,
+  saveCatalogPack,
+  type CatalogRecentItem,
+} from "@/lib/prefs";
 
 
 type Props = {
@@ -294,7 +301,8 @@ export function EvolutionCatalog({
   onOpenChange,
   defaultPack = "ultra",
 }: Props) {
-  const [tab, setTab] = useState<CatalogTab>(defaultPack);
+  const [tab, setTab] = useState<CatalogTab>(() => loadCatalogPack(defaultPack));
+  const [recent, setRecent] = useState<CatalogRecentItem[]>(() => loadCatalogRecent(5));
   const [selectedId, setSelectedId] = useState(1);
   const [lightbox, setLightbox] = useState<Lightbox | null>(null);
   const [burst, setBurst] = useState<PreviewBurst | null>(null);
@@ -316,8 +324,10 @@ export function EvolutionCatalog({
     pack === "ultra" ? ultraHomeSrc(safeId) : null;
   useEffect(() => {
     if (open) {
-      setTab(defaultPack);
+      const pack = loadCatalogPack(defaultPack);
+      setTab(pack);
       setSelectedId(1);
+      setRecent(loadCatalogRecent(5));
       setLightbox(null);
       setBurst(null);
       setMorphing(false);
@@ -427,6 +437,7 @@ export function EvolutionCatalog({
                 variant={tab === t.id ? "default" : "secondary"}
                 onClick={() => {
                   setTab(t.id);
+                  saveCatalogPack(t.id);
                   setSelectedId(1);
                   setMorphing(false);
                 }}
@@ -438,6 +449,55 @@ export function EvolutionCatalog({
               {PACK_LABELS[pack]}
             </span>
           </div>
+
+            {recent.length > 0 ? (
+              <div className="shrink-0 border-b border-border px-4 py-2 sm:px-5">
+                <p className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide text-muted-fg">
+                  Recently viewed
+                </p>
+                <div className="flex gap-2 overflow-x-auto pb-0.5">
+                  {recent.map((item) => {
+                    const av = getAvatar(item.id, item.pack);
+                    if (!av) return null;
+                    const src = getAvatarSrcAtStage(item.id, item.pack, 1, "board");
+                    const on = item.pack === pack && item.id === safeId;
+                    return (
+                      <button
+                        key={`${item.pack}-${item.id}`}
+                        type="button"
+                        onClick={() => {
+                          setTab(item.pack);
+                          saveCatalogPack(item.pack);
+                          setSelectedId(item.id);
+                          setRecent(pushCatalogRecent(item.pack, item.id));
+                          setMorphing(false);
+                        }}
+                        className={cn(
+                          "flex w-16 shrink-0 flex-col items-center gap-1 rounded-xl border-2 p-1.5 transition active:scale-[0.97]",
+                          on
+                            ? "border-accent bg-accent/10"
+                            : "border-border bg-surface-2/50 hover:border-accent/40",
+                        )}
+                        title={`${av.name} · ${PACK_LABELS[item.pack]}`}
+                      >
+                        <img
+                          src={src}
+                          alt=""
+                          width={56}
+                          height={56}
+                          loading="lazy"
+                          decoding="async"
+                          className="aspect-square w-full rounded-lg object-cover"
+                        />
+                        <span className="w-full truncate text-center text-[10px] font-bold leading-tight">
+                          {av.name}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            ) : null}
 
             <div className="grid min-h-0 flex-1 overflow-hidden md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
               <div
@@ -454,6 +514,7 @@ export function EvolutionCatalog({
                         type="button"
                         onClick={() => {
                           setSelectedId(av.id);
+                          setRecent(pushCatalogRecent(pack, av.id));
                           setMorphing(false);
                         }}
                         className={cn(
