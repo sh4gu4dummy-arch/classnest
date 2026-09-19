@@ -5,6 +5,7 @@ import { Archive, BookOpen, Plus, Users } from "lucide-react";
 import { toast } from "sonner";
 import { AppShell } from "@/components/app-shell";
 import { BackupPanel, saveDataBackupNow } from "@/components/backup-panel";
+import { EvolutionCatalog } from "@/components/evolution-catalog";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -40,6 +41,7 @@ function HomePage() {
   const addClass = useClassStore((s) => s.addClass);
   const archiveClass = useClassStore((s) => s.archiveClass);
   const [open, setOpen] = useState(false);
+  const [catalogOpen, setCatalogOpen] = useState(false);
   const [name, setName] = useState("");
   const [grade, setGrade] = useState("");
   const [pack, setPack] = useState<AvatarPack>("kids");
@@ -93,6 +95,18 @@ function HomePage() {
       <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Classes</h2>
         <div className="flex flex-wrap gap-2">
+          <Button
+            type="button"
+            variant="secondary"
+            size="sm"
+            className="gap-1.5"
+            onClick={() => setCatalogOpen(true)}
+            title="Teacher catalog"
+            aria-label="Teacher catalog"
+          >
+            <BookOpen className="size-4" />
+            Teacher catalog
+          </Button>
           <Button asChild variant="secondary" size="sm" className="gap-1.5">
             <Link to="/archived" title="Archived classes" aria-label="Archived classes">
               <Archive className="size-4" />
@@ -258,6 +272,12 @@ function HomePage() {
       <div className="mt-8">
         <BackupPanel />
       </div>
+
+      <EvolutionCatalog
+        open={catalogOpen}
+        onOpenChange={setCatalogOpen}
+        defaultPack="ultra"
+      />
     </AppShell>
   );
 }
