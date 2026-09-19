@@ -519,7 +519,7 @@ export function EvolutionCatalog({
       >
         <DialogContent
           className={cn(
-            "flex w-[calc(100%-1rem)] max-w-3xl flex-col gap-0 overflow-hidden p-0 sm:max-w-3xl",
+            "flex w-[min(1100px,92vw)] !max-w-[min(1100px,92vw)] flex-col gap-0 overflow-hidden p-0",
             "!top-[calc(var(--grok-banner-h,0px)+0.5rem)] !translate-y-0",
             "h-[calc(100dvh-var(--grok-banner-h,0px)-1rem)] max-h-[calc(100dvh-var(--grok-banner-h,0px)-1rem)]",
             lightbox?.kind === "video" &&
@@ -605,12 +605,12 @@ export function EvolutionCatalog({
               </div>
             ) : null}
 
-            <div className="grid min-h-0 flex-1 overflow-hidden md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
+            <div className="grid min-h-0 flex-1 overflow-hidden md:grid-cols-[minmax(16rem,0.95fr)_minmax(0,1.45fr)]">
               <div
                 data-scroll
                 className="min-h-0 max-h-[32dvh] overflow-y-auto overscroll-contain border-b border-border p-3 md:max-h-none md:border-b-0 md:border-r"
               >
-                <div className="grid grid-cols-4 gap-2 sm:grid-cols-5">
+                <div className="grid grid-cols-5 gap-2 sm:grid-cols-6 lg:grid-cols-7">
                   {list.map((av) => {
                     const src = getAvatarSrcAtStage(av.id, pack, 1, "board");
                     const on = av.id === safeId;
@@ -624,22 +624,30 @@ export function EvolutionCatalog({
                           setMorphing(false);
                         }}
                         className={cn(
-                          "flex flex-col items-center gap-1 rounded-xl border-2 p-1.5 transition active:scale-[0.97]",
+                          "flex flex-col items-center gap-1 rounded-xl border-2 p-1.5 pt-3 transition active:scale-[0.97]",
                           on
                             ? "border-accent bg-accent/10"
                             : "border-border bg-surface-2/50 hover:border-accent/40",
                         )}
-                        title={av.name}
+                        title={`${String(av.id).padStart(2, "0")} · ${av.name}`}
                       >
-                        <img
-                          src={src}
-                          alt=""
-                          width={72}
-                          height={72}
-                          loading="lazy"
-                          decoding="async"
-                          className="aspect-square w-full rounded-lg object-cover"
-                        />
+                        <div className="relative w-full">
+                          <span
+                            className="pointer-events-none absolute -left-0.5 -top-2.5 z-10 text-[9px] font-bold tabular-nums leading-none text-muted-fg"
+                            aria-hidden
+                          >
+                            {String(av.id).padStart(2, "0")}
+                          </span>
+                          <img
+                            src={src}
+                            alt=""
+                            width={72}
+                            height={72}
+                            loading="lazy"
+                            decoding="async"
+                            className="aspect-square w-full rounded-lg object-cover"
+                          />
+                        </div>
                         <span className="w-full truncate text-center text-[10px] font-bold leading-tight">
                           {av.name}
                         </span>
@@ -654,7 +662,12 @@ export function EvolutionCatalog({
                 className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-4 sm:p-5"
               >
                 <div className="mb-3">
-                  <h3 className="text-lg font-bold tracking-tight">{avatar.name}</h3>
+                  <h3 className="flex items-baseline gap-2 text-lg font-bold tracking-tight">
+                    <span className="text-[11px] font-bold tabular-nums text-muted-fg">
+                      {String(safeId).padStart(2, "0")}
+                    </span>
+                    {avatar.name}
+                  </h3>
                   {avatar.vibe && (
                     <p className="text-sm font-medium text-muted-fg">{avatar.vibe}</p>
                   )}
