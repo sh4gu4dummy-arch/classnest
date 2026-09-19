@@ -291,6 +291,11 @@ Already in [home-round-16-20.md](home-round-16-20.md); Bot1 tightened further af
 
 ## Log (newest first)
 
+### 2026-09-19 — ClassNest-Bot1 (QAsupervisor handoff)
+
+- QAsup sleeping. **Ash-direct** routing. Protocol: [QA-SUPERVISOR.md](QA-SUPERVISOR.md).
+- Desk: Homes 01–55 in catalog; next `start` = 56 Noxquill.
+
 ### 2026-09-18 — ClassNest-Bot1 (audited + shipped 41–50 prompts)
 
 - Method v2 LOCK: A≥65%, no B/C I2I, last-frame extend, loudnorm in filter_complex, commit-per-id hard gate.
