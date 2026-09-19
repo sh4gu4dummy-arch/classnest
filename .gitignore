@@ -64,3 +64,6 @@ scripts/__pycache__/
 # GitHub 100 MB file cap — zip packs stay on the live server
 public/downloads/*.zip
 public/downloads/*.apk.idsig
+
+# Cinematic scrub stills — local trial only; never commit (teacher check first)
+public/avatars/ultra/scrub/

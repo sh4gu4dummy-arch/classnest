@@ -87,6 +87,10 @@ import {
   type BoardDensity,
   type BoardSort,
 } from "@/lib/prefs";
+import {
+  loadCinematicEvolution,
+  saveCinematicEvolution,
+} from "@/lib/ultra-scrub";
 import { QUICK_PLUS_BEHAVIOR } from "@/lib/seed";
 import { playAwardSound, playSound, unlockAudio } from "@/lib/sounds";
 import { MAX_CLASS_SIZE, multiPointsMaps, useClassStore } from "@/lib/store";
@@ -207,6 +211,9 @@ function ClassBoardPage() {
   const [groupsOpen, setGroupsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [presentation, setPresentation] = useState(() => isPresentationMode());
+  const [cinematicEvolution, setCinematicEvolution] = useState(() =>
+    loadCinematicEvolution(),
+  );
   const [projector, setProjector] = useState(() => isProjectorMode());
   const [smartboard, setSmartboard] = useState(() => isSmartboardMode());
   const [awardOpen, setAwardOpen] = useState(false);
@@ -376,6 +383,18 @@ function ClassBoardPage() {
     setSort(next.id);
     saveBoardSort(next.id);
   }
+  
+  function toggleCinematicEvolution() {
+    const next = !cinematicEvolution;
+    setCinematicEvolution(next);
+    saveCinematicEvolution(next);
+    toast.success(
+      next
+        ? "Cinematic evolution on — one Home still per point"
+        : "Classic evolution — snaps at 10 & 20",
+    );
+  }
+
   function toggleProjector() {
     const next = !projector;
     setProjector(next);
@@ -854,6 +873,13 @@ function ClassBoardPage() {
         {
           label: projector ? "✓ Projector contrast" : "Projector contrast",
           run: () => toggleProjector(),
+        },
+        {
+          label: cinematicEvolution
+            ? "✓ Cinematic evolution"
+            : "Cinematic evolution",
+          run: () => toggleCinematicEvolution(),
+          disabled: pack !== "ultra",
         },
         {
           label: "Rearrange seats",

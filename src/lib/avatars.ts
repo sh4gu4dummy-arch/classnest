@@ -1,3 +1,4 @@
+import { ultraCinematicSrc } from "@/lib/ultra-scrub";
 /** Local avatar packs — Kids, Teens (kept), Ultra (Imagine evolving legends). */
 
 export type AvatarPack = "kids" | "teens" | "ultra";
@@ -342,6 +343,9 @@ export function getAvatarSrc(
   const av = getAvatar(id, pack);
   let src = av.src;
   if (pack === "ultra" && av.stages) {
+    // Cinematic mode: one Home scrub still per point (toggle in Display menu).
+    const cine = ultraCinematicSrc(id ?? av.id, points);
+    if (cine) return cine;
     const stage = getFormStage(points);
     src = av.stages[stage - 1] ?? av.src;
   }

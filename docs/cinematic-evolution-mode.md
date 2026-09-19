@@ -1,6 +1,6 @@
 # Cinematic evolution mode (plan — do not execute yet)
 
-**Status:** plan only (2026-09-19). Teacher asked for the idea + incremental path; **no code until go.**
+**Status:** v1 shipped (2026-09-19, app **v0.135**). Toggle + linear Home scrub for Ultras 01–55 (frames local/gitignored). Intro/adventure still pending mp4s.
 
 **Orientation:** see [START-HERE.md](START-HERE.md).
 

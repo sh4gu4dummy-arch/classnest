@@ -23,7 +23,12 @@ import { cn } from "@/lib/utils";
 import { getUltraLore, ultraIntroSrc } from "@/lib/ultra-lore";
 import { getUltraAdventure, ultraAdventureSrc, ULTRA_ADVENTURE_POSTER } from "@/lib/ultra-adventures";
 import { ultraHomeSrc, ULTRA_HOME_POSTER } from "@/lib/ultra-homes";
-import { Maximize2, Play, X } from "lucide-react";
+import { Maximize2, Pause, Play, X } from "lucide-react";
+import {
+  getUltraScrubBundle,
+  ultraScrubFrameSrc,
+  type UltraScrubClip,
+} from "@/lib/ultra-scrub";
 import {
   loadCatalogPack,
   loadCatalogRecent,
@@ -296,6 +301,105 @@ function CatalogVideoClip({
   );
 }
 
+
+/** Local trial: scrub strip slideshow (frames gitignored). */
+function CatalogScrubSlideshow({
+  avatarName,
+  ultraId,
+  clip,
+}: {
+  avatarName: string;
+  ultraId: number;
+  clip: UltraScrubClip;
+}) {
+  const [frame, setFrame] = useState(1);
+  const [playing, setPlaying] = useState(true);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    setFrame(1);
+    setPlaying(true);
+    setFailed(false);
+  }, [ultraId, clip.kind]);
+
+  useEffect(() => {
+    if (!playing || failed) return;
+    const ms = Math.round(1000 / Math.max(1, clip.fps));
+    const t = window.setInterval(() => {
+      setFrame((f) => (f >= clip.frameCount ? 1 : f + 1));
+    }, ms);
+    return () => window.clearInterval(t);
+  }, [playing, failed, clip.fps, clip.frameCount]);
+
+  if (failed) {
+    return (
+      <div className="border-t border-border pt-2">
+        <p className="text-[11px] font-bold uppercase tracking-wide text-muted-fg">
+          Scrub · {clip.label} · missing
+        </p>
+        <p className="text-xs text-muted-fg">
+          Frames not on disk under /avatars/ultra/scrub/
+          {String(ultraId).padStart(2, "0")}/{clip.kind}/ — local only, not in git.
+        </p>
+      </div>
+    );
+  }
+
+  const src = ultraScrubFrameSrc(ultraId, clip.kind, frame);
+
+  return (
+    <div className="border-t border-border pt-2">
+      <div className="mb-1.5 flex items-center justify-between gap-2">
+        <div>
+          <p className="text-[11px] font-bold uppercase tracking-wide text-muted-fg">
+            Scrub · {clip.label} · slideshow
+          </p>
+          <p className="text-xs text-muted-fg">
+            {clip.source} · {clip.frameCount} frames · local only
+          </p>
+        </div>
+        <Button
+          type="button"
+          size="sm"
+          variant="secondary"
+          className="gap-1 shrink-0"
+          onClick={() => setPlaying((p) => !p)}
+          aria-label={playing ? "Pause slideshow" : "Play slideshow"}
+        >
+          {playing ? <Pause className="size-3.5" /> : <Play className="size-3.5" />}
+          {playing ? "Pause" : "Play"}
+        </Button>
+      </div>
+      <div className="overflow-hidden rounded-xl border border-border bg-black">
+        <img
+          key={src}
+          src={src}
+          alt={`${avatarName} ${clip.label} frame ${frame}`}
+          className="aspect-video w-full object-contain"
+          onError={() => setFailed(true)}
+        />
+      </div>
+      <div className="mt-2 flex items-center gap-2">
+        <input
+          type="range"
+          min={1}
+          max={clip.frameCount}
+          value={frame}
+          onChange={(e) => {
+            setPlaying(false);
+            setFrame(Number(e.target.value));
+          }}
+          className="h-2 w-full accent-[var(--accent)]"
+          aria-label={`${clip.label} scrub frame`}
+        />
+        <span className="w-14 shrink-0 text-right text-[11px] font-bold tabular-nums text-muted-fg">
+          {frame}/{clip.frameCount}
+        </span>
+      </div>
+    </div>
+  );
+}
+
 export function EvolutionCatalog({
   open,
   onOpenChange,
@@ -322,6 +426,8 @@ export function EvolutionCatalog({
     pack === "ultra" ? ultraAdventureSrc(safeId) : null;
   const homeSrc =
     pack === "ultra" ? ultraHomeSrc(safeId) : null;
+  const scrubBundle =
+    pack === "ultra" ? getUltraScrubBundle(safeId) : null;
   useEffect(() => {
     if (open) {
       const pack = loadCatalogPack(defaultPack);
@@ -635,6 +741,16 @@ export function EvolutionCatalog({
                         />
                       </div>
                     ) : null}
+                    {scrubBundle
+                      ? scrubBundle.clips.map((clip) => (
+                          <CatalogScrubSlideshow
+                            key={clip.kind}
+                            avatarName={avatar.name}
+                            ultraId={safeId}
+                            clip={clip}
+                          />
+                        ))
+                      : null}
                   </div>
                 )}
 

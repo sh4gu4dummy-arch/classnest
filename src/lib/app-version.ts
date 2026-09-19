@@ -11,7 +11,7 @@
  * art/videos change. Those keep PACK_VERSION / AVATARS_VERSION until then.
  * PACK_BUILT_* is written by scripts/build-portable.mjs.
  */
-export const APP_VERSION = "0.134";
+export const APP_VERSION = "0.135";
 export const APP_VERSION_LABEL = `v${APP_VERSION}`;
 
 /** True when this is the unzipped Offline APP (no server, no zip downloads). */

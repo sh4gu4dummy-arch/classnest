@@ -29,6 +29,10 @@ import {
   BOARD_BACKDROP_IDS,
   PACK_BOARD_BACKDROP,
 } from "@/lib/shop";
+import {
+  loadCinematicEvolution,
+  saveCinematicEvolution,
+} from "@/lib/ultra-scrub";
 
 export const Route = createFileRoute("/class/$classId/settings")({
   component: ClassSettingsPage,
@@ -68,6 +72,9 @@ function ClassSettingsPage() {
   const [copyFromId, setCopyFromId] = useState("");
   const [hasDefaults, setHasDefaults] = useState(false);
   const [advancedOpen, setAdvancedOpen] = useState(false);
+  const [cinematicEvolution, setCinematicEvolution] = useState(() =>
+    loadCinematicEvolution(),
+  );
 
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editLabel, setEditLabel] = useState("");
@@ -199,6 +206,50 @@ function ClassSettingsPage() {
               </div>
               <p className="text-xs text-muted-fg">{PACK_LABELS[pack]}</p>
             </div>
+            {pack === "ultra" ? (
+              <div className="space-y-2 rounded-xl border border-border bg-surface-2/40 p-3">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <Label htmlFor="cinematic-evo">Cinematic evolution</Label>
+                    <p className="mt-0.5 text-xs text-muted-fg">
+                      When on, Ultra faces advance one Home-film still per point
+                      instead of snapping at 10 and 20. Classic morph burst still
+                      plays at those thresholds. Needs local scrub frames (not in
+                      git).
+                    </p>
+                  </div>
+                  <button
+                    id="cinematic-evo"
+                    type="button"
+                    role="switch"
+                    aria-checked={cinematicEvolution}
+                    onClick={() => {
+                      const next = !cinematicEvolution;
+                      setCinematicEvolution(next);
+                      saveCinematicEvolution(next);
+                      toast.success(
+                        next
+                          ? "Cinematic evolution on"
+                          : "Classic evolution on",
+                      );
+                    }}
+                    className={cn(
+                      "relative h-8 w-14 shrink-0 rounded-full border-2 transition",
+                      cinematicEvolution
+                        ? "border-accent bg-accent"
+                        : "border-border bg-surface",
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        "absolute top-0.5 size-6 rounded-full bg-white shadow transition",
+                        cinematicEvolution ? "left-7" : "left-0.5",
+                      )}
+                    />
+                  </button>
+                </div>
+              </div>
+            ) : null}
             <div className="space-y-2">
               <Label>Board arena</Label>
               <p className="text-xs text-muted-fg">
