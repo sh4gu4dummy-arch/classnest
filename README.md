@@ -7,12 +7,19 @@ browser or as an Offline APP on a USB stick.
 
 ## Run (this repo)
 
+**Easiest on your machine:** double-click **`Open-ClassNest.bat`** (Windows) or **`Open-ClassNest.command`** (Mac).
+That starts ClassNest on **http://127.0.0.1:3847/** (port **3847**, so it does not fight another app on 8080) and opens the browser.
+
+Or manually:
+
 ```bash
 npm install
-npm run dev
+npm run dev:local
 ```
 
-Open [http://127.0.0.1:8080](http://127.0.0.1:8080).
+Open [http://127.0.0.1:3847](http://127.0.0.1:3847/).
+
+(`npm run dev` still uses port **8080** for the shared live-preview setup.)
 
 ## Offline APP (Windows)
 
