@@ -444,6 +444,10 @@ function ClassBoardPage() {
 
   const openAward = useCallback((student: Student) => {
     if (locked) return;
+    if (isAbsentToday(student)) {
+      toast.error("Marked absent — can't award points");
+      return;
+    }
     setSelected(student);
     setFocusId(student.id);
     setAwardOpen(true);
@@ -542,6 +546,18 @@ function ClassBoardPage() {
     const cur = getAttendanceStatus(student);
     const next = nextAttendanceStatus(cur);
     setAttendanceToday(student.id, next);
+    if (next === "absent") {
+      setSelectedIds((prev) => {
+        if (!prev.has(student.id)) return prev;
+        const n = new Set(prev);
+        n.delete(student.id);
+        return n;
+      });
+      if (selected?.id === student.id) {
+        setAwardOpen(false);
+        setSelected(null);
+      }
+    }
     toast.message(
       `${student.name.split(" ")[0]} ${next === "absent" ? "out" : next === "late" ? "late" : "in"}`,
       { duration: 1400 },
@@ -578,6 +594,14 @@ function ClassBoardPage() {
     const mode = paintModeRef.current;
     if (!mode || lastPaintIdRef.current === id) return;
     lastPaintIdRef.current = id;
+    // Absent kids stay grayed out — never enter the award selection
+    if (mode === "add") {
+      const st = students.find((s) => s.id === id);
+      if (st && isAbsentToday(st)) {
+        toast.message("Absent — skipped", { duration: 900 });
+        return;
+      }
+    }
     setSelectedIds((prev) => {
       if (mode === "add" && prev.has(id)) return prev;
       if (mode === "remove" && !prev.has(id)) return prev;
@@ -1077,7 +1101,13 @@ function ClassBoardPage() {
                 size="sm"
                 variant="secondary"
                 onClick={() =>
-                  setSelectedIds(new Set(boardStudents.map((s) => s.id)))
+                  setSelectedIds(
+                    new Set(
+                      boardStudents
+                        .filter((s) => !isAbsentToday(s))
+                        .map((s) => s.id),
+                    ),
+                  )
                 }
                 data-chrome="teacher"
               >
@@ -1476,9 +1506,15 @@ function ClassBoardPage() {
         open={batchOpen}
         onOpenChange={setBatchOpen}
         classId={classId}
-        studentIds={Array.from(selectedIds)}
+        studentIds={Array.from(selectedIds).filter((id) => {
+          const st = students.find((s) => s.id === id);
+          return st && !isAbsentToday(st);
+        })}
         onDone={() => {
-          selectedIds.forEach((id) => flashStudent(id, "positive"));
+          selectedIds.forEach((id) => {
+            const st = students.find((s) => s.id === id);
+            if (st && !isAbsentToday(st)) flashStudent(id, "positive");
+          });
           exitSelectMode();
         }}
       />

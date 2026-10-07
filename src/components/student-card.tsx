@@ -83,6 +83,7 @@ function StudentCardInner({
     if (rearrangeMode) return;
     // Select-mode paint lives on the board grid (click + drag).
     if (selectMode) return;
+    if (absent) return;
     if (!onQuickPlus) {
       onAward(student);
       return;
