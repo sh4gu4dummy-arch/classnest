@@ -123,6 +123,47 @@ function advanceByes(matches: TournamentMatch[]): TournamentMatch[] {
   return next;
 }
 
+/** True if this match can still yield a winner (player or bye advance). Empty null/null branches cannot. */
+function canEverProduceWinner(m: TournamentMatch, matches: TournamentMatch[]): boolean {
+  if (m.winner) return true;
+  if (m.a || m.b) return true;
+  if (m.round === 0) return false; // both null in round 0 — dead branch
+  const feeders = matches.filter(
+    (x) => x.round === m.round - 1 && Math.floor(x.index / 2) === m.index,
+  );
+  return feeders.some((f) => canEverProduceWinner(f, matches));
+}
+
+function feederPending(
+  matches: TournamentMatch[],
+  child: TournamentMatch,
+  side: "a" | "b",
+): boolean {
+  const wantOdd = side === "b" ? 1 : 0;
+  return matches.some(
+    (x) =>
+      x.round === child.round - 1 &&
+      Math.floor(x.index / 2) === child.index &&
+      x.index % 2 === wantOdd &&
+      !x.winner &&
+      canEverProduceWinner(x, matches),
+  );
+}
+
+/** After a slot is filled, auto-advance if the other side can never arrive. */
+function maybeAutoAdvanceBye(matches: TournamentMatch[], child: TournamentMatch) {
+  if (child.winner) return;
+  if (child.a && !child.b && !feederPending(matches, child, "b")) {
+    child.winner = child.a;
+    propagateWinner(matches, child);
+    return;
+  }
+  if (child.b && !child.a && !feederPending(matches, child, "a")) {
+    child.winner = child.b;
+    propagateWinner(matches, child);
+  }
+}
+
 function fillChild(matches: TournamentMatch[], parent: TournamentMatch) {
   const child = matches.find(
     (m) =>
@@ -135,51 +176,22 @@ function fillChild(matches: TournamentMatch[], parent: TournamentMatch) {
   } else {
     child.b = parent.winner;
   }
-  // Auto if opponent is permanent bye (both slots known and one null with no pending)
-  if (child.a && !child.b) {
-    // only auto if sibling match already finished with no winner possible — keep manual for real byes in first round only
-  }
-  if (child.a && child.b === null && parent.round === 0) {
-    // check if sibling was empty first-round
-    const sibling = matches.find(
-      (m) => m.round === parent.round && m.index === parent.index + (parent.index % 2 === 0 ? 1 : -1),
-    );
-    if (sibling && !sibling.a && !sibling.b) {
-      child.winner = child.a;
-    }
-  }
+  maybeAutoAdvanceBye(matches, child);
 }
 
 export function findNextPlayableMatch(matches: TournamentMatch[]): TournamentMatch | null {
   const sorted = [...matches].sort((a, b) => a.round - b.round || a.index - b.index);
   for (const m of sorted) {
     if (m.winner) continue;
+    // Dead empty branch — skip (never blocks championship)
+    if (!m.a && !m.b && !canEverProduceWinner(m, matches)) continue;
     if (m.a && m.b) return m;
-    // Bye: one side filled, other never will be (null and no upstream)
-    if (m.a && !m.b) {
-      // If any unfinished match in previous round feeds into b, wait
-      const feedsB = matches.some(
-        (x) =>
-          x.round === m.round - 1 &&
-          Math.floor(x.index / 2) === m.index &&
-          x.index % 2 === 1 &&
-          !x.winner,
-      );
-      if (!feedsB && m.round === 0) {
-        return { ...m }; // will auto-resolve
-      }
+    // Bye: one side filled, other can never arrive — any round
+    if (m.a && !m.b && !feederPending(matches, m, "b")) {
+      return { ...m };
     }
-    if (m.b && !m.a) {
-      const feedsA = matches.some(
-        (x) =>
-          x.round === m.round - 1 &&
-          Math.floor(x.index / 2) === m.index &&
-          x.index % 2 === 0 &&
-          !x.winner,
-      );
-      if (!feedsA && m.round === 0) {
-        return { ...m };
-      }
+    if (m.b && !m.a && !feederPending(matches, m, "a")) {
+      return { ...m };
     }
   }
   return null;
@@ -230,6 +242,7 @@ function propagateWinner(matches: TournamentMatch[], finished: TournamentMatch) 
   if (!child || !finished.winner) return;
   if (finished.index % 2 === 0) child.a = finished.winner;
   else child.b = finished.winner;
+  maybeAutoAdvanceBye(matches, child);
 }
 
 export function getChampion(matches: TournamentMatch[]): string | null {
