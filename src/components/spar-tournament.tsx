@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { getAvatarSrc, type AvatarPack } from "@/lib/avatars";
+import { avatarImgFallback } from "@/lib/img-fallback";
 import { useClassStore } from "@/lib/store";
 import { playSound, unlockAudio } from "@/lib/sounds";
 import {
@@ -495,7 +496,7 @@ function Fighter({
     >
       <img
         src={getAvatarSrc(student.avatarId, pack, points, "board")}
-
+        onError={avatarImgFallback(student.avatarId, pack, points, "board")}
         alt=""
         className={cn(
           "size-24 rounded-2xl object-cover shadow-lg ring-2 sm:size-28",

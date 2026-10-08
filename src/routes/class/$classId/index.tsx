@@ -89,13 +89,14 @@ import {
 } from "@/lib/prefs";
 import {
   loadCinematicEvolution,
+  probeScrubFrames,
   saveCinematicEvolution,
 } from "@/lib/ultra-scrub";
 import { QUICK_PLUS_BEHAVIOR } from "@/lib/seed";
 import { playAwardSound, playSound, unlockAudio } from "@/lib/sounds";
 import { MAX_CLASS_SIZE, multiPointsMaps, useClassStore } from "@/lib/store";
 import { useHydratedStore } from "@/lib/use-hydrated-store";
-import type { Behavior, Student } from "@/lib/types";
+import type { Behavior, PointEvent, Student } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 const SparArena = lazy(() =>
@@ -134,15 +135,21 @@ function ClassBoardPage() {
   const events = useClassStore((s) => s.events);
   const {
     awardPoints,
+    awardPointsBatch,
     addStudent,
     updateClass,
     updateStudent,
+    undoEvent,
+    undoBatch,
     undoLastClassEvent,
     setSeatOrder,
     setAttendanceToday,
   } = useClassStore(
     useShallow((s) => ({
       awardPoints: s.awardPoints,
+      awardPointsBatch: s.awardPointsBatch,
+      undoEvent: s.undoEvent,
+      undoBatch: s.undoBatch,
       addStudent: s.addStudent,
       updateClass: s.updateClass,
       updateStudent: s.updateStudent,
@@ -207,6 +214,11 @@ function ClassBoardPage() {
   const [sort, setSort] = useState<BoardSort>(() => loadBoardSort());
   const [density, setDensity] = useState<BoardDensity>(() => loadBoardDensity());
   const [moreOpen, setMoreOpen] = useState(false);
+  const [moreAlign, setMoreAlign] = useState<"left" | "right">("right");
+  const [morePlace, setMorePlace] = useState<{ up: boolean; maxH: number }>({
+    up: false,
+    maxH: 576,
+  });
   const moreRef = useRef<HTMLDivElement>(null);
   const [groupsOpen, setGroupsOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -333,6 +345,11 @@ function ClassBoardPage() {
     () => boardStudents.filter((s) => !isAbsentToday(s)),
     [boardStudents],
   );
+  /** RandCycle: only kids still in the pool count toward "all called". */
+  const cycleCalledInPool = useMemo(
+    () => cyclePool.filter((s) => cyclePickedIds.has(s.id)).length,
+    [cyclePool, cyclePickedIds],
+  );
   const focusStudent = focusId
     ? students.find((s) => s.id === focusId) ?? null
     : null;
@@ -349,6 +366,7 @@ function ClassBoardPage() {
   }, [students]);
 
   function selectGroup(label: string) {
+    if (locked) return;
     const ids = students
       .filter((s) => (s.group?.trim() ?? "") === label && !isAbsentToday(s))
       .map((s) => s.id);
@@ -393,6 +411,15 @@ function ClassBoardPage() {
         ? "Cinematic evolution on — one Home still per point"
         : "Classic evolution — snaps at 10 & 20",
     );
+    if (next) {
+      void probeScrubFrames(students[0]?.avatarId ?? 1).then((ok) => {
+        if (!ok) {
+          toast.message("Scrub frames aren't on this device", {
+            description: "Classic evolution art will show until they're copied in.",
+          });
+        }
+      });
+    }
   }
 
   function toggleProjector() {
@@ -459,7 +486,7 @@ function ClassBoardPage() {
     evolved: boolean,
     nextPoints: number,
     prevPoints: number,
-    summary: { label: string; points: number; studentName: string },
+    summary: { label: string; points: number; studentName: string; eventId?: string },
   ) => {
     flashStudent(student.id, kind);
     setFocusId(student.id);
@@ -476,15 +503,18 @@ function ClassBoardPage() {
     const sign = summary.points > 0 ? `+${summary.points}` : String(summary.points);
     toast.success(`${summary.studentName}: ${sign} ${summary.label}`, {
       duration: 2800,
-      action: {
-        label: "Undo",
-        onClick: () => {
-          const undone = undoLastClassEvent(classId);
-          if (undone) toast.message("Undone");
-        },
-      },
+      action: summary.eventId
+        ? {
+            label: "Undo",
+            onClick: () => {
+              // Undo exactly this award, not whatever was awarded last.
+              if (undoEvent(summary.eventId!)) toast.message("Undone");
+              else toast.message("Already undone");
+            },
+          }
+        : undefined,
     });
-  }, [pack, classId, undoLastClassEvent, flashStudent, pulseEvolve]);
+  }, [pack, undoEvent, flashStudent, pulseEvolve]);
 
   const handleQuickPlus = useCallback((student: Student) => {
     if (locked || isAbsentToday(student)) {
@@ -507,10 +537,62 @@ function ClassBoardPage() {
       label: event.behaviorLabel,
       points: event.points,
       studentName: student.name,
+      eventId: event.id,
     });
   }, [locked, lifetimeOf, awardPoints, classId, afterAward]);
 
+  /** Flash + evolution burst for a multi-student award; one toast + one Undo. */
+  function afterBatchAward(
+    created: PointEvent[],
+    prevById: Map<string, number>,
+    kind: "positive" | "needs_work",
+  ) {
+    if (!created.length) return;
+    let burstShown = false;
+    let anyEvolved = false;
+    for (const ev of created) {
+      flashStudent(ev.studentId, kind);
+      const prev = prevById.get(ev.studentId) ?? 0;
+      const next = prev + ev.points;
+      if (didEvolve(prev, next) || didFormEvolve(prev, next)) {
+        anyEvolved = true;
+        pulseEvolve(ev.studentId);
+        const st = students.find((s) => s.id === ev.studentId);
+        if (st && !burstShown) {
+          burstShown = true;
+          setBurst({
+            studentName: st.name,
+            avatarId: st.avatarId,
+            pack,
+            points: next,
+            prevPoints: prev,
+          });
+        }
+      }
+    }
+    const first = created[0]!;
+    playAwardSound(first.points);
+    if (anyEvolved) window.setTimeout(() => playSound("evolve"), 180);
+    const sign = first.points > 0 ? `+${first.points}` : String(first.points);
+    const batchId = first.batchId;
+    toast.success(`${created.length} students: ${sign} ${first.behaviorLabel}`, {
+      duration: 4000,
+      action: {
+        label: "Undo",
+        onClick: () => {
+          const n = batchId
+            ? undoBatch(batchId)
+            : undoEvent(first.id)
+              ? 1
+              : 0;
+          toast.message(n > 0 ? `Undone for ${n} student${n === 1 ? "" : "s"}` : "Already undone");
+        },
+      },
+    });
+  }
+
   function handleFavoriteAward(behavior: Behavior) {
+    if (locked) return;
     unlockAudio();
     const targets: Student[] =
       selectMode && selectedIds.size > 0
@@ -519,27 +601,43 @@ function ClassBoardPage() {
           ? [focusStudent]
           : [];
     if (targets.length === 0) {
-      toast.message("Tap a student first");
+      if (!selectMode && focusStudent && isAbsentToday(focusStudent)) {
+        toast.message(`${focusStudent.name.split(" ")[0]} is out today`);
+      } else if (selectMode && selectedIds.size > 0) {
+        toast.message("Everyone selected is out today");
+      } else {
+        toast.message("Tap a student first");
+      }
       return;
     }
-    for (const st of targets) {
-      const prev = lifetimeOf(st.id);
-      const event = awardPoints({
-        studentId: st.id,
+    if (targets.length > 1) {
+      const prevById = new Map(targets.map((s) => [s.id, lifetimeOf(s.id)]));
+      const created = awardPointsBatch({
+        studentIds: targets.map((s) => s.id),
         classId,
         behaviorId: behavior.id,
       });
-      if (!event) continue;
-      const nextPoints = prev + event.points;
-      const evolved = didEvolve(prev, nextPoints);
-      playAwardSound(event.points);
-      if (evolved) window.setTimeout(() => playSound("evolve"), 180);
-      afterAward(st, behavior.kind, evolved, nextPoints, prev, {
-        label: event.behaviorLabel,
-        points: event.points,
-        studentName: st.name,
-      });
+      afterBatchAward(created, prevById, behavior.kind);
+      return;
     }
+    const st = targets[0]!;
+    const prev = lifetimeOf(st.id);
+    const event = awardPoints({
+      studentId: st.id,
+      classId,
+      behaviorId: behavior.id,
+    });
+    if (!event) return;
+    const nextPoints = prev + event.points;
+    const evolved = didEvolve(prev, nextPoints);
+    playAwardSound(event.points);
+    if (evolved) window.setTimeout(() => playSound("evolve"), 180);
+    afterAward(st, behavior.kind, evolved, nextPoints, prev, {
+      label: event.behaviorLabel,
+      points: event.points,
+      studentName: st.name,
+      eventId: event.id,
+    });
   }
 
   function toggleAttendance(student: Student) {
@@ -565,10 +663,34 @@ function ClassBoardPage() {
   }
 
   function handleUndo() {
+    if (locked) return;
     const undone = undoLastClassEvent(classId);
-    if (undone) toast.message(`Undid ${undone.behaviorLabel}`);
-    else toast.message("Nothing to undo");
+    if (!undone) {
+      toast.message("Nothing to undo");
+      return;
+    }
+    toast.message(
+      undone.count > 1
+        ? `Undid ${undone.event.behaviorLabel} for ${undone.count} students`
+        : `Undid ${undone.event.behaviorLabel}`,
+    );
   }
+
+  // Locking the board drops any teacher-only mode that was open.
+  useEffect(() => {
+    if (!locked) return;
+    setSelectMode(false);
+    setSelectedIds(new Set());
+    setBatchOpen(false);
+    setMoreOpen(false);
+    setGroupsOpen(false);
+    setGoalOpen(false);
+    setAddOpen(false);
+    setSparOpen(false);
+    setTournamentOpen(false);
+    setRearrangeMode(false);
+    setOrderDraft(null);
+  }, [locked]);
 
   const toggleSelect = useCallback((id: string) => {
     setSelectedIds((prev) => {
@@ -758,10 +880,10 @@ function ClassBoardPage() {
   useEffect(() => {
     if (!cycleActive) return;
     if (cyclePool.length === 0) return;
-    if (cyclePickedIds.size < cyclePool.length) return;
+    if (cycleCalledInPool < cyclePool.length) return;
     const t = window.setTimeout(() => stopCycle(), 1800);
     return () => window.clearTimeout(t);
-  }, [cycleActive, cyclePickedIds, cyclePool.length]);
+  }, [cycleActive, cycleCalledInPool, cyclePool.length]);
 
   function beginRearrange() {
     setRearrangeMode(true);
@@ -879,7 +1001,7 @@ function ClassBoardPage() {
         {
           label: "Tournament",
           run: () => setTournamentOpen(true),
-          disabled: students.length < 2,
+          disabled: activeRoster.length < 2,
         },
       ],
     },
@@ -952,44 +1074,50 @@ function ClassBoardPage() {
       backdropSrc={arenaSrc}
       actions={
         <>
-          <Button
-            type="button"
-            variant="ghost"
-            size="icon-sm"
-            aria-label="Undo"
-            title="Undo last award"
-            onClick={handleUndo}
-            data-chrome="teacher"
-          >
-            <Undo2 className="size-4" />
-          </Button>
-          <Button
-            type="button"
-            variant="ghost"
-            size="icon-sm"
-            aria-label="Spar"
-            title="Spar"
-            disabled={students.length < 2}
-            onClick={() => setSparOpen(true)}
-          >
-            <Swords className="size-4" />
-          </Button>
+          {!locked && (
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon-sm"
+              aria-label="Undo"
+              title="Undo last award"
+              onClick={handleUndo}
+              data-chrome="teacher"
+            >
+              <Undo2 className="size-4" />
+            </Button>
+          )}
+          {!locked && (
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon-sm"
+              aria-label="Spar"
+              title={activeRoster.length < 2 ? "Spar needs 2 present students" : "Spar"}
+              disabled={activeRoster.length < 2}
+              onClick={() => setSparOpen(true)}
+            >
+              <Swords className="size-4" />
+            </Button>
+          )}
           <ClassTimer />
           <BoardLockButton locked={locked} onLockedChange={setLocked} />
-          <Button
-            type="button"
-            asChild
-            variant="ghost"
-            size="icon-sm"
-            aria-label="Settings"
-            title="Settings"
-            data-chrome="teacher"
-            data-hide-presentation
-          >
-            <Link to="/class/$classId/settings" params={{ classId }}>
-              <Settings2 className="size-4" />
-            </Link>
-          </Button>
+          {!locked && (
+            <Button
+              type="button"
+              asChild
+              variant="ghost"
+              size="icon-sm"
+              aria-label="Settings"
+              title="Settings"
+              data-chrome="teacher"
+              data-hide-presentation
+            >
+              <Link to="/class/$classId/settings" params={{ classId }}>
+                <Settings2 className="size-4" />
+              </Link>
+            </Button>
+          )}
         </>
       }
     >
@@ -1049,22 +1177,24 @@ function ClassBoardPage() {
               <Monitor className="size-3.5" />
             )}
           </Button>
-          <Button
-            type="button"
-            size="sm"
-            variant={selectMode ? "default" : "secondary"}
-            onClick={() => {
-              if (selectMode) exitSelectMode();
-              else {
-                setSelectMode(true);
-                setSelectedIds(new Set());
-              }
-            }}
-            disabled={students.length === 0}
-            data-chrome="teacher"
-          >
-            {selectMode ? "Done" : "Select"}
-          </Button>
+          {!locked && (
+            <Button
+              type="button"
+              size="sm"
+              variant={selectMode ? "default" : "secondary"}
+              onClick={() => {
+                if (selectMode) exitSelectMode();
+                else {
+                  setSelectMode(true);
+                  setSelectedIds(new Set());
+                }
+              }}
+              disabled={students.length === 0}
+              data-chrome="teacher"
+            >
+              {selectMode ? "Done" : "Select"}
+            </Button>
+          )}
           <Button
             type="button"
             size="sm"
@@ -1094,7 +1224,7 @@ function ClassBoardPage() {
             <Shuffle className="size-3.5" />
             RandCycle
           </Button>
-          {selectMode && (
+          {selectMode && !locked && (
             <>
               <Button
                 type="button"
@@ -1166,6 +1296,7 @@ function ClassBoardPage() {
             </>
           ) : null}
 
+          {!locked && (
           <div className="relative" data-chrome="teacher" ref={moreRef}>
             <Button
               type="button"
@@ -1174,7 +1305,21 @@ function ClassBoardPage() {
               className="gap-1"
               aria-expanded={moreOpen}
               aria-haspopup="menu"
-              onClick={() => setMoreOpen((v) => !v)}
+              aria-label="More"
+              onClick={() => {
+                if (!moreOpen && moreRef.current) {
+                  // Open toward whichever side has room so the menu stays on-screen.
+                  const r = moreRef.current.getBoundingClientRect();
+                  const menuW = Math.min(240, window.innerWidth - 16);
+                  setMoreAlign(r.right - menuW < 8 ? "left" : "right");
+                  // Open down if there's room, else up; cap height to the space.
+                  const below = window.innerHeight - r.bottom - 12;
+                  const above = r.top - 12;
+                  const up = below < 280 && above > below;
+                  setMorePlace({ up, maxH: Math.max(160, Math.min(576, up ? above : below)) });
+                }
+                setMoreOpen((v) => !v);
+              }}
             >
               <MoreHorizontal className="size-4" />
               <span className="hidden sm:inline">More</span>
@@ -1182,7 +1327,12 @@ function ClassBoardPage() {
             {moreOpen && (
               <div
                 role="menu"
-                className="absolute right-0 top-full z-30 mt-1 w-52 overflow-hidden rounded-xl border-2 border-border bg-surface py-1 shadow-lg animate-in fade-in-0 zoom-in-95"
+                className={cn(
+                  "absolute z-30 w-52 max-w-[calc(100vw-1rem)] overflow-y-auto overscroll-contain rounded-xl border-2 border-border bg-surface py-1 shadow-lg animate-in fade-in-0 zoom-in-95",
+                  morePlace.up ? "bottom-full mb-1" : "top-full mt-1",
+                  moreAlign === "left" ? "left-0" : "right-0",
+                )}
+                style={{ maxHeight: morePlace.maxH }}
               >
                 {menuSections.map((section, si) => (
                   <div key={section.title ?? si}>
@@ -1217,7 +1367,9 @@ function ClassBoardPage() {
               </div>
             )}
           </div>
+          )}
 
+          {!locked && (
           <Dialog
             open={addOpen}
             onOpenChange={(v) => {
@@ -1273,6 +1425,7 @@ function ClassBoardPage() {
               </form>
             </DialogContent>
           </Dialog>
+          )}
         </div>
       </div>
 
@@ -1284,9 +1437,9 @@ function ClassBoardPage() {
           }
           pack={pack}
           points={lifetimeOf(cycleCurrentId)}
-          called={cyclePickedIds.size}
+          called={cycleCalledInPool}
           total={cyclePool.length}
-          last={cyclePool.length > 0 && cyclePickedIds.size >= cyclePool.length}
+          last={cyclePool.length > 0 && cycleCalledInPool >= cyclePool.length}
           onNext={cycleNext}
           onRestart={cycleRestart}
           onDone={stopCycle}
@@ -1314,7 +1467,7 @@ function ClassBoardPage() {
         </div>
       </div>
 
-      {groupLabels.length > 0 && !presentation && (
+      {groupLabels.length > 0 && !presentation && !locked && (
         <div
           className="mb-2.5 flex flex-wrap items-center gap-1.5"
           data-chrome="teacher"
@@ -1356,7 +1509,9 @@ function ClassBoardPage() {
       <div className="mb-2.5" data-chrome="teacher">
         <button
           type="button"
+          disabled={locked}
           onClick={() => {
+            if (locked) return;
             setGoalDraft(dailyGoal != null ? String(dailyGoal) : "");
             setGoalOpen(true);
           }}
@@ -1387,6 +1542,7 @@ function ClassBoardPage() {
         </button>
       </div>
 
+      {!locked && (
       <div className="mb-2.5" data-chrome="teacher">
         <FavoriteSkillsBar
           classId={classId}
@@ -1399,6 +1555,7 @@ function ClassBoardPage() {
           onAward={handleFavoriteAward}
         />
       </div>
+      )}
 
       {rearrangeMode && (
         <p className="mb-2 rounded-lg bg-accent/10 px-3 py-1.5 text-xs font-semibold">
@@ -1412,7 +1569,13 @@ function ClassBoardPage() {
             <Plus className="size-6" />
           </span>
           <p className="font-semibold">No students yet</p>
-          <Button size="sm" onClick={() => setAddOpen(true)} className="gap-1.5" data-chrome="teacher">
+          <Button
+            size="sm"
+            onClick={() => setAddOpen(true)}
+            className="gap-1.5"
+            data-chrome="teacher"
+            disabled={locked}
+          >
             <UserPlus className="size-4" />
             Add student
           </Button>
@@ -1503,18 +1666,16 @@ function ClassBoardPage() {
       />
 
       <BatchAwardPanel
-        open={batchOpen}
+        open={batchOpen && !locked}
         onOpenChange={setBatchOpen}
         classId={classId}
         studentIds={Array.from(selectedIds).filter((id) => {
           const st = students.find((s) => s.id === id);
           return st && !isAbsentToday(st);
         })}
-        onDone={() => {
-          selectedIds.forEach((id) => {
-            const st = students.find((s) => s.id === id);
-            if (st && !isAbsentToday(st)) flashStudent(id, "positive");
-          });
+        pointsOf={lifetimeOf}
+        onAwarded={(created, prevById, kind) => {
+          afterBatchAward(created, prevById, kind);
           exitSelectMode();
         }}
       />

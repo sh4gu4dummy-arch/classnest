@@ -730,6 +730,40 @@ export function scrubFrameIndex(points: number, frameCount: number): number {
 }
 
 /**
+ * Scrub stills are local-only (gitignored). When a frame 404s, remember that
+ * Ultra id for this tab so later renders use classic stage art instead of
+ * re-requesting missing frames.
+ */
+const missingScrubIds = new Set<number>();
+
+export function markScrubFramesMissing(id: number) {
+  if (Number.isFinite(id) && id > 0) missingScrubIds.add(id);
+}
+
+/** Parse the Ultra id from a scrub frame URL; null if not a scrub URL. */
+export function scrubIdFromSrc(src: string | null | undefined): number | null {
+  if (!src) return null;
+  const m = src.match(/\/avatars\/ultra\/scrub\/(\d+)\//);
+  return m ? Number(m[1]) : null;
+}
+
+/** Resolve true if the first Home scrub frame for this Ultra loads. */
+export function probeScrubFrames(id = 1): Promise<boolean> {
+  if (typeof window === "undefined") return Promise.resolve(false);
+  const bundle = getUltraScrubBundle(id);
+  if (!bundle) return Promise.resolve(false);
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve(true);
+    img.onerror = () => {
+      markScrubFramesMissing(id);
+      resolve(false);
+    };
+    img.src = ultraScrubFrameSrc(id, "home", 1);
+  });
+}
+
+/**
  * When cinematic mode is on and a Home scrub exists, return that frame URL.
  * Otherwise null → caller keeps classic stage art.
  * Scrub stills are landscape; use same URL for board and full (no board/ thumbs).
@@ -741,6 +775,7 @@ export function ultraCinematicSrc(
   if (typeof window === "undefined") return null;
   if (!loadCinematicEvolution()) return null;
   if (!id || id < 1) return null;
+  if (missingScrubIds.has(id)) return null;
   const bundle = getUltraScrubBundle(id);
   const home = bundle?.clips.find((c) => c.kind === "home");
   if (!home || home.frameCount < 1) return null;

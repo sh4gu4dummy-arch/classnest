@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
+import { toast } from "sonner";
 import { Link } from "@tanstack/react-router";
 import { Home } from "lucide-react";
 import { StudentAvatar } from "@/components/student-avatar";
@@ -13,11 +14,18 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { getAvatar, getAvatarSrc, ULTRA_FORM_NAMES, type AvatarPack } from "@/lib/avatars";
+import {
+  avatarFallbackSrcs,
+  getAvatar,
+  getAvatarSrc,
+  ULTRA_FORM_NAMES,
+  type AvatarPack,
+} from "@/lib/avatars";
 import { didEvolve, getEvolutionTier, getMilestoneMark, pointsToNextLevel } from "@/lib/evolution";
 import { loadLastSkillId, saveLastSkillId } from "@/lib/prefs";
 import { playAwardSound, playSound, unlockAudio } from "@/lib/sounds";
 import { useClassStore } from "@/lib/store";
+import { isAbsentToday } from "@/lib/attendance";
 import type { Behavior, Student } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { FavoriteSkillToggle } from "@/components/favorite-skills-bar";
@@ -36,7 +44,7 @@ interface AwardPanelProps {
     evolved: boolean,
     nextPoints: number,
     prevPoints: number,
-    summary: { label: string; points: number; studentName: string },
+    summary: { label: string; points: number; studentName: string; eventId: string },
   ) => void;
 }
 
@@ -87,6 +95,10 @@ export function AwardPanel({
 
   function handleAward(behavior: Behavior) {
     if (!student) return;
+    if (isAbsentToday(student)) {
+      toast.error("Marked absent — can't award points");
+      return;
+    }
     unlockAudio();
     const prev = studentPoints(student.id);
     const event = awardPoints({
@@ -105,6 +117,7 @@ export function AwardPanel({
       label: event.behaviorLabel,
       points: event.points,
       studentName: student.name,
+      eventId: event.id,
     });
 
     playAwardSound(event.points);
@@ -257,7 +270,14 @@ export function AwardPanel({
     </Dialog>
     {zoom && student && typeof document !== "undefined"
       ? createPortal(
-          <ArtZoom src={zoomSrc} title={zoomTitle} onClose={() => setZoom(false)} />,
+          <ArtZoom
+            src={zoomSrc}
+            title={zoomTitle}
+            fallbackSrcs={
+              student ? avatarFallbackSrcs(student.avatarId, pack, points, "full") : undefined
+            }
+            onClose={() => setZoom(false)}
+          />,
           document.body,
         )
       : null}

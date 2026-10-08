@@ -1,6 +1,7 @@
 import { RotateCcw, Shuffle, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getAvatarSrc, type AvatarPack } from "@/lib/avatars";
+import { avatarImgFallback } from "@/lib/img-fallback";
 import type { Student } from "@/lib/types";
 
 export function pickRandomStudent(pool: Student[]): Student | null {
@@ -47,7 +48,9 @@ export function PickBanner({
       aria-live="polite"
     >
       <img
+        key={src}
         src={src}
+        onError={avatarImgFallback(student.avatarId, pack, points, "board")}
         alt=""
         width={56}
         height={56}

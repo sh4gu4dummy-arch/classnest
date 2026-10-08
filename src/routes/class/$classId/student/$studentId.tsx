@@ -25,7 +25,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { getAvatarCount, resolvePack, type AvatarPack } from "@/lib/avatars";
-import { useClassStore } from "@/lib/store";
+import { isAbsentToday, presentStudents } from "@/lib/attendance";
+import { isShopSpend } from "@/lib/points";
+import { isRollupEvent, useClassStore } from "@/lib/store";
 import { useHydratedStore } from "@/lib/use-hydrated-store";
 import { formatRelative } from "@/lib/utils";
 
@@ -40,7 +42,8 @@ function StudentProfilePage() {
   const student = useClassStore((s) => s.students.find((st) => st.id === studentId));
   const classroom = useClassStore((s) => s.classes.find((c) => c.id === classId));
   const allStudents = useClassStore((s) => s.students);
-  const studentEvents = useClassStore((s) => s.studentEvents);
+  // Subscribe to events themselves so Undo / Clear all / awards refresh the list.
+  const allEvents = useClassStore((s) => s.events);
   const studentPoints = useClassStore((s) => s.studentPoints);
   const updateStudent = useClassStore((s) => s.updateStudent);
   const deleteStudent = useClassStore((s) => s.deleteStudent);
@@ -52,6 +55,9 @@ function StudentProfilePage() {
     () => allStudents.filter((s) => s.classId === classId),
     [allStudents, classId],
   );
+  /** Spar from the Nest only offers kids who are in today (same as the board). */
+  const presentClassmates = useMemo(() => presentStudents(classmates), [classmates]);
+  const absent = student ? isAbsentToday(student) : false;
 
   const [awardOpen, setAwardOpen] = useState(false);
   const [editOpen, setEditOpen] = useState(false);
@@ -74,16 +80,17 @@ function StudentProfilePage() {
   }, [student]);
 
   const events = useMemo(
-    () => studentEvents(studentId),
-    [studentEvents, studentId, ready],
+    () => allEvents.filter((e) => e.studentId === studentId),
+    [allEvents, studentId],
   );
   const points = student ? studentPoints(student.id) : 0;
   const spent = useClassStore((s) => s.studentSpent)(studentId);
+  // Same rule as the board's season points: shop spending isn't subtracted.
   const seasonPoints = useMemo(() => {
     const start = classroom?.seasonStartAt;
     if (start == null) return null;
     return events
-      .filter((e) => e.createdAt >= start)
+      .filter((e) => e.createdAt >= start && !isShopSpend(e))
       .reduce((a, e) => a + e.points, 0);
   }, [events, classroom?.seasonStartAt]);
 
@@ -110,8 +117,19 @@ function StudentProfilePage() {
       actions={
         <div className="flex items-center gap-1.5">
           <PrintSlip student={student} size="sm" />
-          <Button size="sm" onClick={() => setAwardOpen(true)}>
-            Award
+          <Button
+            size="sm"
+            disabled={absent}
+            title={absent ? "Marked out today — can't award points" : undefined}
+            onClick={() => {
+              if (absent) {
+                toast.error("Marked absent — can't award points");
+                return;
+              }
+              setAwardOpen(true);
+            }}
+          >
+            {absent ? "Out today" : "Award"}
           </Button>
         </div>
       }
@@ -126,6 +144,18 @@ function StudentProfilePage() {
         classmates={classmates}
         onShop={() => setShopOpen(true)}
         onSpar={(rematch) => {
+          if (absent) {
+            toast.error(`${student.name.split(" ")[0]} is out today`);
+            return;
+          }
+          if (
+            rematch?.opponentId &&
+            !presentClassmates.some((s) => s.id === rematch.opponentId)
+          ) {
+            const opp = classmates.find((s) => s.id === rematch.opponentId);
+            toast.error(`${opp?.name.split(" ")[0] ?? "Opponent"} is out today`);
+            return;
+          }
           setSparRematch(rematch ?? null);
           setSparOpen(true);
         }}
@@ -198,17 +228,18 @@ function StudentProfilePage() {
                       {e.note ? ` · ${e.note}` : ""}
                     </p>
                   </div>
-                  <Button
-                    variant="ghost"
-                    size="icon-sm"
-                    aria-label="Undo"
-                    onClick={() => {
-                      undoEvent(e.id);
-                      toast.success("Undone");
-                    }}
-                  >
-                    <Undo2 className="size-4" />
-                  </Button>
+                  {!isRollupEvent(e) && (
+                    <Button
+                      variant="ghost"
+                      size="icon-sm"
+                      aria-label="Undo"
+                      onClick={() => {
+                        if (undoEvent(e.id)) toast.success("Undone");
+                      }}
+                    >
+                      <Undo2 className="size-4" />
+                    </Button>
+                  )}
                 </li>
               ))}
             </ul>
@@ -217,7 +248,7 @@ function StudentProfilePage() {
       </Card>
 
       <AwardPanel
-        open={awardOpen}
+        open={awardOpen && !absent}
         onOpenChange={setAwardOpen}
         student={student}
         pack={pack}
@@ -249,7 +280,7 @@ function StudentProfilePage() {
           if (!v) setSparRematch(null);
         }}
         classId={classId}
-        students={classmates}
+        students={presentClassmates}
         pack={pack}
         defaultAttackerId={student.id}
         defaultDefenderId={sparRematch?.opponentId}

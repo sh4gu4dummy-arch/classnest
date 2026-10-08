@@ -2,7 +2,7 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.139.** This file ships in **every** push.
+**v0.140.** This file ships in **every** push.
 
 **Meta-QA / supervisor protocol:** [QA-SUPERVISOR.md](QA-SUPERVISOR.md) (QAsup sleeping 2026-09-19 — **Ash-direct** until a supervisor returns).
 
@@ -19,6 +19,8 @@ Next on `start`: **56 Noxquill**.
 **UI:** Teacher catalog is **landscape-wide** (~92vw / 1100px) with denser thumb grid + tiny IDs outside thumbs.
 
 **UI:** **Cinematic evolution** toggle (Display menu + Ultra class settings) — one Home scrub still per point when on; classic snaps default. Plan: [cinematic-evolution-mode.md](cinematic-evolution-mode.md). Scrub frames local-only under `public/avatars/ultra/scrub/` (gitignored).
+
+**v0.140 (QA sweep fixes):** missing-art request loop fixed (one-shot fallback; cinematic falls back to classic stills when scrub frames are absent); Nest/Reports lists refresh after Undo/Clear; Board Lock hides teacher tools (Select/batch, Undo, favorites, More, Spar, Add, Settings — settings URL shows a locked notice); absent kids blocked on the Nest page; Undo targets the exact award / whole batch and never removes compress rollups; Compress keeps lifetime/spent/season (separate shop/spar rollups); deleting the last class sticks; phone header/More menu fit 390px; tournament byes use standard seeding; RandCycle counts only kids still in the pool.
 
 ## Hard stops
 

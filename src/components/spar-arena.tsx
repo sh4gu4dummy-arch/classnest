@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { getAvatarSrc, type AvatarPack } from "@/lib/avatars";
+import { avatarImgFallback } from "@/lib/img-fallback";
 import { maxBet, sparChances } from "@/lib/spar";
 import { playSound, unlockAudio } from "@/lib/sounds";
 import { useClassStore } from "@/lib/store";
@@ -475,7 +476,7 @@ export function SparArena({
               >
                 <img
                   src={getAvatarSrc(fight.attacker.avatarId, pack, aPts, "board")}
-
+                  onError={avatarImgFallback(fight.attacker.avatarId, pack, aPts, "board")}
                   alt=""
                   className={cn(
                     "size-24 rounded-2xl object-cover shadow-lg ring-2 ring-accent sm:size-28",
@@ -519,7 +520,7 @@ export function SparArena({
               >
                 <img
                   src={getAvatarSrc(fight.defender.avatarId, pack, dPts, "board")}
-
+                  onError={avatarImgFallback(fight.defender.avatarId, pack, dPts, "board")}
                   alt=""
                   className={cn(
                     "size-24 rounded-2xl object-cover shadow-lg ring-2 ring-danger sm:size-28",

@@ -28,6 +28,8 @@ export interface PointEvent {
   relatedStudentId?: string;
   /** Shop item id for purchases */
   shopItemId?: string;
+  /** Shared by every event from one batch award (Undo removes the whole batch). */
+  batchId?: string;
 }
 
 export interface Student {

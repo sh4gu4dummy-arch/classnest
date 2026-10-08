@@ -10,6 +10,7 @@ import {
   type AvatarPack,
   ULTRA_FORM_NAMES,
 } from "@/lib/avatars";
+import { avatarImgFallback } from "@/lib/img-fallback";
 import { BANNER_STYLES, HOME_ITEM_META } from "@/lib/shop";
 import { getEvolutionTier, getMilestoneMark, pointsToNextLevel } from "@/lib/evolution";
 import { getUltraLore, ultraIntroSrc } from "@/lib/ultra-lore";
@@ -549,6 +550,11 @@ export function HiResViewer({
           <img
             key={src}
             src={src}
+            onError={avatarImgFallback(
+              student.avatarId,
+              pack,
+              stage === "current" ? points : (stage - 1) * 10,
+            )}
             alt={avatar.name}
             className={cn(
               "aspect-square w-full object-cover",

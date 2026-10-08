@@ -172,6 +172,38 @@ export function listRefEqual<T>(a: T[], b: T[]): boolean {
   return true;
 }
 
+/** Compress rollup ids — never removed by Undo. */
+export const ROLLUP_BEHAVIOR_IDS = new Set([
+  "history_rollup",
+  "history_rollup_spar",
+  "history_rollup_shop",
+]);
+
+export function isRollupEvent(e: Pick<PointEvent, "behaviorId">): boolean {
+  return ROLLUP_BEHAVIOR_IDS.has(e.behaviorId);
+}
+
+/** Set when the teacher deletes their last class on purpose, so the empty
+ *  save is written and startup recovery doesn't bring the class back. */
+const INTENTIONAL_EMPTY_KEY = "classnest-intentional-empty";
+
+export function isIntentionallyEmpty(): boolean {
+  try {
+    return localStorage.getItem(INTENTIONAL_EMPTY_KEY) != null;
+  } catch {
+    return false;
+  }
+}
+
+function setIntentionallyEmpty(on: boolean) {
+  try {
+    if (on) localStorage.setItem(INTENTIONAL_EMPTY_KEY, String(Date.now()));
+    else localStorage.removeItem(INTENTIONAL_EMPTY_KEY);
+  } catch {
+    /* ignore */
+  }
+}
+
 /** Debounce localStorage writes so rapid +1s don't jank the main thread.
  *  Also refuses to overwrite a non-empty classroom save with an empty one
  *  (guards HMR / race reloads that briefly re-init with classes: []). */
@@ -219,6 +251,8 @@ function createDebouncedStorage(delayMs = 500): StateStorage {
   }
 
   function wouldWipeNonEmpty(name: string, value: string): boolean {
+    // Teacher deleted the last class on purpose — let the empty save through.
+    if (isIntentionallyEmpty()) return false;
     try {
       const next = JSON.parse(value) as {
         state?: { classes?: unknown[]; students?: unknown[] };
@@ -373,8 +407,14 @@ interface ClassStore {
     label: string;
     note?: string;
   }) => PointEvent | null;
-  undoEvent: (eventId: string) => void;
-  undoLastClassEvent: (classId: string) => PointEvent | null;
+  /** Remove one award by id. Never removes compress rollups. */
+  undoEvent: (eventId: string) => boolean;
+  /** Remove every event from one batch award. Returns how many were removed. */
+  undoBatch: (batchId: string) => number;
+  /** Undo the last teacher action in a class (a whole batch if it was a batch). */
+  undoLastClassEvent: (
+    classId: string,
+  ) => { event: PointEvent; count: number } | null;
   clearStudentEvents: (studentId: string) => void;
 
   /** Collapse events older than keepDays into one total per student/class. */
@@ -552,6 +592,47 @@ function writeClassSkillList(
 
 const DAY_MS = 86400000;
 
+type CompactCategory = "earned" | "spar" | "shop";
+
+type CompactGroup = {
+  classId: string;
+  studentId: string;
+  category: CompactCategory;
+  points: number;
+  count: number;
+  oldest: number;
+};
+
+/**
+ * Which rollup an old event folds into, or null to keep it as-is.
+ * Shop purchases and spar results get their own correctly-typed rollups so
+ * lifetime, spent, wallet and evolution stay identical after compress; the
+ * season boundary splits groups so season totals don't move either.
+ */
+function compactGroupKey(
+  e: PointEvent,
+  cutoff: number,
+  seasonByClass: Map<string, number | null>,
+): { key: string; category: CompactCategory } | null {
+  if (e.createdAt >= cutoff) return null;
+  let category: CompactCategory;
+  if (isShopSpend(e)) {
+    // Only plain purchases roll up (cost = -points); keep anything odd as-is.
+    if (!(e.points < 0)) return null;
+    category = "shop";
+  } else if (e.source === "spar") {
+    category = "spar";
+  } else {
+    category = "earned";
+  }
+  const season = seasonByClass.get(e.classId) ?? null;
+  const inSeason = season != null && e.createdAt >= season ? "s" : "p";
+  return {
+    key: `${e.classId}::${e.studentId}::${category}::${inSeason}`,
+    category,
+  };
+}
+
 let persistFlushNow = () => {};
 
 export function flushClassNestPersist() {
@@ -570,6 +651,12 @@ export const useClassStore = create<ClassStore>()(
       seedIfEmpty: () => {
         const s = get();
         if (s.seeded || s.classes.length > 0) {
+          get().migrateStudents();
+          return;
+        }
+
+        // Teacher deleted every class on purpose — don't resurrect one.
+        if (isIntentionallyEmpty()) {
           get().migrateStudents();
           return;
         }
@@ -621,6 +708,7 @@ export const useClassStore = create<ClassStore>()(
         const id = uid("class");
         const now = Date.now();
         const pack = isAvatarPack(avatarPack) ? avatarPack : "kids";
+        setIntentionallyEmpty(false);
         set((s) => ({
           classes: [
             {
@@ -684,6 +772,10 @@ export const useClassStore = create<ClassStore>()(
       },
 
       deleteClass: (id) => {
+        if (get().classes.every((c) => c.id === id)) {
+          // Last class: this empty save is intentional.
+          setIntentionallyEmpty(true);
+        }
         set((s) => {
           const studentIds = new Set(
             s.students.filter((st) => st.classId === id).map((st) => st.id),
@@ -697,6 +789,7 @@ export const useClassStore = create<ClassStore>()(
           };
         });
         invalidatePointsCache();
+        persistFlushNow();
       },
 
       addStudent: (classId, name, avatarId) => {
@@ -995,6 +1088,7 @@ export const useClassStore = create<ClassStore>()(
         }
         if (!behavior) return [];
         const now = Date.now();
+        const batchId = studentIds.length > 1 ? uid("batch") : undefined;
         const created: PointEvent[] = studentIds.map((studentId, i) => ({
           id: uid("evt"),
           studentId,
@@ -1006,6 +1100,7 @@ export const useClassStore = create<ClassStore>()(
           note,
           createdAt: now + i,
           source: "behavior" as const,
+          ...(batchId ? { batchId } : {}),
         }));
         if (!created.length) return [];
         set((s) => ({
@@ -1040,25 +1135,48 @@ export const useClassStore = create<ClassStore>()(
       },
 
       undoEvent: (eventId) => {
+        const target = get().events.find((e) => e.id === eventId);
+        if (!target || isRollupEvent(target)) return false;
         set((s) => ({
           events: s.events.filter((e) => e.id !== eventId),
         }));
         invalidatePointsCache();
+        return true;
+      },
+
+      undoBatch: (batchId) => {
+        if (!batchId) return 0;
+        const removed = get().events.filter(
+          (e) => e.batchId === batchId && !isRollupEvent(e),
+        );
+        if (!removed.length) return 0;
+        const ids = new Set(removed.map((e) => e.id));
+        set((s) => ({
+          events: s.events.filter((e) => !ids.has(e.id)),
+        }));
+        invalidatePointsCache();
+        return removed.length;
       },
 
       undoLastClassEvent: (classId) => {
         const last = get()
           .events.filter(
             (e) =>
-              e.classId === classId && (e.source ?? "behavior") === "behavior",
+              e.classId === classId &&
+              (e.source ?? "behavior") === "behavior" &&
+              !isRollupEvent(e),
           )
           .sort((a, b) => b.createdAt - a.createdAt)[0];
         if (!last) return null;
+        if (last.batchId) {
+          const count = get().undoBatch(last.batchId);
+          return { event: last, count };
+        }
         set((s) => ({
           events: s.events.filter((e) => e.id !== last.id),
         }));
         invalidatePointsCache();
-        return last;
+        return { event: last, count: 1 };
       },
 
       clearStudentEvents: (studentId) => {
@@ -1073,13 +1191,36 @@ export const useClassStore = create<ClassStore>()(
         const cutoff = Date.now() - days * DAY_MS;
         const all = get().events;
         const before = all.length;
+        const seasonByClass = new Map(
+          get().classes.map((c) => [c.id, c.seasonStartAt ?? null]),
+        );
         const recent: PointEvent[] = [];
-        const old: PointEvent[] = [];
+        const groups = new Map<string, CompactGroup>();
+        let removed = 0;
         for (const e of all) {
-          if (e.createdAt >= cutoff) recent.push(e);
-          else old.push(e);
+          const key = compactGroupKey(e, cutoff, seasonByClass);
+          if (!key) {
+            recent.push(e);
+            continue;
+          }
+          removed += 1;
+          const g = groups.get(key.key);
+          if (g) {
+            g.points += e.points;
+            g.count += 1;
+            if (e.createdAt < g.oldest) g.oldest = e.createdAt;
+          } else {
+            groups.set(key.key, {
+              classId: e.classId,
+              studentId: e.studentId,
+              category: key.category,
+              points: e.points,
+              count: 1,
+              oldest: e.createdAt,
+            });
+          }
         }
-        if (old.length === 0) {
+        if (removed === 0) {
           return {
             before,
             after: before,
@@ -1089,47 +1230,43 @@ export const useClassStore = create<ClassStore>()(
           };
         }
 
-        type Acc = {
-          classId: string;
-          studentId: string;
-          points: number;
-          count: number;
-          oldest: number;
-        };
-        const groups = new Map<string, Acc>();
-        for (const e of old) {
-          const key = `${e.classId}::${e.studentId}`;
-          const g = groups.get(key);
-          if (g) {
-            g.points += e.points;
-            g.count += 1;
-            if (e.createdAt < g.oldest) g.oldest = e.createdAt;
-          } else {
-            groups.set(key, {
-              classId: e.classId,
-              studentId: e.studentId,
-              points: e.points,
-              count: 1,
-              oldest: e.createdAt,
-            });
-          }
-        }
-
+        const note = `Compacted awards older than ${days} days. Individual skill tags removed; total points kept.`;
         const rollups: PointEvent[] = [];
         for (const g of groups.values()) {
           const pts = Math.round(g.points);
-          rollups.push({
+          const base = {
             id: uid("evt"),
             studentId: g.studentId,
             classId: g.classId,
-            behaviorId: "history_rollup",
-            behaviorLabel: `History rollup (${g.count} entries)`,
-            kind: pts >= 0 ? "positive" : "needs_work",
             points: pts,
-            note: `Compacted awards older than ${days} days. Individual skill tags removed; total points kept.`,
+            note,
             createdAt: g.oldest,
-            source: "behavior",
-          });
+          };
+          if (g.category === "shop") {
+            rollups.push({
+              ...base,
+              behaviorId: "history_rollup_shop",
+              behaviorLabel: `Shop history rollup (${g.count} purchases)`,
+              kind: "needs_work",
+              source: "shop",
+            });
+          } else if (g.category === "spar") {
+            rollups.push({
+              ...base,
+              behaviorId: "history_rollup_spar",
+              behaviorLabel: `Spar history rollup (${g.count} entries)`,
+              kind: pts >= 0 ? "positive" : "needs_work",
+              source: "spar",
+            });
+          } else {
+            rollups.push({
+              ...base,
+              behaviorId: "history_rollup",
+              behaviorLabel: `History rollup (${g.count} entries)`,
+              kind: pts >= 0 ? "positive" : "needs_work",
+              source: "behavior",
+            });
+          }
         }
 
         const next = [...recent, ...rollups].sort(
@@ -1141,7 +1278,7 @@ export const useClassStore = create<ClassStore>()(
           before,
           after: next.length,
           rollups: rollups.length,
-          removed: old.length,
+          removed,
           keepDays: days,
         };
       },
@@ -1151,13 +1288,16 @@ export const useClassStore = create<ClassStore>()(
         const cutoff = Date.now() - days * DAY_MS;
         const all = get().events;
         const before = all.length;
+        const seasonByClass = new Map(
+          get().classes.map((c) => [c.id, c.seasonStartAt ?? null]),
+        );
         let oldCount = 0;
         const groupKeys = new Set<string>();
         for (const e of all) {
-          if (e.createdAt < cutoff) {
-            oldCount += 1;
-            groupKeys.add(`${e.classId}::${e.studentId}`);
-          }
+          const key = compactGroupKey(e, cutoff, seasonByClass);
+          if (!key) continue;
+          oldCount += 1;
+          groupKeys.add(key.key);
         }
         if (oldCount === 0) {
           return {
@@ -1386,6 +1526,7 @@ export const useClassStore = create<ClassStore>()(
           return { ok: false, error: "Invalid ClassNest backup" };
         }
         const behaviors = data.behaviors.filter(isBehaviorLike);
+        if (data.classes.length > 0) setIntentionallyEmpty(false);
         set({
           classes: data.classes.map(normalizeClassroom),
           students: data.students.map((st) => {
@@ -1467,6 +1608,7 @@ export const useClassStore = create<ClassStore>()(
           return { ok: true, addedClasses: 0, addedStudents: 0, addedEvents: 0 };
         }
 
+        if (classById.size > 0) setIntentionallyEmpty(false);
         set({
           classes: Array.from(classById.values()),
           students: Array.from(studentById.values()),

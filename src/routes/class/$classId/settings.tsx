@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useShallow } from "zustand/react/shallow";
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { Link, createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Check, ChevronDown, Copy, Pencil, Save, X } from "lucide-react";
 import { toast } from "sonner";
 import { AppShell } from "@/components/app-shell";
+import { BoardLockButton, useBoardLockState } from "@/components/board-lock";
 import { SkillIcon } from "@/components/skill-icon";
 import { SkillIconPicker } from "@/components/skill-icon-picker";
 import { Button } from "@/components/ui/button";
@@ -31,6 +32,7 @@ import {
 } from "@/lib/shop";
 import {
   loadCinematicEvolution,
+  probeScrubFrames,
   saveCinematicEvolution,
 } from "@/lib/ultra-scrub";
 
@@ -62,6 +64,7 @@ function ClassSettingsPage() {
   const copyBehaviorsFromClass = useClassStore((s) => s.copyBehaviorsFromClass);
   const useSharedBehaviors = useClassStore((s) => s.useSharedBehaviors);
 
+  const { locked, setLocked } = useBoardLockState();
   const [name, setName] = useState("");
   const [grade, setGrade] = useState("");
   const [pack, setPack] = useState<AvatarPack>("kids");
@@ -151,6 +154,36 @@ function ClassSettingsPage() {
     );
   }
 
+  if (locked) {
+    // Board lock hides Settings; a direct URL lands here instead.
+    return (
+      <AppShell
+        title="Settings"
+        subtitle={classroom.name}
+        backTo={`/class/${classId}`}
+        backLabel="Board"
+        actions={<BoardLockButton locked={locked} onLockedChange={setLocked} />}
+      >
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base">Board is locked</CardTitle>
+            <CardDescription>
+              Settings are hidden while the board is locked. Tap the lock (top
+              right) and enter your teacher PIN to unlock.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button asChild variant="secondary" size="sm">
+              <Link to="/class/$classId" params={{ classId }}>
+                Back to board
+              </Link>
+            </Button>
+          </CardContent>
+        </Card>
+      </AppShell>
+    );
+  }
+
   return (
     <AppShell
       title="Settings"
@@ -232,6 +265,16 @@ function ClassSettingsPage() {
                           ? "Cinematic evolution on"
                           : "Classic evolution on",
                       );
+                      if (next) {
+                        void probeScrubFrames(1).then((ok) => {
+                          if (!ok) {
+                            toast.message("Scrub frames aren't on this device", {
+                              description:
+                                "Classic evolution art will show until they're copied in.",
+                            });
+                          }
+                        });
+                      }
                     }}
                     className={cn(
                       "relative h-8 w-14 shrink-0 rounded-full border-2 transition",

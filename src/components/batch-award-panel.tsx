@@ -8,9 +8,9 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { playAwardSound, unlockAudio } from "@/lib/sounds";
+import { unlockAudio } from "@/lib/sounds";
 import { useClassStore } from "@/lib/store";
-import type { Behavior } from "@/lib/types";
+import type { Behavior, PointEvent } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
 interface BatchAwardPanelProps {
@@ -18,7 +18,14 @@ interface BatchAwardPanelProps {
   onOpenChange: (v: boolean) => void;
   classId: string;
   studentIds: string[];
-  onDone?: (eventsCount: number, points: number) => void;
+  /** Lifetime points before the award (for evolution detection). */
+  pointsOf: (id: string) => number;
+  /** Parent shows flash / evolution / one toast with a whole-batch Undo. */
+  onAwarded: (
+    created: PointEvent[],
+    prevById: Map<string, number>,
+    kind: "positive" | "needs_work",
+  ) => void;
 }
 
 export function BatchAwardPanel({
@@ -26,7 +33,8 @@ export function BatchAwardPanel({
   onOpenChange,
   classId,
   studentIds,
-  onDone,
+  pointsOf,
+  onAwarded,
 }: BatchAwardPanelProps) {
   const behaviors = useClassStore((s) => s.classBehaviors(classId));
 
@@ -36,6 +44,7 @@ export function BatchAwardPanel({
 
   function award(b: Behavior) {
     unlockAudio();
+    const prevById = new Map(studentIds.map((id) => [id, pointsOf(id)]));
     const events = awardPointsBatch({
       studentIds,
       classId,
@@ -45,11 +54,7 @@ export function BatchAwardPanel({
       toast.error("Nothing awarded");
       return;
     }
-    playAwardSound(b.points);
-    toast.success(
-      `${events.length} students · ${b.points > 0 ? "+" : ""}${b.points} ${b.label}`,
-    );
-    onDone?.(events.length, b.points);
+    onAwarded(events, prevById, b.kind);
     onOpenChange(false);
   }
 

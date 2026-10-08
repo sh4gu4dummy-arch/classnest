@@ -50,11 +50,33 @@ export function shuffleIds(ids: string[], rng = Math.random): string[] {
  * Build single-elim rounds. Round 0 = first round with byes as null.
  * Winners fill next round as matches complete.
  */
-export function buildBracket(entrantIds: string[], rng = Math.random): TournamentMatch[] {
+/**
+ * Standard seeding order for a power-of-2 bracket, e.g. 8 → [1,8,4,5,2,7,3,6].
+ * Seed s always meets seed (size + 1 − s) in round 1.
+ */
+export function seedOrder(size: number): number[] {
+  let order = [1];
+  while (order.length < size) {
+    const n = order.length * 2;
+    order = order.flatMap((s) => [s, n + 1 - s]);
+  }
+  return order;
+}
+
+/**
+ * Random seeds, standard placement: byes are the highest "seeds", so each bye
+ * faces a real player in round 1 and never two byes meet. Nobody gets more
+ * than one bye, and no one reaches the Final without playing (n ≥ 3).
+ */
+export function seededSlots(entrantIds: string[], rng = Math.random): BracketSlot[] {
   const shuffled = shuffleIds(entrantIds, rng);
   const size = bracketSize(shuffled.length);
-  const slots: BracketSlot[] = [...shuffled];
-  while (slots.length < size) slots.push(null);
+  return seedOrder(size).map((seed) => shuffled[seed - 1] ?? null);
+}
+
+export function buildBracket(entrantIds: string[], rng = Math.random): TournamentMatch[] {
+  const slots = seededSlots(entrantIds, rng);
+  const size = slots.length;
 
   const matches: TournamentMatch[] = [];
   let roundSize = size / 2;
@@ -113,7 +135,7 @@ export function buildBracket(entrantIds: string[], rng = Math.random): Tournamen
 
 function advanceByes(matches: TournamentMatch[]): TournamentMatch[] {
   const maxRound = Math.max(...matches.map((m) => m.round), 0);
-  let next = matches.map((m) => ({ ...m }));
+  const next = matches.map((m) => ({ ...m }));
   for (let r = 0; r < maxRound; r++) {
     const roundMatches = next.filter((m) => m.round === r);
     for (const m of roundMatches) {

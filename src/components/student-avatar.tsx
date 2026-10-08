@@ -1,6 +1,7 @@
 import { memo } from "react";
 import { Award, Star, Trophy } from "lucide-react";
 import { getAvatar, getAvatarSrc, type AvatarPack } from "@/lib/avatars";
+import { avatarImgFallback } from "@/lib/img-fallback";
 import { BANNER_STYLES, FRAME_STYLES } from "@/lib/shop";
 import { getEvolutionTier, getMilestoneMark } from "@/lib/evolution";
 import {
@@ -240,13 +241,12 @@ function StudentAvatarInner({
           decoding="async"
           fetchPriority={size === "hero" ? "high" : "auto"}
           data-full-src={boardThumb ? fullSrc : undefined}
-          onError={(e) => {
-            // Fallback to full art if a thumb is missing
-            const el = e.currentTarget;
-            if (boardThumb && fullSrc && el.src !== fullSrc) {
-              el.src = fullSrc;
-            }
-          }}
+          onError={avatarImgFallback(
+            avatarId,
+            pack,
+            points,
+            boardThumb ? "board" : "full",
+          )}
           className={cn(
             "avatar-art size-full object-cover",
             "transition-transform duration-300 ease-out",

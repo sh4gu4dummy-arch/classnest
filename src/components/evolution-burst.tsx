@@ -1,4 +1,5 @@
 import { useEffect, useState, type CSSProperties } from "react";
+import { imgFallback } from "@/lib/img-fallback";
 import { createPortal } from "react-dom";
 import { Maximize2, X } from "lucide-react";
 import { ConfettiBurst } from "@/components/confetti-burst";
@@ -51,10 +52,13 @@ export function ArtZoom({
   src,
   title,
   onClose,
+  fallbackSrcs,
 }: {
   src: string;
   title?: string;
   onClose: () => void;
+  /** Tried once each if `src` fails (e.g. missing cinematic scrub frame). */
+  fallbackSrcs?: string[];
 }) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -91,7 +95,9 @@ export function ArtZoom({
         onClick={(e) => e.stopPropagation()}
       >
         <img
+          key={src}
           src={src}
+          onError={fallbackSrcs?.length ? imgFallback(fallbackSrcs) : undefined}
           alt={title ?? ""}
           className="max-h-[min(82dvh,52rem)] w-auto max-w-full rounded-2xl border-2 border-white/20 bg-black object-contain shadow-2xl"
         />

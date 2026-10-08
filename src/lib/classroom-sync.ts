@@ -4,6 +4,7 @@ import {
   useClassStore,
   type ClassNestBackup,
   isBackup,
+  isIntentionallyEmpty,
   backupFingerprint,
 } from "./store";
 import { flushPendingLocalBackup, markLocalBackupClean, scheduleLocalBackup } from "./local-backups";
@@ -23,6 +24,9 @@ export async function pullClassroomVault(): Promise<boolean> {
     if (!data.classes?.length) return false;
 
     const cur = useClassStore.getState();
+    // Teacher deleted every class on purpose — the vault still has the old
+    // rooms, so don't pull them back.
+    if (cur.classes.length === 0 && isIntentionallyEmpty()) return false;
     if (cur.classes.length === 0 || looksLikeDemoSnapshot(cur)) {
       const result = useClassStore.getState().importBackup(data);
       return result.ok;

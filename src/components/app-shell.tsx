@@ -59,8 +59,10 @@ export function AppShell({
           aria-hidden
           className="h-1 w-full bg-gradient-to-r from-accent via-violet-500 to-orange-400"
         />
-        <div className="mx-auto flex h-12 max-w-7xl items-center justify-between gap-2 px-3 sm:h-14 sm:gap-3 sm:px-6">
-          <div className="flex min-w-0 items-center gap-2 sm:gap-3">
+        {/* Phones: title row, then a right-aligned tool row (scrolls if it
+            still can't fit) — the page itself never gets wider than the screen. */}
+        <div className="cn-header-row mx-auto flex min-h-12 max-w-7xl flex-wrap items-center justify-between gap-x-2 gap-y-1 px-3 py-1 sm:h-14 sm:flex-nowrap sm:gap-3 sm:px-6 sm:py-0">
+          <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3">
             {backTo ? (
               <Link
                 to={backTo}
@@ -92,9 +94,12 @@ export function AppShell({
               </div>
             )}
           </div>
-          <div className="flex shrink-0 items-center gap-0.5 sm:gap-1">
+          <div className="cn-header-tools flex w-full min-w-0 items-center gap-0.5 overflow-x-auto sm:w-auto sm:shrink-0 sm:gap-1 sm:overflow-visible">
+            {/* Right-aligns tools on phones; collapses to 0 if they overflow so
+                the first tool stays reachable by scrolling (justify-end can't). */}
+            <span aria-hidden className="flex-1 sm:hidden" />
             <span
-              className="mr-1 rounded-full border border-border px-1.5 py-0.5 text-[10px] font-bold tabular-nums text-muted-fg"
+              className="mr-1 hidden shrink-0 rounded-full border border-border px-1.5 py-0.5 text-[10px] font-bold tabular-nums text-muted-fg sm:inline"
               title="ClassNest version"
             >
               {APP_VERSION_LABEL}

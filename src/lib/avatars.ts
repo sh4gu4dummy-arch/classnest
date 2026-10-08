@@ -353,6 +353,41 @@ export function getAvatarSrc(
   return src;
 }
 
+/** Classic stage art for the current points (never a cinematic scrub frame). */
+export function getAvatarSrcClassic(
+  id: number | undefined | null,
+  pack: AvatarPack = "kids",
+  points = 0,
+  display: AvatarDisplay = "full",
+): string {
+  const av = getAvatar(id, pack);
+  let src = av.src;
+  if (pack === "ultra" && av.stages) {
+    src = av.stages[getFormStage(points) - 1] ?? av.src;
+  }
+  if (display === "board") return boardThumbPath(src);
+  return src;
+}
+
+/**
+ * Ordered fallbacks for an avatar <img> whose first src failed:
+ * classic art at the requested size → classic full → base pack art.
+ */
+export function avatarFallbackSrcs(
+  id: number | undefined | null,
+  pack: AvatarPack = "kids",
+  points = 0,
+  display: AvatarDisplay = "full",
+): string[] {
+  const av = getAvatar(id, pack);
+  const list = [
+    getAvatarSrcClassic(id, pack, points, display),
+    getAvatarSrcClassic(id, pack, points, "full"),
+    av.src,
+  ];
+  return list.filter((s, i) => !!s && list.indexOf(s) === i);
+}
+
 /** Previous form src (for evolution morph). */
 export function getAvatarSrcAtStage(
   id: number,

@@ -600,6 +600,29 @@ html.smartboard header > div {
   gap: 0.35rem;
 }
 
+/* Phones: keep smartboard tap sizes but fit the header tool row on ~390px. */
+@media (max-width: 639px) {
+  html.smartboard header .cn-header-tools button,
+  html.smartboard header .cn-header-tools a.inline-flex,
+  html.smartboard header .cn-header-tools button.h-9.w-9,
+  html.smartboard header .cn-header-tools button.h-10.w-10 {
+    min-width: 2.35rem;
+    min-height: 2.35rem;
+  }
+  html.smartboard header .cn-header-tools button.h-9.w-9,
+  html.smartboard header .cn-header-tools button.h-10.w-10,
+  html.smartboard header .cn-header-tools a.h-9.w-9 {
+    width: 2.35rem;
+    height: 2.35rem;
+  }
+  .cn-header-tools {
+    scrollbar-width: none;
+  }
+  .cn-header-tools::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 html.smartboard main {
   padding-top: 0.85rem;
   padding-bottom: 1.25rem;

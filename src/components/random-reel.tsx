@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import type { AvatarPack } from "@/lib/avatars";
+import { avatarImgFallback } from "@/lib/img-fallback";
 import { getAvatarSrc } from "@/lib/avatars";
 import { getOverlayRoot } from "@/lib/overlay-root";
 import { playSound, unlockAudio } from "@/lib/sounds";
@@ -40,7 +41,9 @@ function ReelFace({
   const src = getAvatarSrc(student.avatarId, pack, points, "board");
   return (
     <img
+      key={src}
       src={src}
+      onError={avatarImgFallback(student.avatarId, pack, points, "board")}
       alt={student.name}
       width={REEL_FACE}
       height={REEL_FACE}

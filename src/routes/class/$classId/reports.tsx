@@ -33,7 +33,7 @@ import {
   toCsv,
   type PointsScope,
 } from "@/lib/points";
-import { useClassStore } from "@/lib/store";
+import { isRollupEvent, useClassStore } from "@/lib/store";
 import { useHydratedStore } from "@/lib/use-hydrated-store";
 import { cn, toDateInputValue } from "@/lib/utils";
 
@@ -54,14 +54,24 @@ function ReportsPage() {
   const navigate = useNavigate();
   const ready = useHydratedStore();
   const classroom = useClassStore((s) => s.classes.find((c) => c.id === classId));
-  const classStudents = useClassStore((s) => s.classStudents);
-  const classEvents = useClassStore((s) => s.classEvents);
+  // Subscribe to the data itself so Undo refreshes the lists and leaderboard.
+  const storeStudents = useClassStore((s) => s.students);
+  const storeEvents = useClassStore((s) => s.events);
   const studentPoints = useClassStore((s) => s.studentPoints);
   const undoEvent = useClassStore((s) => s.undoEvent);
 
   const pack: AvatarPack = resolvePack(classroom?.avatarPack);
-  const students = useMemo(() => classStudents(classId), [classStudents, classId, ready]);
-  const allEvents = useMemo(() => classEvents(classId), [classEvents, classId, ready]);
+  const students = useMemo(
+    () =>
+      storeStudents
+        .filter((s) => s.classId === classId)
+        .sort((a, b) => a.name.localeCompare(b.name)),
+    [storeStudents, classId],
+  );
+  const allEvents = useMemo(
+    () => storeEvents.filter((e) => e.classId === classId),
+    [storeEvents, classId],
+  );
 
   const [scope, setScope] = useState<PointsScope>("week");
   const [customFrom, setCustomFrom] = useState(() =>
@@ -535,20 +545,21 @@ function ReportsPage() {
                       {e.note ? ` · “${e.note}”` : ""}
                     </p>
                   </div>
-                  <Button
-                    type="button"
-                    size="icon-sm"
-                    variant="ghost"
-                    className="shrink-0 text-muted-fg"
-                    title="Undo this award"
-                    aria-label="Undo"
-                    onClick={() => {
-                      undoEvent(e.id);
-                      toast.message("Award undone");
-                    }}
-                  >
-                    <Undo2 className="size-3.5" />
-                  </Button>
+                  {!isRollupEvent(e) && (
+                    <Button
+                      type="button"
+                      size="icon-sm"
+                      variant="ghost"
+                      className="shrink-0 text-muted-fg"
+                      title="Undo this award"
+                      aria-label="Undo"
+                      onClick={() => {
+                        if (undoEvent(e.id)) toast.message("Award undone");
+                      }}
+                    >
+                      <Undo2 className="size-3.5" />
+                    </Button>
+                  )}
                 </li>
               ))}
             </ul>
