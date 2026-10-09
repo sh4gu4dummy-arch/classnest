@@ -11,14 +11,14 @@
  * art/videos change. Those keep PACK_VERSION / AVATARS_VERSION until then.
  * PACK_BUILT_* is written by scripts/build-portable.mjs.
  */
-export const APP_VERSION = "0.140";
+export const APP_VERSION = "0.141";
 export const APP_VERSION_LABEL = `v${APP_VERSION}`;
 
 /** True when this is the unzipped Offline APP (no server, no zip downloads). */
 export const IS_PORTABLE = import.meta.env.VITE_PORTABLE === "true";
 
 /** Last time the Offline APP (no avatar media) was rebuilt. */
-export const PACK_VERSION = "0.048";
+export const PACK_VERSION = "0.141";
 export const PACK_VERSION_LABEL = `v${PACK_VERSION}`;
 
 /** Last sideload APK. Independent of the portable zip. */
@@ -33,9 +33,9 @@ export const AVATARS_STAMP = "20260830-0614";
 export const AVATARS_BUILT_LABEL = "Aug 30, 2026, 6:14 AM MDT";
 
 /** Filled by the pack script — ISO + classroom-local label + compact stamp. */
-export const PACK_BUILT_AT = "2026-09-11T14:46:22.306Z";
-export const PACK_BUILT_LABEL = "Sep 11, 2026, 8:46 AM MDT";
-export const PACK_STAMP = "20260911-0846";
+export const PACK_BUILT_AT = "2026-10-09T06:52:01.418Z";
+export const PACK_BUILT_LABEL = "Oct 9, 2026, 12:52 AM MDT";
+export const PACK_STAMP = "20261009-0052";
 export const CODE_STAMP = "20260919-0731";
 
 function zipName(version: string, kind: string, stamp: string): string {

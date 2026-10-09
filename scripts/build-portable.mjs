@@ -46,7 +46,7 @@ function denverStamp(d = new Date()) {
     day: "2-digit",
     hour: "2-digit",
     minute: "2-digit",
-    hour12: false,
+    hourCycle: "h23", // hour12:false yields "24" just after midnight
     timeZoneName: "short",
   }).formatToParts(d);
   const get = (t) => parts.find((p) => p.type === t)?.value ?? "";
@@ -760,7 +760,10 @@ async function buildPortableOnly() {
     built,
   );
 
-  if (forceAvatars || !avatarsZipOnDisk(files.avatars)) {
+  // --skip-avatars: app-only rebuild; teachers keep their existing avatars/
+  // folder, so never rebuild the ~400MB media pack just because it is not on disk.
+  const skipAvatars = process.argv.includes("--skip-avatars");
+  if (!skipAvatars && (forceAvatars || !avatarsZipOnDisk(files.avatars))) {
     console.log("  building Avatar media pack…");
     const avatarsEntry = await buildAvatarsZip(version, built);
     files.avatars = avatarsEntry;
@@ -774,7 +777,7 @@ async function buildPortableOnly() {
     });
     console.log("  ", avatarsEntry.file, `(${(avatarsEntry.bytes / 1024 / 1024).toFixed(2)} MB)`);
   } else {
-    console.log("  keeping", files.avatars.file);
+    console.log("  keeping", files.avatars?.file ?? "(no avatars entry)");
   }
 
   saveManifest({

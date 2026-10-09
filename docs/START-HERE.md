@@ -2,7 +2,7 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.140.** This file ships in **every** push.
+**v0.141.** This file ships in **every** push.
 
 **Meta-QA / supervisor protocol:** [QA-SUPERVISOR.md](QA-SUPERVISOR.md) (QAsup sleeping 2026-09-19 — **Ash-direct** until a supervisor returns).
 
@@ -14,11 +14,15 @@ Next on `start`: **56 Noxquill**.
 
 **UI:** Teacher catalog on the **main page**; remembers last pack; recently viewed strip.
 
-**Local viewer:** double-click `Open-ClassNest.bat` / `Open-ClassNest.command` → **http://127.0.0.1:3847/** (not 8080).
+**Teacher viewer (portable, nothing to install):** unzip the Offline APP zip, copy the existing `avatars/` folder next to `index.html`, double-click `Start-ClassNest.bat` → **http://127.0.0.1:8765/** (falls back to 8766–8768). `ClassNest.url` points there.
+
+**Developer-only:** `Open-ClassNest.bat` / `.command` / `npm run dev:local` → http://127.0.0.1:3847/ — needs Node.js + `npm install`. Never send teachers to 3847.
 
 **UI:** Teacher catalog is **landscape-wide** (~92vw / 1100px) with denser thumb grid + tiny IDs outside thumbs.
 
 **UI:** **Cinematic evolution** toggle (Display menu + Ultra class settings) — one Home scrub still per point when on; classic snaps default. Plan: [cinematic-evolution-mode.md](cinematic-evolution-mode.md). Scrub frames local-only under `public/avatars/ultra/scrub/` (gitignored).
+
+**v0.141 (portable viewer):** Ash saw "Unable to connect" on 127.0.0.1:3847 — that is the dev server (needs Node); the portable app runs on 8765. Docs + `ClassNest.url` now send teachers to `Start-ClassNest.bat` → 127.0.0.1:8765. Offline APP rebuilt for v0.141 (was stale at v0.048); zip is app-only (no avatars). `build-portable.mjs` gained `--skip-avatars` and a fixed midnight stamp ("24xx" → "00xx").
 
 **v0.140 (QA sweep fixes):** missing-art request loop fixed (one-shot fallback; cinematic falls back to classic stills when scrub frames are absent); Nest/Reports lists refresh after Undo/Clear; Board Lock hides teacher tools (Select/batch, Undo, favorites, More, Spar, Add, Settings — settings URL shows a locked notice); absent kids blocked on the Nest page; Undo targets the exact award / whole batch and never removes compress rollups; Compress keeps lifetime/spent/season (separate shop/spar rollups); deleting the last class sticks; phone header/More menu fit 390px; tournament byes use standard seeding; RandCycle counts only kids still in the pool.
 

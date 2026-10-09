@@ -5,6 +5,8 @@ cd /d "%~dp0"
 echo.
 echo  ClassNest local
 echo  ---------------
+echo  DEVELOPER ONLY - needs Node.js + npm. Teachers: use Start-ClassNest.bat
+echo  from the Offline APP zip instead (http://127.0.0.1:8765/).
 echo  URL: http://127.0.0.1:3847/
 echo  (Port 3847 — leaves 8080 free for your other game.)
 echo  Leave this window open while you use the app.
