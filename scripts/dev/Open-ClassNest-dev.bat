@@ -1,6 +1,6 @@
 @echo off
 title ClassNest (local)
-cd /d "%~dp0"
+cd /d "%~dp0..\.."
 
 echo.
 echo  ClassNest local

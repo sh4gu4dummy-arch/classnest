@@ -23,6 +23,9 @@ Then this file. Direct chat instructions still win.
 - Version bump + git commit on each change. Tell the teacher the new
   version number in the reply. Rebuild portable / full / APK **only when
   asked**. Rebuild code-only zip each change.
+- **Every version bump: `npm run build:offline` and commit `offline/`** (the
+  run-from-clone app behind root `Start-ClassNest.bat`). The push script
+  refuses to push when `offline/VERSION` != `VERSION`.
 - **Always push to GitHub after the commit** (`origin` =
   `sh4gu4dummy-arch/classnest`, branch `main`). Use `sh scripts/push-github.sh`.
   Auth is the connected GitHub account / `gh` — never paste a PAT in chat.

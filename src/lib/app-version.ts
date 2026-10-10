@@ -4,14 +4,15 @@
  * Every change:
  *   1. bump APP_VERSION (+ /VERSION + package.json)
  *   2. rebuild code-only zip  (`npm run pack:code`)
- *   3. git commit
+ *   3. rebuild the run-from-clone app (`npm run build:offline`, commit offline/)
+ *   4. git commit
  *
  * Rebuild portable (`npm run pack:portable`) or APK (`npm run pack`) only
  * when the teacher asks. Avatar media (`npm run pack:avatars`) only when
  * art/videos change. Those keep PACK_VERSION / AVATARS_VERSION until then.
  * PACK_BUILT_* is written by scripts/build-portable.mjs.
  */
-export const APP_VERSION = "0.141";
+export const APP_VERSION = "0.142";
 export const APP_VERSION_LABEL = `v${APP_VERSION}`;
 
 /** True when this is the unzipped Offline APP (no server, no zip downloads). */

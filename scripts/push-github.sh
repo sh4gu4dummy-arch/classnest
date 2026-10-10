@@ -36,6 +36,17 @@ if ! git diff --name-only HEAD~1 HEAD 2>/dev/null | grep -qx 'docs/START-HERE.md
   exit 1
 fi
 
+# Run-from-clone app (offline/) must match VERSION, or teachers pulling get a stale app.
+if [ "$(cat offline/VERSION 2>/dev/null)" != "$(cat VERSION)" ]; then
+  echo "Refusing push: offline/VERSION ($(cat offline/VERSION 2>/dev/null || echo missing)) != VERSION ($(cat VERSION))." >&2
+  echo "Run: npm run build:offline  then commit offline/ and retry." >&2
+  exit 1
+fi
+if ! git diff --quiet HEAD -- offline/ || [ -n "$(git ls-files --others --exclude-standard offline/)" ]; then
+  echo "Refusing push: offline/ has uncommitted changes. Commit the rebuilt app first." >&2
+  exit 1
+fi
+
 GIT_ASKPASS="$ASK" SSH_ASKPASS="$ASK" GIT_TERMINAL_PROMPT=1 \
   git -c credential.helper= push origin HEAD:main "$@"
 echo "pushed HEAD -> origin/main"
