@@ -266,7 +266,7 @@ export function StudentHome({
                     <div className="min-w-0 flex-1">
                       <p className="truncate text-sm font-semibold">
                         {e.behaviorLabel}
-                        {opp ? ` · vs ${opp.split(" ")[0]}` : ""}
+                        {opp ? ` · vs ${opp}` : ""}
                       </p>
                       <p className="text-[11px] text-muted-fg">
                         {formatRelative(e.createdAt)}

@@ -471,7 +471,7 @@ function ReportsPage() {
                       frameId={row.student.frameId}
                     />
                     <div className="min-w-0 flex-1">
-                      <span className="block truncate text-sm font-semibold">
+                      <span className="cn-name block text-sm font-semibold">
                         {row.student.name}
                       </span>
                       <span className="text-[10px] text-muted-fg tabular-nums">
@@ -536,7 +536,7 @@ function ReportsPage() {
                   </Badge>
                   <div className="min-w-0 flex-1">
                     <p className="text-sm font-semibold">
-                      <span className="text-fg">{studentName(e.studentId).split(" ")[0]}</span>
+                      <span className="text-fg">{studentName(e.studentId)}</span>
                       <span className="font-medium text-muted-fg"> · {e.behaviorLabel}</span>
                     </p>
                     <p className="text-[11px] text-muted-fg">

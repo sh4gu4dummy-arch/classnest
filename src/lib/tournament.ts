@@ -283,5 +283,5 @@ export function roundLabel(round: number, maxRound: number): string {
 
 export function entrantName(students: Student[], id: string | null): string {
   if (!id) return "BYE";
-  return students.find((s) => s.id === id)?.name.split(" ")[0] ?? "?";
+  return students.find((s) => s.id === id)?.name ?? "?";
 }

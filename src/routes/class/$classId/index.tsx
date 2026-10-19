@@ -602,7 +602,7 @@ function ClassBoardPage() {
           : [];
     if (targets.length === 0) {
       if (!selectMode && focusStudent && isAbsentToday(focusStudent)) {
-        toast.message(`${focusStudent.name.split(" ")[0]} is out today`);
+        toast.message(`${focusStudent.name} is out today`);
       } else if (selectMode && selectedIds.size > 0) {
         toast.message("Everyone selected is out today");
       } else {
@@ -657,7 +657,7 @@ function ClassBoardPage() {
       }
     }
     toast.message(
-      `${student.name.split(" ")[0]} ${next === "absent" ? "out" : next === "late" ? "late" : "in"}`,
+      `${student.name} ${next === "absent" ? "out" : next === "late" ? "late" : "in"}`,
       { duration: 1400 },
     );
   }
@@ -1549,7 +1549,7 @@ function ClassBoardPage() {
           targetLabel={
             selectMode && selectedIds.size > 0
               ? `${selectedIds.size} selected`
-              : focusStudent?.name.split(" ")[0]
+              : focusStudent?.name
           }
           disabled={rearrangeMode}
           onAward={handleFavoriteAward}
@@ -1780,7 +1780,7 @@ function ClassBoardPage() {
                         "border-border bg-surface-2 text-fg hover:border-accent/40",
                     )}
                   >
-                    {student.name.split(" ")[0]}
+                    {student.name}
                     {status === "late" ? " · late" : status === "absent" ? " · out" : ""}
                   </button>
                 );
@@ -1859,7 +1859,7 @@ function ClassBoardPage() {
                   key={st.id}
                   className="flex flex-wrap items-center gap-2 rounded-xl border border-border px-2.5 py-2"
                 >
-                  <span className="min-w-0 flex-1 truncate text-sm font-semibold">
+                  <span className="cn-name min-w-0 flex-1 text-sm font-semibold">
                     {st.name}
                   </span>
                   <div className="flex flex-wrap gap-1">

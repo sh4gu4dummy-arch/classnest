@@ -287,8 +287,8 @@ export function SparTournament({
                         showLevelBadge={false}
                       />
                       <span className="min-w-0 flex-1">
-                        <span className="block truncate font-semibold">
-                          {s.name.split(" ")[0]}
+                        <span className="cn-name block font-semibold">
+                          {s.name}
                         </span>
                         <span className="text-[10px] tabular-nums text-muted-fg">
                           {pts} pts
@@ -509,7 +509,7 @@ function Fighter({
               : "animate-spar-lunge-left"),
         )}
       />
-      <p className="text-sm font-bold">{student.name.split(" ")[0]}</p>
+      <p className="cn-name text-sm font-bold">{student.name}</p>
       <p className="text-[10px] tabular-nums text-muted-fg">{points} power</p>
     </div>
   );

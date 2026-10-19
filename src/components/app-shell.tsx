@@ -84,7 +84,7 @@ export function AppShell({
             {(title || subtitle) && (
               <div className="min-w-0 border-l border-border pl-2 sm:border-l-2 sm:border-accent/20 sm:pl-3">
                 {title && (
-                  <h1 className="truncate text-sm font-bold leading-tight sm:text-base">
+                  <h1 className="cn-name line-clamp-2 text-sm font-bold leading-tight sm:text-base">
                     {title}
                   </h1>
                 )}

@@ -198,7 +198,7 @@ export function AwardPanel({
               </button>
             )}
             <span className="min-w-0 flex-1">
-              <span className="block truncate">{student?.name ?? "Student"}</span>
+              <span className="cn-name block">{student?.name ?? "Student"}</span>
               <span className="text-sm font-normal text-muted-fg tabular-nums">
                 {points > 0 ? `+${points}` : points} pts
                 {pack === "ultra" && tier.level > 0 ? ` · ${tier.name}` : ""}

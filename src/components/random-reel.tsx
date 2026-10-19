@@ -139,7 +139,7 @@ export function RandomReel({
 
   if (typeof document === "undefined") return null;
 
-  const first = winner.name.split(" ")[0] ?? winner.name;
+  const first = winner.name;
   const center = (windowRef.current?.clientWidth ?? 480) / 2;
   const winnerPts = pointsMap.get(winner.id) ?? 0;
 
@@ -204,7 +204,7 @@ export function RandomReel({
       {landed ? (
         <div className="flex flex-col items-center gap-3">
           <ReelFace student={winner} pack={pack} points={winnerPts} />
-          <p className="text-center text-4xl font-black tracking-tight text-white sm:text-5xl">
+          <p className="cn-name max-w-[90vw] text-center text-4xl font-black tracking-tight text-white sm:text-5xl">
             {first}
           </p>
           <p className="text-sm font-semibold text-white/70">Tap to continue</p>

@@ -139,7 +139,7 @@ export function EvolutionBurst({ data, onDone }: EvolutionBurstProps) {
   const avatar = getAvatar(data.avatarId, data.pack);
   const tier = getEvolutionTier(data.points);
   const clip = getCelebrationClip(data.points, data.pack);
-  const first = data.studentName.split(" ")[0] ?? data.studentName;
+  const first = data.studentName;
 
   const formStage = getFormStage(data.points);
   const milestone = data.pack !== "ultra";

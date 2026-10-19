@@ -1,4 +1,5 @@
 import { memo, useEffect, useRef } from "react";
+import { nameLength } from "@/lib/names";
 import { Check } from "lucide-react";
 import { StudentAvatar } from "@/components/student-avatar";
 import type { AvatarPack } from "@/lib/avatars";
@@ -206,8 +207,12 @@ function StudentCardInner({
               "transition-transform duration-150 ease-out group-hover:scale-[1.03] group-active:scale-[0.98]",
           )}
         />
-        <span className="board-name w-full truncate text-center text-sm font-semibold text-fg sm:text-[15px]">
-          {student.name.split(" ")[0]}
+        <span
+          className="board-name cn-name w-full text-center text-sm font-semibold text-fg sm:text-[15px]"
+          data-len={nameLength(student.name)}
+          title={student.name}
+        >
+          {student.name}
         </span>
         {student.group ? (
           <span className="rounded-full bg-surface-2 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-muted-fg">

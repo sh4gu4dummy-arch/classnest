@@ -30,7 +30,7 @@ export function PickBanner({
   onRestart?: () => void;
   onDone: () => void;
 }) {
-  const first = student.name.split(" ")[0] ?? student.name;
+  const first = student.name;
   const src = getAvatarSrc(student.avatarId, pack, points, "board");
   const cycling = onNext != null || onRestart != null;
 
@@ -60,7 +60,7 @@ export function PickBanner({
         <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/70">
           {last ? "All called" : cycling ? "Up now" : "Picked"}
         </p>
-        <p className="truncate text-2xl font-black leading-tight tracking-tight sm:text-3xl">
+        <p className="cn-name text-2xl font-black leading-tight tracking-tight sm:text-3xl">
           {first}
         </p>
         {cycling && total != null && called != null ? (

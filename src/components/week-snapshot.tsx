@@ -156,7 +156,7 @@ export function WeekSnapshot({
                 Milestones this week
               </h3>
               <p className="mt-1 text-sm font-semibold">
-                {evolutions.map((s) => s.name.split(" ")[0]).join(", ")}
+                {evolutions.map((s) => s.name).join(", ")}
               </p>
             </section>
           )}

@@ -768,3 +768,29 @@ html.cn-paused .animate-confetti-fall,
 html.cn-paused .animate-energy-shimmer {
   animation-play-state: paused !important;
 }
+
+/* ─── Full student names (v0.143): wrap instead of cutting off ───── */
+.cn-name {
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  text-wrap: balance;
+  line-height: 1.15;
+}
+.board-name[data-len="long"] {
+  font-size: 0.8125rem !important;
+}
+.board-name[data-len="xlong"] {
+  font-size: 0.75rem !important;
+}
+html.smartboard .board-grid .board-name[data-len="long"],
+html.projector .board-name[data-len="long"],
+.board-grid[data-density="showcase"] .board-name[data-len="long"] {
+  font-size: 0.95rem !important;
+}
+html.smartboard .board-grid .board-name[data-len="xlong"],
+html.projector .board-name[data-len="xlong"],
+.board-grid[data-density="showcase"] .board-name[data-len="xlong"] {
+  font-size: 0.875rem !important;
+}

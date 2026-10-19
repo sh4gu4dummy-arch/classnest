@@ -73,7 +73,7 @@ export function ShopPanel({
             Point Shop
           </DialogTitle>
           <DialogDescription>
-            {studentName.split(" ")[0]} · wallet{" "}
+            {studentName} · wallet{" "}
             <span className="font-bold tabular-nums text-fg">{wallet}</span>
             <span className="text-muted-fg">
               {" "}
@@ -96,7 +96,7 @@ export function ShopPanel({
               shieldCharges={student.shieldCharges}
               showLevelBadge={false}
             />
-            <p className="text-sm font-bold">{student.name.split(" ")[0]}</p>
+            <p className="cn-name text-sm font-bold">{student.name}</p>
           </div>
         )}
 

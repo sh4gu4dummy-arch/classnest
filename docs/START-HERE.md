@@ -2,7 +2,7 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.142.** This file ships in **every** push.
+**v0.143.** This file ships in **every** push.
 
 **Meta-QA / supervisor protocol:** [QA-SUPERVISOR.md](QA-SUPERVISOR.md) (QAsup sleeping 2026-09-19 — **Ash-direct** until a supervisor returns).
 
@@ -23,6 +23,8 @@ Next on `start`: **56 Noxquill**.
 **UI:** Teacher catalog is **landscape-wide** (~92vw / 1100px) with denser thumb grid + tiny IDs outside thumbs.
 
 **UI:** **Cinematic evolution** toggle (Display menu + Ultra class settings) — one Home scrub still per point when on; classic snaps default. Plan: [cinematic-evolution-mode.md](cinematic-evolution-mode.md). Scrub frames local-only under `public/avatars/ultra/scrub/` (gitignored).
+
+**v0.143 (full names):** student names were cut to the first word in the UI (`name.split(" ")[0]` in ~26 display spots + `truncate`); full name was always stored. Now full names everywhere (cards, Nest, toasts, picker/reel, spar/tournament, shop, reports, attendance, favorites, week snapshot). Long names wrap (`.cn-name`) and board cards step the font down (`nameLength()` in `src/lib/names.ts`). No data change; existing kids show their full names automatically.
 
 **v0.142 (run from clone):** root `Start-ClassNest.bat` + `scripts/serve-offline.ps1` (PowerShell-only server: `offline/` first, then `public/`; SPA fallback) and committed `offline/` build (`npm run build:offline`, ~1.3 MB). Removed root `ClassNest.url`; dev launchers moved to `scripts/dev/`. See [offline-launcher.md](offline-launcher.md).
 

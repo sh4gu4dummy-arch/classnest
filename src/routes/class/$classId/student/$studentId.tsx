@@ -145,7 +145,7 @@ function StudentProfilePage() {
         onShop={() => setShopOpen(true)}
         onSpar={(rematch) => {
           if (absent) {
-            toast.error(`${student.name.split(" ")[0]} is out today`);
+            toast.error(`${student.name} is out today`);
             return;
           }
           if (
@@ -153,7 +153,7 @@ function StudentProfilePage() {
             !presentClassmates.some((s) => s.id === rematch.opponentId)
           ) {
             const opp = classmates.find((s) => s.id === rematch.opponentId);
-            toast.error(`${opp?.name.split(" ")[0] ?? "Opponent"} is out today`);
+            toast.error(`${opp?.name ?? "Opponent"} is out today`);
             return;
           }
           setSparRematch(rematch ?? null);

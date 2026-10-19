@@ -166,8 +166,8 @@ function StudentPick({
                 size="sm"
                 showLevelBadge={false}
               />
-              <span className="max-w-[5.5rem] truncate text-xs font-semibold">
-                {s.name.split(" ")[0]}
+              <span className="cn-name max-w-[5.5rem] text-center text-xs font-semibold">
+                {s.name}
               </span>
             </button>
           );
@@ -220,9 +220,9 @@ export function SparArena({
   const seriesDone = bestOf3 && (seriesA >= 2 || seriesB >= 2);
   const seriesLead =
     seriesA > seriesB
-      ? attacker?.name.split(" ")[0]
+      ? attacker?.name
       : seriesB > seriesA
-        ? defender?.name.split(" ")[0]
+        ? defender?.name
         : null;
 
   const canFight =
@@ -484,7 +484,7 @@ export function SparArena({
                   )}
                 />
                 <p className="text-sm font-bold">
-                  {fight.attacker.name.split(" ")[0]}
+                  {fight.attacker.name}
                 </p>
               </div>
 
@@ -528,7 +528,7 @@ export function SparArena({
                   )}
                 />
                 <p className="text-sm font-bold">
-                  {fight.defender.name.split(" ")[0]}
+                  {fight.defender.name}
                 </p>
               </div>
             </div>
@@ -543,7 +543,7 @@ export function SparArena({
                       </p>
                       <p className="mt-1 flex items-center justify-center gap-1 text-sm text-muted-fg">
                         <Shield className="size-3.5" />
-                        {fight.defender.name.split(" ")[0]} used a force shield.
+                        {fight.defender.name} used a force shield.
                       </p>
                     </>
                   ) : (
@@ -552,7 +552,7 @@ export function SparArena({
                         {(fight.attackerWon
                           ? fight.attacker
                           : fight.defender
-                        ).name.split(" ")[0]}{" "}
+                        ).name}{" "}
                         wins!
                       </p>
                       <p className="mt-1 text-sm text-muted-fg">
@@ -566,7 +566,7 @@ export function SparArena({
 
                 <div className="flex gap-2">
                   <SparPointsTick
-                    name={fight.attacker.name.split(" ")[0] ?? "Challenger"}
+                    name={fight.attacker.name ?? "Challenger"}
                     before={fight.attackerBefore}
                     delta={attackerDelta}
                     won={fight.attackerWon && !fight.blocked}
@@ -574,7 +574,7 @@ export function SparArena({
                     delayMs={0}
                   />
                   <SparPointsTick
-                    name={fight.defender.name.split(" ")[0] ?? "Opponent"}
+                    name={fight.defender.name ?? "Opponent"}
                     before={fight.defenderBefore}
                     delta={defenderDelta}
                     won={!fight.attackerWon && !fight.blocked}
