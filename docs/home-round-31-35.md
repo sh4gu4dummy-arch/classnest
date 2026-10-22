@@ -142,7 +142,7 @@ Sound: neon, metal click, paws. No speech, no song.
 
 ## 34 Kindlekin — Lantern Study — pause, tea, then the page
 
-> **v0.145 note:** `34-s2.jpg` was reshot (Tea Apprentice). `34-s3.jpg` is still the old Legend and is pending a remake. `homes/34.mp4` and the scrub frames were made from the OLD art. Reshoot only on Ash's `go`.
+> **v0.146 note:** all Kindlekin stills after s1 were reshot: `34-s2.jpg` = Tea Apprentice (v0.145), `34-s3.jpg` = Legend B, reclining sage with winged teapot (v0.146). `homes/34.mp4` and the scrub frames were made from the OLD art and are stale. Reshoot only on Ash's `go`.
 
 **Bot1 QA + QAsupervisor deepen (2026-09-18).** Batch **33–35** on Ash `go` together (LIVE after this deepen). Do not remake 32. §33 unchanged.
 

@@ -2,7 +2,7 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.145.** This file ships in **every** push.
+**v0.146.** This file ships in **every** push.
 
 **Meta-QA / supervisor protocol:** [QA-SUPERVISOR.md](QA-SUPERVISOR.md) (QAsup sleeping 2026-09-19 — **Ash-direct** until a supervisor returns).
 
@@ -23,6 +23,8 @@ Next on `start`: **56 Noxquill**.
 **UI:** Teacher catalog is **landscape-wide** (~92vw / 1100px) with denser thumb grid + tiny IDs outside thumbs.
 
 **UI:** **Cinematic evolution** toggle (Display menu + Ultra class settings) — one Home scrub still per point when on; classic snaps default. Plan: [cinematic-evolution-mode.md](cinematic-evolution-mode.md). Scrub frames local-only under `public/avatars/ultra/scrub/` (gitignored).
+
+**v0.146 (Kindlekin #34 Legend reshoot, Ash-confirmed — Kindlekin fully remade):** `public/avatars/ultra/34-s3.jpg` is now **Legend B** (review round 3: grown red panda reclining on cream pillows in a red gold-trimmed mantle, holding a tiny winged copper teapot, golden steam and floating lanterns, soft beige s1 style; a stray plant on the pillow was cleaned out; 1024→1408 JPG), plus `ultra/board/34-s3.jpg` (360) and the unused `public/offline-app/avatars/` mirror. Kindlekin is now s1 Hatchling (unchanged) → s2 Tea Apprentice (v0.145) → s3 Legend B. Drafts stay local in `/workspace/kindlekin-trial/`. **Home film `homes/34.mp4` and the local scrub frames for 34 are stale (old art)** — reshoot only on Ash's `go`.
 
 **v0.145 (Kindlekin #34 Adolescent reshoot, Ash-approved):** `public/avatars/ultra/34-s2.jpg` is now the **Tea Apprentice** (review round 2 option B: upright young red panda lifting a copper kettle, red scarf, soft beige backdrop in the s1 style; 1024→1408 JPG), plus `ultra/board/34-s2.jpg` (360) and the unused `public/offline-app/avatars/` mirror. s1 unchanged. **s3 (Legend) is still the OLD art and is pending a Legend remake** — Ash rejected rounds 1–2 as not enough change; drafts stay local in `/workspace/kindlekin-trial/`. **Home film `homes/34.mp4` and the local scrub frames for 34 still show the old art** — reshoot only on Ash's `go` (ideally after the new Legend ships). Style note from Ash: Kindlekin evolutions must keep s1's soft, plush, cute, warm look (no dark/moody scenes, no scowls).
 

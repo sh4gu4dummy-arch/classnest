@@ -1,6 +1,6 @@
 {
   "name": "classnest",
-  "version": "0.145",
+  "version": "0.146",
   "private": true,
   "sideEffects": false,
   "type": "module",
