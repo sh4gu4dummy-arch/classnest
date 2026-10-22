@@ -33,4 +33,5 @@ Do not loop `imagine_text_to_image` hoping a path appears. Method C = this scrip
 - Evolutions **may look quite different** from stage to stage (new pose, scene, body shape, maturity, effects) **as long as resemblance and theme stay consistent**. Examples: same species/silhouette family, signature colours and motif.
 - A near-copy of the previous stage is a weak evolution. Don't play it safe.
 - First applied to **35 Riftstallion (v0.144):** foal → comet yearling with constellation markings → rearing galaxy stallion with a spiral-galaxy flank and glowing hooves. The dark-indigo star-coat identity is kept.
+- **34 Kindlekin (v0.145):** s2 → Tea Apprentice (upright, kettle, scarf, soft beige s1 style). Round 1 (dark moody study, scowling face) was rejected as wrong style — match the Hatchling's soft, plush, cute, warm lighting. s3 Legend still pending a remake.
 - When a still changes, its Home film (`homes/<id>.mp4`) and scrub frames go stale. Note it in START-HERE and reshoot only on Ash's `go`.

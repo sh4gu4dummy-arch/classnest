@@ -142,6 +142,8 @@ Sound: neon, metal click, paws. No speech, no song.
 
 ## 34 Kindlekin — Lantern Study — pause, tea, then the page
 
+> **v0.145 note:** `34-s2.jpg` was reshot (Tea Apprentice). `34-s3.jpg` is still the old Legend and is pending a remake. `homes/34.mp4` and the scrub frames were made from the OLD art. Reshoot only on Ash's `go`.
+
 **Bot1 QA + QAsupervisor deepen (2026-09-18).** Batch **33–35** on Ash `go` together (LIVE after this deepen). Do not remake 32. §33 unchanged.
 
 **Catalog s3 trap:** red panda **asleep** on table, scarf, **already-steaming finished cup**, scrolls, lantern, packed bookshelf, rain window. Sleep / finished-tea still **cannot** deliver hurry→pour. **Catalog rewrite rule applies** — do not I2V `34-s3.jpg`.
