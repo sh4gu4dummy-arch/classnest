@@ -26,3 +26,11 @@ python3 scripts/imagine-image.py --prompt "a red apple" --out /tmp/apple.jpg --a
 ```
 
 Do not loop `imagine_text_to_image` hoping a path appears. Method C = this script. Video = existing HTTP poll to `grok-imagine-video`.
+
+
+## Evolution rule (Ash, 2026-10-22)
+
+- Evolutions **may look quite different** from stage to stage (new pose, scene, body shape, maturity, effects) **as long as resemblance and theme stay consistent**. Examples: same species/silhouette family, signature colours and motif.
+- A near-copy of the previous stage is a weak evolution. Don't play it safe.
+- First applied to **35 Riftstallion (v0.144):** foal → comet yearling with constellation markings → rearing galaxy stallion with a spiral-galaxy flank and glowing hooves. The dark-indigo star-coat identity is kept.
+- When a still changes, its Home film (`homes/<id>.mp4`) and scrub frames go stale. Note it in START-HERE and reshoot only on Ash's `go`.

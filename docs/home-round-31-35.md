@@ -192,6 +192,8 @@ Sound: hurry paws, kettle pour, rain. No speech, no song.
 
 ## 35 Riftstallion — Silent Observatory — look up, then step
 
+> **v0.144 note:** the s2/s3 stills were reshot (new Legend = rearing galaxy stallion). `homes/35.mp4` and the scrub frames were made from the OLD s3 and no longer match the stills. Reshoot only on Ash's `go`.
+
 **Bot1 QA + QAsupervisor deepen (2026-09-18).** Batch **33–35** on Ash `go` together (LIVE after this deepen). Do not remake 32. §33 unchanged.
 
 **Catalog s3:** galaxy/nebula horse, **four legs**, rocky ground, observatory dome on a hill under aurora — **not** already at the dark rim. Lock this galaxy body/face. I2I must **place** him at the silent observatory’s dark rim (night as wall). Hero ≥50%.

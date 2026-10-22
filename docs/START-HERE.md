@@ -2,7 +2,7 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.143.** This file ships in **every** push.
+**v0.144.** This file ships in **every** push.
 
 **Meta-QA / supervisor protocol:** [QA-SUPERVISOR.md](QA-SUPERVISOR.md) (QAsup sleeping 2026-09-19 — **Ash-direct** until a supervisor returns).
 
@@ -23,6 +23,8 @@ Next on `start`: **56 Noxquill**.
 **UI:** Teacher catalog is **landscape-wide** (~92vw / 1100px) with denser thumb grid + tiny IDs outside thumbs.
 
 **UI:** **Cinematic evolution** toggle (Display menu + Ultra class settings) — one Home scrub still per point when on; classic snaps default. Plan: [cinematic-evolution-mode.md](cinematic-evolution-mode.md). Scrub frames local-only under `public/avatars/ultra/scrub/` (gitignored).
+
+**v0.144 (Riftstallion #35 evolution reshoot, Ash-approved):** `public/avatars/ultra/35-s2.jpg` (Adolescent) and `35-s3.jpg` (Legend, draft G upscaled 1024→1408) replaced, plus `ultra/board/35-s2/s3.jpg` (360) and the unused `public/offline-app/avatars/` mirror; s1 unchanged. Drafts/options stay local in `/workspace/riftstallion-trial/`. **Home film `homes/35.mp4` and the local scrub frames for 35 still show the OLD Legend** and now differ from the stills — reshoot only on Ash's `go`. **Ash's evolution rule:** stages may look quite different from each other as long as the resemblance and theme stay consistent — see [imagine-stills.md](imagine-stills.md#evolution-rule-ash-2026-10-22).
 
 **v0.143 (full names):** student names were cut to the first word in the UI (`name.split(" ")[0]` in ~26 display spots + `truncate`); full name was always stored. Now full names everywhere (cards, Nest, toasts, picker/reel, spar/tournament, shop, reports, attendance, favorites, week snapshot). Long names wrap (`.cn-name`) and board cards step the font down (`nameLength()` in `src/lib/names.ts`). No data change; existing kids show their full names automatically.
 
