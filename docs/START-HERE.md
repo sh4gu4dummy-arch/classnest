@@ -2,7 +2,7 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.146.** This file ships in **every** push.
+**v0.147.** This file ships in **every** push.
 
 **Meta-QA / supervisor protocol:** [QA-SUPERVISOR.md](QA-SUPERVISOR.md) (QAsup sleeping 2026-09-19 — **Ash-direct** until a supervisor returns).
 
@@ -23,6 +23,8 @@ Next on `start`: **56 Noxquill**.
 **UI:** Teacher catalog is **landscape-wide** (~92vw / 1100px) with denser thumb grid + tiny IDs outside thumbs.
 
 **UI:** **Cinematic evolution** toggle (Display menu + Ultra class settings) — one Home scrub still per point when on; classic snaps default. Plan: [cinematic-evolution-mode.md](cinematic-evolution-mode.md). Scrub frames local-only under `public/avatars/ultra/scrub/` (gitignored).
+
+**v0.147 (Ironmaw #38 + Mossback #24 evolution reshoots, Ash-confirmed):** `public/avatars/ultra/38-s2.jpg` is now **Adolescent C** (young orc smith kneeling to fit a glowing hinge on a castle door, tongue out; 1408 JPG) and `38-s3.jpg` is **Legend C** (crowned orc smith-king on a throne of anvils and hinges, offering a glowing hinge; 1024→1408 JPG). `24-s2.jpg` is now **Adolescent D** (young turtle swimming underwater in sunbeams, moss shell with a lily pad and pink lotus) and `24-s3.jpg` is **Legend C** (great sea turtle with a blossoming tree on its mossy shell, koi swarm; both 1024→768 JPG to match Mossback's s1). Plus `ultra/board/{38,24}-s2/s3.jpg` (360) and the unused `public/offline-app/avatars/` mirror. s1 Hatchlings unchanged. Drafts stay local in `/workspace/ironmaw-trial/` and `/workspace/mossback-trial/`. **Home films `homes/38.mp4` and `homes/24.mp4` and the local scrub frames for 38 and 24 are stale (old art)** — reshoot only on Ash's `go`.
 
 **v0.146 (Kindlekin #34 Legend reshoot, Ash-confirmed — Kindlekin fully remade):** `public/avatars/ultra/34-s3.jpg` is now **Legend B** (review round 3: grown red panda reclining on cream pillows in a red gold-trimmed mantle, holding a tiny winged copper teapot, golden steam and floating lanterns, soft beige s1 style; a stray plant on the pillow was cleaned out; 1024→1408 JPG), plus `ultra/board/34-s3.jpg` (360) and the unused `public/offline-app/avatars/` mirror. Kindlekin is now s1 Hatchling (unchanged) → s2 Tea Apprentice (v0.145) → s3 Legend B. Drafts stay local in `/workspace/kindlekin-trial/`. **Home film `homes/34.mp4` and the local scrub frames for 34 are stale (old art)** — reshoot only on Ash's `go`.
 

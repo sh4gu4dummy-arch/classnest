@@ -109,6 +109,8 @@ I2V: duration `15`, `480p`, from the **home I2I** (not the portrait).
 
 ## 24 Mossback — Mossdock — steady beats panic
 
+> **v0.147 note:** `24-s2.jpg` = Adolescent D (swimming young turtle, lotus on its mossy shell) and `24-s3.jpg` = Legend C (great sea turtle with a blossoming tree on its shell, koi) were reshot. `homes/24.mp4` and the scrub frames were made from the OLD art and are stale. Reshoot only on Ash's `go`.
+
 **Portrait s3:** elder turtle (open before I2I).  
 **Prop / t7 must show:** **one lily pad** settling (no readable numbers / no panic digits / no clock face text).  
 **Don’t:** extra turtles; no people on the dock.

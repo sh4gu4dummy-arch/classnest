@@ -118,6 +118,8 @@ Clip1←A, Clip2←B, Clip3←C. Sound: kettle hiss, glass, far thunder.
 
 ## 38 Ironmaw — Bellforge Keep — repair > trophy
 
+> **v0.147 note:** `38-s2.jpg` = Adolescent C (kneeling to fit a glowing hinge) and `38-s3.jpg` = Legend C (hinge-throne smith-king) were reshot. `homes/38.mp4` and the scrub frames were made from the OLD art and are stale. Reshoot only on Ash's `go`.
+
 **Catalog s3 trap:** warhammer + skull armor + lava cavern = trophy warrior. **Rewrite hard:** door + broken hinge at Bellforge. Gentle hammer. No gore.
 
 | Still | Lock |
