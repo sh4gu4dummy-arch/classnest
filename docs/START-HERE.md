@@ -2,7 +2,7 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
-**v0.147.** This file ships in **every** push.
+**v0.148.** This file ships in **every** push.
 
 **Meta-QA / supervisor protocol:** [QA-SUPERVISOR.md](QA-SUPERVISOR.md) (QAsup sleeping 2026-09-19 — **Ash-direct** until a supervisor returns).
 
@@ -23,6 +23,8 @@ Next on `start`: **56 Noxquill**.
 **UI:** Teacher catalog is **landscape-wide** (~92vw / 1100px) with denser thumb grid + tiny IDs outside thumbs.
 
 **UI:** **Cinematic evolution** toggle (Display menu + Ultra class settings) — one Home scrub still per point when on; classic snaps default. Plan: [cinematic-evolution-mode.md](cinematic-evolution-mode.md). Scrub frames local-only under `public/avatars/ultra/scrub/` (gitignored).
+
+**v0.148 (Palevow #46 evolution reshoot + Quartzarch #48 Legend, Ash-confirmed):** `public/avatars/ultra/46-s2.jpg` is now **Adolescent C** (young armored knight leaping with sword and cross shield at a training yard; 1408 JPG) and `46-s3.jpg` is **Legend D** (winged haloed paladin in red-and-gold cape on a cathedral carpet, golden sword; 1024→1408 JPG). `48-s3.jpg` is now **Legend E** (crystal sage, arms raised, rose-quartz robe, rainbow beams from a star rose window; 1024→1408 JPG). **Quartzarch's Adolescent `48-s2.jpg` is unchanged** — Ash rejected the drafts as too girly; a new Adolescent draft is pending review. Plus `ultra/board/` (360) and the unused `public/offline-app/avatars/` mirror. s1 Hatchlings unchanged. Drafts stay local in `/workspace/palevow-trial/` and `/workspace/quartzarch-trial/`. **Home films `homes/46.mp4` and `homes/48.mp4` and the local scrub frames for 46 and 48 are stale (old art)** — reshoot only on Ash's `go`.
 
 **v0.147 (Ironmaw #38 + Mossback #24 evolution reshoots, Ash-confirmed):** `public/avatars/ultra/38-s2.jpg` is now **Adolescent C** (young orc smith kneeling to fit a glowing hinge on a castle door, tongue out; 1408 JPG) and `38-s3.jpg` is **Legend C** (crowned orc smith-king on a throne of anvils and hinges, offering a glowing hinge; 1024→1408 JPG). `24-s2.jpg` is now **Adolescent D** (young turtle swimming underwater in sunbeams, moss shell with a lily pad and pink lotus) and `24-s3.jpg` is **Legend C** (great sea turtle with a blossoming tree on its mossy shell, koi swarm; both 1024→768 JPG to match Mossback's s1). Plus `ultra/board/{38,24}-s2/s3.jpg` (360) and the unused `public/offline-app/avatars/` mirror. s1 Hatchlings unchanged. Drafts stay local in `/workspace/ironmaw-trial/` and `/workspace/mossback-trial/`. **Home films `homes/38.mp4` and `homes/24.mp4` and the local scrub frames for 38 and 24 are stale (old art)** — reshoot only on Ash's `go`.
 

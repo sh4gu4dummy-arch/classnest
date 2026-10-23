@@ -163,6 +163,8 @@ Cinematic 16:9 Glassreef Palace gate underwater. This exact merfolk monarch face
 
 ## 46 Palevow — Sunlit Ossuary
 
+> **v0.148 note:** `46-s2.jpg` = Adolescent C (leaping young knight, sword + shield) and `46-s3.jpg` = Legend D (winged haloed paladin, cathedral) were reshot. `homes/46.mp4` and the scrub frames were made from the OLD art and are stale. Reshoot only on Ash's `go`.
+
 **Virtue:** Catches a slipping oath-scroll and pins it over the heart. Not horror.
 
 **Catalog trap:** s3 serene cathedral paladin — keep face; warm sunlit ossuary not horror.
@@ -206,6 +208,8 @@ Cinematic 16:9 World-Tree Nave. This exact dryad face from the reference. ONE dr
 **Sound:** water, wood
 
 ## 48 Quartzarch — Infinite Prism
+
+> **v0.148 note:** `48-s3.jpg` = Legend E (crystal sage under a star rose window, rainbow beams) was reshot. `48-s2.jpg` is still the old Adolescent (new draft pending). `homes/48.mp4` and the scrub frames were made from the OLD art and are stale. Reshoot only on Ash's `go`.
 
 **Virtue:** Rotates a crystal cube until a new corridor of light opens, then walks it.
 
