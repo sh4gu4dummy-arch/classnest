@@ -1,5 +1,7 @@
 # AUDIT 21–25
 
+> **v0.150 note:** `21-s2.jpg`/`21-s3.jpg` (Quietpaw Adolescent B + Legend B) were reshot. `homes/21.mp4` and the scrub frames for 21 were made from the OLD art and are stale. Reshoot only on Ash's `go`.
+
 Executor shipped after teacher `go`. **QA: try to fail.** Do not generate. Do not redo unless ids named.
 
 Stills: `{id}_s3.jpg` = **home I2I** (not the catalog bust) + `t0.5/3/7/11/14`.  
