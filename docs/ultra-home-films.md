@@ -262,6 +262,8 @@ Same legends. Old = what we actually sent. New = 3 beats, one hero, one prop.
 
 ### 03 Emberpuff — Ember Hollow
 
+> **v0.149 note:** `03-s2.jpg` = Adolescent E (`05-approx-50pct`, fennec kit with fiery mane + lava forelegs) was reshot. `homes/03.mp4` and the scrub frames were made from the OLD art and are stale. Reshoot only on Ash's `go`.
+
 **Old:** burst den → gold breath on clay fox → curl around it → crack seals → sun shaft → spark flick. (Extra foxes + lava-tails.)
 
 **Next (if redo):** One solar kitsune, tails stay tails. (1) Trots to the kiln shelf. (2) Breathes a **gold line** onto the crack of **one clay fox figurine**. (3) Flicks a spark and leaves; figurine glows, still clay. Sound: crackle, kiln whoosh, one yip.
