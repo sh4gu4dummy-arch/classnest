@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "items": {
+    "riftstallion-35/legend2-G": {
+      "vote": "yes",
+      "reasons": [],
+      "comment": "SHIPPED in v0.144 as 35-s3 (Legend), upscaled to 1408",
+      "shipped": "v0.144",
+      "history": [
+        {
+          "at": 1792649056610,
+          "reason": "CONFIRM — SHIPPED v0.144 (commit ac6122c)"
+        }
+      ],
+      "updatedAt": 1792649056610,
+      "savedAt": "2026-10-22T06:04:16.685Z"
+    },
+    "riftstallion-35/adol-A": {
+      "vote": "yes",
+      "reasons": [],
+      "comment": "SHIPPED in v0.144 as 35-s2 (Adolescent)",
+      "shipped": "v0.144",
+      "history": [
+        {
+          "at": 1792649056610,
+          "reason": "CONFIRM — SHIPPED v0.144 (commit ac6122c)"
+        }
+      ],
+      "updatedAt": 1792649056610,
+      "savedAt": "2026-10-22T06:04:16.698Z"
+    },
+    "ultra-34/s2": {
+      "vote": "no",
+      "reasons": [
+        "not enough change"
+      ],
+      "comment": "",
+      "history": [
+        {
+          "at": 1792659906078,
+          "reason": "REMAKE: not enough change"
+        },
+        {
+          "at": 1792659904808,
+          "reason": "cleared vote"
+        },
+        {
+          "at": 1792659902295,
+          "reason": "REMAKE: not enough change"
+        }
+      ],
+      "updatedAt": 1792659906078,
+      "savedAt": "2026-10-22T09:05:05.488Z"
+    },
+    "ultra-34/s3": {
+      "vote": "no",
+      "reasons": [
+        "not enough change"
+      ],
+      "comment": "",
+      "history": [
+        {
+          "at": 1792659908151,
+          "reason": "REMAKE: not enough change"
+        }
+      ],
+      "updatedAt": 1792659908151,
+      "savedAt": "2026-10-22T09:05:07.560Z"
+    }
+  },
+  "updatedAt": "2026-10-22T09:05:07.560Z"
+}

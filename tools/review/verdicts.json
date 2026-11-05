@@ -1,0 +1,269 @@
+{
+  "version": 1,
+  "items": {
+    "riftstallion-35/legend2-G": {
+      "vote": "yes",
+      "reasons": [],
+      "comment": "SHIPPED in v0.144 as 35-s3 (Legend), upscaled to 1408",
+      "shipped": "v0.144",
+      "history": [
+        {
+          "at": 1792649056610,
+          "reason": "CONFIRM — SHIPPED v0.144 (commit ac6122c)"
+        }
+      ],
+      "updatedAt": 1792649056610,
+      "savedAt": "2026-10-22T06:04:16.685Z",
+      "stamp": "f3a742b524eb"
+    },
+    "riftstallion-35/adol-A": {
+      "vote": "yes",
+      "reasons": [],
+      "comment": "SHIPPED in v0.144 as 35-s2 (Adolescent)",
+      "shipped": "v0.144",
+      "history": [
+        {
+          "at": 1792649056610,
+          "reason": "CONFIRM — SHIPPED v0.144 (commit ac6122c)"
+        }
+      ],
+      "updatedAt": 1792649056610,
+      "savedAt": "2026-10-22T06:04:16.698Z",
+      "stamp": "3eefa82ebfdd"
+    },
+    "ultra-34/s2": {
+      "cleared": true,
+      "stale": true,
+      "stamp": "69e0a5b76c8b",
+      "updatedAt": 1792677579795,
+      "history": [
+        {
+          "at": 1792677579795,
+          "reason": "art changed — old verdict dropped"
+        },
+        {
+          "at": 1792677237155,
+          "reason": "REPLACED — v0.145 (commit f2dae89)"
+        },
+        {
+          "at": 1792659906078,
+          "reason": "REMAKE: not enough change"
+        },
+        {
+          "at": 1792659904808,
+          "reason": "cleared vote"
+        },
+        {
+          "at": 1792659902295,
+          "reason": "REMAKE: not enough change"
+        }
+      ]
+    },
+    "ultra-34/s3": {
+      "cleared": true,
+      "stale": true,
+      "stamp": "53cb06bfae20",
+      "updatedAt": 1792677702519,
+      "history": [
+        {
+          "at": 1792677702519,
+          "reason": "REPLACED — v0.146 (commit aa8f8fa)"
+        },
+        {
+          "at": 1792677695368,
+          "reason": "art changed — old verdict dropped"
+        },
+        {
+          "at": 1792659908151,
+          "reason": "REMAKE: not enough change"
+        }
+      ],
+      "shipped": "v0.146",
+      "comment": "REPLACED in v0.146 by R3 Legend B (kindlekin-34 / r3-legend-B); this REMAKE vote was for the old art",
+      "savedAt": "2026-10-22T14:01:42.519Z"
+    },
+    "kindlekin-34/r2-adol-B": {
+      "vote": "yes",
+      "reasons": [],
+      "comment": "SHIPPED in v0.145 as 34-s2 (Adolescent, Tea Apprentice), upscaled to 1408",
+      "shipped": "v0.145",
+      "history": [
+        {
+          "at": 1792677237155,
+          "reason": "CONFIRM — SHIPPED v0.145 (commit f2dae89)"
+        }
+      ],
+      "updatedAt": 1792677237155,
+      "savedAt": "2026-10-22T13:53:57.157Z",
+      "stamp": "37484950a73e"
+    },
+    "kindlekin-34/r3-legend-B": {
+      "vote": "yes",
+      "reasons": [],
+      "comment": "SHIPPED in v0.146 as 34-s3 (Legend), plant removed, upscaled to 1408",
+      "history": [
+        {
+          "at": 1792677702519,
+          "reason": "CONFIRM — SHIPPED v0.146 (commit aa8f8fa)"
+        },
+        {
+          "at": 1792677539086,
+          "reason": "CONFIRM"
+        }
+      ],
+      "updatedAt": 1792677702519,
+      "savedAt": "2026-10-22T14:01:42.519Z",
+      "stamp": "edb48722ff4e",
+      "shipped": "v0.146"
+    },
+    "ironmaw-38/pick-s2-C": {
+      "vote": "yes",
+      "reasons": [],
+      "comment": "SHIPPED in v0.147 as 38-s2 (Adolescent)",
+      "shipped": "v0.147",
+      "history": [
+        {
+          "at": 1792732781054,
+          "reason": "CONFIRM — SHIPPED v0.147 (commit a91dac2)"
+        }
+      ],
+      "updatedAt": 1792732781054,
+      "stamp": "e995d5455700",
+      "savedAt": "2026-10-23T05:19:41.072Z"
+    },
+    "ironmaw-38/legend-C": {
+      "vote": "yes",
+      "reasons": [],
+      "comment": "SHIPPED in v0.147 as 38-s3 (Legend), upscaled to 1408",
+      "shipped": "v0.147",
+      "history": [
+        {
+          "at": 1792732781054,
+          "reason": "CONFIRM — SHIPPED v0.147 (commit a91dac2)"
+        }
+      ],
+      "updatedAt": 1792732781054,
+      "stamp": "7ae747d73c10",
+      "savedAt": "2026-10-23T05:19:41.090Z"
+    },
+    "mossback-24/adol-D": {
+      "vote": "yes",
+      "reasons": [],
+      "comment": "SHIPPED in v0.147 as 24-s2 (Adolescent), 768",
+      "shipped": "v0.147",
+      "history": [
+        {
+          "at": 1792732781054,
+          "reason": "CONFIRM — SHIPPED v0.147 (commit a91dac2)"
+        }
+      ],
+      "updatedAt": 1792732781054,
+      "stamp": "e407e7a5354b",
+      "savedAt": "2026-10-23T05:19:41.103Z"
+    },
+    "mossback-24/legend-C": {
+      "vote": "yes",
+      "reasons": [],
+      "comment": "SHIPPED in v0.147 as 24-s3 (Legend), 768",
+      "shipped": "v0.147",
+      "history": [
+        {
+          "at": 1792732781054,
+          "reason": "CONFIRM — SHIPPED v0.147 (commit a91dac2)"
+        }
+      ],
+      "updatedAt": 1792732781054,
+      "stamp": "4537d7e0bc41",
+      "savedAt": "2026-10-23T05:19:41.114Z"
+    },
+    "palevow-46/pick-s2-C": {
+      "vote": "yes",
+      "reasons": [],
+      "comment": "SHIPPED in v0.148 as 46-s2 (Adolescent), 1408",
+      "shipped": "v0.148",
+      "history": [
+        {
+          "at": 1792736252263,
+          "reason": "CONFIRM — SHIPPED v0.148 (commit dde4522)"
+        }
+      ],
+      "updatedAt": 1792736252263,
+      "stamp": "42bc21b6b3b5",
+      "savedAt": "2026-10-23T06:17:32.393Z"
+    },
+    "palevow-46/legend-D": {
+      "vote": "yes",
+      "reasons": [],
+      "comment": "SHIPPED in v0.148 as 46-s3 (Legend), 1408",
+      "shipped": "v0.148",
+      "history": [
+        {
+          "at": 1792736252263,
+          "reason": "CONFIRM — SHIPPED v0.148 (commit dde4522)"
+        }
+      ],
+      "updatedAt": 1792736252263,
+      "stamp": "e955d7b18c10",
+      "savedAt": "2026-10-23T06:17:32.448Z"
+    },
+    "quartzarch-48/legend-E": {
+      "vote": "yes",
+      "reasons": [],
+      "comment": "Ash cancelled this confirm 2026-11-05, remake requested (still in app v0.148)",
+      "shipped": "v0.148",
+      "history": [
+        {
+          "at": 1792736252263,
+          "reason": "CONFIRM — SHIPPED v0.148 (commit dde4522)"
+        },
+        {
+          "at": 1793897923610,
+          "reason": "Ash cancelled this confirm 2026-11-05, remake requested"
+        }
+      ],
+      "updatedAt": 1793897923610,
+      "stamp": "4080261fa179",
+      "savedAt": "2026-10-23T06:17:32.475Z"
+    },
+    "quartzarch-48/adol-E": {
+      "cleared": true,
+      "stale": true,
+      "stamp": "45ecf7aa2c15",
+      "updatedAt": 1793897940209,
+      "history": [
+        {
+          "at": 1793897940209,
+          "reason": "art changed — old verdict dropped"
+        },
+        {
+          "at": 1793897923610,
+          "reason": "REMAKE (Ash 2026-11-05)"
+        }
+      ]
+    },
+    "emberpuff-drafts/05-approx-50pct.png": {
+      "vote": "yes",
+      "reasons": [],
+      "comment": "SHIPPED in v0.149 as 03-s2 (Adolescent), 768",
+      "shipped": "v0.149",
+      "history": [
+        {
+          "at": 1793896439085,
+          "reason": "CONFIRM — SHIPPED v0.149 (commit ddbf93c)"
+        },
+        {
+          "at": 1793896187785,
+          "reason": "SENT CONFIRM"
+        },
+        {
+          "at": 1793896173500,
+          "reason": "CONFIRM"
+        }
+      ],
+      "updatedAt": 1793896439085,
+      "stamp": "54dc77706c9e",
+      "savedAt": "2026-11-05T16:33:59.087Z"
+    }
+  },
+  "updatedAt": "2026-11-05T16:59:00.210Z"
+}

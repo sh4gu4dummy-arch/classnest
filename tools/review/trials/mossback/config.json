@@ -1,0 +1,13 @@
+{"root":"/workspace/mossback-trial","num":24,"name":"Mossback","setId":"mossback-24","accent":"#65a30d",
+"blurb":"Remake of s2 + s3 (old stages repeated the same front-facing pose; s2/s3 had cut-out halo edges). LOCAL ONLY. Photoreal style of the Hatchling kept; new poses, full natural scenes. Bot picks: Adolescent B (climbing onto the mossy dock-stone among lily pads), Legend A (giant elder whose shell is a blossoming island with a lantern, golden sunset pond). CONFIRM = ship; REMAKE = stays local.",
+"s2":{"pick":"B","alt":"A","options":{
+ "A":{"title":"three-quarter walk, mossy shell with a lily pad","short":"mossy walk"},
+ "B":{"title":"climbing onto the mossy dock-stone, lily pads, fern sprout","short":"dock-stone"},
+ "C":{"title":"lily-pad hat, clover moss","short":"lily-pad hat","fail":"same front-facing pose as the Hatchling (the problem we are fixing)"},
+ "D":{"title":"swimming through a sunlit pond, water-lily on shell","short":"swimming"}}},
+"s3":{"pick":"A","alt":"D","options":{
+ "A":{"title":"giant elder, blossoming island shell with lantern, golden sunset","short":"island elder"},
+ "B":{"title":"on the dock-stone under a giant floating lily-pad halo","short":"lily halo","fail":"near-copy of Adolescent B's pose and rock; halo reads as a floating lily pad"},
+ "C":{"title":"colossal swimmer with a garden shell and golden koi","short":"koi garden"},
+ "D":{"title":"twilight elder, glowing willow and moss veins, moon","short":"moonlit willow"},
+ "E":{"title":"sleeping island-turtle in a lily lake at dawn, birds on the shell","short":"sleeping island"}}}}

@@ -1,0 +1,194 @@
+{
+  "id": "emberpuff-drafts",
+  "title": "Emberpuff #03",
+  "root": "/workspace/emberpuff-s1-s2-drafts",
+  "created": "2026-10-01",
+  "auto": true,
+  "aspect": "16/9",
+  "ultra": 3,
+  "details": "Adolescent E (05-approx-50pct) SHIPPED in v0.149 as 03-s2; the other drafts are done (not chosen). Local-only drafts from /workspace/emberpuff-s1-s2-drafts (not in the app). The folder is listed automatically, so new files show up on reload. Drafts are in-between steps from the Hatchling toward the current Adolescent (the % is how far along).",
+  "itemRules": [
+    {
+      "match": "^05-approx-50pct\\.png$",
+      "stage": 2,
+      "role": "current",
+      "letter": "E",
+      "title": "Now in app: Adolescent E",
+      "desc": "About 50% of the way from the Hatchling to the old Adolescent: fiery mane, cracked-lava forelegs, flame tail",
+      "shipped": "v0.149",
+      "note": "Ash confirmed; SHIPPED as 03-s2 in v0.149 (commit ddbf93c), square crop at 768"
+    },
+    {
+      "match": "^ref-s2\\.jpg$",
+      "stage": 2,
+      "role": "reference",
+      "group": "before",
+      "title": "Before: old Adolescent (replaced in v0.149)"
+    },
+    {
+      "match": "^01\\-approx\\-10pct\\.png$",
+      "stage": 2,
+      "role": "draft",
+      "desc": "About 10% of the way from the Hatchling to the current Adolescent",
+      "letter": "A",
+      "done": "Ash picked Adolescent E (05-approx-50pct)"
+    },
+    {
+      "match": "^02\\-approx\\-20pct\\.png$",
+      "stage": 2,
+      "role": "draft",
+      "desc": "About 20% of the way from the Hatchling to the current Adolescent",
+      "letter": "B",
+      "done": "Ash picked Adolescent E (05-approx-50pct)"
+    },
+    {
+      "match": "^03\\-approx\\-30pct\\.png$",
+      "stage": 2,
+      "role": "draft",
+      "desc": "About 30% of the way from the Hatchling to the current Adolescent",
+      "letter": "C",
+      "done": "Ash picked Adolescent E (05-approx-50pct)"
+    },
+    {
+      "match": "^04\\-approx\\-40pct\\.png$",
+      "stage": 2,
+      "role": "draft",
+      "desc": "About 40% of the way from the Hatchling to the current Adolescent",
+      "letter": "D",
+      "done": "Ash picked Adolescent E (05-approx-50pct)"
+    },
+    {
+      "match": "^06\\-approx\\-60pct\\.png$",
+      "stage": 2,
+      "role": "draft",
+      "desc": "About 60% of the way from the Hatchling to the current Adolescent",
+      "letter": "F",
+      "done": "Ash picked Adolescent E (05-approx-50pct)"
+    },
+    {
+      "match": "^07\\-approx\\-70pct\\.png$",
+      "stage": 2,
+      "role": "draft",
+      "desc": "About 70% of the way from the Hatchling to the current Adolescent",
+      "letter": "G",
+      "done": "Ash picked Adolescent E (05-approx-50pct)"
+    },
+    {
+      "match": "^08\\-approx\\-80pct\\.png$",
+      "stage": 2,
+      "role": "draft",
+      "desc": "About 80% of the way from the Hatchling to the current Adolescent",
+      "letter": "H",
+      "done": "Ash picked Adolescent E (05-approx-50pct)"
+    },
+    {
+      "match": "^09\\-approx\\-90pct\\.png$",
+      "stage": 2,
+      "role": "draft",
+      "desc": "About 90% of the way from the Hatchling to the current Adolescent",
+      "letter": "I",
+      "done": "Ash picked Adolescent E (05-approx-50pct)"
+    },
+    {
+      "match": "^10\\-smooth\\-45pct\\-alt\\.png$",
+      "stage": 2,
+      "role": "draft",
+      "desc": "About 45% of the way, smoother alternative",
+      "letter": "J",
+      "done": "Ash picked Adolescent E (05-approx-50pct)"
+    },
+    {
+      "match": "^gradual/01\\.png$",
+      "stage": 2,
+      "role": "draft",
+      "desc": "Gradual series, step 01",
+      "letter": "K",
+      "done": "Ash picked Adolescent E (05-approx-50pct)"
+    },
+    {
+      "match": "^gradual/02\\.png$",
+      "stage": 2,
+      "role": "draft",
+      "desc": "Gradual series, step 02",
+      "letter": "L",
+      "done": "Ash picked Adolescent E (05-approx-50pct)"
+    },
+    {
+      "match": "^gradual/03\\.png$",
+      "stage": 2,
+      "role": "draft",
+      "desc": "Gradual series, step 03",
+      "letter": "M",
+      "done": "Ash picked Adolescent E (05-approx-50pct)"
+    },
+    {
+      "match": "^gradual/05\\-larger\\-tail\\-flame\\.png$",
+      "stage": 2,
+      "role": "draft",
+      "desc": "Gradual series, step 05: larger tail flame",
+      "letter": "N",
+      "done": "Ash picked Adolescent E (05-approx-50pct)"
+    },
+    {
+      "match": "^ref-s1\\.jpg$",
+      "stage": 1,
+      "role": "current",
+      "title": "Current Hatchling"
+    },
+    {
+      "match": "stage1-source",
+      "role": "reference",
+      "group": "extras",
+      "title": "Stage 1 source (same picture as the Hatchling)"
+    },
+    {
+      "match": "approx-(\\d+)pct",
+      "stage": 2,
+      "role": "draft",
+      "desc": "About $1% of the way from the Hatchling to the current Adolescent",
+      "done": "Ash picked Adolescent E (05-approx-50pct)"
+    },
+    {
+      "match": "smooth-(\\d+)pct-alt",
+      "stage": 2,
+      "role": "draft",
+      "desc": "About $1% of the way, smoother alternative",
+      "done": "Ash picked Adolescent E (05-approx-50pct)"
+    },
+    {
+      "match": "gradual/(\\d+)-larger-tail-flame",
+      "stage": 2,
+      "role": "draft",
+      "desc": "Gradual series, step $1: larger tail flame",
+      "done": "Ash picked Adolescent E (05-approx-50pct)"
+    },
+    {
+      "match": "gradual/(\\d+)",
+      "stage": 2,
+      "role": "draft",
+      "desc": "Gradual series, step $1",
+      "done": "Ash picked Adolescent E (05-approx-50pct)"
+    },
+    {
+      "match": ".",
+      "stage": 2,
+      "role": "draft",
+      "done": "Ash picked Adolescent E (05-approx-50pct)"
+    }
+  ],
+  "autoLetters": true,
+  "groups": [
+    {
+      "id": "before",
+      "title": "Before the remake (s2 replaced v0.149)",
+      "done": "reference: the art before this rework"
+    },
+    {
+      "id": "extras",
+      "title": "Extras (nothing to vote)"
+    }
+  ],
+  "shipped": "v0.149",
+  "headline": "Emberpuff #03: SHIPPED v0.149. Adolescent E is now in the app. Hatchling and Legend unchanged.",
+  "coverItem": "05-approx-50pct.png"
+}

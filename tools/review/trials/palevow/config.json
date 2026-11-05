@@ -1,0 +1,13 @@
+{"root":"/workspace/palevow-trial","num":46,"name":"Palevow","setId":"palevow-46","accent":"#3b82f6",
+"blurb":"Remake of s2 + s3 (old stages were washed-out gold cathedral scenes that looked alike). LOCAL ONLY. Painterly porcelain style + friendly big-eyed face of the Relic Squire kept; color moved to sky-blue / sapphire so stages read apart. Bot picks: Adolescent A (striding squire with oath-scroll and shield, sunny ivy courtyard), Legend A (oath-knight raising a shining sword under a halo in a sapphire stained-glass cathedral, glowing blank scroll aura). CONFIRM = ship; REMAKE = stays local.",
+"s2":{"pick":"A","alt":"C","options":{
+ "A":{"title":"striding squire, oath-scroll with blue ribbon, shield, ivy courtyard","short":"courtyard stride"},
+ "B":{"title":"kneeling vow in a flower meadow, blank scroll, practice sword","short":"meadow vow","note":"calmer pose, less 'more active' than A/C"},
+ "C":{"title":"leaping training swing, teal cape, scroll in belt pouch, training yard","short":"training leap"},
+ "D":{"title":"lantern-bearer on a stone bridge at dusk, rose cape, fireflies","short":"lantern bridge","note":"proportions read younger/chibi - weaker step up from the Hatchling"}}},
+"s3":{"pick":"A","alt":"E","options":{
+ "A":{"title":"sword raised under a halo, sapphire stained-glass cathedral, glowing scroll aura","short":"cathedral halo"},
+ "B":{"title":"sword planted on a peak at sunrise, light-ribbon aura, cathedral spires","short":"sunrise peak"},
+ "C":{"title":"glowing shield + scroll under a starry aurora, floating scrolls","short":"aurora shield","fail":"floating scrolls carry scribble lines that read as writing (letter-like text)"},
+ "D":{"title":"winged knight with halo striding down a red-carpet nave","short":"winged nave","note":"backdrop pale cream/gold - closest to the old washed-out look; weakest at thumbnail"},
+ "E":{"title":"leaping with a blazing sword, giant blank scroll trail, sea cathedral","short":"sky leap","note":"pose echoes Adolescent C's leap - if Ash picks Adol C, prefer Legend A or B"}}}}

@@ -2,6 +2,8 @@
 
 You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby classroom app.
 
+**Review tooling now in repo (docs/tools only, app still v0.149):** the Ash vote-site pipeline (build/publish scripts, server, `remake-tool.py`, Playwright `test/pages-test.cjs`, per-set `sets/*/set.json`, `verdicts.json`, `history.jsonl`, trial configs) lives in `tools/review/` — see `tools/review/README.md` and `RECOVERED.md`. Draft images stay on the public review repo / box, not here. Old handoff notes: `docs/archive/handoff-2026-09/`.
+
 **v0.149.** This file ships in **every** push.
 
 **Replacement agent / handover:** read [HANDOVER.md](HANDOVER.md) (who's who, Ash's rules, memory, status, waiting-on-Ash, secrets locations, scars). Art votes with Ash's exact words: [art-decisions.md](art-decisions.md).

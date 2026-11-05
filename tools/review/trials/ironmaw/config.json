@@ -1,0 +1,14 @@
+{"root":"/workspace/ironmaw-trial","num":38,"name":"Ironmaw","setId":"ironmaw-38","accent":"#dc2626",
+"blurb":"Remake of s2 + s3 (old stages had the same face and pose; s3 only added lava). LOCAL ONLY. Painterly storybook style of the Hatchling kept, warmer and brighter. Bot picks: Adolescent A (anvil swing with sparks), Legend A (adult warchief raising a glowing hammer by the great bell at sunrise). CONFIRM = ship; REMAKE = stays local.",
+"s2":{"pick":"A","alt":"C","options":{
+ "A":{"title":"teen smith mid-swing at the anvil, sparks","short":"anvil swing"},
+ "B":{"title":"walking out carrying a bronze bell, hinge medal","short":"carrying bell","note":"looks barely older than s1"},
+ "C":{"title":"kneeling to fit a glowing hinge on a door, tongue out","short":"fitting hinge","note":"boot slightly cut at bottom; darker"},
+ "D":{"title":"hammer on shoulder, braid, chest plate, sunset","short":"hammer on shoulder","note":"style drift: sketchy parchment vignette backdrop"}}},
+"s3":{"pick":"A","alt":"E","options":{
+ "A":{"title":"adult warchief on the battlement, glowing hammer raised, great bell, sunrise","short":"bell tower hero"},
+ "B":{"title":"striking a giant bell, golden sound waves","short":"bell strike","fail":"hammer reads as two hammers through the bell; legs cropped"},
+ "C":{"title":"on a throne of anvils and hinges, crown, offers glowing hinge","short":"hinge throne","note":"hinge reads like a cross; knees cropped; darker"},
+ "D":{"title":"slamming the anvil, golden shockwave","short":"anvil slam","fail":"face reads fierce/angry (scary)"},
+ "E":{"title":"at the repaired castle gate, hand on the hinge, bells in towers","short":"gate keeper","note":"boots cut off at the bottom"},
+ "F":{"title":"laughing anvil strike at dusk","short":"laughing anvil","fail":"near-copy of Adolescent A's pose; holds hot bar bare-handed"}}}}

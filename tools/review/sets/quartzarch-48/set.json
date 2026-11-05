@@ -1,0 +1,199 @@
+{
+  "id": "quartzarch-48",
+  "title": "Quartzarch #48",
+  "root": "/workspace/quartzarch-trial",
+  "created": "2026-10-22",
+  "groups": [
+    {
+      "id": "before",
+      "title": "Before the remake (Legend replaced v0.148)",
+      "done": "reference: the art before this rework"
+    },
+    {
+      "id": "extras",
+      "title": "Extras: review sheets (nothing to vote)"
+    }
+  ],
+  "items": [
+    {
+      "id": "old-s1",
+      "stage": 1,
+      "role": "current",
+      "title": "Hatchling (unchanged)",
+      "file": "old/48-s1.jpg"
+    },
+    {
+      "id": "old-s2",
+      "stage": 2,
+      "role": "current",
+      "title": "Current Adolescent (still in app)",
+      "file": "old/48-s2.jpg"
+    },
+    {
+      "id": "pick-s2-A",
+      "stage": 2,
+      "role": "draft",
+      "letter": "A",
+      "title": "Adolescent A",
+      "desc": "prism student, cube splits a rainbow fan",
+      "file": "picks/48-s2.jpg",
+      "thumb": "picks/board/48-s2.jpg",
+      "done": "rejected: too girly (Ash)",
+      "rejected": "too girly"
+    },
+    {
+      "id": "adol-B",
+      "stage": 2,
+      "role": "draft",
+      "letter": "B",
+      "title": "Adolescent B",
+      "desc": "running with wand, pink crystal cape",
+      "file": "options/s2-B.jpg",
+      "note": "face drifted to peach human skin (style drift)",
+      "done": "rejected: too girly (Ash)",
+      "rejected": "too girly"
+    },
+    {
+      "id": "adol-C",
+      "stage": 2,
+      "role": "draft",
+      "letter": "C",
+      "title": "Adolescent C",
+      "desc": "levitating, cube + satchel, pink shards",
+      "file": "options/s2-C.jpg",
+      "done": "rejected: too girly (Ash)",
+      "rejected": "too girly"
+    },
+    {
+      "id": "pick-s2-D",
+      "stage": 2,
+      "role": "draft",
+      "letter": "D",
+      "title": "Adolescent D",
+      "desc": "prism staff, pink armor plates, rainbow beam",
+      "file": "picks/48-s2-alt-D.jpg",
+      "thumb": "picks/board/48-s2-alt-D.jpg",
+      "done": "rejected: too girly (Ash)",
+      "rejected": "too girly"
+    },
+    {
+      "id": "adol-E",
+      "stage": 2,
+      "role": "draft",
+      "letter": "E",
+      "title": "Adolescent E",
+      "desc": "sturdy crystal-rock golem, amethyst dragon spines, bold fists-up stance",
+      "file": "options/s2-E.jpg",
+      "note": "Ash 2026-11-05: \"i like brighter color purple, stronger feel, but the current one taller is good this one is too short, and too white/bright can't see the colors clearly, contrast better in this one.\"",
+      "done": "REMAKE requested (Ash): too short, too white/bright",
+      "rejected": "remake requested"
+    },
+    {
+      "id": "adol-F",
+      "stage": 2,
+      "role": "draft",
+      "letter": "F",
+      "title": "Adolescent F",
+      "desc": "tall amethyst crystal-armor teen, deep purple, strong contrast, fists ready",
+      "file": "options/s2-F.jpg",
+      "note": "would replace Adolescent. Remake of E per Ash: tall like the current one, E's brighter purple + sturdy feel, fewer white highlights, no pink/sparkles"
+    },
+    {
+      "id": "old-s3",
+      "role": "reference",
+      "title": "Old Legend (replaced v0.148)",
+      "file": "old/48-s3.jpg",
+      "group": "before",
+      "replaced": "v0.148",
+      "done": "replaced in v0.148"
+    },
+    {
+      "id": "pick-s3-A",
+      "stage": 3,
+      "role": "draft",
+      "letter": "A",
+      "title": "Legend A",
+      "desc": "shard halo ring, rainbow burst, arms wide",
+      "file": "picks/48-s3-alt-A.jpg",
+      "thumb": "picks/board/48-s3-alt-A.jpg",
+      "pick": "runner-up",
+      "done": "Ash picked Legend E"
+    },
+    {
+      "id": "legend-B",
+      "stage": 3,
+      "role": "draft",
+      "letter": "B",
+      "title": "Legend B",
+      "desc": "crowned battlemage with crystal wings and greatstaff",
+      "file": "options/s3-B.jpg",
+      "note": "pose very close to Adolescent D",
+      "done": "Ash picked Legend E"
+    },
+    {
+      "id": "pick-s3-C",
+      "stage": 3,
+      "role": "draft",
+      "letter": "C",
+      "title": "Legend C",
+      "desc": "crowned archmage on a glowing cube throne",
+      "file": "picks/48-s3.jpg",
+      "thumb": "picks/board/48-s3.jpg",
+      "pick": "bot",
+      "done": "Ash picked Legend E"
+    },
+    {
+      "id": "legend-D",
+      "stage": 3,
+      "role": "draft",
+      "letter": "D",
+      "title": "Legend D",
+      "desc": "leaping, giant prism, rainbow spray",
+      "file": "options/s3-D.jpg",
+      "note": "body still small/chibi",
+      "done": "Ash picked Legend E"
+    },
+    {
+      "id": "legend-E",
+      "stage": 3,
+      "role": "current",
+      "letter": "E",
+      "title": "Now in app: Legend E",
+      "desc": "light-cathedral rose window, arms raised",
+      "file": "options/s3-E.jpg",
+      "note": "Ash cancelled this confirm 2026-11-05, remake requested. Still in app (shipped v0.148, commit dde4522) until a new Legend is confirmed.",
+      "shipped": "v0.148"
+    },
+    {
+      "id": "legend-F",
+      "stage": 3,
+      "role": "draft",
+      "letter": "F",
+      "title": "Legend F",
+      "desc": "towering amethyst crystal titan-mage, shard crown, giant crystal greatstaff, crystal cathedral",
+      "file": "options/s3-F.jpg",
+      "note": "would replace Legend. Bigger + more dramatic step up from Adolescent F, same purple crystal palette, not girly"
+    },
+    {
+      "id": "sheet-review",
+      "role": "reference",
+      "group": "extras",
+      "title": "Old vs new review sheet",
+      "file": "review.png",
+      "done": "review sheet"
+    },
+    {
+      "id": "sheet-phone",
+      "role": "reference",
+      "group": "extras",
+      "title": "Phone check (390x844)",
+      "file": "phone-check.png",
+      "done": "review sheet"
+    }
+  ],
+  "coverItem": "legend-E",
+  "details": "Adolescent E: REMAKE (too short, too white/bright). New Adolescent F keeps E's purple + sturdy feel at the current Adolescent's tall height. Legend E is still in the app (v0.148) but Ash cancelled that confirm 2026-11-05; new Legend F would replace it. Keep current is available for both stages. Nothing ships until Ash confirms.",
+  "ultra": 48,
+  "partial": "v0.148 (Legend)",
+  "headline": "Quartzarch #48: Ash asked for a remake of both. Vote on Adolescent F and Legend F."
+}

@@ -1,0 +1,204 @@
+{
+  "id": "riftstallion-35",
+  "title": "Riftstallion #35",
+  "blurb": "SHIPPED in v0.144 (commit ac6122c): s1 unchanged, s2 = Adolescent A, s3 = Legend r2 G. The other options are kept here for reference. CONFIRM = ship to main; REMAKE = stays local until confirmed.",
+  "root": "/workspace/riftstallion-trial",
+  "created": "2026-10-22",
+  "groups": [
+    {
+      "id": "shipped",
+      "title": "Shipped in v0.144 (in the app now)"
+    },
+    {
+      "id": "old",
+      "title": "Before v0.144 (replaced)"
+    },
+    {
+      "id": "picks",
+      "title": "Bot picks (before Ash chose)"
+    },
+    {
+      "id": "adol",
+      "title": "Adolescent options (Comet Yearling)"
+    },
+    {
+      "id": "legend1",
+      "title": "Legend options, round 1"
+    },
+    {
+      "id": "legend2",
+      "title": "Legend options, round 2 (grown-up head)"
+    },
+    {
+      "id": "clip",
+      "title": "Test clip"
+    }
+  ],
+  "items": [
+    {
+      "id": "ship-s1",
+      "group": "shipped",
+      "title": "Hatchling (s1, unchanged)",
+      "shipped": "in app",
+      "url": "/avatars/ultra/35-s1.jpg",
+      "thumbUrl": "/avatars/ultra/board/35-s1.jpg",
+      "note": "live file from the repo (public/avatars/ultra)"
+    },
+    {
+      "id": "ship-s2",
+      "group": "shipped",
+      "title": "Comet Yearling (s2) = Adolescent A",
+      "shipped": "v0.144",
+      "url": "/avatars/ultra/35-s2.jpg",
+      "thumbUrl": "/avatars/ultra/board/35-s2.jpg",
+      "note": "live file from the repo (public/avatars/ultra)"
+    },
+    {
+      "id": "ship-s3",
+      "group": "shipped",
+      "title": "Galaxy Stallion (s3) = Legend r2 G",
+      "shipped": "v0.144",
+      "url": "/avatars/ultra/35-s3.jpg",
+      "thumbUrl": "/avatars/ultra/board/35-s3.jpg",
+      "note": "live file from the repo (public/avatars/ultra)"
+    },
+    {
+      "id": "old-s1",
+      "group": "old",
+      "title": "Old Hatchling",
+      "file": "old/35-s1.jpg"
+    },
+    {
+      "id": "old-s2",
+      "group": "old",
+      "title": "Old Adolescent",
+      "file": "old/35-s2.jpg"
+    },
+    {
+      "id": "old-s3",
+      "group": "old",
+      "title": "Old Legend",
+      "file": "old/35-s3.jpg"
+    },
+    {
+      "id": "pick-s1",
+      "group": "picks",
+      "title": "Hatchling (kept as-is)",
+      "file": "picks/35-s1.jpg"
+    },
+    {
+      "id": "pick-s2",
+      "group": "picks",
+      "title": "Comet Yearling = Adolescent A",
+      "file": "picks/35-s2.jpg",
+      "note": "bot pick"
+    },
+    {
+      "id": "pick-s3-v2",
+      "group": "picks",
+      "title": "Galaxy Stallion v2 = Legend round 2 E",
+      "file": "picks-v2/35-s3.jpg",
+      "note": "bot pick, not shipped (Ash chose G)"
+    },
+    {
+      "id": "adol-A",
+      "group": "adol",
+      "title": "Adolescent A (trot)",
+      "file": "options/s2-optA.jpg",
+      "note": "Ash chose this; SHIPPED as s2 in v0.144",
+      "shipped": "v0.144"
+    },
+    {
+      "id": "adol-B",
+      "group": "adol",
+      "title": "Adolescent B (standing)",
+      "file": "options/s2-optB.jpg"
+    },
+    {
+      "id": "adol-C",
+      "group": "adol",
+      "title": "Adolescent C (leap)",
+      "file": "options/s2-optC.jpg"
+    },
+    {
+      "id": "legend1-A",
+      "group": "legend1",
+      "title": "Legend r1 A (rearing)",
+      "file": "options/s3-optA.jpg",
+      "note": "round 1 pick"
+    },
+    {
+      "id": "legend1-B",
+      "group": "legend1",
+      "title": "Legend r1 B (proud stand)",
+      "file": "options/s3-optB.jpg"
+    },
+    {
+      "id": "legend1-C",
+      "group": "legend1",
+      "title": "Legend r1 C (leap)",
+      "file": "options/s3-optC.jpg"
+    },
+    {
+      "id": "legend2-A",
+      "group": "legend2",
+      "title": "Legend r2 A",
+      "file": "options-v2/s3v2-A.jpg",
+      "note": "near-copy of r1 A"
+    },
+    {
+      "id": "legend2-B",
+      "group": "legend2",
+      "title": "Legend r2 B",
+      "file": "options-v2/s3v2-B.jpg",
+      "note": "near-copy of r1 A"
+    },
+    {
+      "id": "legend2-C",
+      "group": "legend2",
+      "title": "Legend r2 C",
+      "file": "options-v2/s3v2-C.jpg",
+      "note": "near-copy of r1 A"
+    },
+    {
+      "id": "legend2-D",
+      "group": "legend2",
+      "title": "Legend r2 D",
+      "file": "options-v2/s3v2-D.jpg",
+      "note": "near-copy of r1 A"
+    },
+    {
+      "id": "legend2-E",
+      "group": "legend2",
+      "title": "Legend r2 E (adult head)",
+      "file": "options-v2/s3v2-E.jpg",
+      "note": "bot pick"
+    },
+    {
+      "id": "legend2-F",
+      "group": "legend2",
+      "title": "Legend r2 F",
+      "file": "options-v2/s3v2-F.jpg",
+      "note": "lost the rearing pose"
+    },
+    {
+      "id": "legend2-G",
+      "group": "legend2",
+      "title": "Legend r2 G (text-only)",
+      "file": "options-v2/s3v2-G.jpg",
+      "note": "Ash chose this; SHIPPED as s3 in v0.144 (upscaled to 1408)",
+      "shipped": "v0.144"
+    },
+    {
+      "id": "clip-legend-test",
+      "group": "clip",
+      "title": "Legend test clip (from r1 A)",
+      "file": "legend-test.mp4",
+      "kind": "video",
+      "poster": "frames/t0.2.jpg",
+      "note": "6s, made from the round-1 Legend"
+    }
+  ],
+  "coverItem": "legend2-G",
+  "shipped": "v0.144"
+}

@@ -1,0 +1,170 @@
+{
+  "id": "palevow-46",
+  "title": "Palevow #46",
+  "root": "/workspace/palevow-trial",
+  "created": "2026-10-22",
+  "groups": [
+    {
+      "id": "before",
+      "title": "Before the remake (s2 + s3 replaced v0.148)",
+      "done": "reference: the art before this rework"
+    },
+    {
+      "id": "extras",
+      "title": "Extras: review sheets (nothing to vote)"
+    }
+  ],
+  "items": [
+    {
+      "id": "old-s1",
+      "stage": 1,
+      "role": "current",
+      "title": "Hatchling (unchanged)",
+      "file": "old/46-s1.jpg"
+    },
+    {
+      "id": "old-s2",
+      "role": "reference",
+      "title": "Old Adolescent (replaced v0.148)",
+      "file": "old/46-s2.jpg",
+      "group": "before",
+      "replaced": "v0.148",
+      "done": "replaced in v0.148"
+    },
+    {
+      "id": "pick-s2-A",
+      "stage": 2,
+      "role": "draft",
+      "letter": "A",
+      "title": "Adolescent A",
+      "desc": "striding squire, oath-scroll with blue ribbon, shield, ivy courtyard",
+      "file": "picks/46-s2.jpg",
+      "thumb": "picks/board/46-s2.jpg",
+      "pick": "bot",
+      "done": "Ash picked Adolescent C"
+    },
+    {
+      "id": "adol-B",
+      "stage": 2,
+      "role": "draft",
+      "letter": "B",
+      "title": "Adolescent B",
+      "desc": "kneeling vow in a flower meadow, blank scroll, practice sword",
+      "file": "options/s2-B.jpg",
+      "note": "calmer pose, less 'more active' than A/C",
+      "done": "Ash picked Adolescent C"
+    },
+    {
+      "id": "pick-s2-C",
+      "stage": 2,
+      "role": "current",
+      "letter": "C",
+      "title": "Now in app: Adolescent C",
+      "desc": "leaping training swing, teal cape, scroll in belt pouch, training yard",
+      "file": "picks/46-s2-alt-C.jpg",
+      "thumb": "picks/board/46-s2-alt-C.jpg",
+      "shipped": "v0.148",
+      "note": "Ash confirmed; SHIPPED as 46-s2 in v0.148 (commit dde4522)"
+    },
+    {
+      "id": "adol-D",
+      "stage": 2,
+      "role": "draft",
+      "letter": "D",
+      "title": "Adolescent D",
+      "desc": "lantern-bearer on a stone bridge at dusk, rose cape, fireflies",
+      "file": "options/s2-D.jpg",
+      "note": "proportions read younger/chibi - weaker step up from the Hatchling",
+      "done": "Ash picked Adolescent C"
+    },
+    {
+      "id": "old-s3",
+      "role": "reference",
+      "title": "Old Legend (replaced v0.148)",
+      "file": "old/46-s3.jpg",
+      "group": "before",
+      "replaced": "v0.148",
+      "done": "replaced in v0.148"
+    },
+    {
+      "id": "pick-s3-A",
+      "stage": 3,
+      "role": "draft",
+      "letter": "A",
+      "title": "Legend A",
+      "desc": "sword raised under a halo, sapphire stained-glass cathedral, glowing scroll aura",
+      "file": "picks/46-s3.jpg",
+      "thumb": "picks/board/46-s3.jpg",
+      "pick": "bot",
+      "done": "Ash picked Legend D"
+    },
+    {
+      "id": "legend-B",
+      "stage": 3,
+      "role": "draft",
+      "letter": "B",
+      "title": "Legend B",
+      "desc": "sword planted on a peak at sunrise, light-ribbon aura, cathedral spires",
+      "file": "options/s3-B.jpg",
+      "pick": "alt",
+      "note": "Alternative to A \u2014 A's figure is small",
+      "done": "Ash picked Legend D"
+    },
+    {
+      "id": "legend-C",
+      "stage": 3,
+      "role": "draft",
+      "letter": "C",
+      "title": "Legend C",
+      "desc": "glowing shield + scroll under a starry aurora, floating scrolls",
+      "file": "options/s3-C.jpg",
+      "note": "art check FAIL: floating scrolls carry scribble lines that read as writing (letter-like text)",
+      "done": "Ash picked Legend D"
+    },
+    {
+      "id": "legend-D",
+      "stage": 3,
+      "role": "current",
+      "letter": "D",
+      "title": "Now in app: Legend D",
+      "desc": "winged knight with halo striding down a red-carpet nave",
+      "file": "options/s3-D.jpg",
+      "note": "Ash confirmed; SHIPPED as 46-s3 in v0.148 (commit dde4522)",
+      "shipped": "v0.148"
+    },
+    {
+      "id": "pick-s3-E",
+      "stage": 3,
+      "role": "draft",
+      "letter": "E",
+      "title": "Legend E",
+      "desc": "leaping with a blazing sword, giant blank scroll trail, sea cathedral",
+      "file": "picks/46-s3-alt-E.jpg",
+      "thumb": "picks/board/46-s3-alt-E.jpg",
+      "pick": "runner-up",
+      "note": "pose echoes Adolescent C's leap - if Ash picks Adol C, prefer Legend A or B",
+      "done": "Ash picked Legend D"
+    },
+    {
+      "id": "sheet-review",
+      "role": "reference",
+      "group": "extras",
+      "title": "Old vs new review sheet",
+      "file": "review.png",
+      "done": "review sheet"
+    },
+    {
+      "id": "sheet-phone",
+      "role": "reference",
+      "group": "extras",
+      "title": "Phone check (390x844)",
+      "file": "phone-check.png",
+      "done": "review sheet"
+    }
+  ],
+  "coverItem": "legend-D",
+  "details": "SHIPPED v0.148: s2 Adolescent C (leaping young knight with sword and cross shield), s3 Legend D (winged haloed paladin in a cathedral). Hatchling unchanged. Home film 46 + scrub frames are now stale (reshoot only on Ash's go).",
+  "ultra": 46,
+  "shipped": "v0.148",
+  "headline": "Palevow #46: SHIPPED v0.148. Adolescent C and Legend D are now in the app. Hatchling unchanged."
+}

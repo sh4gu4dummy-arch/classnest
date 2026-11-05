@@ -1,0 +1,38 @@
+{
+  "id": "kindlekin-34",
+  "title": "Kindlekin #34",
+  "blurb": "Remake of s2 + s3 (Ash: 'not enough change'). LOCAL ONLY, not in the app. Bot picks: s1 unchanged, s2 = Adolescent B (apprentice), s3 = Legend F (spectacles hearth-sage); runner-up Legend A (robed sage). CONFIRM = ship to main; REMAKE = stays local.",
+  "root": "/workspace/kindlekin-trial",
+  "created": "2026-10-22",
+  "groups": [
+    { "id": "old", "title": "Live today (rejected s2/s3)" },
+    { "id": "picks", "title": "Bot picks (1408px, ready to ship)" },
+    { "id": "adol", "title": "Adolescent options (Tea Apprentice)" },
+    { "id": "legend", "title": "Legend options (Hearth-Sage)" },
+    { "id": "clip", "title": "Test clip" },
+    { "id": "sheets", "title": "Review sheets" }
+  ],
+  "items": [
+    { "id": "old-s1", "group": "old", "title": "Old Hatchling", "file": "old/34-s1.jpg" },
+    { "id": "old-s2", "group": "old", "title": "Old Adolescent", "file": "old/34-s2.jpg", "note": "rejected: not enough change" },
+    { "id": "old-s3", "group": "old", "title": "Old Legend", "file": "old/34-s3.jpg", "note": "rejected: not enough change" },
+    { "id": "pick-s1", "group": "picks", "title": "Hatchling (kept as-is)", "file": "picks/34-s1.jpg", "thumb": "picks/board/34-s1.jpg" },
+    { "id": "pick-s2", "group": "picks", "title": "Tea Apprentice = Adolescent B", "file": "picks/34-s2.jpg", "thumb": "picks/board/34-s2.jpg", "note": "bot pick" },
+    { "id": "pick-s3", "group": "picks", "title": "Hearth-Sage = Legend F", "file": "picks/34-s3.jpg", "thumb": "picks/board/34-s3.jpg", "note": "bot pick" },
+    { "id": "pick-s3-alt", "group": "picks", "title": "Robed Sage = Legend A (alt)", "file": "picks/34-s3-alt-A.jpg", "thumb": "picks/board/34-s3-alt-A.jpg", "note": "runner-up" },
+    { "id": "adol-A", "group": "adol", "title": "Adolescent A (pours tea)", "file": "options/s2-optA.jpg", "note": "still cub-like body" },
+    { "id": "adol-B", "group": "adol", "title": "Adolescent B (apprentice, kettle + rune books)", "file": "options/s2-optB.jpg", "note": "bot pick" },
+    { "id": "adol-C", "group": "adol", "title": "Adolescent C (rune book)", "file": "options/s2-optC.jpg", "note": "art check: floating runes look like B / P letters" },
+    { "id": "adol-D", "group": "adol", "title": "Adolescent D (library ladder)", "file": "options/s2-optD.jpg" },
+    { "id": "legend-A", "group": "legend", "title": "Legend A (robed sage, rune steam)", "file": "options/s3-optA.jpg", "note": "runner-up" },
+    { "id": "legend-B", "group": "legend", "title": "Legend B (pours on book stack, ember tail)", "file": "options/s3-optB.jpg" },
+    { "id": "legend-C", "group": "legend", "title": "Legend C (rainy-night wanderer)", "file": "options/s3-optC.jpg" },
+    { "id": "legend-D", "group": "legend", "title": "Legend D (grown-up elder on balcony)", "file": "options/s3-optD.jpg", "note": "most realistic, but drops the tea scene" },
+    { "id": "legend-E", "group": "legend", "title": "Legend E", "file": "options/s3-optE.jpg", "note": "art check fail: near-copy of A" },
+    { "id": "legend-F", "group": "legend", "title": "Legend F (spectacles hearth-sage)", "file": "options/s3-optF.jpg", "note": "bot pick" },
+    { "id": "clip-legend-test", "group": "clip", "title": "Legend test clip (from F)", "file": "legend-test.mp4", "kind": "video", "poster": "frames/t0.2.jpg", "note": "6s, made from Legend F" },
+    { "id": "sheet-review", "group": "sheets", "title": "Old vs new sheet", "file": "review.png" },
+    { "id": "sheet-phone", "group": "sheets", "title": "Phone check (390x844)", "file": "phone-check.png" }
+  ],
+  "coverItem": "pick-s3"
+}

@@ -67,3 +67,9 @@ public/downloads/*.apk.idsig
 
 # Cinematic scrub stills — local trial only; never commit (teacher check first)
 public/avatars/ultra/scrub/
+
+# Bot / platform scratch — never GitHub (proposed in handover-recovered, pending Ash OK)
+agent-tools/
+secrets/
+.cursor/
+agent-data/

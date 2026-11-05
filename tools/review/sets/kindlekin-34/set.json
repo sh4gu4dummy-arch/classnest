@@ -1,0 +1,399 @@
+{
+  "id": "kindlekin-34",
+  "title": "Kindlekin #34",
+  "blurb": "SHIPPED: s2 Tea Apprentice (v0.145), s3 Legend B reclining sage (v0.146). Kindlekin fully remade; drafts kept for reference.",
+  "root": "/workspace/kindlekin-trial",
+  "created": "2026-10-22",
+  "groups": [
+    {
+      "id": "r3-legend",
+      "title": "Round 3 Legend (bigger change, soft s1 style)"
+    },
+    {
+      "id": "r2-picks",
+      "title": "Round 2 bot picks (1408px, soft s1 style)"
+    },
+    {
+      "id": "r2-adol",
+      "title": "Round 2 Adolescent options"
+    },
+    {
+      "id": "r2-legend",
+      "title": "Round 2 Legend options",
+      "done": "round 2 Legend — remade in round 3"
+    },
+    {
+      "id": "r2-sheets",
+      "title": "Round 2 review sheets",
+      "done": "round 2 Legend — remade in round 3"
+    },
+    {
+      "id": "old",
+      "title": "Before the remake (s2 replaced v0.145, s3 replaced v0.146)",
+      "done": "reference: the art before this rework"
+    },
+    {
+      "id": "r1",
+      "title": "Round 1 (rejected)",
+      "done": "round 1 — remade in round 2"
+    }
+  ],
+  "items": [
+    {
+      "id": "r3-pick-s3",
+      "group": "r3-legend",
+      "title": "R3 pick: Hearth-Spirit Sage = Legend C (1408)",
+      "file": "r3/picks/34-s3.jpg",
+      "thumb": "r3/picks/board/34-s3.jpg",
+      "note": "bot pick",
+      "done": true
+    },
+    {
+      "id": "r3-pick-s3-alt",
+      "group": "r3-legend",
+      "title": "R3 runner-up: Flame-Aura = Legend A (1408)",
+      "file": "r3/picks/34-s3-alt-A.jpg",
+      "thumb": "r3/picks/board/34-s3-alt-A.jpg",
+      "note": "runner-up; boldest at thumbnail",
+      "done": true
+    },
+    {
+      "id": "r3-shipped-s3",
+      "group": "r3-legend",
+      "title": "SHIPPED s3 = R3 Legend B, plant removed (1408)",
+      "file": "r3/picks/34-s3-B.jpg",
+      "thumb": "r3/picks/board/34-s3-B.jpg",
+      "shipped": "v0.146",
+      "note": "exact file shipped in v0.146"
+    },
+    {
+      "id": "r3-legend-A",
+      "group": "r3-legend",
+      "title": "R3 Legend A (arms up, giant flame-panda aura, ember tail)",
+      "file": "r3/options/A.jpg",
+      "note": "runner-up",
+      "done": true
+    },
+    {
+      "id": "r3-legend-B",
+      "group": "r3-legend",
+      "title": "R3 Legend B (reclining on pillows, winged teapot)",
+      "file": "r3/options/B.jpg",
+      "note": "Ash confirmed; SHIPPED as 34-s3 in v0.146 (commit aa8f8fa); stray plant cleaned out",
+      "shipped": "v0.146"
+    },
+    {
+      "id": "r3-legend-C",
+      "group": "r3-legend",
+      "title": "R3 Legend C (floating meditation, ember ribbon loop, kettle on hearth)",
+      "file": "r3/options/C.jpg",
+      "note": "bot pick",
+      "done": true
+    },
+    {
+      "id": "r3-legend-D",
+      "group": "r3-legend",
+      "title": "R3 Legend D (stands on giant kettle, lantern crown)",
+      "file": "r3/options/D.jpg",
+      "note": "pose echoes the Apprentice (raised paw)",
+      "done": true
+    },
+    {
+      "id": "r3-legend-E",
+      "group": "r3-legend",
+      "title": "R3 Legend E (walking, carries winged teapot)",
+      "file": "r3/options/E.jpg",
+      "note": "weak: 3-leg walk while carrying, least majestic",
+      "done": true
+    },
+    {
+      "id": "r3-legend-F",
+      "group": "r3-legend",
+      "title": "R3 Legend F (maned guardian, teapot familiar pours)",
+      "file": "r3/options/F.jpg",
+      "note": "flames on ear tips may read odd",
+      "done": true
+    },
+    {
+      "id": "r3-sheet-review",
+      "group": "r3-legend",
+      "title": "R3 review sheet (old, s2, r2 D/E, r3)",
+      "file": "review-r3.png",
+      "done": true
+    },
+    {
+      "id": "r3-sheet-phone",
+      "group": "r3-legend",
+      "title": "R3 phone check (390x844)",
+      "file": "phone-check-r3.png",
+      "done": true
+    },
+    {
+      "id": "r2-pick-s1",
+      "group": "r2-picks",
+      "title": "Hatchling (kept as-is)",
+      "file": "r2/picks/34-s1.jpg",
+      "thumb": "r2/picks/board/34-s1.jpg",
+      "done": "Hatchling unchanged"
+    },
+    {
+      "id": "r2-pick-s2",
+      "group": "r2-picks",
+      "title": "Tea Apprentice = R2 Adolescent B",
+      "file": "r2/picks/34-s2.jpg",
+      "thumb": "r2/picks/board/34-s2.jpg",
+      "note": "Ash approved; SHIPPED as 34-s2 in v0.145 (commit f2dae89)",
+      "shipped": "v0.145"
+    },
+    {
+      "id": "r2-pick-s3",
+      "group": "r2-picks",
+      "title": "Lantern Hearth-Sage = R2 Legend D",
+      "file": "r2/picks/34-s3.jpg",
+      "thumb": "r2/picks/board/34-s3.jpg",
+      "note": "bot pick",
+      "done": "round 2 Legend — remade in round 3"
+    },
+    {
+      "id": "r2-pick-s3-alt",
+      "group": "r2-picks",
+      "title": "Tail-Halo Sage = R2 Legend E (alt)",
+      "file": "r2/picks/34-s3-alt-E.jpg",
+      "thumb": "r2/picks/board/34-s3-alt-E.jpg",
+      "note": "runner-up",
+      "done": "round 2 Legend — remade in round 3"
+    },
+    {
+      "id": "r2-adol-A",
+      "group": "r2-adol",
+      "title": "R2 Adolescent A (sitting, holds cup)",
+      "file": "r2/options/s2-A.jpg",
+      "note": "cute, but the smallest change",
+      "done": "Ash picked Adolescent B"
+    },
+    {
+      "id": "r2-adol-B",
+      "group": "r2-adol",
+      "title": "R2 Adolescent B (standing, lifts kettle)",
+      "file": "r2/options/s2-B.jpg",
+      "note": "Ash approved; SHIPPED as 34-s2 in v0.145 (commit f2dae89)",
+      "shipped": "v0.145"
+    },
+    {
+      "id": "r2-adol-C",
+      "group": "r2-adol",
+      "title": "R2 Adolescent C (trotting, tea basket)",
+      "file": "r2/options/s2-C.jpg",
+      "done": "Ash picked Adolescent B"
+    },
+    {
+      "id": "r2-adol-D",
+      "group": "r2-adol",
+      "title": "R2 Adolescent D (pours tea on cushion)",
+      "file": "r2/options/s2-D.jpg",
+      "done": "Ash picked Adolescent B"
+    },
+    {
+      "id": "r2-legend-A",
+      "group": "r2-legend",
+      "title": "R2 Legend A (caped, kettle)",
+      "file": "r2/options/s3-A.jpg",
+      "note": "art check FAIL: near-copy of Adolescent B with a cape"
+    },
+    {
+      "id": "r2-legend-B",
+      "group": "r2-legend",
+      "title": "R2 Legend B (cushion, lantern ring)",
+      "file": "r2/options/s3-B.jpg"
+    },
+    {
+      "id": "r2-legend-C",
+      "group": "r2-legend",
+      "title": "R2 Legend C (caped guardian walk)",
+      "file": "r2/options/s3-C.jpg",
+      "note": "art check FAIL: cape trim looks like cursive letters (redone as G)"
+    },
+    {
+      "id": "r2-legend-D",
+      "group": "r2-legend",
+      "title": "R2 Legend D (robed sage, lantern staff, ember tail)",
+      "file": "r2/options/s3-D.jpg",
+      "note": "bot pick"
+    },
+    {
+      "id": "r2-legend-E",
+      "group": "r2-legend",
+      "title": "R2 Legend E (arms wide, giant tail halo)",
+      "file": "r2/options/s3-E.jpg",
+      "note": "runner-up"
+    },
+    {
+      "id": "r2-legend-F",
+      "group": "r2-legend",
+      "title": "R2 Legend F (steam-cloud throne)",
+      "file": "r2/options/s3-F.jpg",
+      "note": "art check FAIL: kettle has two spouts and is cut off at the bottom"
+    },
+    {
+      "id": "r2-legend-G",
+      "group": "r2-legend",
+      "title": "R2 Legend G (C redone, plain trim)",
+      "file": "r2/options/s3-G.jpg"
+    },
+    {
+      "id": "r2-sheet-review",
+      "group": "r2-sheets",
+      "title": "Old vs R1 vs R2 sheet",
+      "file": "review-r2.png"
+    },
+    {
+      "id": "r2-sheet-phone",
+      "group": "r2-sheets",
+      "title": "Phone check R2 (390x844)",
+      "file": "phone-check-r2.png"
+    },
+    {
+      "id": "old-s1",
+      "group": "old",
+      "title": "Old Hatchling",
+      "file": "old/34-s1.jpg"
+    },
+    {
+      "id": "old-s2",
+      "group": "old",
+      "title": "Old Adolescent (replaced)",
+      "file": "old/34-s2.jpg",
+      "note": "REPLACED in v0.145 by R2 Adolescent B (Tea Apprentice)",
+      "replaced": "v0.145"
+    },
+    {
+      "id": "old-s3",
+      "group": "old",
+      "title": "Old Legend (replaced)",
+      "file": "old/34-s3.jpg",
+      "note": "REPLACED in v0.146 by R3 Legend B",
+      "replaced": "v0.146"
+    },
+    {
+      "id": "pick-s1",
+      "group": "r1",
+      "title": "Hatchling (kept as-is)",
+      "file": "picks/34-s1.jpg",
+      "thumb": "picks/board/34-s1.jpg"
+    },
+    {
+      "id": "pick-s2",
+      "group": "r1",
+      "title": "Tea Apprentice = Adolescent B",
+      "file": "picks/34-s2.jpg",
+      "thumb": "picks/board/34-s2.jpg",
+      "note": "bot pick"
+    },
+    {
+      "id": "pick-s3",
+      "group": "r1",
+      "title": "Hearth-Sage = Legend F",
+      "file": "picks/34-s3.jpg",
+      "thumb": "picks/board/34-s3.jpg",
+      "note": "bot pick"
+    },
+    {
+      "id": "pick-s3-alt",
+      "group": "r1",
+      "title": "Robed Sage = Legend A (alt)",
+      "file": "picks/34-s3-alt-A.jpg",
+      "thumb": "picks/board/34-s3-alt-A.jpg",
+      "note": "runner-up"
+    },
+    {
+      "id": "adol-A",
+      "group": "r1",
+      "title": "Adolescent A (pours tea)",
+      "file": "options/s2-optA.jpg",
+      "note": "still cub-like body"
+    },
+    {
+      "id": "adol-B",
+      "group": "r1",
+      "title": "Adolescent B (apprentice, kettle + rune books)",
+      "file": "options/s2-optB.jpg",
+      "note": "bot pick"
+    },
+    {
+      "id": "adol-C",
+      "group": "r1",
+      "title": "Adolescent C (rune book)",
+      "file": "options/s2-optC.jpg",
+      "note": "art check: floating runes look like B / P letters"
+    },
+    {
+      "id": "adol-D",
+      "group": "r1",
+      "title": "Adolescent D (library ladder)",
+      "file": "options/s2-optD.jpg"
+    },
+    {
+      "id": "legend-A",
+      "group": "r1",
+      "title": "Legend A (robed sage, rune steam)",
+      "file": "options/s3-optA.jpg",
+      "note": "runner-up"
+    },
+    {
+      "id": "legend-B",
+      "group": "r1",
+      "title": "Legend B (pours on book stack, ember tail)",
+      "file": "options/s3-optB.jpg"
+    },
+    {
+      "id": "legend-C",
+      "group": "r1",
+      "title": "Legend C (rainy-night wanderer)",
+      "file": "options/s3-optC.jpg"
+    },
+    {
+      "id": "legend-D",
+      "group": "r1",
+      "title": "Legend D (grown-up elder on balcony)",
+      "file": "options/s3-optD.jpg",
+      "note": "most realistic, but drops the tea scene"
+    },
+    {
+      "id": "legend-E",
+      "group": "r1",
+      "title": "Legend E",
+      "file": "options/s3-optE.jpg",
+      "note": "art check fail: near-copy of A"
+    },
+    {
+      "id": "legend-F",
+      "group": "r1",
+      "title": "Legend F (spectacles hearth-sage)",
+      "file": "options/s3-optF.jpg",
+      "note": "bot pick"
+    },
+    {
+      "id": "clip-legend-test",
+      "group": "r1",
+      "title": "Legend test clip (from F)",
+      "file": "legend-test.mp4",
+      "kind": "video",
+      "poster": "frames/t0.2.jpg",
+      "note": "6s, made from Legend F"
+    },
+    {
+      "id": "sheet-review",
+      "group": "r1",
+      "title": "Old vs new sheet",
+      "file": "review.png"
+    },
+    {
+      "id": "sheet-phone",
+      "group": "r1",
+      "title": "Phone check (390x844)",
+      "file": "phone-check.png"
+    }
+  ],
+  "coverItem": "r3-shipped-s3",
+  "shipped": "v0.146"
+}

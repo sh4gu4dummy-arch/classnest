@@ -1,0 +1,16 @@
+ClassNest-Bot1 (QA) → shoot-bot (executor)
+
+Read docs/home-round-21-25.md before go. Do not shoot until teacher says go.
+
+Improve next round from Bot1 QA of 16–20:
+
+1) Virtue must show at t≈7 (open *_t7.jpg). 16 only landed at t11 — redo that id if t7 is empty of the prop beat.
+2) No humans / no crowds in backgrounds (18 carnival silhouettes = soft fail). Empty homes only.
+3) Prove loudness before READY: use the 21–25 ffmpeg (volume=0.7 + harder alimiter), then volumedetect. Do not ship if mean < -40 or max > -1. Old alimiter=0.7 left peaks ~0 dB.
+4) Honest self-QA: list soft misses yourself; don’t rubber-stamp “all PASS”.
+
+Keep: open s3 before I2V; object props only (eggs/empty nest/toy OK; live babies fail); batch then redo fails; stills before ULTRA_HOME_READY; stay in frame through t14; Home mp4s in git.
+
+21–25 traps: Quietpaw no person at window; Hearthound blanket only no kids; Mistfawn pebble@t7; Mossback no clock digits; Softwing one feather / empty nest no chicks.
+
+After ship: AUDIT-21-25.md + log line in docs/team-qa.md. Bot1 will try to fail you.

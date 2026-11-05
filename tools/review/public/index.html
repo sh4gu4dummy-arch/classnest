@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ClassNest preview</title>
+<style>
+:root{--bg:#0f1117;--card:#181b24;--line:#2a2f3d;--fg:#eef0f6;--muted:#9aa1b4;--yes:#16a34a;--no:#dc2626;--acc:#818cf8;--ship:#f59e0b}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+body.lock{overflow:hidden}
+header{position:sticky;top:0;z-index:5;background:rgba(15,17,23,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);padding:10px 12px 8px}
+h1{font-size:17px;margin:0 0 6px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+a{color:var(--acc)}
+button,select,input,.btn{font:inherit;color:var(--fg);background:#232836;border:1px solid var(--line);border-radius:999px;padding:7px 12px;min-height:38px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+input{border-radius:10px;cursor:text;width:100%}
+button.on{background:var(--acc);border-color:var(--acc);color:#0b0d14;font-weight:700}
+.tabs button{flex:1}.pill{font-size:13px;padding:5px 10px;min-height:32px}
+main{padding:10px 12px 90px;max-width:1100px;margin:0 auto}
+.blurb{color:var(--muted);font-size:13px;margin:6px 0 2px}
+h2{font-size:14px;margin:18px 0 8px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.grid{display:grid;grid-template-columns:1fr;gap:12px}@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}@media(min-width:1050px){.grid{grid-template-columns:1fr 1fr 1fr}}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}@media(min-width:700px){.tiles{grid-template-columns:repeat(5,1fr)}}@media(min-width:1050px){.tiles{grid-template-columns:repeat(7,1fr)}}
+.card{background:var(--card);border:2px solid var(--line);border-radius:14px;overflow:hidden;position:relative}
+.card.yes{border-color:var(--yes)}.card.no{border-color:var(--no)}
+.media{display:block;width:100%;aspect-ratio:var(--ar,1);object-fit:contain;background:#000;cursor:zoom-in}
+.body{padding:10px}.title{font-weight:700}.note{color:var(--muted);font-size:13px}
+.badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.04em;border-radius:6px;padding:2px 6px;background:var(--ship);color:#1a1205;vertical-align:middle}
+.card>.badge{position:absolute;top:8px;left:8px;z-index:1}
+.status{font-size:12px;font-weight:800;letter-spacing:.05em;margin-top:2px}.status.yes{color:var(--yes)}.status.no{color:#f87171}
+.vote{display:flex;gap:6px;margin:10px 0 6px}.vote button{flex:1 1 0;min-width:0;min-height:44px;font-weight:700;padding:7px 6px;white-space:nowrap;font-size:14px}
+.vote .y.on,#lb .y.on{background:var(--yes);border-color:var(--yes);color:#fff}.vote .r,#lb .r{border-color:#7f1d1d;color:#fca5a5}.vote .r.on,#lb .r.on{background:#7f1d1d;border-color:#ef4444;color:#fff}.vote .n.on,#lb .n.on{background:var(--no);border-color:var(--no);color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.chips button{font-size:13px;padding:5px 10px;min-height:32px}
+.chips button.on{background:#7f1d1d;border-color:#f87171;color:#fff;font-weight:600}
+textarea{width:100%;min-height:56px;font:inherit;color:var(--fg);caret-color:var(--fg);-webkit-text-fill-color:var(--fg);background:#10131b;border:1px solid var(--line);border-radius:10px;padding:8px;color-scheme:dark;opacity:1}
+.hist{font-size:12px;color:var(--muted);margin-top:6px}.hist li{margin:2px 0}
+.saved{font-size:12px;color:var(--muted);margin-top:4px;min-height:16px}
+.tile{background:var(--card);border:2px solid var(--line);border-radius:12px;overflow:hidden;cursor:pointer;color:var(--fg);text-decoration:none;display:block;padding:0;min-height:0;text-align:left;width:100%}
+.tile.yes{border-color:var(--yes)}.tile.no{border-color:var(--no)}
+.tile img{display:block;width:100%;aspect-ratio:1;object-fit:cover;background:#000}
+.tile .cap{padding:5px 6px;font-size:12px;line-height:1.25;overflow-wrap:anywhere}.tile .cap b{display:block}
+.setcard{justify-content:flex-start;display:flex;gap:10px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px;cursor:pointer;width:100%;text-align:left;border-radius:14px;min-height:0}
+.setcard img{width:84px;height:84px;object-fit:cover;border-radius:10px;flex:none;background:#000}
+.setcard .t{font-weight:700;font-size:15px}.setcard .note{margin-top:2px}
+.appcard .btn{flex:none;white-space:nowrap}.appcard{display:flex;gap:10px;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#1e1b4b,#181b24);border:1px solid #3730a3;border-radius:14px;padding:12px}
+#copybar{position:fixed;left:0;right:0;bottom:0;z-index:6;background:rgba(15,17,23,.97);border-top:1px solid var(--line);padding:8px 12px calc(8px + env(safe-area-inset-bottom));display:flex;gap:8px;align-items:center}
+#copybar .count{flex:1;font-size:13px;color:var(--muted)}#copybar button{font-weight:700}
+#fallback{display:none;margin-top:8px}#fallback.open{display:block}#fallback textarea{min-height:180px;font-family:ui-monospace,monospace;font-size:13px}
+.sum-sec{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;margin:10px 0}
+.sum-item{display:flex;gap:10px;align-items:center;padding:6px 0;border-top:1px solid var(--line)}.sum-item:first-of-type{border-top:0}
+.sum-item img{width:56px;height:56px;object-fit:cover;border-radius:8px;flex:none;cursor:zoom-in;background:#000}
+pre{white-space:pre-wrap;background:#10131b;border:1px solid var(--line);border-radius:10px;padding:10px;font-size:13px}
+.empty{color:var(--muted);padding:20px 0;text-align:center}
+/* Lightbox: in-page only, never touches browser history */
+#lb{position:fixed;inset:0;z-index:30;background:#000;display:none;flex-direction:column}
+#lb.open{display:flex}
+#lb .top{display:flex;align-items:center;gap:8px;padding:calc(8px + env(safe-area-inset-top)) 10px 8px}
+#lb .top .cap{flex:1;min-width:0;font-size:14px}#lb .top .cap b{display:block;overflow-wrap:anywhere}
+#lb .x{width:46px;height:46px;min-height:46px;padding:0;border-radius:50%;font-size:22px;flex:none}
+#lb .stage{flex:1;min-height:0;position:relative;display:flex;align-items:center;justify-content:center;touch-action:pan-y pinch-zoom}
+#lb .stage img,#lb .stage video{max-width:100%;max-height:100%;object-fit:contain;user-select:none;-webkit-user-drag:none}
+#lb .nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:64px;min-height:0;border-radius:12px;background:rgba(35,40,54,.75);font-size:28px;padding:0;z-index:2}
+#lb .prev{left:6px}#lb .next{right:6px}#lb .nav[disabled]{opacity:.25;cursor:default}
+#lb .bottom{display:flex;gap:8px;padding:8px 10px calc(10px + env(safe-area-inset-bottom))}
+#lb .bottom button{flex:1;min-height:44px;font-weight:700}
+#sumtext{cursor:pointer;white-space:pre-wrap;border:1px dashed var(--line);padding:10px;border-radius:8px}#sumtext.copied{outline:2px solid #4ade80}.sumhead{display:flex;gap:10px;align-items:center}.sumhead button{font-weight:700}
+.pin{font-size:13px;color:#fca5a5;margin-top:2px;overflow-wrap:anywhere}.pin.yes{color:#86efac}.pin.h{color:var(--muted)}
+.menu{background:#10131b;border:1px solid var(--line);border-radius:12px;padding:8px;margin:6px 0}
+.chips.stack{flex-direction:column}.chips.stack button{width:100%;min-height:44px;font-size:14px;justify-content:flex-start;text-align:left}
+@media(max-width:699px){.chips{flex-direction:column}.chips button{width:100%;min-height:44px;font-size:14px;justify-content:flex-start}}
+.crow{display:block;width:100%;margin-top:8px}.crow textarea{display:block;width:100%;font-size:16px;color:var(--fg);caret-color:var(--fg);-webkit-text-fill-color:var(--fg);background:#10131b;opacity:1;visibility:visible}
+.wide{width:100%;margin-top:6px}
+.clearbtn{width:100%;margin-top:6px;background:transparent;color:var(--muted);border-style:dashed}
+details.shipped>summary{cursor:pointer;color:var(--muted);font-weight:700;padding:8px 0;list-style:none}details.shipped>summary::before{content:"▸ "}details.shipped[open]>summary::before{content:"▾ "}
+.homesum{background:var(--card);border:1px solid #4ade80;border-radius:14px;padding:4px 10px 10px;margin-bottom:12px}.homesum .sumhead{margin:8px 0;color:var(--fg);justify-content:space-between}.homesum #sumcopy{min-height:44px;padding:8px 22px;background:#16a34a;border-color:#16a34a;color:#fff}.homesum pre{margin:0;font-size:14px}.homesum-empty{margin:2px 0 10px}
+#copy[disabled],#sumcopy[disabled]{opacity:.4;cursor:default}
+#toast{position:fixed;left:12px;right:12px;bottom:calc(64px + env(safe-area-inset-bottom));z-index:40;background:#1f2937;border:1px solid var(--line);border-radius:12px;padding:8px 10px;display:none;gap:8px;align-items:center;max-width:520px;margin:0 auto}
+#toast.open{display:flex}body.lock #toast{top:calc(64px + env(safe-area-inset-top));bottom:auto}#toast span{flex:1;font-size:14px}
+#lb .pinbox{font-size:13px;color:var(--muted);padding:0 10px}
+#lb-menu{display:none;padding:0 10px 4px;max-height:45vh;overflow:auto}#lb-menu.open{display:block}
+#lb .bottom .clr{flex:0 0 auto;font-weight:400}
+body.typing #copybar,body.typing #toast{display:none}
+textarea{scroll-margin:120px 0}#lb-menu textarea{min-height:64px;font-size:16px}#lb-menu .lbtyped{background:var(--no);border-color:var(--no);color:#fff;font-weight:700}
+.menu .wide.n{background:var(--no);border-color:var(--no);color:#fff;font-weight:700;min-height:44px}
+/* v2 set view: stage sections, NOW IN APP vs DRAFT */
+.headline{font-size:16px;font-weight:700;margin:8px 0 2px;line-height:1.35}
+details.more{margin:2px 0 4px}details.more>summary{cursor:pointer;color:var(--muted);font-size:13px}
+.stg{margin-top:16px;padding-top:4px}
+.stagehead{font-size:19px;color:var(--fg);text-transform:none;letter-spacing:0;margin:10px 0 2px;padding:8px 12px;border-radius:10px;background:#1e2230;border-left:5px solid var(--acc)}
+.stg>.note{margin:0 2px 8px}
+.sbadge{display:block;font-weight:900;letter-spacing:.05em;font-size:14px;padding:8px 12px;text-align:left}
+.sbadge.now{background:#d1d5db;color:#111827}
+.sbadge.draft{background:#facc15;color:#1a1205}
+.sbadge.ref{background:#374151;color:#e5e7eb}
+.sbadge .done{float:right;font-weight:800;font-size:12px;background:var(--ship);color:#1a1205;border-radius:6px;padding:1px 6px}
+.card.now{border-color:#6b7280;background:#15171d}.card.now .title{color:#d1d5db}
+.card.now.yes{border-color:var(--yes)}
+.card.reject{border-color:#7f1d1d!important;border-style:dashed}.card.reject .media{opacity:.4;filter:grayscale(.7)}.card.reject .ttl,.card.reject .desc{opacity:.6}.tile.reject{border-color:#7f1d1d;opacity:.55}
+@media(max-width:699px){#subbar{gap:5px}#subbar .pill{padding:5px 8px}}
+.rtag{display:inline-block;margin-left:8px;font-size:12px;font-weight:900;letter-spacing:.06em;border-radius:6px;padding:1px 7px;background:#dc2626;color:#fff;vertical-align:middle}.pin.rej{color:#f87171;font-weight:700}.vote.keep button{flex:1}
+.card.draft{border-color:#a16207}.card.draft.yes{border-color:var(--yes)}.card.draft.no{border-color:var(--no)}
+.letter{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#facc15;color:#1a1205;font-weight:900;margin-right:8px;flex:none}
+.ttl{display:flex;align-items:center;gap:0;flex-wrap:wrap;font-weight:800;font-size:16px}
+.ptag{font-size:12px;font-weight:800;border-radius:999px;padding:2px 8px;margin-left:8px;border:1px solid #22c55e;color:#86efac}
+.ptag.alt{border-color:#38bdf8;color:#7dd3fc}.ptag.ru{border-color:#6b7280;color:#d1d5db}
+.desc{font-size:13px;color:#c7cbd6;margin-top:2px}
+.empty.small{padding:6px 0;font-size:13px;text-align:left}
+#lb .lbbadge{display:table;margin:3px 0 2px;font-size:12px;font-weight:900;letter-spacing:.04em;border-radius:6px;padding:2px 7px}
+#lb .lbbadge.now{background:#d1d5db;color:#111827}#lb .lbbadge.draft{background:#facc15;color:#1a1205}#lb .lbbadge.ref{background:#374151;color:#e5e7eb}
+</style>
+</head>
+<body>
+<header>
+  <h1><span id="h-title">ClassNest preview</span> <span class="note" id="h-note">· local only</span></h1>
+  <div class="row tabs"><button id="tab-home">Sets</button><button id="tab-summary">Summary</button></div>
+  <div class="row" id="subbar" style="margin-top:6px"></div>
+</header>
+<main id="main"></main>
+<div id="copybar"><span class="count" id="count"></span><button id="copy">Copy</button></div>
+<div id="toast" role="status"><span id="toast-t"></span><button id="toast-undo" class="pill">Undo</button></div>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Full size image">
+  <div class="top"><div class="cap" id="lb-cap"></div><button class="x" id="lb-x" aria-label="Close">✕</button></div>
+  <div class="stage" id="lb-stage"><button class="nav prev" id="lb-prev" aria-label="Previous">‹</button><div id="lb-media" style="display:contents"></div><button class="nav next" id="lb-next" aria-label="Next">›</button></div>
+  <div class="pinbox" id="lb-pin"></div>
+  <div id="lb-menu"></div>
+  <div class="bottom" id="lb-vote"></div>
+</div>
+<script>
+/* ClassNest review v2 — works like Number Pictures' review:
+   - the queue ("To review") only shows items that are undecided and not shipped/done
+   - verdicts carry the art stamp; when the art changes the old verdict drops itself
+   - copying the summary clears the copied verdicts (tombstones on the server, so sync can't bring them back) */
+const LS_KEY = "classnest-review-v1";               // versioned; survives app version bumps
+/* Static mode (GitHub Pages build): no /api; sets/meta/verdicts come from data/*.json (relative paths only),
+   votes live in this browser's localStorage only. build-pages.sh flips STATIC_BUILD; otherwise auto-detected
+   when /api/sets is unreachable. */
+const STATIC_BUILD = false;
+let STATIC = STATIC_BUILD;
+const REMAKE_TEMPLATES = [
+  "not enough change", "style doesn't match", "angry / scary, not cute", "off-model / drift", "too foal-like",
+  "anatomy (extra legs / extra horse)", "text or letters", "too soft / blurry", "lost the pose", "colours drifted",
+];
+const FILTERS = [["todo","To review"],["yes","Confirm"],["no","Remake"],["reject","Reject"],["comment","Commented"],["sent","Sent"],["done","Shipped / done"],["all","All"]];
+let sets = [], set = null, route = {view:"home"}, ultraQuery = "", version = "";
+let filter = localStorage.getItem(LS_KEY + ":filter2") || "todo";
+let menuFor = null;                 // key whose REMAKE reason menu is open (cards)
+const sticky = new Set();           // keys kept on screen once you start typing in them / open their REMAKE menu (until a vote, filter or page change)
+let store = loadLocal();
+
+function loadLocal(){ try { const s = JSON.parse(localStorage.getItem(LS_KEY) || "null"); return s && s.items ? s : {version:1, items:{}}; } catch { return {version:1, items:{}}; } }
+function saveLocal(){ try { localStorage.setItem(LS_KEY, JSON.stringify(store)); } catch {} }
+const keyOf = (s, it) => `${s.id}/${it.id}`;
+const VOTE_NAME = {yes:"CONFIRM", no:"REMAKE", reject:"REJECT"};
+const vName = (v) => VOTE_NAME[v] || "COMMENT";
+/* ---- v2: stage model. Items may carry stage (1-3), role ("current" | "draft" | "reference"), letter, pick
+   ("bot" | "alt" | "runner-up"), desc. Auto sets get them from set.json "itemRules" (first regex match on the
+   file wins) and "autoLetters". Ultra sets are reference only: s1-s3 are the current art, no voting. */
+const STAGE_NAMES = {1:"Hatchling", 2:"Adolescent", 3:"Legend"};
+const letterOf = (n) => n < 26 ? String.fromCharCode(65 + n) : letterOf(Math.floor(n / 26) - 1) + String.fromCharCode(65 + n % 26);
+function normalize(list){
+  for (const s of list) {
+    s.items ||= [];
+    if (s.kind === "ultra") { s.noVote = true; for (const it of s.items) { const m = /^s([123])$/.exec(it.id); if (m) { it.stage = +m[1]; it.role = "current"; it.title = `Current ${STAGE_NAMES[it.stage]}`; } } }
+    for (const it of s.items) {
+      let m = null;
+      const r = (s.itemRules || []).find((r) => { try { return (m = new RegExp(r.match).exec(it.file || it.id)); } catch { return false; } });
+      if (!r) continue;
+      const orig = it.title, sub = (v) => typeof v === "string" ? v.replace(/\$(\d)/g, (_, n) => m[n] ?? "") : v;   // "$1" = regex group
+      for (const [k, v] of Object.entries(r)) if (k !== "match" && (k === "title" || k === "group" || it[k] === undefined)) it[k] = sub(v);
+      if (it.role === "draft" && !it.desc && orig) it.desc = orig;
+    }
+    if (s.autoLetters) { const per = {}; for (const it of s.items) if (it.role === "draft" && !it.letter) it.letter = letterOf(per[it.stage] = (per[it.stage] ?? -1) + 1); }
+    for (const it of s.items) {
+      if (it.role === "draft") it.label = `${STAGE_NAMES[it.stage] || "Draft"} ${it.letter || ""}`.trim();
+      else if (it.role === "current") it.label = it.title || `Current ${STAGE_NAMES[it.stage]}`;
+      if (it.role === "reference") { it.group ||= "extras"; if (!(s.groups || []).some((g) => g.id === it.group)) (s.groups ||= []).push({id: it.group, title: "Extras (nothing to vote)"}); }
+    }
+    s.staged = s.items.some((it) => it.stage);
+    /* "Keep current" option: in any voting set, a stage that has current art AND drafts gets a virtual item keep-sN.
+       CONFIRM on it = keep today's art; it is mutually exclusive with CONFIRM on that stage's drafts. Generic for all sets. */
+    if (s.kind !== "ultra" && !s.noVote) for (const st of [1, 2, 3]) {
+      const cur = s.items.find((it) => it.stage === st && it.role === "current"), drafts = s.items.filter((it) => it.stage === st && it.role === "draft");
+      if (!cur || !drafts.length || s.items.some((it) => it.id === `keep-s${st}`)) continue;
+      const open = !s.shipped && !s.done && drafts.some((it) => !it.done && !it.shipped);
+      s.items.push({id: `keep-s${st}`, stage: st, role: "keep", keepOf: cur.id, file: cur.file, thumb: cur.thumb, stamp: cur.stamp,
+        title: `Keep current ${STAGE_NAMES[st]}`, label: `Keep current ${STAGE_NAMES[st]}`, ...(open ? {} : {done: "stage decided"})});
+    }
+  }
+  return list;
+}
+const names = (ns) => ns.map((n) => STAGE_NAMES[n]).join(" and ");
+const changing = (s) => [1, 2, 3].filter((n) => s.items.some((it) => it.stage === n && it.role === "draft"));
+const shortTitle = (s) => s.kind === "ultra" ? s.title : s.title.replace(/\s+(s\d.*|drafts?)$/i, "");
+function headline(s){
+  if (s.headline) return s.headline;
+  if (s.kind === "ultra") return `${s.title}: the art in the app now. Nothing to vote here.`;
+  const ch = changing(s); if (!ch.length) return "";
+  const stay = [1, 2, 3].filter((n) => !ch.includes(n));
+  return `${shortTitle(s)}: pick a new ${names(ch)}.${stay.length ? ` ${names(stay)} stay${stay.length === 1 ? "s" : ""}.` : ""}`;
+}
+/* The badge every card / lightbox shows: what this picture IS. */
+function badgeOf(s, it){
+  const st = STAGE_NAMES[it.stage];
+  if (it.role === "current") return s.kind !== "ultra" && !s.items.some((x) => x.stage === it.stage && x.role === "draft")
+    ? {cls:"now", t:"NOW · style reference, not changing"} : {cls:"now", t:"NOW IN APP"};
+  if (it.role === "draft") return {cls:"draft", t:`DRAFT · would replace ${st}`};
+  if (it.role === "reference") return {cls:"ref", t:"REFERENCE · nothing to vote"};
+  return null;
+}
+const pickTag = (it) => it.pick === "bot" ? `<span class="ptag">★ Bot pick</span>` : it.pick === "alt" ? `<span class="ptag alt">Alt pick</span>` : it.pick === "runner-up" ? `<span class="ptag ru">Runner-up</span>` : "";
+const nameOf = (it) => it.label || it.title;
+const clean = (t) => (t||"").replace(/\s+/g," ").trim();
+const stale = (e, it) => !!(e && e.stamp && it.stamp && e.stamp !== it.stamp);
+const rawOf = (s, it) => { const e = store.items[keyOf(s, it)]; return e && !stale(e, it) ? e : null; };
+const isActive = (e) => !!(e && !e.cleared && (e.vote || clean(e.comment)));
+const isSent = (e) => !!(e && e.cleared && e.sent);
+/* What the card shows: the live verdict (never a cleared one). */
+const entryOf = (s, it) => { const e = rawOf(s, it); return isActive(e) ? e : {vote:null, reasons:[], comment:"", history:e?.history||[]}; };
+const decided = (s, it) => { const e = rawOf(s, it); return isActive(e) || isSent(e); };
+function groupOf(s, it){ return (s.groups||[]).find((g) => g.id === (it.group || "_")); }
+/* One source of "done": shipped/done on the item, its group or its set (or a shipped verdict). */
+function doneOf(s, it){
+  const e = rawOf(s, it), g = groupOf(s, it);
+  if (it.shipped) return `SHIPPED ${it.shipped}`; if (it.done) return it.done;
+  if (g?.shipped) return `SHIPPED ${g.shipped}`; if (g?.done) return g.done;
+  if (s.shipped) return `SHIPPED ${s.shipped}`; if (s.done) return s.done;
+  if (e?.shipped) return `SHIPPED ${e.shipped}`;
+  return "";
+}
+/* Rejected by the set file (baseline, e.g. done: "rejected: …" or rejected: "reason") or by your REJECT vote. */
+const baseRejected = (it) => !!(it.rejected || /^rejected/i.test(it.done || ""));
+const isRejected = (s, it) => baseRejected(it) || (it.role !== "keep" && entryOf(s, it).vote === "reject" && !doneOf(s, it));
+const canVote = (s, it) => !(s.noVote || it.noVote || it.role === "current" || it.role === "reference");
+const keepOf = (s, st) => s.items.find((x) => x.role === "keep" && x.stage === st);
+const keepChosen = (s, st) => { const k = keepOf(s, st); return !!(k && !doneOf(s, k) && entryOf(s, k).vote === "yes"); };
+const inQueue = (s, it) => it.role !== "keep" && canVote(s, it) && !doneOf(s, it) && !decided(s, it) && !(it.role === "draft" && keepChosen(s, it.stage));
+
+async function push(k){
+  const e = store.items[k] ?? null;
+  const el = document.querySelector(`[data-saved="${CSS.escape(k)}"]`);
+  if (STATIC) { if (el) el.textContent = "Saved on this device " + new Date().toLocaleTimeString(); return; }
+  try {
+    const r = await fetch("/api/verdicts", {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({key:k, entry:e})});
+    if (!r.ok) throw new Error(r.status);
+    const j = await r.json();
+    if (!j.ok && j.entry && (j.entry.updatedAt||0) >= ((store.items[k]||{}).updatedAt||0)) { store.items[k] = j.entry; saveLocal(); if (!busyTyping()) render(); }
+    else if (!j.ok && j.reason === "stale art") { delete store.items[k]; saveLocal(); if (!busyTyping()) render(); }
+    if (el) el.textContent = "Saved " + new Date().toLocaleTimeString();
+  } catch { if (el) el.textContent = "Saved on this device (server backup failed)"; }
+}
+function tomb(prev, it, at, sent){
+  const t = {cleared:true, updatedAt:at, stamp: it.stamp || prev?.stamp};
+  if (sent && isActive(prev)) t.sent = {vote: prev.vote ?? null, reasons: prev.reasons||[], comment: prev.comment||"", at};
+  if (prev?.shipped) t.shipped = prev.shipped;
+  t.history = [{at, reason: t.sent ? `SENT ${vName(t.sent.vote)}` : "cleared"}, ...(prev?.history||[])].slice(0, 20);
+  return t;
+}
+/* Write a verdict. An empty verdict becomes a tombstone (so the two-way sync can't resurrect the old one). */
+function setEntry(s, it, patch, histReason, opts = {}){
+  const k = keyOf(s, it), raw = rawOf(s, it), cur = isActive(raw) ? raw : {vote:null, reasons:[], comment:""};
+  const now = Date.now();
+  let next = {vote: cur.vote ?? null, reasons: cur.reasons||[], comment: cur.comment||"", ...patch, stamp: it.stamp, updatedAt: now,
+    history: histReason ? [{at: now, reason: histReason}, ...(raw?.history||[])].slice(0, 20) : (raw?.history||[])};
+  if (!next.vote && !clean(next.comment)) next = {cleared:true, stamp: it.stamp, updatedAt: now, history: next.history};
+  store.items[k] = next; saveLocal(); push(k);
+  if (!opts.quiet) { render(); if (lb.open) lbRender(); }
+}
+function snapshot(k){ const e = store.items[k]; return e ? JSON.parse(JSON.stringify(e)) : null; }
+function restore(k, s, it, prev, others = []){
+  const now = Date.now();
+  store.items[k] = prev ? {...prev, updatedAt: now} : {cleared:true, stamp: it.stamp, updatedAt: now, history: []};
+  for (const o of others) { store.items[o.k] = o.prev ? {...o.prev, updatedAt: now} : {cleared:true, stamp: o.it.stamp, updatedAt: now, history: []}; push(o.k); }
+  saveLocal(); push(k); render(); if (lb.open) lbRender();
+}
+/* Items whose CONFIRM conflicts with this one: one CONFIRM per stage (Keep current or one draft). REJECT has no rivals. */
+function rivals(s, it){
+  if (it.role === "keep") return s.items.filter((x) => x.role === "draft" && x.stage === it.stage);
+  if (it.role === "draft" && it.stage) return s.items.filter((x) => x !== it && (x.role === "keep" || x.role === "draft") && x.stage === it.stage);
+  return [];
+}
+function confirmItem(s, it){
+  const k = keyOf(s, it), prev = snapshot(k), e = entryOf(s, it);
+  if (e.vote === "yes") return;
+  const others = rivals(s, it).filter((x) => entryOf(s, x).vote === "yes").map((x) => ({k: keyOf(s, x), it: x, prev: snapshot(keyOf(s, x))}));
+  for (const o of others) setEntry(s, o.it, {vote:null, reasons:[]}, `un-picked: ${it.label || it.title} chosen`, {quiet:true});
+  setEntry(s, it, {vote:"yes", reasons:[]}, "CONFIRM");
+  toast(`CONFIRM · ${it.label || it.title}`, () => restore(k, s, it, prev, others));
+}
+function remakeItem(s, it, reason){
+  const k = keyOf(s, it), prev = snapshot(k), e = entryOf(s, it);
+  const reasons = reason ? [...new Set([...(e.vote === "no" ? e.reasons||[] : []), reason])] : (e.reasons||[]);
+  menuFor = null;
+  setEntry(s, it, {vote:"no", reasons}, reason ? `REMAKE: ${reason}` : "REMAKE");
+  toast(`REMAKE · ${it.title}${reason ? " — " + reason : ""}`, () => restore(k, s, it, prev));
+}
+/* REJECT: "I don't want this one". Any number per stage; it replaces this item's CONFIRM/REMAKE (one verdict per item). Tap again = un-reject. */
+function rejectItem(s, it){
+  const k = keyOf(s, it), prev = snapshot(k), e = entryOf(s, it);
+  menuFor = null;
+  if (e.vote === "reject") { setEntry(s, it, {vote:null, reasons:[]}, "un-rejected"); toast(`Un-rejected · ${nameOf(it)}`, () => restore(k, s, it, prev)); return; }
+  setEntry(s, it, {vote:"reject", reasons:[]}, e.vote === "yes" ? "REJECT (confirm cleared)" : "REJECT");
+  toast(`REJECT · ${nameOf(it)}${e.vote === "yes" ? " (confirm cleared)" : ""}`, () => restore(k, s, it, prev));
+}
+function clearItem(s, it){
+  const k = keyOf(s, it), prev = snapshot(k);
+  setEntry(s, it, {vote:null, reasons:[], comment:""}, "cleared verdict");
+  toast(`Cleared · ${it.title}`, () => restore(k, s, it, prev));
+}
+
+async function sync(){
+  try {
+    const srv = await (await fetch(STATIC ? "data/verdicts.json" : "/api/verdicts", {cache:"no-cache"})).json();
+    for (const [k, e] of Object.entries(srv.items || {})) {
+      const loc = store.items[k];
+      if (!loc || (e.updatedAt||0) >= (loc.updatedAt||0)) store.items[k] = e;
+    }
+    pruneStale();
+    if (!STATIC) for (const [k, e] of Object.entries(store.items)) {
+      const s = (srv.items||{})[k];
+      if (!s || (e.updatedAt||0) > (s.updatedAt||0)) push(k);
+    }
+    saveLocal();
+  } catch {}
+}
+/* Verdicts for art that has since changed are dropped (stamp mismatch). */
+function pruneStale(){
+  for (const s of sets) for (const it of s.items) { const k = keyOf(s, it), e = store.items[k]; if (stale(e, it)) delete store.items[k]; }
+}
+
+/* ---------- Copy text (Number Pictures shape): version line, then CONFIRM / REMAKE / REJECT / COMMENT buckets of "Section: id, id — note" ---------- */
+function pendingEntries(){
+  const out = [];
+  for (const s of sets) for (const it of s.items) { const e = rawOf(s, it); if (isActive(e) && !doneOf(s, it) && canVote(s, it)) out.push({s, item:it, e, k: keyOf(s, it)}); }
+  return out;
+}
+function bySection(list, note){
+  const out = [];
+  for (const s of sets) {
+    const words = list.filter((x) => x.s === s).map((x) => { const n = note ? note(x) : ""; const w = x.item.label ? `${x.item.label} (${x.item.id})` : x.item.id; return n ? `${w} — ${n}` : w; });
+    if (words.length) out.push(`${s.title}: ${words.join(", ")}`);
+  }
+  return out;
+}
+const remakeNote = (x) => clean([...(x.e.reasons||[]), x.e.comment].filter(Boolean).join("; "));
+function formatApprovals(list = pendingEntries()){
+  if (!list.length) return "";
+  const lines = [`ClassNest v${version || "?"}`];
+  const b = (title, body) => { if (body.length) lines.push(title, ...body); };
+  b("CONFIRM", bySection(list.filter((x) => x.e.vote === "yes"), (x) => clean(x.e.comment)));
+  b("REMAKE", bySection(list.filter((x) => x.e.vote === "no"), remakeNote));
+  b("REJECT", bySection(list.filter((x) => x.e.vote === "reject"), (x) => clean(x.e.comment)));
+  b("COMMENT", bySection(list.filter((x) => !x.e.vote && clean(x.e.comment)), (x) => clean(x.e.comment)));
+  return lines.join("\n");
+}
+function copyFallback(text){
+  const ta = document.createElement("textarea");
+  ta.value = text; ta.setAttribute("readonly", ""); ta.setAttribute("aria-hidden", "true");
+  ta.style.cssText = "position:fixed;top:0;left:-9999px;width:1px;height:1px;opacity:0;font-size:16px";
+  document.body.appendChild(ta);
+  let ok = false;
+  try { ta.focus(); ta.select(); ta.setSelectionRange(0, text.length); ok = document.execCommand("copy"); } catch {}
+  ta.remove(); return ok;
+}
+/* After a successful copy the copied verdicts leave the queue for good (server tombstones). Never opens the share sheet. */
+async function markSent(list){
+  const at = Date.now(), keys = list.map((x) => x.k);
+  for (const x of list) store.items[x.k] = tomb(x.e, x.item, at, true);
+  saveLocal();
+  if (STATIC) return;
+  try { await fetch("/api/verdicts/clear", {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({keys, at, sent:true})}); } catch {}
+}
+let copying = false;
+async function copyText(){
+  if (copying) return;
+  const list = pendingEntries(), text = formatApprovals(list);
+  if (!text) { toast("Nothing to send"); return; }
+  copying = true; let ok = false;
+  try { if (navigator.clipboard?.writeText && window.isSecureContext) { await navigator.clipboard.writeText(text); ok = true; } } catch {}
+  if (!ok) ok = copyFallback(text);
+  copying = false;
+  if (ok) {
+    await markSent(list);
+    toast(`Copied ${list.length} — paste it in chat. Cleared from the queue.`);
+    render();
+  } else {
+    if (!document.getElementById("fallback")) go("#/summary");     // Home and Summary both have the fallback box in place
+    const f = document.getElementById("fallback"); if (f) { f.classList.add("open"); const t = f.querySelector("textarea"); t.focus(); t.setSelectionRange(0, t.value.length); }
+  }
+}
+
+const enc = (p) => p.split("/").map(encodeURIComponent).join("/");
+const src = (s, it) => it.url || `/sets/${encodeURIComponent(s.id)}/${enc(it.file)}`;
+const thumb = (s, it) => it.thumbUrl || (it.thumb ? `/sets/${encodeURIComponent(s.id)}/${enc(it.thumb)}` : it.kind === "video" ? poster(s, it) : src(s, it));
+const poster = (s, it) => it.posterUrl || (it.poster ? `/sets/${encodeURIComponent(s.id)}/${enc(it.poster)}` : "");
+const cover = (s) => s.coverUrl || (s.cover ? `/sets/${encodeURIComponent(s.id)}/${enc(s.cover)}` : "");
+/* Grid cards: a web-sized copy when the static build made one (the lightbox always uses the full src). */
+const cardImg = (s, it) => it.cardUrl || (it.kind === "video" ? poster(s, it) : src(s, it));
+function esc(t){ return String(t ?? "").replace(/[&<>"]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c])); }
+const when = (at) => new Date(at).toLocaleString([], {month:"short", day:"numeric", hour:"numeric", minute:"2-digit"});
+/* Newest reason, pinned under the title. */
+function pinLine(s, it){
+  const raw = rawOf(s, it), e = entryOf(s, it);
+  if (e.vote === "no") return {cls:"", t:`REMAKE${(e.reasons||[]).length ? " · " + e.reasons[e.reasons.length - 1] : ""}${clean(e.comment) ? " · " + clean(e.comment) : ""}`};
+  if (e.vote === "yes") return {cls:"yes", t:`CONFIRM${clean(e.comment) ? " · " + clean(e.comment) : ""}`};
+  if (e.vote === "reject") return {cls:"rej", t:`REJECT · you don't want this one${clean(e.comment) ? " · " + clean(e.comment) : ""}`};
+  if (clean(e.comment)) return {cls:"h", t:`💬 ${clean(e.comment)}`};
+  if (isSent(raw)) { const v = raw.sent; return {cls:"h", t:`Sent ${v.vote ? vName(v.vote) : "comment"}${(v.reasons||[]).length ? " · " + v.reasons.join("; ") : ""} · ${when(v.at)}`}; }
+  const h = (raw?.history||[])[0]; if (h) return {cls:"h", t:`${h.reason} · ${when(h.at)}`};
+  return null;
+}
+
+/* ---------- Toast (with Undo) ---------- */
+let toastTimer = 0, toastUndo = null;
+function toast(text, undo){
+  toastUndo = undo || null;
+  document.getElementById("toast-t").textContent = text;
+  document.getElementById("toast-undo").style.display = undo ? "" : "none";
+  document.getElementById("toast").classList.add("open");
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => document.getElementById("toast").classList.remove("open"), 4500);
+}
+document.getElementById("toast-undo").onclick = () => { const u = toastUndo; toastUndo = null; document.getElementById("toast").classList.remove("open"); if (u) u(); };
+
+/* ---------- Lightbox (in-page; X, tap outside, Esc; arrows/swipe). Never touches history. ---------- */
+const lb = {open:false, list:[], i:0, menu:false};
+function openLb(list, i){ if (!list.length) return; lb.list = list; lb.i = i; lb.open = true; lb.menu = false; document.getElementById("lb").classList.add("open"); document.body.classList.add("lock"); lbRender(); }
+function closeLb(){ lb.open = false; lb.menu = false; document.getElementById("lb").classList.remove("open"); document.body.classList.remove("lock"); document.getElementById("lb-media").innerHTML = ""; }
+function lbStep(d){ const n = lb.i + d; if (n < 0 || n >= lb.list.length) return; lb.i = n; lb.menu = false; lbRender(); }
+/* After a vote: go to the next undecided item (forward first, then wrap). */
+function lbAdvance(){
+  const n = lb.list.length;
+  for (let j = 1; j < n; j++) { const x = lb.list[(lb.i + j) % n]; if (inQueue(x.s, x.it)) { lb.i = (lb.i + j) % n; lb.menu = false; lbRender(); return; } }
+  closeLb(); toast("All reviewed here ✓");
+}
+let lbShown = "";
+function lbRender(){
+  const {s, it} = lb.list[lb.i]; const e = entryOf(s, it), raw = rawOf(s, it), done = doneOf(s, it);
+  const mk = `${s.id}/${it.id}`;
+  if (lbShown !== mk) {
+    document.getElementById("lb-media").innerHTML = it.kind === "video"
+      ? `<video src="${src(s, it)}" poster="${poster(s, it)}" controls autoplay playsinline></video>`
+      : `<img src="${src(s, it)}" alt="${esc(nameOf(it))}" draggable="false">`;
+    lbShown = mk;
+  }
+  const bd = badgeOf(s, it);
+  const bdText = bd ? (it.role === "draft" ? `${bd.t} · Option ${it.letter}` : it.role === "current" ? `${bd.t} · Stage ${it.stage} ${STAGE_NAMES[it.stage]}` : bd.t) : "";
+  document.getElementById("lb-cap").innerHTML = `<b>${esc(nameOf(it))}</b>${bd ? `<span class="lbbadge ${bd.cls}">${esc(bdText)}</span> ` : ""}<span class="note">${lb.i + 1} / ${lb.list.length} · ${esc(s.title)}${done ? ` · <span class="badge">${esc(done)}</span>` : ""}</span>`;
+  const reasons = e.vote === "no" ? [...(e.reasons||[]), clean(e.comment)].filter(Boolean).join("; ") : clean(e.comment);
+  const h = (raw?.history||[])[0];
+  document.getElementById("lb-pin").innerHTML = [e.vote ? `<b class="${e.vote==="yes"?"pin yes":"pin"}">${vName(e.vote)}</b>${reasons ? " · " + esc(reasons) : ""}` : reasons ? "💬 " + esc(reasons) : "",
+    h ? `<div>Last: ${esc(h.reason)} · ${esc(when(h.at))}</div>` : ""].filter(Boolean).join("");
+  document.getElementById("lb-prev").disabled = lb.i === 0;
+  document.getElementById("lb-next").disabled = lb.i === lb.list.length - 1;
+  const m = document.getElementById("lb-menu");
+  m.classList.toggle("open", lb.menu);
+  m.innerHTML = lb.menu ? `<label class="crow" style="margin-top:2px"><span class="note">Type your own reason (saved as you type)…</span><textarea placeholder="Your reason, e.g. arms look odd" data-comment="${esc(it.id)}" data-key="${esc(mk)}" rows="2" enterkeyhint="done">${esc(e.comment||"")}</textarea></label><div class="chips stack"><button data-lbreason="__typed" class="lbtyped">✕ REMAKE with my reason</button></div><div class="note" style="margin:6px 0 4px">…or tap a reason: REMAKE is applied and you move on.</div><div class="chips stack">${REMAKE_TEMPLATES.map((r) => `<button data-lbreason="${esc(r)}" class="${(e.reasons||[]).includes(r) ? "on" : ""}">${esc(r)}</button>`).join("")}<button data-lbreason="">REMAKE (no reason)</button></div>` : "";
+  document.getElementById("lb-vote").innerHTML = !canVote(s, it) ? "" :
+    `<button class="y ${e.vote==="yes"?"on":""}" data-lbvote="yes">✓ CONFIRM</button><button class="n ${e.vote==="no"||lb.menu?"on":""}" data-lbvote="no">✕ REMAKE…</button>${it.role === "draft" || !it.stage ? `<button class="r ${e.vote==="reject"?"on":""}" data-lbvote="reject" aria-pressed="${e.vote==="reject"}">⊘ REJECT</button>` : ""}${e.vote || clean(e.comment) ? `<button class="clr" data-lbvote="clear" aria-label="Clear verdict">Clear</button>` : ""}`;
+}
+(() => {
+  const el = document.getElementById("lb"), stage = document.getElementById("lb-stage");
+  document.getElementById("lb-x").onclick = closeLb;
+  document.getElementById("lb-prev").onclick = (e) => { e.stopPropagation(); lbStep(-1); };
+  document.getElementById("lb-next").onclick = (e) => { e.stopPropagation(); lbStep(1); };
+  stage.addEventListener("click", (e) => { if (e.target === stage) closeLb(); });   // tap outside the picture
+  el.addEventListener("click", (e) => { if (e.target === el || e.target.classList.contains("top")) closeLb(); });
+  document.getElementById("lb-vote").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-lbvote]"); if (!b) return; const {s, it} = lb.list[lb.i];
+    if (b.dataset.lbvote === "yes") { confirmItem(s, it); lbAdvance(); }
+    else if (b.dataset.lbvote === "no") { lb.menu = !lb.menu; lbRender(); if (lb.menu) { const {s, it} = lb.list[lb.i]; focusRemakeBox(`${s.id}/${it.id}`); } }
+    else if (b.dataset.lbvote === "reject") { const was = entryOf(s, it).vote === "reject"; rejectItem(s, it); if (was) lbRender(); else lbAdvance(); }
+    else { clearItem(s, it); lbRender(); }
+  });
+  document.getElementById("lb-menu").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-lbreason]"); if (!b) return; const {s, it} = lb.list[lb.i];
+    remakeItem(s, it, b.dataset.lbreason === "__typed" ? "" : b.dataset.lbreason); lb.menu = false; lbAdvance();
+  });
+  let sx = 0, sy = 0, multi = false;
+  stage.addEventListener("touchstart", (e) => { multi = e.touches.length > 1; sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, {passive:true});
+  stage.addEventListener("touchend", (e) => {
+    if (multi || (window.visualViewport && visualViewport.scale > 1.05)) return;
+    const t = e.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) lbStep(dx < 0 ? 1 : -1);
+  }, {passive:true});
+  document.addEventListener("keydown", (e) => {
+    if (!lb.open) return;
+    if (e.target.closest && e.target.closest("textarea,input") && e.key !== "Escape") return;   // typing: arrows move the caret
+    if (e.key === "Escape") { if (lb.menu) { lb.menu = false; lbRender(); } else closeLb(); }
+    else if (e.key === "ArrowRight") lbStep(1); else if (e.key === "ArrowLeft") lbStep(-1);
+  });
+})();
+
+/* ---------- Views ---------- */
+function stats(s){
+  let todo = 0, y = 0, n = 0, r = 0, c = 0, sent = 0;
+  for (const it of s.items) {
+    if (inQueue(s, it)) todo++;
+    const e = rawOf(s, it); if (doneOf(s, it)) continue;
+    if (isActive(e)) { if (e.vote === "yes") y++; else if (e.vote === "no") n++; else if (e.vote === "reject") r++; else c++; } else if (isSent(e)) sent++;
+  }
+  return {todo, y, n, r, c, sent};
+}
+function statLine(s){ const t = stats(s), ch = s.staged && s.kind !== "ultra" ? changing(s) : []; return [ch.length && `New ${names(ch)}`, t.todo ? `${t.todo} to review` : "nothing to review", t.y && `${t.y} confirm`, t.n && `${t.n} remake`, t.r && `${t.r} reject`, t.c && `${t.c} comment`, t.sent && `${t.sent} sent`].filter(Boolean).join(" · "); }
+function setCard(s){ return `<button class="setcard" data-set="${esc(s.id)}"><img src="${cover(s)}" alt="" loading="lazy"><div><div class="t">${esc(s.title)} ${s.shipped ? `<span class="badge">SHIPPED ${esc(s.shipped)}</span>` : s.partial ? `<span class="badge">SHIPPED ${esc(s.partial)}</span>` : ""}</div><div class="note">${esc(statLine(s))}</div></div></button>`; }
+function renderHome(){
+  const review = sets.filter((s) => s.kind !== "ultra"), ultras = sets.filter((s) => s.kind === "ultra");
+  const live = review.filter((s) => !s.shipped && !s.done), shipped = review.filter((s) => s.shipped || s.done);
+  const q = ultraQuery.trim().toLowerCase();
+  const shown = ultras.filter((s) => !q || s.name.toLowerCase().includes(q) || String(s.num) === q.replace(/^#?0*/, "") || s.blurb.toLowerCase().includes(q));
+  return `${homeSummary()}${STATIC ? `<div class="note">Online review copy of ClassNest v${esc(version || "?")} art. Votes are saved in this browser; tap Copy and paste the text in chat.</div>` : `<div class="appcard"><div><div class="title">ClassNest app (preview)</div><div class="note">The real app from the local clone, served at /app/. Its saved classes live in this browser only.</div></div><a class="btn" href="/app/" target="_blank" rel="noopener">Open app ↗</a></div>`}
+  <h2 id="h-waiting">Waiting for your vote</h2><div class="grid" id="waiting">${live.map(setCard).join("") || `<p class="empty">Nothing waiting. 🎉</p>`}</div>
+  ${shipped.length ? `<details class="shipped" id="done"><summary>Done (${shipped.length})</summary><div class="grid">${shipped.map(setCard).join("")}</div></details>` : ""}
+  <h2 id="h-ultras">Browse all Ultras (current art, nothing to vote) · ${ultras.length}</h2>
+  <input id="uq" type="search" placeholder="Search Ultras by name or number" value="${esc(ultraQuery)}" autocomplete="off">
+  <div class="tiles" style="margin-top:8px">${shown.map((s) => { const t = stats(s); void t; return `<button class="tile" data-set="${esc(s.id)}"><img src="${cover(s)}" alt="" loading="lazy"><div class="cap"><b>#${String(s.num).padStart(2,"0")} ${esc(s.name)}</b>${s.items.some((i) => i.kind === "video") ? "🎬 film" : ""}</div></button>`; }).join("") || `<p class="empty">No match.</p>`}</div>`;
+}
+function passes(s, it){
+  if (filter === "all") return true;
+  if (sticky.has(keyOf(s, it))) return true;
+  const done = doneOf(s, it);
+  if (filter === "done") return !!done;
+  if (done) return false;                                   // shipped / done items only show under Shipped / done and All
+  const raw = rawOf(s, it), e = entryOf(s, it);
+  if (filter === "todo") return inQueue(s, it);
+  if (filter === "sent") return isSent(raw);
+  if (filter === "yes") return e.vote === "yes"; if (filter === "no") return e.vote === "no"; if (filter === "reject") return e.vote === "reject";
+  if (filter === "comment") return !!clean(e.comment);
+  return true;
+}
+function nowCard(s, it){
+  const b = badgeOf(s, it), kp = keepOf(s, it.stage);
+  let keep = "";
+  if (kp && canVote(s, kp) && !doneOf(s, kp)) {
+    const ke = entryOf(s, kp), on = ke.vote === "yes";
+    keep = `<div class="vote keep"><button class="y ${on ? "on" : ""}" data-vote="yes" data-id="${esc(kp.id)}" aria-pressed="${on}">✓ CONFIRM: Keep current</button></div>
+  <div class="note">${on ? `Keeping today's ${STAGE_NAMES[it.stage]}. Picking a draft below switches this off.` : `Like none of the drafts? Keep this ${STAGE_NAMES[it.stage]} instead.`}</div>
+  ${on ? `<button class="clearbtn" data-clear="${esc(kp.id)}">Clear</button>` : ""}`;
+  }
+  return `<div class="card now ${keep && entryOf(s, kp).vote === "yes" ? "yes" : ""}"><span class="sbadge now">${esc(b.t)}</span>
+  <img class="media" src="${cardImg(s, it)}" alt="${esc(nameOf(it))}" loading="lazy" data-zoom="${esc(it.id)}">
+  <div class="body"><div class="title">${esc(nameOf(it))}</div><div class="note">Stage ${it.stage} · ${STAGE_NAMES[it.stage]} · in the app today${it.note ? " · " + esc(it.note) : ""}</div>${keep}</div></div>`;
+}
+function card(s, it){
+  if (it.role === "current") return nowCard(s, it);
+  const e = entryOf(s, it), raw = rawOf(s, it), k = keyOf(s, it), done = doneOf(s, it), pin = pinLine(s, it);
+  const b = badgeOf(s, it);
+  const hist = (raw?.history||[]).length ? `<details class="hist"><summary>History (${raw.history.length})</summary><ul>${raw.history.map((h) => `<li>${esc(when(h.at))} — ${esc(h.reason)}</li>`).join("")}</ul></details>` : "";
+  const img = cardImg(s, it);
+  const box = (ph) => `<textarea placeholder="${esc(ph)}" data-comment="${esc(it.id)}" data-key="${esc(k)}" rows="2" enterkeyhint="done">${esc(e.comment||"")}</textarea>`;
+  /* Crow stays put when REMAKE opens (chips appear under it). Swapping the box out was why
+     typing worked BEFORE remake and failed AFTER — the editable box left the screen / lost focus. */
+  const menu = menuFor === k ? `<div class="menu"><div class="note" style="margin-bottom:4px">Use the box above, or tap a reason: REMAKE is applied and the card moves on.</div>
+  <div class="chips">${REMAKE_TEMPLATES.map((r) => `<button data-reason="${esc(r)}" data-id="${esc(it.id)}" class="${(e.reasons||[]).includes(r) ? "on" : ""}">${esc(r)}</button>`).join("")}</div>
+  <button class="wide n" data-reason="__typed" data-id="${esc(it.id)}">✕ REMAKE with my reason</button><button class="wide" data-reason="" data-id="${esc(it.id)}">REMAKE (no reason)</button><button class="clearbtn" data-menuclose="1">Cancel</button></div>` : "";
+  const votes = canVote(s, it) ? `<div class="vote"><button class="y ${e.vote==="yes"?"on":""}" data-vote="yes" data-id="${esc(it.id)}">✓ CONFIRM</button><button class="n ${e.vote==="no"||menuFor===k?"on":""}" data-vote="no" data-id="${esc(it.id)}">✕ REMAKE…</button><button class="r ${e.vote==="reject"?"on":""}" data-vote="reject" data-id="${esc(it.id)}" aria-pressed="${e.vote==="reject"}">⊘ REJECT</button></div>
+  <label class="crow"><span class="note">${menuFor === k ? "Remake reason (saved as you type)" : "Comment (saved as you type)"}</span>${box(menuFor === k ? "Your reason, e.g. arms look odd" : "Comment or your own remake reason")}</label>
+  ${menu}
+  ${e.vote || clean(e.comment) ? `<button class="clearbtn" data-clear="${esc(it.id)}">Clear verdict</button>` : ""}` : "";
+  const rej = isRejected(s, it), rtag = rej ? `<span class="rtag">REJECTED</span>` : "";
+  const head = b ? `<span class="sbadge ${b.cls}">${esc(b.t)}${rtag}${done ? `<span class="done">${esc(done)}</span>` : ""}</span>` : done ? `<span class="badge">${esc(done)}</span>${rtag}` : rtag;
+  const ttl = it.role === "draft"
+    ? `<div class="ttl"><span class="letter">${esc(it.letter || "?")}</span>${esc(nameOf(it))}${pickTag(it)}</div>${it.desc ? `<div class="desc">${esc(it.desc)}</div>` : ""}`
+    : `<div class="title">${it.kind === "video" ? "▶ " : ""}${esc(nameOf(it))}</div>`;
+  return `<div class="card ${it.role || ""} ${e.vote||""} ${rej && e.vote !== "reject" ? "reject" : ""}" ${rej ? `data-rejected="1"` : ""}>${head}
+  <img class="media" src="${img}" alt="${esc(nameOf(it))}" loading="lazy" data-zoom="${esc(it.id)}">
+  <div class="body">${ttl}${pin ? `<div class="pin ${pin.cls}">${esc(pin.t)}</div>` : ""}${it.note ? `<div class="note">${esc(it.note)}</div>` : ""}
+  ${votes}${hist}<div class="saved" data-saved="${esc(k)}"></div></div></div>`;
+}
+function tile(s, it){
+  const e = entryOf(s, it);
+  return `<button class="tile ${e.vote||""} ${isRejected(s, it) && e.vote !== "reject" ? "reject" : ""}" data-zoom="${esc(it.id)}"><img src="${thumb(s, it)}" alt="" loading="lazy"><div class="cap">${esc(nameOf(it))}</div></button>`;
+}
+let shownOrder = [];                 // items in the order they are on screen (lightbox ‹ › follows it)
+function visibleItems(){ return shownOrder.map((x) => x.it); }
+function renderStaged(){
+  const s = set, hl = headline(s), more = s.details || s.blurb;
+  let html = `${hl ? `<p class="headline">${esc(hl)}</p>` : ""}${more ? `<details class="more"><summary>Details</summary><p class="blurb">${esc(more)}</p></details>` : ""}`;
+  const order = [];
+  for (const st of [1, 2, 3]) {
+    const cur = s.items.filter((it) => it.stage === st && it.role === "current"), drafts = s.items.filter((it) => it.stage === st && it.role !== "current" && it.role !== "keep");
+    if (!cur.length && !drafts.length) continue;
+    const shown = drafts.filter((it) => passes(s, it)), nm = STAGE_NAMES[st];
+    const open = drafts.filter((it) => !doneOf(s, it)), shipCur = cur.find((it) => it.shipped);
+    const sub = s.kind === "ultra" ? "In the app now."
+      : open.length ? `${open.length} draft${open.length === 1 ? "" : "s"}. Pick one to replace the current ${nm}, REMAKE, or REJECT the ones you don't want.`
+      : shipCur ? `Shipped ${shipCur.shipped}: the new ${nm} is in the app now. Nothing left to vote here.`
+      : drafts.length ? `Decided. Nothing left to vote here (${s.shipped ? `set shipped ${s.shipped}` : "drafts closed"}).`
+      : (s.shipped ? `Not changed in ${s.shipped}. Shown so you can check the style.` : "Not changing. Shown so you can check the style.");
+    order.push(...cur, ...shown);
+    html += `<section class="stg" data-stage="${st}"><h2 class="stagehead">Stage ${st} · ${nm}</h2><div class="note">${esc(sub)}</div><div class="grid">${cur.map((it) => nowCard(s, it)).join("")}${shown.map((it) => card(s, it)).join("")}</div>${drafts.length && !shown.length ? `<p class="empty small">${filter === "todo" ? "All drafts here have a vote ✓ (see Confirm / Remake / Reject / Sent)" : "No drafts for this filter."}</p>` : ""}</section>`;
+  }
+  for (const g of s.groups || []) {
+    const items = s.items.filter((it) => !it.stage && (it.group || "_") === g.id && (!canVote(s, it) || passes(s, it)));
+    if (!items.length) continue; order.push(...items);
+    const compact = g.compact || g.id === "scrub" || g.id === "extras";
+    html += `<h2>${esc(g.title || "")}</h2><div class="${compact ? "tiles" : "grid"}">${items.map((it) => compact ? tile(s, it) : card(s, it)).join("")}</div>`;
+  }
+  shownOrder = order.map((it) => ({s, it}));
+  return html;
+}
+function renderSet(){
+  if (set.staged) return renderStaged();
+  const groups = set.groups?.length ? set.groups : [{id:"_", title:""}];
+  let html = `<p class="blurb">${esc(set.blurb||"")}</p>`; let n = 0; const order = [];
+  for (const g of groups) {
+    const items = set.items.filter((it) => (it.group || "_") === g.id && passes(set, it));
+    if (!items.length) continue; n += items.length; order.push(...items);
+    const compact = g.compact || g.id === "scrub";
+    html += `${g.title ? `<h2>${esc(g.title)}</h2>` : ""}<div class="${compact ? "tiles" : "grid"}">${items.map((it) => compact ? tile(set, it) : card(set, it)).join("")}</div>`;
+  }
+  shownOrder = order.map((it) => ({s: set, it}));
+  if (n) return html;
+  const msg = filter === "todo" ? (set.shipped ? `Everything here shipped (${esc(set.shipped)}). Nothing left to review.` : "Nothing left to review here ✓") : "Nothing here for this filter.";
+  return html + `<p class="empty">${msg}</p>`;
+}
+/* The tap-to-copy block (Summary tab and top of Home): same text, same copy-then-clear, same fallback. */
+function pendingBlock(text){
+  return `<h2 class="sumhead">Pending — tap to copy <button id="sumcopy">Copy</button></h2><pre id="sumtext" title="Tap to copy">${esc(text)}</pre>
+  <div id="fallback"><div class="note">Copy didn't work here. Select the text below and copy it, then tap “I copied it”.</div><textarea readonly>${esc(text)}</textarea><button class="wide" id="manualsent">I copied it — clear these</button></div>`;
+}
+function homeSummary(){
+  const all = pendingEntries(), text = formatApprovals(all);
+  return all.length ? `<div class="homesum" id="homesum">${pendingBlock(text)}</div>` : `<p class="note homesum-empty" id="homesum">Nothing to send yet</p>`;
+}
+let summaryList = [];
+function renderSummary(){
+  const all = pendingEntries(), text = formatApprovals(all);
+  summaryList = all;
+  const sec = (title, list, note) => list.length ? `<div class="sum-sec"><b>${title} (${list.length})</b>${list.map((x) => `<div class="sum-item"><img src="${thumb(x.s, x.item)}" data-sum="${esc(x.s.id)}|${esc(x.item.id)}" alt=""><div><div class="title">${esc(nameOf(x.item))}</div><div class="note">${esc(x.s.title)} · ${esc(x.item.id)}${note(x) ? " — " + esc(note(x)) : ""}</div></div></div>`).join("")}</div>` : "";
+  const sent = [];
+  for (const s of sets) for (const it of s.items) { const e = rawOf(s, it); if (isSent(e) && !doneOf(s, it)) sent.push({s, it, e}); }
+  sent.sort((a, b) => b.e.sent.at - a.e.sent.at);
+  return `${all.length ? "" : `<p class="empty">Nothing to send. Everything you voted on has been copied or shipped.</p>`}
+  ${sec("CONFIRM", all.filter((x) => x.e.vote==="yes"), (x) => clean(x.e.comment))}
+  ${sec("REMAKE", all.filter((x) => x.e.vote==="no"), remakeNote)}
+  ${sec("REJECT", all.filter((x) => x.e.vote==="reject"), (x) => clean(x.e.comment))}
+  ${sec("COMMENT", all.filter((x) => !x.e.vote && clean(x.e.comment)), (x) => clean(x.e.comment))}
+  ${all.length ? pendingBlock(text) : ""}
+  ${sent.length ? `<details class="shipped"><summary>Sent, waiting on the bot (${sent.length})</summary>${sent.slice(0, 40).map((x) => `<div class="note">${esc(when(x.e.sent.at))} · ${esc(x.s.title)}: ${esc(x.it.id)} — ${vName(x.e.sent.vote)}${(x.e.sent.reasons||[]).length ? " · " + esc(x.e.sent.reasons.join("; ")) : ""}</div>`).join("")}</details>` : ""}`;
+}
+function parseRoute(){
+  const h = location.hash.replace(/^#\/?/, "");
+  if (h.startsWith("set/")) { const s = sets.find((x) => x.id === decodeURIComponent(h.slice(4))); if (s) return {view:"set", s}; }
+  if (h === "summary" || (!h && location.pathname === "/summary")) return {view:"summary"};
+  return {view:"home"};
+}
+function go(hash){ if (location.hash !== hash) location.hash = hash; else onRoute(); }
+function onRoute(){ closeLb(); menuFor = null; sticky.clear(); route = parseRoute(); set = route.s || null; render(); window.scrollTo(0, 0); }
+const busyTyping = () => { const a = document.activeElement; return !!(a && a.dataset && a.dataset.comment); };
+function countText(all){ const y = all.filter((x)=>x.e.vote==="yes").length, n = all.filter((x)=>x.e.vote==="no").length, r = all.filter((x)=>x.e.vote==="reject").length, c = all.length - y - n - r;
+  return all.length ? [`${y} confirm`, `${n} remake`, r && `${r} reject`, c && `${c} comment`].filter(Boolean).join(" · ") + " to send" : "Nothing to send"; }
+function render(){
+  const v = route.view;
+  document.getElementById("tab-home").classList.toggle("on", v !== "summary");
+  document.getElementById("tab-summary").classList.toggle("on", v === "summary");
+  document.getElementById("h-title").textContent = v === "set" ? set.title : "ClassNest preview";
+  const todoN = v === "set" ? set.items.filter((it) => inQueue(set, it)).length : 0;
+  const votable = v === "set" && set.items.some((it) => canVote(set, it));
+  document.getElementById("subbar").innerHTML = v === "set"
+    ? `<button class="pill" data-home="1">← All sets</button>${set.shipped ? `<span class="badge">SHIPPED ${esc(set.shipped)}</span>` : ""}` + (!votable ? `<span class="note">Reference only · nothing to vote</span>` : "") + (!votable ? [] : FILTERS).map(([id, label]) => `<button class="pill ${filter===id?"on":""}" data-filter="${id}">${label}${id === "todo" ? ` (${todoN})` : ""}</button>`).join("")
+    : "";
+  document.getElementById("subbar").style.display = v === "set" ? "" : "none";
+  const keep = window.scrollY, ae = document.activeElement, focusId = ae && ae.id;
+  const typing = ae && ae.dataset && ae.dataset.key ? {k: ae.dataset.key, a: ae.selectionStart, b: ae.selectionEnd} : null;
+  const main = document.getElementById("main");
+  main.style.setProperty("--ar", set?.aspect || "1");
+  main.innerHTML = !sets.length ? `<p class="empty">Loading…</p>` : v === "set" ? renderSet() : v === "summary" ? renderSummary() : renderHome();
+  window.scrollTo(0, keep);
+  if (focusId === "uq") { const i = document.getElementById("uq"); i.focus(); i.setSelectionRange(i.value.length, i.value.length); }
+  if (typing) { const t = main.querySelector(`textarea[data-key="${CSS.escape(typing.k)}"]`); if (t) { t.focus({preventScroll:true}); try { t.setSelectionRange(typing.a, typing.b); } catch {} } }
+  const all = pendingEntries();
+  document.getElementById("count").textContent = countText(all);
+  document.getElementById("copy").disabled = !all.length;
+}
+
+document.addEventListener("click", (ev) => {
+  const t = ev.target.closest("[data-set],[data-home],[data-vote],[data-reason],[data-filter],[data-zoom],[data-sum],[data-clear],[data-menuclose]"); if (!t || t.closest("#lb")) return;
+  const find = (id) => set.items.find((x) => x.id === id);
+  if (t.dataset.set) { go("#/set/" + encodeURIComponent(t.dataset.set)); return; }
+  if (t.dataset.home) { go("#/"); return; }
+  if (t.dataset.vote === "yes") { menuFor = null; const it = find(t.dataset.id); sticky.delete(keyOf(set, it)); confirmItem(set, it); return; }
+  if (t.dataset.vote === "reject") { const it = find(t.dataset.id); sticky.delete(keyOf(set, it)); rejectItem(set, it); return; }
+  if (t.dataset.vote === "no") { const k = keyOf(set, find(t.dataset.id)); menuFor = menuFor === k ? null : k; if (menuFor) sticky.add(k); render(); if (menuFor) focusRemakeBox(k); return; }
+  if (t.dataset.reason !== undefined) { const it = find(t.dataset.id); sticky.delete(keyOf(set, it)); remakeItem(set, it, t.dataset.reason === "__typed" ? "" : t.dataset.reason); return; }
+  if (t.dataset.clear) { clearItem(set, find(t.dataset.clear)); return; }
+  if (t.dataset.menuclose) { menuFor = null; render(); return; }
+  if (t.dataset.filter) { filter = t.dataset.filter; localStorage.setItem(LS_KEY + ":filter2", filter); sticky.clear(); menuFor = null; render(); return; }
+  if (t.dataset.zoom) { const list = visibleItems().map((it) => ({s: set, it})); openLb(list, Math.max(0, list.findIndex((x) => x.it.id === t.dataset.zoom))); return; }
+  if (t.dataset.sum) { const [sid, iid] = t.dataset.sum.split("|"); const list = summaryList.map((x) => ({s: x.s, it: x.item})); openLb(list, Math.max(0, list.findIndex((x) => x.s.id === sid && x.it.id === iid))); return; }
+});
+/* Comments save on every keystroke (debounced to the server) so nothing is lost on phones; the card stays put while typing. */
+let commentTimers = {};
+document.addEventListener("input", (ev) => {
+  const t = ev.target;
+  if (t.id === "uq") { ultraQuery = t.value; render(); return; }
+  if (t.dataset.comment && t.dataset.key) {
+    const k = t.dataset.key, i = k.indexOf("/"), cs = sets.find((x) => x.id === k.slice(0, i)), it = cs?.items.find((x) => x.id === k.slice(i + 1));
+    if (!it) return;
+    sticky.add(k);
+    const e = entryOf(cs, it);
+    setEntry(cs, it, {comment: t.value}, null, {quiet:true});
+    clearTimeout(commentTimers[k]);
+    commentTimers[k] = setTimeout(() => { const raw = store.items[k]; if (raw && raw.history && clean(t.value) && !(raw.history[0]||{}).reason?.startsWith("comment")) { raw.history = [{at: Date.now(), reason: `comment: ${clean(t.value).slice(0,80)}`}, ...raw.history].slice(0, 20); saveLocal(); push(k); } }, 1200);
+    const el = document.querySelector(`[data-saved="${CSS.escape(k)}"]`); if (el) el.textContent = "Saved on this device";
+    void e;
+  }
+});
+/* Typing: no re-render on blur (that used to drop the card mid-edit and eat the next tap); the card stays until a vote,
+   a filter change or leaving the page. Keep the box above the phone keyboard and hide the bottom bar meanwhile. */
+/* Soft keyboard: never smooth-scroll on focus — that dismisses the keyboard on iOS/Android. */
+function nudgeCommentBox(t){
+  if (!t || document.activeElement !== t) return;
+  const r = t.getBoundingClientRect(), vh = window.innerHeight;
+  if (r.top < 70 || r.bottom > vh - 24) t.scrollIntoView({block: "center", behavior: "instant"});
+}
+function focusRemakeBox(key){
+  const tryFocus = () => {
+    // Prefer the lightbox reason box when its menu is open — crow on the card stays in the DOM
+    // behind the overlay and would otherwise steal querySelector / focus (typed text looks "invisible").
+    const sel = `textarea[data-key="${CSS.escape(key)}"]`;
+    const t = document.querySelector(`#lb-menu.open ${sel}`) || document.querySelector(sel);
+    if (!t) return false;
+    t.focus();
+    try { const n = t.value.length; t.setSelectionRange(n, n); } catch {}
+    nudgeCommentBox(t);
+    return document.activeElement === t;
+  };
+  if (tryFocus()) return;
+  requestAnimationFrame(() => { if (!tryFocus()) setTimeout(tryFocus, 50); });
+}
+document.addEventListener("focusin", (ev) => {
+  const t = ev.target; if (!(t.dataset && t.dataset.comment)) return;
+  document.body.classList.add("typing");
+  setTimeout(() => nudgeCommentBox(t), 50);
+});
+document.addEventListener("focusout", (ev) => {
+  const t = ev.target; if (!(t.dataset && t.dataset.comment)) return;
+  setTimeout(() => { if (!busyTyping()) { document.body.classList.remove("typing"); const all = pendingEntries(); document.getElementById("count").textContent = countText(all); document.getElementById("copy").disabled = !all.length; } }, 150);
+});
+document.getElementById("tab-home").onclick = () => go("#/");
+document.getElementById("tab-summary").onclick = () => go("#/summary");
+document.getElementById("copy").onclick = copyText;
+document.addEventListener("click", (ev) => {
+  if (!ev.target.closest) return;
+  if (ev.target.closest("#sumtext") || ev.target.closest("#sumcopy")) copyText();
+  if (ev.target.closest("#manualsent")) { const list = pendingEntries(); markSent(list).then(() => { toast(`Cleared ${list.length} from the queue`); render(); }); }
+});
+window.addEventListener("hashchange", onRoute);
+window.addEventListener("storage", (e) => { if (e.key === LS_KEY) { store = loadLocal(); if (!busyTyping()) render(); } });
+
+(async () => {
+  render();
+  let ss = null, meta = {};
+  if (!STATIC) {
+    try { const r = await fetch("/api/sets"); if (!r.ok) throw new Error(r.status); ss = await r.json(); if (!Array.isArray(ss)) throw new Error("bad");
+      meta = await fetch("/api/meta").then((r) => r.json()).catch(() => ({})); }
+    catch { STATIC = true; }
+  }
+  if (STATIC) {
+    [ss, meta] = await Promise.all([fetch("data/sets.json", {cache:"no-cache"}).then((r) => r.json()), fetch("data/meta.json", {cache:"no-cache"}).then((r) => r.json()).catch(() => ({}))]);
+    document.getElementById("h-note").textContent = "· online copy" + (meta.builtAt ? " · " + new Date(meta.builtAt).toLocaleDateString([], {month:"short", day:"numeric"}) : "");
+  }
+  sets = normalize(ss); version = meta.version || "";
+  pruneStale();
+  route = parseRoute(); set = route.s || null; render();
+  await sync(); render();
+})();
+
+</script>
+</body>
+</html>

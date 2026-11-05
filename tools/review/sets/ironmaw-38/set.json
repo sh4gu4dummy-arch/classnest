@@ -1,0 +1,181 @@
+{
+  "id": "ironmaw-38",
+  "title": "Ironmaw #38",
+  "root": "/workspace/ironmaw-trial",
+  "created": "2026-10-22",
+  "groups": [
+    {
+      "id": "before",
+      "title": "Before the remake (s2 + s3 replaced v0.147)",
+      "done": "reference: the art before this rework"
+    },
+    {
+      "id": "extras",
+      "title": "Extras: review sheets (nothing to vote)"
+    }
+  ],
+  "items": [
+    {
+      "id": "old-s1",
+      "stage": 1,
+      "role": "current",
+      "title": "Hatchling (unchanged)",
+      "file": "old/38-s1.jpg"
+    },
+    {
+      "id": "old-s2",
+      "role": "reference",
+      "title": "Old Adolescent (replaced v0.147)",
+      "file": "old/38-s2.jpg",
+      "group": "before",
+      "replaced": "v0.147",
+      "done": "replaced in v0.147"
+    },
+    {
+      "id": "pick-s2-A",
+      "stage": 2,
+      "role": "draft",
+      "letter": "A",
+      "title": "Adolescent A",
+      "desc": "teen smith mid-swing at the anvil, sparks",
+      "file": "picks/38-s2.jpg",
+      "thumb": "picks/board/38-s2.jpg",
+      "pick": "bot",
+      "done": "Ash picked Adolescent C"
+    },
+    {
+      "id": "adol-B",
+      "stage": 2,
+      "role": "draft",
+      "letter": "B",
+      "title": "Adolescent B",
+      "desc": "walking out carrying a bronze bell, hinge medal",
+      "file": "options/s2-B.jpg",
+      "note": "looks barely older than s1",
+      "done": "Ash picked Adolescent C"
+    },
+    {
+      "id": "pick-s2-C",
+      "stage": 2,
+      "role": "current",
+      "letter": "C",
+      "title": "Now in app: Adolescent C",
+      "desc": "kneeling to fit a glowing hinge on a door, tongue out",
+      "file": "picks/38-s2-alt-C.jpg",
+      "thumb": "picks/board/38-s2-alt-C.jpg",
+      "pick": "runner-up",
+      "note": "Ash confirmed; SHIPPED as 38-s2 in v0.147 (commit a91dac2)",
+      "shipped": "v0.147"
+    },
+    {
+      "id": "adol-D",
+      "stage": 2,
+      "role": "draft",
+      "letter": "D",
+      "title": "Adolescent D",
+      "desc": "hammer on shoulder, braid, chest plate, sunset",
+      "file": "options/s2-D.jpg",
+      "note": "style drift: sketchy parchment vignette backdrop",
+      "done": "Ash picked Adolescent C"
+    },
+    {
+      "id": "old-s3",
+      "role": "reference",
+      "title": "Old Legend (replaced v0.147)",
+      "file": "old/38-s3.jpg",
+      "group": "before",
+      "replaced": "v0.147",
+      "done": "replaced in v0.147"
+    },
+    {
+      "id": "pick-s3-A",
+      "stage": 3,
+      "role": "draft",
+      "letter": "A",
+      "title": "Legend A",
+      "desc": "adult warchief on the battlement, glowing hammer raised, great bell, sunrise",
+      "file": "picks/38-s3.jpg",
+      "thumb": "picks/board/38-s3.jpg",
+      "pick": "bot",
+      "done": "Ash picked Legend C"
+    },
+    {
+      "id": "legend-B",
+      "stage": 3,
+      "role": "draft",
+      "letter": "B",
+      "title": "Legend B",
+      "desc": "striking a giant bell, golden sound waves",
+      "file": "options/s3-B.jpg",
+      "note": "art check FAIL: hammer reads as two hammers through the bell; legs cropped",
+      "done": "Ash picked Legend C"
+    },
+    {
+      "id": "legend-C",
+      "stage": 3,
+      "role": "current",
+      "letter": "C",
+      "title": "Now in app: Legend C",
+      "desc": "on a throne of anvils and hinges, crown, offers glowing hinge",
+      "file": "options/s3-C.jpg",
+      "note": "Ash confirmed; SHIPPED as 38-s3 in v0.147 (commit a91dac2)",
+      "shipped": "v0.147"
+    },
+    {
+      "id": "legend-D",
+      "stage": 3,
+      "role": "draft",
+      "letter": "D",
+      "title": "Legend D",
+      "desc": "slamming the anvil, golden shockwave",
+      "file": "options/s3-D.jpg",
+      "note": "art check FAIL: face reads fierce/angry (scary)",
+      "done": "Ash picked Legend C"
+    },
+    {
+      "id": "pick-s3-E",
+      "stage": 3,
+      "role": "draft",
+      "letter": "E",
+      "title": "Legend E",
+      "desc": "at the repaired castle gate, hand on the hinge, bells in towers",
+      "file": "picks/38-s3-alt-E.jpg",
+      "thumb": "picks/board/38-s3-alt-E.jpg",
+      "pick": "runner-up",
+      "note": "boots cut off at the bottom",
+      "done": "Ash picked Legend C"
+    },
+    {
+      "id": "legend-F",
+      "stage": 3,
+      "role": "draft",
+      "letter": "F",
+      "title": "Legend F",
+      "desc": "laughing anvil strike at dusk",
+      "file": "options/s3-F.jpg",
+      "note": "art check FAIL: near-copy of Adolescent A's pose; holds hot bar bare-handed",
+      "done": "Ash picked Legend C"
+    },
+    {
+      "id": "sheet-review",
+      "role": "reference",
+      "group": "extras",
+      "title": "Old vs new review sheet",
+      "file": "review.png",
+      "done": "review sheet"
+    },
+    {
+      "id": "sheet-phone",
+      "role": "reference",
+      "group": "extras",
+      "title": "Phone check (390x844)",
+      "file": "phone-check.png",
+      "done": "review sheet"
+    }
+  ],
+  "coverItem": "legend-C",
+  "details": "SHIPPED v0.147: s2 Adolescent C (kneeling to fit a glowing hinge), s3 Legend C (hinge-throne smith-king). Hatchling unchanged. Home film 38 is now stale (reshoot only on Ash's go).",
+  "ultra": 38,
+  "shipped": "v0.147",
+  "headline": "Ironmaw #38: SHIPPED v0.147. Adolescent C and Legend C are now in the app. Hatchling unchanged."
+}

@@ -1,0 +1,10 @@
+ClassNest (github.com/sh4gu4dummy-arch/classnest, main). Read docs/START-HERE.md first, then AGENTS.project.md.
+
+NOW: Home 16–20 shipped. Bot1 QA in docs/home-film-qa/AUDIT-16-20.md (17 scrap PASS; soft 16/18; fix encode peaks).
+Next PLAN: 21–25 — docs/home-round-21-25.md. Do not generate until teacher go.
+Shared QA board + debate: docs/team-qa.md. Bot1=QA, shoot-bot=executor.
+
+21–25: Quietpaw / Hearthound / Mistfawn / Mossback / Softwing. Object props only. No humans/crowds. Virtue visible at t7. Probe loudness max before READY.
+
+DO NOT redo 01–20 unless they name ids (horrors: 02, 03, 05). Do not delete mp4s. lmk = talk only.
+Home films ARE in git. Intro/adventure are NOT.

@@ -341,3 +341,5 @@ Nothing was rewritten, force-pushed or filtered. Ideas for Ash to decide on, one
 3. **Home films 01–10** are the biggest blobs (6–16 MB each) but they're current, tracked on purpose. Could be
    re-encoded to a smaller bitrate later (new commit, no rewrite) if repo size matters.
 4. No noisy "wip/fixup/oops" commits found (114 commits on `main`).
+
+> Update: the §11 recovered review tooling was merged into `main` under `tools/review/` (refreshed from the live `/workspace/classnest-review` copies where newer).
