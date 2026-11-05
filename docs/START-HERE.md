@@ -4,7 +4,7 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 
 **Review tooling now in repo (docs/tools only, app still v0.149):** the Ash vote-site pipeline (build/publish scripts, server, `remake-tool.py`, Playwright `test/pages-test.cjs`, per-set `sets/*/set.json`, `verdicts.json`, `history.jsonl`, trial configs) lives in `tools/review/` — see `tools/review/README.md` and `RECOVERED.md`. Draft images stay on the public review repo / box, not here. Old handoff notes: `docs/archive/handoff-2026-09/`.
 
-**v0.150.** This file ships in **every** push.
+**v0.151.** This file ships in **every** push.
 
 **Replacement agent / handover:** read [HANDOVER.md](HANDOVER.md) (who's who, Ash's rules, memory, status, waiting-on-Ash, secrets locations, scars). Art votes with Ash's exact words: [art-decisions.md](art-decisions.md).
 
@@ -27,6 +27,8 @@ Next on `start`: **56 Noxquill**.
 **UI:** Teacher catalog is **landscape-wide** (~92vw / 1100px) with denser thumb grid + tiny IDs outside thumbs.
 
 **UI:** **Cinematic evolution** toggle (Display menu + Ultra class settings) — one Home scrub still per point when on; classic snaps default. Plan: [cinematic-evolution-mode.md](cinematic-evolution-mode.md). Scrub frames local-only under `public/avatars/ultra/scrub/` (gitignored).
+
+**v0.151 (Softwing #25 evolution reshoot + Quartzarch #48 Adolescent, Ash-confirmed):** `public/avatars/ultra/25-s2.jpg` is now **Adolescent B** (the taller, older cream dove on a white cottage eave, wings opening, fallen feather) and `25-s3.jpg` is **Legend B** (huge sun-guardian dove, wings fully spread, golden aura, atop a white tower at golden hour); both 1024→768 JPG to match the 768 Hatchling. `48-s2.jpg` is now **Adolescent G** (tall sturdy rock-armor crystal teen in clear white rainbow crystal, amethyst spines + chest core as accents; 1024→1408 JPG). **Quartzarch Legend `48-s3.jpg` is unchanged (Legend E, v0.148)** — Ash asked for a remake (Legend G "looks too young"); Legend H is pending review. Plus `ultra/board/` (360) and the `public/offline-app/avatars/` mirror. Hatchlings unchanged. Drafts stay local in `/workspace/softwing-trial/` and `/workspace/quartzarch-trial/`. **Home films `homes/25.mp4` and `homes/48.mp4` and the local scrub frames for 25 and 48 are stale (old art)** — reshoot only on Ash's `go`.
 
 **v0.150 (Quietpaw #21 evolution reshoot, Ash-confirmed):** `public/avatars/ultra/21-s2.jpg` is now **Adolescent B** (the former draft Legend A: big fluffy silver tabby lying on an arched window seat, rainy city night; body touches the right edge slightly — accepted) and `21-s3.jpg` is **Legend B** (giant storm-guardian tabby with glowing amber eyes, storm swirls and lightning on a rooftop over a rainy night city; rune-like glyphs only). Both 1024→768 JPG to match the 768 Hatchling. Plus `ultra/board/` (360) and the `public/offline-app/avatars/` mirror. `21-s1` Hatchling unchanged. Drafts stay local in `/workspace/quietpaw-trial/`. **Home film `avatars/ultra/homes/21.mp4` and the local scrub frames for 21 are stale (old art)** — reshoot only on Ash's `go`.
 

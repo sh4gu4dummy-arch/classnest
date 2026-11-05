@@ -1,5 +1,7 @@
 # Home round 41–50 (PLAN — QA audited; wait teacher `go`)
 
+> **v0.151 note:** `48-s2.jpg` (Quartzarch Adolescent G) was reshot (Legend `48-s3` changed in v0.148). `homes/48.mp4` and the scrub frames for 48 are stale. Reshoot only on Ash's `go`.
+
 **Expedite (Ash):** all **ten in one pass**. No trial-stop between ids.
 
 **HARD shoot gate:** after **each** id is filmed + encoded + stamped + in catalog/`ULTRA_HOME_READY`, **git commit that id** before starting the next. Do not ten-pack without per-id commits (work-loss risk).
