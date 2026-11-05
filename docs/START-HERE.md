@@ -4,6 +4,8 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 
 **v0.149.** This file ships in **every** push.
 
+**Replacement agent / handover:** read [HANDOVER.md](HANDOVER.md) (who's who, Ash's rules, memory, status, waiting-on-Ash, secrets locations, scars). Art votes with Ash's exact words: [art-decisions.md](art-decisions.md).
+
 **Meta-QA / supervisor protocol:** [QA-SUPERVISOR.md](QA-SUPERVISOR.md) (QAsup sleeping 2026-09-19 — **Ash-direct** until a supervisor returns).
 
 ## `start`
