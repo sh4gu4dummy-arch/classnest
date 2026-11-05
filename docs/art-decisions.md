@@ -4,7 +4,7 @@ Human-readable record of every Ash CONFIRM / REMAKE / REJECT / COMMENT on Ultra 
 remake programme started (2026-10-22), so nothing lives only in chat or on Bot1's box.
 Sources: Ash's chat messages to ClassNest-Bot1, the review site's `set.json` / `verdicts.json`
 (copies held on local branch `handover-recovered`, pending Ash OK), and the ship commits.
-Written by ClassNest-Bot1 on 2026-11-05. Newest ship at that time: **v0.149** (`ddbf93c`).
+Started by ClassNest-Bot1 on 2026-11-05 (through v0.149). Catch-up by QAsupervisor 2026-11-05 evening (America/New_York) through **v0.151** (`cccadbe`).
 
 Stage names: **s1 Hatchling**, **s2 Adolescent**, **s3 Legend**. Files: `public/avatars/ultra/NN-sK.jpg`,
 board thumbs `public/avatars/ultra/board/NN-sK.jpg` (360), plus the unused `public/offline-app/avatars/` mirror.
@@ -61,19 +61,22 @@ COMMENT
   winged copper teapot, lanterns). Ash allowed removing a stray plant only if nothing else changed → done, v0.146.
 - s1 unchanged. Home film `homes/34.mp4` + scrub stale.
 
-### Quartzarch #48 — s3 shipped v0.148 (`dde4522`, 2026-10-23); s2 still open
+### Quartzarch #48 — s3 shipped v0.148 (`dde4522`); s2 shipped v0.151 (`cccadbe`, 2026-11-05)
 - 2026-10-22 COMMENT (Ash's words): **"Quartzarch #48: Adolescent A (pick-s2-A) — changed too girly,
   Adolescent B (adol-B) — changed too girly"**. Set marks A, B, C (levitating, pink shards) and D (pink armor,
   rainbow beam) as rejected "too girly".
 - 2026-10-23 **CONFIRM:** "Quartzarch #48: Legend E (legend-E)" → s3 = crystal sage, arms raised, rose-quartz
   robe, rainbow beams from a star rose window (1024→1408). Legends A–D: Ash picked E.
-- Ash chose "Yes, make one new less-girly Quartzarch Adolescent" → **Adolescent E (adol-E)**: sturdy crystal-rock
-  golem, purple/amethyst dragon spines, fists-up stance, friendly grin, no pink/bows/capes. On the review page
-  with a "Keep current" button (Ash: "give me a button to confirm the existing one too if I just decide to keep it").
+- Ash chose "Yes, make one new less-girly Quartzarch Adolescent" → drafts E/F/G. Feedback on the way: E "i like
+  brighter color purple, stronger feel"; F "keep some crystal white rainbows from previous".
 - 2026-11-05 COMMENT "Quartzarch #48: Adolescent E (adol-E) — asdfadf" = Ash's typing test of the comment box,
-  **not a vote**. (`verdicts.json` also holds an `asdfadfXYZ…` comment on adol-E: Bot1's own repro test residue —
-  ignore.) **Still waiting on Ash: CONFIRM adol-E or Keep current.**
-- Home film `homes/48.mp4` + scrub stale (Legend changed).
+  **not a vote** (ignore).
+- **CONFIRM Adolescent G** → shipped as `48-s2` in **v0.151**: tall sturdy rock-armor crystal teen in clear white
+  rainbow crystal, amethyst spines + chest core as accents (1024→1408). Hatchling unchanged.
+- Legend: Ash cancelled a confirm on Legend E (still in app from v0.148). Legend G got **"looks too young"**.
+  **Legend H** is on the review set (builds off shipped Adolescent G) — waiting Ash CONFIRM / Keep current /
+  REMAKE. Do **not** nag (Ash standing 2026-11-05: no ClassNest art-vote nags).
+- Home film `homes/48.mp4` + scrub stale (s2 and likely s3 when Legend moves).
 
 ### Ironmaw #38 — shipped v0.147 (`a91dac2`, 2026-10-23)
 - Ash: **"ClassNest v0.146 / CONFIRM / Ironmaw #38: Adolescent C (pick-s2-C), Legend C (legend-C)"**
@@ -101,12 +104,37 @@ COMMENT
   draft cropped to square (sky/gravel extended), sized 768 to match the Hatchling. s1, s3 unchanged.
 - Home film `homes/03.mp4` + scrub for 03 stale.
 
-## Open after v0.149
+### Quietpaw #21 — shipped v0.150 (`af9076e`, 2026-11-05)
+- **CONFIRM** Adolescent B + Legend B reshoot. Details in review set `quietpaw-21` / START-HERE. Home film
+  `homes/21.mp4` + scrub stale.
+
+### Softwing #25 — shipped v0.151 (`cccadbe`, 2026-11-05)
+- **CONFIRM** Adolescent B (taller cream dove on cottage eave) + Legend B (sun-guardian dove on white tower).
+  Sized 1024→768 to match Hatchling. Home film `homes/25.mp4` + scrub stale.
+
+### Boring-Ultra remake batch (on review site, drafts local) — 2026-11-05
+Ash's "clearly lame / stages barely change" pass. One draft per weak stage; Hatchling kept. Sets already on the
+local + Pages review viewer (no art-vote nags from QAsup):
+`rimeveil-53`, `viridelle-47`, `ashenhoof-27`, `quillburst-11`, `glimmercap-30`, `inkstride-49`,
+`hearthound-22`, `mistfawn-23`. Trial folders under `/workspace/<name>-trial/`.
+
+### QAsup next-lame audit (2026-11-05 evening, visual + ahash) — not drafted yet
+Clearly weak adjacent stages still **without** a dedicated remake set (auto `ultra-NN` tiles already exist):
+1. **#55 Hollowplate** — s2 and s3 are the same hall pose; mostly armor recolor/iridescence. Highest priority.
+2. **#41 Sparkgrit** — same face, same glowing gadget across s1/s2/s3; background grows, creature barely does.
+3. **#45 Brinecrown** — s2≈s3 underwater trident pose; crown/armor glow only.
+4. **#42 Gravemason** — s2≈s3 mountain pose; glow/water added, pose locked.
+**Not lame (skip):** #13 Hexabyte — clear kit→fox→wolf progression and pose change.
+Next ClassNest remake pass: draft **one** option per weak stage for Hollowplate first, force onto the review
+viewer the same way as the boring batch. Do not ping Ash for votes.
+
+## Open after v0.151
 
 | Item | Waiting on |
 |---|---|
-| Quartzarch #48 Adolescent E vs Keep current | Ash vote |
-| Home film + scrub reshoots for 03, 24, 34, 35, 38, 46, 48 (old art) | Ash `go` |
+| Quartzarch #48 Legend H vs Keep current (Legend E) | Ash vote (no nags) |
+| Boring-Ultra batch drafts above | Ash votes when ready (no nags) |
+| Home film + scrub reshoots for 03, 21, 24, 25, 34, 35, 38, 46, 48 (old art) | Ash `go` |
 
 When a decision lands: ship it (VERSION bump, `npm run build:offline`, `sh scripts/push-github.sh`), mark the
 item shipped in the review site's `verdicts.json`, republish the review site, and **add a line here**.

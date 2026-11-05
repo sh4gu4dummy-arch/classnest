@@ -6,6 +6,8 @@ You are in **ClassNest** (`sh4gu4dummy-arch/classnest`, `main`). Teacher: hobby 
 
 **v0.151.** This file ships in **every** push.
 
+**Docs catch-up (QAsup 2026-11-05 evening):** [art-decisions.md](art-decisions.md) now matches live ships through v0.151 (Quietpaw, Softwing, Quartzarch Adolescent G) and lists open Legend H + the boring-Ultra batch + the next lame-audit queue (Hollowplate #55 first). No product change.
+
 **Replacement agent / handover:** read [HANDOVER.md](HANDOVER.md) (who's who, Ash's rules, memory, status, waiting-on-Ash, secrets locations, scars). Art votes with Ash's exact words: [art-decisions.md](art-decisions.md).
 
 **Meta-QA / supervisor protocol:** [QA-SUPERVISOR.md](QA-SUPERVISOR.md) (QAsup sleeping 2026-09-19 — **Ash-direct** until a supervisor returns).
